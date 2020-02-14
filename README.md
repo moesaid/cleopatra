@@ -13,6 +13,7 @@
 ## Installation
 
 There are multiple ways to install Cleopatra.
+
 <br>
 <br>
 
@@ -27,7 +28,10 @@ Download from [Github releases](https://github.com/moesaid/cleopatra/releases/ta
 
 **via npm**
 
-`npm install cleopatra`
+`npm install @moesaid/cleopatra@1.0.0`
+
+<br>
+<br>
 
 **Via Git**
 
@@ -35,7 +39,8 @@ Download from [Github releases](https://github.com/moesaid/cleopatra/releases/ta
 
 `git clone https://github.com/moesaid/cleopatra.git`
 
-
+<br>
+<br>
 <br>
 
 **Compile dist files**
@@ -48,11 +53,14 @@ you can list files as you wish **( file get compile with gulp )**
 - `npm run build` (compile css/js files for production)
 
 
+<br>
+<br>
+
 
 ## License
 
 Cleopatra is an open source project by 
 [Mohamed Said](moesaid.com) that is licensed under MIT. 
 
-moesaid.com reserves the right to change the license of future releases.
+[Mohamed Said](moesaid.com) reserves the right to change the license of future releases.
 

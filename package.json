@@ -60,6 +60,8 @@
     "gulp-webp": "^4.0.1",
     "log-symbols": "^2.2.0",
     "purifycss-extended": "^1.3.6",
+    "mem": ">=4.0.0",
+    "lodash.template": ">=4.5.0",
     "tailwindcss": "^1.1.2",
     "tailwindcss-animatecss": "^0.2.7"
   },
