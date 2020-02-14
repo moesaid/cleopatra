@@ -54,5 +54,5 @@ you can list files as you wish **( file get compile with gulp )**
 Cleopatra is an open source project by 
 [Mohamed Said](moesaid.com) that is licensed under MIT. 
 
-[Mohamed Said](moesaid.com) reserves the right to change the license of future releases.
+moesaid.com reserves the right to change the license of future releases.
 
