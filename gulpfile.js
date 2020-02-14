@@ -11,6 +11,7 @@ const purgecss = require('gulp-purgecss');
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const logSymbols = require('log-symbols');
+const markdown = require('gulp-markdown');
 
 class TailwindExtractor {
   static extract(content) {
@@ -47,6 +48,12 @@ task('build-html', () => {
     return src(options.paths.src.base+'/**/*.html')
            .pipe(dest(options.paths.build.base));
 }); 
+
+task('readme' , () => {
+    return src('README.md')
+            .pipe(markdown())
+            .pipe(dest(options.paths.dist.base)); 
+});
 
 //Compiling styles
 task('dev-styles', ()=> {
@@ -87,7 +94,7 @@ task('dev-scripts' ,()=> {
 task('build-scripts' ,()=> {
     return src([options.paths.src.js + '/libs/**/*.js',options.paths.src.js + '/**/*.js'])
            .pipe(concat({ path: 'scripts.js'}))
-           .pipe(uglify())
+        //    .pipe(uglify())
            .pipe(dest(options.paths.build.js));
 });
 
@@ -121,7 +128,7 @@ task('watch-changes', (done) => {
     watch(options.paths.src.js+'/**/*.js',series('dev-scripts',previewReload));
 
     //Watching Img Files updates
-    watch(options.paths.src.img+'/**/*',series('dev-imgs',previewReload));
+    watch(options.paths.src.img+'/**/*',series('dev-imgs',previewReload));    
 
     console.log("\n\t" + logSymbols.info,"Watching for Changes made to files.\n");
 
