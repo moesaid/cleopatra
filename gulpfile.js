@@ -12,6 +12,7 @@ const cleanCSS = require('gulp-clean-css');
 const del = require('del');
 const logSymbols = require('log-symbols');
 const markdown = require('gulp-markdown');
+const fileinclude = require('gulp-file-include');
 
 class TailwindExtractor {
   static extract(content) {
@@ -40,13 +41,15 @@ function previewReload(done){
 }
 
 task('dev-html', () => {
-    return src(options.paths.src.base+'/**/*.html')
+    return src(options.paths.src.base+'/views/*.html')
+           .pipe(fileinclude({prefix: '@'}))
            .pipe(dest(options.paths.dist.base));
 }); 
 
 task('build-html', () => {
-    return src(options.paths.src.base+'/**/*.html')
-           .pipe(dest(options.paths.build.base));
+    return src(options.paths.src.base+'/views/*.html')
+            .pipe(fileinclude({prefix: '@'}))
+            .pipe(dest(options.paths.build.base));
 }); 
 
 task('readme' , () => {
