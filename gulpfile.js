@@ -13,6 +13,7 @@ const del = require('del');
 const logSymbols = require('log-symbols');
 const markdown = require('gulp-markdown');
 const fileinclude = require('gulp-file-include');
+const cache = require('gulp-cache');
 
 class TailwindExtractor {
   static extract(content) {
@@ -27,6 +28,7 @@ task('livepreview', (done) => {
             baseDir: options.paths.dist.base
         },
         port: 8080,
+        https: true,    
         notify: false,
         open: false,
     });
@@ -37,6 +39,7 @@ task('livepreview', (done) => {
 function previewReload(done){
     console.log("\n\t" + logSymbols.info,"Reloading Preview.\n");
     browserSync.reload();
+    cache.clearAll(done);
     done();
 }
 
@@ -75,7 +78,7 @@ task('dev-styles', ()=> {
 task('build-styles', ()=> {
     return src(options.paths.dist.css + '/**/*')
         .pipe(purgecss({
-            content: ["src/**/*.html","src/**/.*js"],
+            content: ["src/views/**/*.html","src/**/.*js"],
             extractors: [{
                 extractor: TailwindExtractor,
                 extensions: ['html']
@@ -122,7 +125,7 @@ task('watch-changes', (done) => {
     watch(options.config.tailwindjs,series('dev-styles',previewReload));
 
     //Watching HTML Files edits
-    watch(options.paths.src.base+'/**/*.html',series('dev-styles','dev-html',previewReload));
+    watch(options.paths.src.base+'/views/**/*.html',series('dev-styles','dev-html',previewReload));
 
     //Watching css Files edits
     watch(options.paths.src.css+'/**/*',series('dev-styles',previewReload));
