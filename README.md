@@ -28,7 +28,7 @@ Download from [Github releases](https://github.com/moesaid/cleopatra/releases/ta
 
 **via npm**
 
-`npm install @moesaid/cleopatra@1.0.0`
+`npm install @moesaid/cleopatra`
 
 <br>
 <br>
