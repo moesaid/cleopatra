@@ -57,7 +57,7 @@ var display_4 = function(){
 if (el_4.length > 0) {
     display_4();   
 }
-// end 4 digit
+// end 4 digits
 
 
 

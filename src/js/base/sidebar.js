@@ -3,7 +3,7 @@ var btn     = document.getElementById('sliderBtn'),
     sideBar = document.getElementById('sideBar'),
     sideBarHideBtn = document.getElementById('sideBarHideBtn');
 
-    // show sidebar
+    // show sidebar 
     btn.addEventListener('click' , function(){    
         if (sideBar.classList.contains('md:-ml-64')) {
             sideBar.classList.replace('md:-ml-64' , 'md:ml-0');
