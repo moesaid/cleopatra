@@ -64,8 +64,8 @@ task('readme' , () => {
 //Compiling styles
 task('dev-styles', ()=> {
     var tailwindcss = require('tailwindcss'); 
-    return src(options.paths.src.css + '/**/*')
-        .pipe(sass().on('error', sass.logError))
+    return src(options.paths.src.css + '/**/*')         
+        .pipe(sass().on('error', sass.logError))        
         .pipe(postcss([
             tailwindcss(options.config.tailwindjs),
             require('autoprefixer'),

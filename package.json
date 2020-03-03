@@ -1,6 +1,6 @@
 {
   "name": "@moesaid/cleopatra",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "cleopatra admin dashboard template built especially for developers",
   "author": "Mohamed Said , moesaid.com",
   "license": "MIT",
@@ -64,6 +64,7 @@
     "gulp-purifycss": "^0.2.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
     "gulp-uglify": "^3.0.1",
     "gulp-webp": "^4.0.1",
     "lodash.template": ">=4.5.0",
