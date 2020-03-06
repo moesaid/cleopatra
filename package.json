@@ -10,7 +10,7 @@
     "build": "gulp build",
     "git": "git add . && git commit -m",
     "postgit": "git push -u origin master && npm run gh-pages",
-    "gh-pages": "git add dist && git commit -m 'last update'",
+    "gh-pages": "git add dist && git commit -m `last update`",
     "postgh-pages": "git push subtree --prefix dist origin gh-pages"
   },
   "options": {
