@@ -771,6 +771,99 @@ div.code-toolbar .toolbar button:hover {
   text-transform: lowercase
 }
 
+.alert {
+  border-width: 1px;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 0.875rem
+}
+
+.alert a {
+  font-weight: 800;
+  color: #000;
+  font-size: 1rem;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.alert a:hover {
+  opacity: 0.75
+}
+
+.alert-default {
+  background-color: #e6fffa;
+  border-color: #b2f5ea;
+  color: #38b2ac
+}
+
+.alert-default a {
+  color: #2c7a7b
+}
+
+.alert-light {
+  background-color: #f7fafc;
+  border-color: #e2e8f0;
+  color: #718096
+}
+
+.alert-light a {
+  color: #4a5568
+}
+
+.alert-dark {
+  background-color: #4a5568;
+  border-color: #1a202c;
+  color: #fff
+}
+
+.alert-dark a {
+  color: #a0aec0
+}
+
+.alert-success {
+  background-color: #c6f6d5;
+  border-color: #9ae6b4;
+  color: #48bb78
+}
+
+.alert-success a {
+  color: #2f855a
+}
+
+.alert-error {
+  background-color: #fed7d7;
+  border-color: #feb2b2;
+  color: #f56565
+}
+
+.alert-error a {
+  color: #c53030
+}
+
+.alert-close {
+  display: flex;
+  flex-direction: row-reverse
+}
+
+.alert-close button.alert-btn-close {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.alert-close button.alert-btn-close:hover {
+  opacity: 0.75
+}
+
+.alert-close span {
+  flex: 1 1 0%
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
