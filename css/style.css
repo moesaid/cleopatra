@@ -707,6 +707,69 @@ p {
   color: #285e61
 }
 
+.btn-indigo {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #667eea;
+  color: #ebf4ff;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-indigo:hover {
+  background-color: #5a67d8;
+  color: #c3dafe
+}
+
+.btn-info {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #faf089;
+  color: #d69e2e;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-info:hover {
+  background-color: #f6e05e;
+  color: #d69e2e
+}
+
+.btn-danger {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #feb2b2;
+  color: #e53e3e;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-danger:hover {
+  background-color: #fc8181;
+  color: #e53e3e
+}
+
 .btn-gray {
   text-align: center;
   text-transform: capitalize;
@@ -730,6 +793,126 @@ p {
   color: #2d3748;
   border-width: 1px;
   border-color: #e2e8f0
+}
+
+.btn-bs-dark {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #1a202c;
+  color: #fff;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-bs-dark:hover {
+  opacity: 0.75
+}
+
+.btn-bs-primary {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #5a67d8;
+  color: #fff;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-bs-primary:hover {
+  opacity: 0.75
+}
+
+.btn-bs-secondary {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #a0aec0;
+  color: #fff;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-bs-secondary:hover {
+  opacity: 0.75
+}
+
+.btn-bs-success {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #48bb78;
+  color: #fff;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-bs-success:hover {
+  opacity: 0.75
+}
+
+.btn-bs-danger {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #f56565;
+  color: #fff;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-bs-danger:hover {
+  opacity: 0.75
+}
+
+.btn-bs-info {
+  text-align: center;
+  text-transform: capitalize;
+  background-color: #ecc94b;
+  color: #fff;
+  display: block;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 0.25rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms
+}
+
+.btn-bs-info:hover {
+  opacity: 0.75
 }
 
 code[class*="language-"],
