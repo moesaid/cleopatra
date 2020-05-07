@@ -5,8 +5,6 @@
 
 
 
->**right now it's the scaffold layout sidebar , navbar , content area fully responsive**
-
 ![image](dist/img/now.png)
 
 ---
