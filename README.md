@@ -8,6 +8,10 @@
 ![image](dist/img/now.png)
 
 ---
+**Cleopatra** has been carefully coded with clear comments in all of its JS, SASS and HTML files. SASS has been used to increase code customizability.
+
+
+
 ## Installation
 
 There are multiple ways to install Cleopatra.
