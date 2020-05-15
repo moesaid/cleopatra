@@ -2,6 +2,11 @@ var num = function(from , to){
     return Math.floor(Math.random() * to)  + from;
 };
 
+// array of number
+var numArr = function(length , max){
+    return Array.from({length: length}, () => Math.floor(Math.random() * max));
+}
+
 
 // return 2 digit
 var el_2 = document.getElementsByClassName('num-2');

@@ -64,7 +64,12 @@ var options = {
     
   };
   
-  var chart = new ApexCharts(document.querySelector("#SummaryChart"), options);
+
+  var SummaryChart =  document.getElementById("SummaryChart");
   
-  chart.render();
+  if (SummaryChart != null && typeof(SummaryChart) != 'undefined') {
+    var chart = new ApexCharts(document.querySelector("#SummaryChart"), options); 
+    chart.render();
+  }
+  
    
