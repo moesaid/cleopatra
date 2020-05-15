@@ -5,7 +5,8 @@
 
 
 
-![image](dist/img/now.png)
+![image](dist/img/index.png)
+![image](dist/img/index-1.png)
 
 ---
 **Cleopatra** has been carefully coded with clear comments in all of its JS, SASS and HTML files. SASS has been used to increase code customizability.

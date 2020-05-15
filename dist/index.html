@@ -355,15 +355,15 @@
 
       <!-- link -->
       <a href="./index.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-chart-pie text-xs mr-2"></i>
-        ecommerce dashboard        
+        <i class="fad fa-chart-pie text-xs mr-2"></i>                
+        Analytics dashboard
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="./index-2.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+      <a href="./index-1.html" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
         <i class="fad fa-shopping-cart text-xs mr-2"></i>
-        Analytics dashboard
+        ecommerce dashboard
       </a>
       <!-- end link -->
 
@@ -489,454 +489,478 @@
   <!-- strat content -->
   <div class="bg-gray-100 flex-1 p-6 md:mt-16"> 
 
-    <!-- congrats & summary -->
-    <div class="grid grid-cols-3 lg:grid-cols-1 gap-5">
-      <!-- congrats -->
-<div class="card col-span-1">
-
-    <div class="card-body h-full flex flex-col justify-between">
-
-        <div>
-            <h1 class="text-lg font-bold tracking-wide">Congratulations Moe!</h1>
-            <p class="text-gray-600 mt-2">Best seller of the month</p>
-        </div>
     
-        <div class="flex flex-row mt-10 items-end">
+    <!-- General Report -->
+    <div class="grid grid-cols-4 gap-6">
+
+
+    <!-- card -->
+    <div class="report-card">
+        <div class="card">
+            <div class="card-body flex flex-col">
+                
+                <!-- top -->
+                <div class="flex flex-row justify-between items-center">
+                    <div class="h6 text-indigo-700 fad fa-shopping-cart"></div>
+                    <span class="rounded-full text-white badge bg-teal-400 text-xs">
+                        12%
+                        <i class="fal fa-chevron-up ml-1"></i>
+                    </span>
+                </div>
+                <!-- end top -->
+
+                <!-- bottom -->
+                <div class="mt-8">
+                    <h1 class="h5 num-4"></h1>
+                    <p>items sales</p>
+                </div>                
+                <!-- end bottom -->
     
-            <div class="flex-1">
-                <h1 class="font-extrabold text-4xl text-teal-400">$89k</h1>
-                <p class="mt-3 mb-4 text-xs text-gray-500">You have done 57.6% more sales today.</p>
-                <a href="#" class="btn-shadow py-3">
-                    view sales
-                </a>
             </div>
-    
-            <div class="flex-1 ml-10 w-32 h-32 lg:w-auto lg:h-auto overflow-hidden">
-                <img class="object-cover" src="img/congrats.svg">
-            </div>
-    
         </div>
-
+        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
     </div>
+    <!-- end card -->
+
+
+    <!-- card -->
+    <div class="report-card">
+        <div class="card">
+            <div class="card-body flex flex-col">
+                
+                <!-- top -->
+                <div class="flex flex-row justify-between items-center">
+                    <div class="h6 text-red-700 fad fa-store"></div>
+                    <span class="rounded-full text-white badge bg-red-400 text-xs">
+                        6%
+                        <i class="fal fa-chevron-down ml-1"></i>
+                    </span>
+                </div>
+                <!-- end top -->
+
+                <!-- bottom -->
+                <div class="mt-8">
+                    <h1 class="h5 num-4"></h1>
+                    <p>new orders</p>
+                </div>                
+                <!-- end bottom -->
     
+            </div>
+        </div>
+        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
+    </div>
+    <!-- end card -->
+
+
+    <!-- card -->
+    <div class="report-card">
+        <div class="card">
+            <div class="card-body flex flex-col">
+                
+                <!-- top -->
+                <div class="flex flex-row justify-between items-center">
+                    <div class="h6 text-yellow-600 fad fa-sitemap"></div>
+                    <span class="rounded-full text-white badge bg-teal-400 text-xs">
+                        72%
+                        <i class="fal fa-chevron-up ml-1"></i>
+                    </span>
+                </div>
+                <!-- end top -->
+
+                <!-- bottom -->
+                <div class="mt-8">
+                    <h1 class="h5 num-4"></h1>
+                    <p>total Products</p>
+                </div>                
+                <!-- end bottom -->
+    
+            </div>
+        </div>
+        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
+    </div>
+    <!-- end card -->
+
+
+    <!-- card -->
+    <div class="report-card">
+        <div class="card">
+            <div class="card-body flex flex-col">
+                
+                <!-- top -->
+                <div class="flex flex-row justify-between items-center">
+                    <div class="h6 text-green-700 fad fa-users"></div>
+                    <span class="rounded-full text-white badge bg-teal-400 text-xs">
+                        150%
+                        <i class="fal fa-chevron-up ml-1"></i>
+                    </span>
+                </div>
+                <!-- end top -->
+
+                <!-- bottom -->
+                <div class="mt-8">
+                    <h1 class="h5 num-4"></h1>
+                    <p>new Visitor</p>
+                </div>                
+                <!-- end bottom -->
+    
+            </div>
+        </div>
+        <div class="footer bg-white p-1 mx-4 border border-t-0 rounded rounded-t-none"></div>
+    </div>
+    <!-- end card -->
+    
+
 </div>
-<!-- end congrats -->
-      <div class="card p-0 overflow-hidden col-span-2 lg:col-span-1 flex flex-row lg:flex-col">
-     
-    <!-- right -->
-    <div class="border-r border-gray-200 w-2/3 lg:w-full lg:mb-5">
-        
-        <!-- top -->
-        <div class="p-5 flex flex-row flex-wrap justify-between items-center">
-            <h2 class="font-bold text-lg">Order Summary</h2>
-            <div class="flex flex-row justify-center items-center">
-                <a href="#" class="btn mr-4 text-sm py-2 block">month</a>
-                <a href="#" class="btn-shadow text-sm py-2 block">week</a>
-            </div>
-        </div>
-        <!-- end top -->
+    <!-- End General Report -->
 
-        <!-- chart -->                
-        <div id="SummaryChart"></div>
-        <!-- end chart -->
+    <!-- strat Analytics -->
+    <div class="mt-6 grid grid-cols-2 gap-6">
 
-    </div>
-    <!-- end right -->
-
-    <!-- left -->
-    <div class="w-1/3 lg:w-full">
-        
-        <!-- top -->
-        <div class="p-5 border-b border-gray-200">
-            <h2 class="font-bold text-lg mb-6">Sales History</h2>
-
-            <div class="flex flex-row justify-between mb-3">
-                <div class="">
-                    <h4 class="text-gray-600 font-thin">Puma Shoes</h4>
-                    <p class="text-gray-400 text-xs font-hairline">30 min ago</p>
-                </div>
-                <div class="text-sm font-medium">
-                    <span class="text-green-400">+</span> $250
-                </div>
-            </div>
-
-            <div class="flex flex-row justify-between mb-3">
-                <div class="">
-                    <h4 class="text-gray-600 font-thin">Google Pixel 4 xl</h4>
-                    <p class="text-gray-400 text-xs font-hairline">1 day ago</p>
-                </div>
-                <div class="text-sm font-medium">
-                    <span class="text-red-400">-</span> $10
-                </div>
-            </div>
+    <!-- update section -->
+    <div class="card bg-teal-400 border-teal-400 shadow-md text-white">
+        <div class="card-body flex flex-row">
             
-            <div class="flex flex-row justify-between">
-                <div class="">
-                    <h4 class="text-gray-600 font-thin">Nike Air Jordan</h4>
-                    <p class="text-gray-400 text-xs font-hairline">2 hour ago</p>
-                </div>
-                <div class="text-sm font-medium">
-                    <span class="text-red-400">-</span> $98
-                </div>
+            <!-- image -->
+            <div class="img-wrapper w-40 h-40 flex justify-center items-center">
+                <img src="./img/happy.svg" alt="img title">
+            </div>
+            <!-- end image -->
+
+            <!-- info -->
+            <div class="py-2 ml-10">
+                <h1 class="h6">Good Job, Mohamed!</h1>
+                <p class="text-white text-xs">You've finished all of your tasks for this week.</p>
+
+                <ul class="mt-4">
+                    <li class="text-sm font-light"><i class="fad fa-check-double mr-2 mb-2"></i> Finish Dashboard Design</li>
+                    <li class="text-sm font-light"><i class="fad fa-check-double mr-2 mb-2"></i> Fix Issue #74</li>
+                    <li class="text-sm font-light"><i class="fad fa-check-double mr-2"></i> Publish version 1.0.6</li>
+                </ul>
+            </div>
+            <!-- end info -->
+
+        </div>
+    </div>
+    <!-- end update section -->
+
+    <!-- carts -->
+    <div class="flex flex-col">
+
+        <!-- alert -->
+        <div class="alert alert-dark mb-6">
+            Hi! Wait A Minute . . . . . . Follow Me On Twitter 
+            <a class="ml-2" target="_blank" href="https://twitter.com/MohamedSaid__">@moesaid</a>
+        </div>
+        <!-- end alert -->
+
+        <!-- charts -->
+        <div class="grid grid-cols-2 gap-6 h-full">
+
+            <div class="card">
+                <div class="py-3 px-4 flex flex-row justify-between">
+                    <h1 class="h6">
+                        <span class="num-4"></span>k
+                        <p>page view</p>
+                    </h1>
+
+                    <div class="bg-teal-200 text-teal-700 border-teal-300 border w-10 h-10 rounded-full flex justify-center items-center">
+                        <i class="fad fa-eye"></i>
+                    </div>
+                </div>                
+                <div class="analytics_1"></div>
             </div>
 
+            <div class="card">
+                <div class="py-3 px-4 flex flex-row justify-between">                    
+                    <h1 class="h6">
+                        <span class="num-2"></span>k
+                        <p>Unique Users</p>
+                    </h1>
+
+                    <div class="bg-indigo-200 text-indigo-700 border-indigo-300 border w-10 h-10 rounded-full flex justify-center items-center">
+                        <i class="fad fa-users-crown"></i>
+                    </div>
+                </div>
+                <div class="analytics_1"></div>
+            </div>
+
+        </div>     
+        <!-- charts    -->
+
+    </div>
+    <!-- end charts -->
+
+
+</div>
+    <!-- end Analytics -->
+
+    <!-- Sales Overview -->
+    <div class="card mt-6">
+
+    <!-- header -->
+    <div class="card-header flex flex-row justify-between">
+        <h1 class="h6">Sales Overview</h1>
+
+        <div class="flex flex-row justify-center items-center">
+
+            <a href="">
+                <i class="fad fa-chevron-double-down mr-6"></i>
+            </a>
+
+            <a href="">
+                <i class="fad fa-ellipsis-v"></i>
+            </a>
+
+        </div>
+
+    </div>
+    <!-- end header -->
+
+    <!-- body -->
+    <div class="card-body grid grid-cols-2 gap-6">
+
+        <div class="p-8">
+            <h1 class="h2">5,337</h1>
+            <p class="text-black font-medium">Sales this month</p>
+
+            <div class="mt-20 mb-2 flex items-center">
+                <div class="py-1 px-3 rounded bg-green-200 text-green-900 mr-3">
+                    <i class="fa fa-caret-up"></i>
+                </div>
+                <p class="text-black"><span class="num-2 text-green-400"></span><span class="text-green-400">% more sales</span> in comparison to last month.</p>
+            </div>
+
+            <div class="flex items-center">
+                <div class="py-1 px-3 rounded bg-red-200 text-red-900 mr-3">
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <p class="text-black"><span class="num-2 text-red-400"></span><span class="text-red-400">% revenue per sale</span> in comparison to last month.</p>
+            </div>
+
+            <a href="#" class="btn-shadow mt-6">view details</a>
+
+        </div>
+    
+        <div class="">
+            <div id="sealsOverview"></div>
+        </div>
+    
+    </div>
+    <!-- end body -->
+
+</div>
+    <!-- end Sales Overview -->
+
+    <!-- start numbers -->
+    <div class="grid grid-cols-5 gap-6">
+
+    <!-- card -->
+    <div class="card mt-6">
+        <div class="card-body flex items-center">
             
+            <div class="px-3 py-2 rounded bg-indigo-600 text-white mr-3">
+                <i class="fad fa-wallet"></i>
+            </div>
+
+            <div class="flex flex-col">
+                <h1 class="font-semibold"><span class="num-2"></span> Sales</h1>
+                <p class="text-xs"><span class="num-2"></span> payments</p>
+            </div>
 
         </div>
-        <!-- end top -->
+    </div>
+    <!-- end card -->
+    
+    <!-- card -->
+    <div class="card mt-6">
+        <div class="card-body flex items-center">
+            
+            <div class="px-3 py-2 rounded bg-green-600 text-white mr-3">
+                <i class="fad fa-shopping-cart"></i>
+            </div>
 
-        <!-- bottom -->
-        <div class="p-5">
-            <h2 class="font-bold text-lg mb-2">Sales History</h2>
-            <strong class="text-teal-400 font-extrabold text-xl">$82,950.96</strong>
+            <div class="flex flex-col">
+                <h1 class="font-semibold"><span class="num-2"></span> Orders</h1>
+                <p class="text-xs"><span class="num-2"></span> items</p>
+            </div>
 
-            <div class="bg-gray-300 h-2 rounded-full mt-2 relative">
-                <div class="rounded-full bg-teal-400 h-full w-3/4 shadow-md"></div>
+        </div>
+    </div>
+    <!-- end card -->
+
+    <!-- card -->
+    <div class="card mt-6">
+        <div class="card-body flex items-center">
+            
+            <div class="px-3 py-2 rounded bg-yellow-600 text-white mr-3">
+                <i class="fad fa-blog"></i>
+            </div>
+
+            <div class="flex flex-col">
+                <h1 class="font-semibold"><span class="num-2"></span> posts</h1>
+                <p class="text-xs"><span class="num-2"></span> active</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- end card -->
+
+    <!-- card -->
+    <div class="card mt-6">
+        <div class="card-body flex items-center">
+            
+            <div class="px-3 py-2 rounded bg-red-600 text-white mr-3">
+                <i class="fad fa-comments"></i>
+            </div>
+
+            <div class="flex flex-col">
+                <h1 class="font-semibold"><span class="num-2"></span> comments</h1>
+                <p class="text-xs"><span class="num-2"></span> approved</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- end card -->
+
+    <!-- card -->
+    <div class="card mt-6">
+        <div class="card-body flex items-center">
+            
+            <div class="px-3 py-2 rounded bg-pink-600 text-white mr-3">
+                <i class="fad fa-user"></i>
+            </div>
+
+            <div class="flex flex-col">
+                <h1 class="font-semibold"><span class="num-2"></span> memebrs</h1>
+                <p class="text-xs"><span class="num-2"></span> online</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- end card -->
+
+</div>
+    <!-- end nmbers -->
+
+    <!-- start quick Info -->
+    <div class="grid grid-cols-3 gap-6 mt-6">
+
+
+    <!-- Browser Stats -->
+    <div class="card">
+        <div class="card-header">Browser Stats</div>
+
+        <!-- brawser -->
+        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
+            <div class="flex items-center">
+                <i class="fab fa-chrome mr-4"></i>    
+                <h1>google chrome</h1>
+            </div>                
+            <div>
+                <span class="num-2"></span>%
             </div>
         </div>
-        <!-- end bottom -->
+        <!-- end brawser -->
 
-    </div>
-    <!-- end left -->
-
-</div>
-
-
-      
-    </div>
-    <!-- end congrats & summary -->
-
-    <!-- status -->
-    <div class="grid grid-cols-5 gap-5 mt-5 lg:grid-cols-2">
-
-    <!-- status -->
-    <div class="card col-span-1">
-        <div class="card-body">
-            <h5 class="uppercase text-xs tracking-wider font-extrabold">today</h5>
-            <h1 class="capitalize text-lg mt-1 mb-1">$<span class="num-3"></span>  <span class="text-xs tracking-widest font-extrabold"> / <span class="num-2"></span> orders</span></h1>
-            <p class="capitalize text-xs text-gray-500">( $<span class="num-2"></span> in the last year )</p>
+        <!-- brawser -->
+        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
+            <div class="flex items-center">
+                <i class="fab fa-firefox mr-4"></i>    
+                <h1>firefox</h1>
+            </div>                
+            <div>
+                <span class="num-2"></span>%
+            </div>
         </div>
-    </div>
-    <!-- status -->
+        <!-- end brawser -->
 
-    <!-- status -->
-    <div class="card col-span-1">
-        <div class="card-body">
-            <h5 class="uppercase text-xs tracking-wider font-extrabold">yesterday</h5>
-            <h1 class="capitalize text-lg mt-1 mb-1">$<span class="num-3"></span>  <span class="text-xs tracking-widest font-extrabold"> / <span class="num-2"></span> orders</span></h1>
-            <p class="capitalize text-xs text-gray-500">( $<span class="num-2"></span> in the last year )</p>
+        <!-- brawser -->
+        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b">
+            <div class="flex items-center">
+                <i class="fab fa-internet-explorer mr-4"></i>    
+                <h1>internet explorer</h1>
+            </div>                
+            <div>
+                <span class="num-2"></span>%
+            </div>
         </div>
-    </div>
-    <!-- status -->
+        <!-- end brawser -->
 
-    <!-- status -->
-    <div class="card col-span-1">
-        <div class="card-body">
-            <h5 class="uppercase text-xs tracking-wider font-extrabold">last week</h5>
-            <h1 class="capitalize text-lg mt-1 mb-1">$<span class="num-3"></span>  <span class="text-xs tracking-widest font-extrabold"> / <span class="num-2"></span> orders</span></h1>
-            <p class="capitalize text-xs text-gray-500">( $<span class="num-2"></span> in the last year )</p>
+        <!-- brawser -->
+        <div class="p-6 flex flex-row justify-between items-center text-gray-600 border-b-0">
+            <div class="flex items-center">
+                <i class="fab fa-safari mr-4"></i>    
+                <h1>safari</h1>
+            </div>                
+            <div>
+                <span class="num-2"></span>%
+            </div>
         </div>
+        <!-- end brawser -->
+
     </div>
-    <!-- status -->
+    <!-- end Browser Stats -->
 
-    <!-- status -->
-    <div class="card col-span-1">
-        <div class="card-body">
-            <h5 class="uppercase text-xs tracking-wider font-extrabold">last month</h5>
-            <h1 class="capitalize text-lg mt-1 mb-1">$<span class="num-3"></span>  <span class="text-xs tracking-widest font-extrabold"> / <span class="num-2"></span> orders</span></h1>
-            <p class="capitalize text-xs text-gray-500">( $<span class="num-2"></span> in the last year )</p>
-        </div>
-    </div>
-    <!-- status -->
+    <!-- Start Recent Sales -->
+    <div class="card col-span-2">
+        <div class="card-header">Recent Sales</div>
 
-    <!-- status -->
-    <div class="card col-span-1 lg:col-span-2">
-        <div class="card-body">
-            <h5 class="uppercase text-xs tracking-wider font-extrabold">last 90-days</h5>
-            <h1 class="capitalize text-lg mt-1 mb-1">$<span class="num-3"></span>  <span class="text-xs tracking-widest font-extrabold"> / <span class="num-2"></span> orders</span></h1>
-            <p class="capitalize text-xs text-gray-500">( $<span class="num-2"></span> in the last year )</p>
-        </div>
-    </div>
-    <!-- status -->
-    
- 
-</div>
-    <!-- end status -->
-
-    <!-- best seller & traffic -->
-    <div class="grid grid-cols-2 lg:grid-cols-1 gap-5 mt-5">
-      <div class="card">
-
-    <div class="card-body">
-        <div class="flex flex-row justify-between items-center">
-            <h1 class="font-extrabold text-lg">best sellers</h1>
-            <a href="#" class="btn-gray text-sm">view all</a>
-        </div>
-    
-        <table class="table-auto w-full mt-5 text-right">
-    
+        <table class="table-auto w-full text-left">
             <thead>
                 <tr>
-                    <td class="py-4 font-extrabold text-sm text-left">product</td>
-                    <td class="py-4 font-extrabold text-sm">price</td>
-                    <td class="py-4 font-extrabold text-sm">sold</td>
-                    <td class="py-4 font-extrabold text-sm">profit</td>
+                    <th class="px-4 py-2 border-r"></th>
+                    <th class="px-4 py-2 border-r">product</th>
+                    <th class="px-4 py-2 border-r">price</th>
+                    <th class="px-4 py-2">date</th>
                 </tr>
             </thead>
-    
-            <tbody>
-    
-                <!-- item -->
-                <tr class="">
-                    <td class="py-4 text-sm text-gray-600 flex flex-row items-center text-left">
-                        <div class="w-8 h-8 overflow-hidden mr-3">
-                            <img src="img/sneakers.svg" class="object-cover">
-                        </div>
-                        Sneakers and Tennis 
-                    </td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-2"></span></td>
-                    <td class="py-4 text-xs text-gray-600"><span class="num-3"></span></td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-4"></span></td>
+            <tbody class="text-gray-600">
+
+                <tr>                    
+                    <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
+                    <td class="border border-l-0 px-4 py-2">Lightning to USB-C Adapter Lightning.</td>
+                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
+                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <!-- end item -->
-    
-                <!-- item -->
-                <tr class="">
-                    <td class="py-4 text-sm text-gray-600 flex flex-row items-center">
-                        <div class="w-8 h-8 overflow-hidden mr-3">
-                            <img src="img/socks.svg" class="object-cover">
-                        </div>
-                        Crazy Socks & Graphic Socks for Men
-                    </td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-2"></span></td>
-                    <td class="py-4 text-xs text-gray-600"><span class="num-3"></span></td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-4"></span></td>
+                <tr>                    
+                    <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
+                    <td class="border border-l-0 px-4 py-2">Apple iPhone 8.</td>
+                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
+                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <!-- end item -->
-    
-                <!-- item -->
-                <tr class="">
-                    <td class="py-4 text-sm text-gray-600 flex flex-row items-center">
-                        <div class="w-8 h-8 overflow-hidden mr-3">
-                            <img src="img/soccer.svg" class="object-cover">
-                        </div>
-                        Adidas Soccer Ball
-                    </td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-2"></span></td>
-                    <td class="py-4 text-xs text-gray-600"><span class="num-3"></span></td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-4"></span></td>
+                <tr>                    
+                    <td class="border border-l-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
+                    <td class="border border-l-0 px-4 py-2">Apple MacBook Pro.</td>
+                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
+                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <!-- end item -->
-    
-                <!-- item -->
-                <tr class="">
-                    <td class="py-4 text-sm text-gray-600 flex flex-row items-center">
-                        <div class="w-8 h-8 overflow-hidden mr-3">
-                            <img src="img/food.svg" class="object-cover">
-                        </div>
-                        Best Chocolate Chip Cookies
-                    </td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-2"></span></td>
-                    <td class="py-4 text-xs text-gray-600"><span class="num-3"></span></td>
-                    <td class="py-4 text-xs text-gray-600">$ <span class="num-4"></span></td>
+                <tr>                    
+                    <td class="border border-l-0 px-4 py-2 text-center text-red-500"><i class="fad fa-circle"></i></td>
+                    <td class="border border-l-0 px-4 py-2">Samsung Galaxy S9.</td>
+                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
+                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
                 </tr>
-                <!-- end item -->
-    
+                <tr>                    
+                    <td class="border border-l-0 px-4 py-2 text-center text-yellow-500"><i class="fad fa-circle"></i></td>
+                    <td class="border border-l-0 px-4 py-2">Samsung Galaxy S8 256GB.</td>
+                    <td class="border border-l-0 px-4 py-2">$<span class="num-2"></span></td>
+                    <td class="border border-l-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
+                </tr>
+                <tr>                    
+                    <td class="border border-l-0 border-b-0 px-4 py-2 text-center text-green-500"><i class="fad fa-circle"></i></td>
+                    <td class="border border-l-0 border-b-0 px-4 py-2">apple watch.</td>
+                    <td class="border border-l-0 border-b-0 px-4 py-2">$<span class="num-2"></span></td>
+                    <td class="border border-l-0 border-b-0 border-r-0 px-4 py-2"><span class="num-2"></span> minutes ago</td>
+                </tr>
+                
             </tbody>
-    
         </table>
-    
     </div>
+    <!-- End Recent Sales -->
+
+
 </div>
-      <div class="card">    
-
-    <div class="card-body">
-        <h2 class="font-bold text-lg mb-10">Recent Orders</h2>
-    
-    <!-- start a table -->
-    <table class="table-fixed w-full">
-        
-        <!-- table head -->
-        <thead class="text-left">
-            <tr>
-                <th class="w-1/2 pb-10 text-sm font-extrabold tracking-wide">customer</th>
-                <th class="w-1/4 pb-10 text-sm font-extrabold tracking-wide text-right">Product</th>
-                <th class="w-1/4 pb-10 text-sm font-extrabold tracking-wide text-right">Invoice</th>
-                <th class="w-1/4 pb-10 text-sm font-extrabold tracking-wide text-right">price</th>
-                <th class="w-1/4 pb-10 text-sm font-extrabold tracking-wide text-right">status</th>
-            </tr>
-        </thead>
-        <!-- end table head -->
-
-        <!-- table body -->
-        <tbody class="text-left text-gray-600">
-
-            <!-- item -->
-            <tr>
-                <!-- name -->
-                <th class="w-1/2 mb-4 text-xs font-extrabold tracking-wider flex flex-row items-center w-full">
-                    <div class="w-8 h-8 overflow-hidden rounded-full">
-                        <img src="img/user2.jpg" class="object-cover">
-                    </div>
-                    <p class="ml-3 name-1">user name</p>                    
-                </th>
-                <!-- name -->
-                
-                <!-- product -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">Nike Sport</th>
-                <!-- product -->
-
-                <!-- invoice -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">#<span class="num-4"></span></th>
-                <!-- invoice -->
-
-                <!-- price -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">$<span class="num-2"></span></th>
-                <!-- price -->
-
-                <!-- status -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">shipped</th>
-                <!-- status -->
-
-            </tr>
-            <!-- item -->
-
-
-            <!-- item -->
-            <tr>
-                <!-- name -->
-                <th class="w-1/2 mb-4 text-xs font-extrabold tracking-wider flex flex-row items-center w-full">
-                    <div class="w-8 h-8 overflow-hidden rounded-full">
-                        <img src="img/user3.jpg" class="object-cover">
-                    </div>
-                    <p class="ml-3 name-1">user name</p>                    
-                </th>
-                <!-- name -->
-                
-                <!-- product -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">Nike Sport</th>
-                <!-- product -->
-
-                <!-- invoice -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">#<span class="num-4"></span></th>
-                <!-- invoice -->
-
-                <!-- price -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">$<span class="num-2"></span></th>
-                <!-- price -->
-
-                <!-- status -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">shipped</th>
-                <!-- status -->
-
-            </tr>
-            <!-- item -->
-
-
-            <!-- item -->
-            <tr>
-                <!-- name -->
-                <th class="w-1/2 mb-4 text-xs font-extrabold tracking-wider flex flex-row items-center w-full">
-                    <div class="w-8 h-8 overflow-hidden rounded-full">
-                        <img src="img/user2.jpg" class="object-cover">
-                    </div>
-                    <p class="ml-3 name-1">user name</p>                    
-                </th>
-                <!-- name -->
-                
-                <!-- product -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">Nike Sport</th>
-                <!-- product -->
-
-                <!-- invoice -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">#<span class="num-4"></span></th>
-                <!-- invoice -->
-
-                <!-- price -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">$<span class="num-2"></span></th>
-                <!-- price -->
-
-                <!-- status -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">shipped</th>
-                <!-- status -->
-
-            </tr>
-            <!-- item -->
-
-            <!-- item -->
-            <tr>
-                <!-- name -->
-                <th class="w-1/2 mb-4 text-xs font-extrabold tracking-wider flex flex-row items-center w-full">
-                    <div class="w-8 h-8 overflow-hidden rounded-full">
-                        <img src="img/user1.jpg" class="object-cover">
-                    </div>
-                    <p class="ml-3 name-1">user name</p>                    
-                </th>
-                <!-- name -->
-                
-                <!-- product -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">Nike Sport</th>
-                <!-- product -->
-
-                <!-- invoice -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">#<span class="num-4"></span></th>
-                <!-- invoice -->
-
-                <!-- price -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">$<span class="num-2"></span></th>
-                <!-- price -->
-
-                <!-- status -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">shipped</th>
-                <!-- status -->
-
-            </tr>
-            <!-- item -->
-
-            <!-- item -->
-            <tr>
-                <!-- name -->
-                <th class="w-1/2 mb-4 text-xs font-extrabold tracking-wider flex flex-row items-center w-full">
-                    <div class="w-8 h-8 overflow-hidden rounded-full">
-                        <img src="img/user3.jpg" class="object-cover">
-                    </div>
-                    <p class="ml-3 name-1">user name</p>                    
-                </th>
-                <!-- name -->
-                
-                <!-- product -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">Nike Sport</th>
-                <!-- product -->
-
-                <!-- invoice -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">#<span class="num-4"></span></th>
-                <!-- invoice -->
-
-                <!-- price -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">$<span class="num-2"></span></th>
-                <!-- price -->
-
-                <!-- status -->
-                <th class="w-1/4 mb-4 text-xs font-extrabold tracking-wider text-right">shipped</th>
-                <!-- status -->
-
-            </tr>
-            <!-- item -->            
-
-            
-
-
-        </tbody>
-        <!-- end table body -->
-
-    </table>
-    <!-- end a table -->
-    </div>
-
-</div> 
-          
-    </div>
-    <!-- end best seller & traffic -->
+    <!-- end quick Info -->
         
 
   </div>

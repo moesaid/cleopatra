@@ -1,6 +1,6 @@
 {
   "name": "@moesaid/cleopatra",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "cleopatra admin dashboard template built especially for developers",
   "author": "Mohamed Said , moesaid.com",
   "license": "MIT",
@@ -9,9 +9,7 @@
     "dev": "gulp",
     "build": "gulp build",
     "git": "git add . && git commit -m",
-    "postgit": "git push -u origin master",
-    "gh-pages": "git add dist && git commit -m",
-    "postgh-pages": "git subtree push --prefix dist origin gh-pages"
+    "postgit": "git push -u origin master && git subtree push --prefix dist origin gh-pages"    
   },
   "options": {
     "config": {
