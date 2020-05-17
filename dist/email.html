@@ -487,239 +487,225 @@
   <!-- end sidbar -->
 
   <!-- strat content -->
-  <div class="bg-gray-100 flex-1 p-6 md:mt-16">
+  <div class="bg-gray-100 flex-1 p-6 md:mt-16 grid grid-cols-8"> 
     
-    <h1 class="h5">alerts</h1>
-<p>Use cleopatra custom alerts styles for actions , notifcations etc.</p>
-<p>so far there's just 3 type of alerts feel free to submit a pull request</p>
+    <div class="col-span-2 bg-white border rounded p-6 mr-8">
 
-<hr class="my-5">
-    <div class="card">
+    <a href="#" class="btn-bs-dark uppercase tracking-wider">
+        <i class="fad fa-layer-plus mr-2"></i>
+        Compose
+    </a>
+    <hr class="my-6">
 
-    <div class="card-header">
-        simple alert - you can always use <span class="badge badge-primary">.alert</span> class along with <span class="badge badge-primary">.alert-(type)</span>
-    </div>
-
-    <div class="card-body">        
+    <ul>
+        <li class="my-5 mt-0">
+            <a class="btn-indigo text-left" href="#">
+                <i class="text-xs fad fa-inbox mr-1"></i>
+                inbox
+            </a>
+        </li>
         
-        <div class="alert mb-5">
-            A simple alert it out!!
-        </div>
 
-        <div class="alert alert-default mb-5">
-            A simple alert it out!
-        </div>        
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-xs fad fa-paper-plane mr-1"></i>
+                sent
+            </a>
+        </li>
 
-        <div class="alert alert-light mb-5">
-            A simple alert it out!
-        </div>
 
-        <div class="alert alert-dark mb-5">
-            A simple alert it out!
-        </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-xs fad fa-star mr-1"></i>
+                Marked
+            </a>
+        </li>
+        
 
-        <div class="alert alert-success mb-5">
-            A simple alert it out!
-        </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-xs fad fa-inbox-in mr-1"></i>
+                draft
+            </a>
+        </li>
+        
 
-        <div class="alert alert-error">
-            A simple alert it out!
-        </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-xs fad fa-inbox-out mr-1"></i>
+                sent
+            </a>
+        </li>
+        
 
-    </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-xs fad fa-trash mr-1"></i>
+                trash
+            </a>
+        </li>
 
-    <div class="card-footer">
-        <script type="text/plain" class="language-html">
-            <div class="alert mb-5">
-                A simple alert it out!
-            </div>
-    
-            <div class="alert alert-default mb-5">
-                A simple alert it out! 
-            </div>        
-    
-            <div class="alert alert-light mb-5">
-                A simple alert it out!
-            </div>
-    
-            <div class="alert alert-dark mb-5">
-                A simple alert it out!
-            </div>
-    
-            <div class="alert alert-success mb-5">
-                A simple alert it out!
-            </div>
-    
-            <div class="alert alert-error">
-                A simple alert it out!
-            </div>
-        </script>
-    </div>
-</div>
-    <div class="card mt-5">
+        <!-- seprator -->
+        <hr class="my-10">
 
-    <div class="card-header">
-        any <span class="badge badge-primary">a tag</span> inside alert will have font <span class="badge badge-primary">font-weight: 900</span>
-    </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-indigo-700 fad fa-dot-circle mr-1"></i>
+                Custom Work
+            </a>
+        </li>
 
-    <div class="card-body">
 
-        <div class="alert mb-5">
-            a simple alert it out! with <a href="#">alert link</a> click it now.
-        </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-gray-700 fad fa-dot-circle mr-1"></i>
+                Important 
+            </a>
+        </li>
 
-        <div class="alert alert-default mb-5">
-            a simple alert it out! with <a href="#">alert link</a> click it now.
-        </div>
 
-        <div class="alert alert-light mb-5">
-            a simple alert it out! with <a href="#">alert link</a> click it now.
-        </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-green-700 fad fa-dot-circle mr-1"></i>
+                work
+            </a>
+        </li>
 
-        <div class="alert alert-dark mb-5">
-            a simple alert it out! with <a href="#">alert link</a> click it now.
-        </div>
 
-        <div class="alert alert-success mb-5">
-            a simple alert it out! with <a href="#">alert link</a> click it now.
-        </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-yellow-700 fad fa-dot-circle mr-1"></i>
+                design
+            </a>
+        </li>
 
-        <div class="alert alert-error">
-            a simple alert it out! with <a href="#">alert link</a> click it now.
-        </div>
 
-    </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-red-700 fad fa-dot-circle mr-1"></i>
+                laravel
+            </a>
+        </li>
 
-    <div class="card-footer">
-        <script type="text/plain" class="lang-html">
-
-            <div class="alert mb-5">
-                a simple alert it out! with 
-                <a href="#">alert link</a> 
-                click it now.
-            </div>            
-
-            <div class="alert alert-default mb-5">
-                a simple alert it out! with 
-                <a href="#">alert link</a> 
-                click it now.
-            </div>
-    
-            <div class="alert alert-light mb-5">
-                a simple alert it out! with 
-                <a href="#">alert link</a> 
-                click it now.
-            </div>
-    
-            <div class="alert alert-dark mb-5">
-                a simple alert it out! with 
-                <a href="#">alert link</a> 
-                click it now.
-            </div>
-    
-            <div class="alert alert-success mb-5">
-                a simple alert it out! with 
-                <a href="#">alert link</a> 
-                click it now.
-            </div>
-    
-            <div class="alert alert-error">
-                a simple alert it out! with 
-                <a href="#">alert link</a> 
-                click it now.
-            </div>
-
-        </script>
-    </div>
+        <li>
+            <a class="btn text-left text-gray-800 bg-white hover:bg-gray-100 hover:text-gray-900" href="#">
+                <i class="text-teal-800 fad fa-dot-circle mr-1"></i>
+                add new label
+            </a>
+        </li>       
+        
+    </ul>
 
 </div>
-    <div class="card mt-5">
+    <div class="col-span-6 card flex flex-col">
 
-    <div class="card-header">
-        Dismissing alert using simple function to dismiss alert , 
-        alert will take class animated & fadeOut and elemnt will be removed <br>
-        for more check <span class="badge badge-primary">alert.js</span> 
-        you have to follow the same structure
+    <div class="px-3 border-b">
+        <form action="" class="flex">
+            <input class="p-3 flex-1" type="text" placeholder="search">
+            <button type="submit" class="p-3">
+                <i class="fad fa-search"></i>
+            </button>
+        </form>
     </div>
 
-    <div class="card-body">        
-        
-        <div class="alert mb-5 alert-close">
-            <button class="alert-btn-close"><i class="fad fa-times"></i></button>
-            <span>A simple alert it out!</span>
-        </div>
+    <div class="flex-1 flex flex-col">
 
-        <div class="alert alert-default alert-close mb-5">
-            <button class="alert-btn-close"><i class="fad fa-times"></i></button>
-            <span>A simple alert it out!</span>
-        </div>        
-
-        <div class="alert alert-light alert-close mb-5">
-            <button class="alert-btn-close"><i class="fad fa-times"></i></button>
-            <span>A simple alert it out!</span>
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
         </div>
-
-        <div class="alert alert-dark alert-close mb-5">
-            <button class="alert-btn-close"><i class="fad fa-times"></i></button>
-            <span>A simple alert it out!</span>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
         </div>
-
-        <div class="alert alert-success alert-close mb-5">
-            <button class="alert-btn-close"><i class="fad fa-times"></i></button>
-            <span>A simple alert it out!</span>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
         </div>
-
-        <div class="alert alert-error alert-close">
-            <button class="alert-btn-close"><i class="fad fa-times"></i></button>
-            <span>A simple alert it out!</span>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
         </div>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
+        </div>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
+        </div>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
+        </div>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
+        </div>
+        <!-- message -->
+        <!-- message -->
+        <div class="flex items-center shadow-xs transition-all duration-300 ease-in-out p-5 hover:shadow-md">
+            <div class="w-10 h-10 overflow-hidden rounded-md">
+                <img class="img-responsive" src="img/user1.jpg" alt="">
+            </div>    
+            <h1 class="ml-3">mohamed</h1>    
+            <p class="ml-6 flex-1 text-xs">page when looking at its layout looking at its layout The point of using Lorem...</p>    
+            <p class="font-bold text-gray-900">05:09 AM</p>
+        </div>
+        <!-- message -->
 
     </div>
 
-    <div class="card-footer">
-        <script type="text/plain" class="language-html">
-            <div class="alert mb-5 alert-close">
-                <button class="alert-btn-close">
-                    <i class="fad fa-times"></i>
-                </button>
-                <span>A simple alert it out!</span>
-            </div>
-    
-            <div class="alert alert-default alert-close mb-5">
-                <button class="alert-btn-close">
-                    <i class="fad fa-times"></i>
-                </button>
-                <span>A simple alert it out!</span>
-            </div>        
-    
-            <div class="alert alert-light alert-close mb-5">
-                <button class="alert-btn-close">
-                    <i class="fad fa-times"></i>
-                </button>
-                <span>A simple alert it out!</span>
-            </div>
-    
-            <div class="alert alert-dark alert-close mb-5">
-                <button class="alert-btn-close">
-                    <i class="fad fa-times"></i>
-                </button>
-                <span>A simple alert it out!</span>
-            </div>
-    
-            <div class="alert alert-success alert-close mb-5">
-                <button class="alert-btn-close">
-                    <i class="fad fa-times"></i>
-                </button>
-                <span>A simple alert it out!</span>
-            </div>
-    
-            <div class="alert alert-error alert-close">
-                <button class="alert-btn-close">
-                    <i class="fad fa-times"></i>
-                </button>
-                <span>A simple alert it out!</span>
-            </div>
-        </script>
+    <div class="card-footer flex justify-between">
+        <p>4.41 GB (25%) of 17 GB used Manage</p>
+        <p>Last account activity: 36 minutes ago</p>
     </div>
 </div>
 
@@ -727,9 +713,7 @@
   <!-- end content -->
 
 </div>
-<!-- end wrapper --> 
-
-  
+<!-- end wrapper -->
 
 <!-- script -->
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
