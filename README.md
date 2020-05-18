@@ -1,12 +1,12 @@
+![image](https://github.com/moesaid/cleopatra/raw/master/dist/img/index.png)
+![image](https://github.com/moesaid/cleopatra/raw/master/dist/img/index-1.png)
+
+
 # Cleopatra [live demo](https://moesaid.github.io/cleopatra/)
 ### Cleopatra – Clean & Minimal tailwind css Admin Dashboard Template
 
 >Looking for an admin dashboard that was made with you in mind, look no further than Cleopatra Admin Template. A powerful admin dashboard template built on **tailwind css**, Cleopatra is **developer-first** Template , rich with features and highly customizable. i'am followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable.
 
-
-
-![image](dist/img/index.png)
-![image](dist/img/index-1.png)
 
 ---
 **Cleopatra** has been carefully coded with clear comments in all of its JS, SASS and HTML files. SASS has been used to increase code customizability.
