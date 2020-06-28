@@ -1194,6 +1194,10 @@ p {
   opacity: 0.75
 }
 
+.menu-overflow:focus {
+  outline: none;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   border-radius: 5px;

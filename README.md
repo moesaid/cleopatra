@@ -1,15 +1,14 @@
+# Cleopatra [live demo](https://moesaid.github.io/cleopatra/)
+### Cleopatra – Clean & Minimal tailwind css Admin Dashboard Template
+
 ![image](https://github.com/moesaid/cleopatra/raw/master/dist/img/index.png)
 ![image](https://github.com/moesaid/cleopatra/raw/master/dist/img/index-1.png)
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/MohamedSaid__)  [![GitHub tag](https://img.shields.io/github/tag/moesaid/cleopatra.svg)](https://GitHub.com/moesaid/cleopatra/tags/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) [![GitHub forks](https://img.shields.io/github/forks/moesaid/cleopatra.svg?style=social&label=Fork&maxAge=2592000)](https://github.com/moesaid/cleopatra) [![GitHub stars](https://img.shields.io/github/stars/moesaid/cleopatra.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/moesaid/cleopatra) [![GitHub watchers](https://img.shields.io/github/watchers/moesaid/cleopatra.svg?style=social&label=Watch&maxAge=2592000)](https://GitHub.com/moesaid/cleopatra/watchers/)
+
+## Status
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://moesaid.com/) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/MohamedSaid__)  [![GitHub tag](https://img.shields.io/github/tag/moesaid/cleopatra.svg)](https://GitHub.com/moesaid/cleopatra/tags/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) 
 
 
-
-
-
-
-# Cleopatra [live demo](https://moesaid.github.io/cleopatra/)
-### Cleopatra – Clean & Minimal tailwind css Admin Dashboard Template
 
 >Looking for an admin dashboard that was made with you in mind, look no further than Cleopatra Admin Template. A powerful admin dashboard template built on **tailwind css**, Cleopatra is **developer-first** Template , rich with features and highly customizable. i'am followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable.
 
