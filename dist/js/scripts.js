@@ -218,6 +218,20 @@ if (el_4.length > 0) {
 
 
 
+$(function() {
+  "use strict";
+  // Toggle Submenu
+  $(".toggle-submenu").on("click", function() {
+    $(this)
+      .toggleClass("active")
+      .find(".fa-angle-right")
+      .toggleClass("down");
+    $(this)
+      .next(".child-links")
+      .slideToggle();
+  });
+
+});
 // work with sidebar
 var btn     = document.getElementById('sliderBtn'),
     sideBar = document.getElementById('sideBar'),

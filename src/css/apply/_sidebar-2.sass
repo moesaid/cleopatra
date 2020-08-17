@@ -1,0 +1,57 @@
+.sidebar
+  .links-area
+    li
+      @apply my-4 cursor-pointer
+      a
+        @apply mb-3 p-2 block capitalize font-medium text-sm transition ease-in-out duration-500
+        &:hover 
+          @apply text-teal-600
+        i 
+          @apply text-xs mr-2
+    > li > a 
+        @apply relative text-black
+        &.active 
+          @apply text-black rounded inset-0 bg-teal-200 text-opacity-100
+        .fa-angle-right 
+          @apply float-right relative
+          top: 6px
+          transition: 0.3s
+          &.down 
+            @apply transform rotate-90
+            a
+              @apply text-teal-600
+    // Sub-Menu Active
+    .active
+      @apply text-black rounded inset-0 bg-teal-200 text-opacity-100
+    .child-links 
+      @apply relative hidden text-black
+      bottom: 0.25rem
+      li
+        @apply relative my-4 cursor-pointer
+        left: 0.5rem
+        &:before 
+          content: ""
+          @apply absolute left-0
+          top: 13px
+          height: 10px
+          width: 10px
+          border: 2px solid #000
+          border-radius: 50%
+          transition: 0.4s
+        &:hover:before 
+          content: ""
+          @apply absolute left-0
+          top: 13px
+          height: 10px
+          width: 10px
+          border: 2px solid #ffd60b
+          border-radius: 50%
+          transition: 0.4s
+        a 
+          @apply relative p-2
+          left: 1rem
+          transition: 0.4s
+          &:hover
+            left: 1.5rem
+            transition: 0.4s
+            
