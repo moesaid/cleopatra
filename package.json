@@ -9,7 +9,7 @@
     "dev": "gulp",
     "build": "gulp build",
     "git": "git add . && git commit -m",
-    "postgit": "git push -u origin master && git subtree push --prefix dist origin gh-pages"    
+    "postgit": "git push -u origin master && git subtree push --prefix dist origin gh-pages"
   },
   "options": {
     "config": {
@@ -50,33 +50,35 @@
     "admin dashboard template"
   ],
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
-    "browser-sync": "^2.26.3",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
+    "autoprefixer": "^10.4.7",
+    "browser-sync": "^2.27.9",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
     "gulp-cache": "^1.1.3",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-file-include": "^2.2.2",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-markdown": "^5.0.1",
-    "gulp-postcss": "^8.0.0",
-    "gulp-purgecss": "^1.1.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-markdown": "^6.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-purgecss": "^4.1.3",
     "gulp-purify-css": "^0.1.0",
     "gulp-purifycss": "^0.2.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^5.1.0",
     "gulp-sass-glob": "^1.1.0",
-    "gulp-uglify": "^3.0.1",
+    "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "lodash.template": ">=4.5.0",
     "log-symbols": "^2.2.0",
-    "mem": "^6.1.0",
+    "mem": "^9.0.2",
+    "postcss": "^8.4.13",
     "purifycss-extended": "^1.3.6",
-    "tailwindcss": "^1.4.6",
-    "tailwindcss-animatecss": "^0.2.7"
+    "tailwindcss": "^3.0.24",
+    "tailwindcss-animatecss": "^1.0.7"
   },
   "dependencies": {
-    "chart.js": "^2.9.3"
+    "chart.js": "^3.7.1",
+    "sass": "^1.51.0"
   }
 }
