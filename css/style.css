@@ -1354,6 +1354,22 @@ div.code-toolbar .toolbar button:hover {
   width: 75%;
 }
 
+.w-6\/12{
+  width: 50%;
+}
+
+.w-3\/6{
+  width: 50%;
+}
+
+.max-w-lg{
+  max-width: 32rem;
+}
+
+.max-w-3xl{
+  max-width: 48rem;
+}
+
 .flex-1{
   flex: 1 1 0%;
 }
@@ -1382,16 +1398,16 @@ div.code-toolbar .toolbar button:hover {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.grid-cols-4{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
 .grid-cols-5{
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-cols-6{
   grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-4{
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -1590,11 +1606,6 @@ div.code-toolbar .toolbar button:hover {
 .bg-gray-300{
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.bg-red-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
 .object-cover{
@@ -1947,13 +1958,13 @@ div.code-toolbar .toolbar button:hover {
   outline-offset: 2px;
 }
 
-@media (min-width: 640px){
+@media (max-width: 639px){
   .sm\:grid-cols-1{
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 768px){
+@media (max-width: 767px){
   .md\:static{
     position: static;
   }
@@ -2002,9 +2013,6 @@ div.code-toolbar .toolbar button:hover {
   .md\:w-full{
     width: 100%;
   }
-  .md\:grid-cols-1{
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
   .md\:grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -2047,7 +2055,7 @@ div.code-toolbar .toolbar button:hover {
   }
 }
 
-@media (min-width: 1024px){
+@media (max-width: 1023px){
   .lg\:col-span-2{
     grid-column: span 2 / span 2;
   }
@@ -2062,9 +2070,6 @@ div.code-toolbar .toolbar button:hover {
   }
   .lg\:mb-6{
     margin-bottom: 1.5rem;
-  }
-  .lg\:mt-16{
-    margin-top: 4rem;
   }
   .lg\:h-auto{
     height: auto;
@@ -2086,7 +2091,7 @@ div.code-toolbar .toolbar button:hover {
   }
 }
 
-@media (min-width: 1280px){
+@media (max-width: 1279px){
   .xl\:col-span-2{
     grid-column: span 2 / span 2;
   }
