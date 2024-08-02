@@ -1592,6 +1592,11 @@ div.code-toolbar .toolbar button:hover {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.bg-red-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
+}
+
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
@@ -1942,6 +1947,12 @@ div.code-toolbar .toolbar button:hover {
   outline-offset: 2px;
 }
 
+@media (min-width: 640px){
+  .sm\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 768px){
   .md\:static{
     position: static;
@@ -1990,6 +2001,12 @@ div.code-toolbar .toolbar button:hover {
   }
   .md\:w-full{
     width: 100%;
+  }
+  .md\:grid-cols-1{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .md\:grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .md\:flex-row{
     flex-direction: row;
@@ -2045,6 +2062,9 @@ div.code-toolbar .toolbar button:hover {
   }
   .lg\:mb-6{
     margin-bottom: 1.5rem;
+  }
+  .lg\:mt-16{
+    margin-top: 4rem;
   }
   .lg\:h-auto{
     height: auto;
