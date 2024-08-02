@@ -15,12 +15,6 @@ const markdown = require("gulp-markdown");
 const fileinclude = require("gulp-file-include");
 const cache = require("gulp-cache");
 
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
-  }
-}
-
 //Load Previews on Browser on dev
 task("livepreview", (done) => {
   browserSync.init({
@@ -65,7 +59,10 @@ task("dev-styles", () => {
   return src(options.paths.src.css + "/**/*")
     .pipe(sass().on("error", sass.logError))
     .pipe(
-      postcss([tailwindcss(options.config.tailwindjs), require("autoprefixer")])
+      postcss([
+        tailwindcss(options.config.tailwindjs),
+        require("autoprefixer"),
+      ]),
     )
     .pipe(concat({ path: "style.css" }))
     .pipe(dest(options.paths.dist.css));
@@ -77,13 +74,8 @@ task("build-styles", () => {
     .pipe(
       purgecss({
         content: ["src/views/**/*.html", "src/**/.*js"],
-        extractors: [
-          {
-            extractor: TailwindExtractor,
-            extensions: ["html"],
-          },
-        ],
-      })
+        defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+      }),
     )
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(dest(options.paths.build.css));
@@ -132,7 +124,7 @@ task("watch-changes", (done) => {
   //Watching HTML Files edits
   watch(
     options.paths.src.base + "/views/**/*.html",
-    series("dev-styles", "dev-html", previewReload)
+    series("dev-styles", "dev-html", previewReload),
   );
 
   //Watching css Files edits
@@ -141,7 +133,7 @@ task("watch-changes", (done) => {
   //Watching JS Files edits
   watch(
     options.paths.src.js + "/**/*.js",
-    series("dev-scripts", previewReload)
+    series("dev-scripts", previewReload),
   );
 
   //Watching Img Files updates
@@ -149,7 +141,7 @@ task("watch-changes", (done) => {
 
   console.log(
     "\n\t" + logSymbols.info,
-    "Watching for Changes made to files.\n"
+    "Watching for Changes made to files.\n",
   );
 
   done();
@@ -159,7 +151,7 @@ task("watch-changes", (done) => {
 task("clean:dist", () => {
   console.log(
     "\n\t" + logSymbols.info,
-    "Cleaning dist folder for fresh start.\n"
+    "Cleaning dist folder for fresh start.\n",
   );
   return del(["dist"]);
 });
@@ -168,7 +160,7 @@ task("clean:dist", () => {
 task("clean:build", () => {
   console.log(
     "\n\t" + logSymbols.info,
-    "Cleaning build folder for fresh start.\n"
+    "Cleaning build folder for fresh start.\n",
   );
   return del(["build"]);
 });
@@ -185,11 +177,11 @@ task(
     (done) => {
       console.log(
         "\n\t" + logSymbols.info,
-        "npm run dev is complete. Files are located at ./dist\n"
+        "npm run dev is complete. Files are located at ./dist\n",
       );
       done();
-    }
-  )
+    },
+  ),
 );
 
 task(
@@ -204,11 +196,11 @@ task(
     (done) => {
       console.log(
         "\n\t" + logSymbols.info,
-        "npm run build is complete. Files are located at ./build\n"
+        "npm run build is complete. Files are located at ./build\n",
       );
       done();
-    }
-  )
+    },
+  ),
 );
 
 exports.default = series("development", "livepreview", "watch-changes");
