@@ -6,7 +6,7 @@
 
 
 ## Status
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://moesaid.com/) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/MohamedSaid__)  [![GitHub tag](https://img.shields.io/github/tag/moesaid/cleopatra.svg)](https://GitHub.com/moesaid/cleopatra/tags/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://moesaid.com/) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/MohamedSaid__)  [![GitHub tag](https://img.shields.io/github/tag/moesaid/cleopatra.svg)](https://GitHub.com/moesaid/cleopatra/tags/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 
 
 
@@ -52,11 +52,11 @@ There are multiple ways to install Cleopatra.
 
 **Compile dist files**
 
-your work station is the src file 
+your work station is the src file
 you can list files as you wish **( file get compile with gulp )**
 
-- first run `npm install`
-- Optional: `npm run dev` (developer mode, autocompile with **browsersync** support for live demo) , will open on port `8080` , `http://localhost:8080/` change that as you want from **gulpfile.js**
+- first run `yarn`
+- Optional: `yarn dev` (developer mode, autocompile with **browsersync** support for live demo) , will open on port `8080` , `http://localhost:8080/` change that as you want from **gulpfile.js**
 - `npm run build` (compile css/js files for production)
 
 
@@ -66,8 +66,7 @@ you can list files as you wish **( file get compile with gulp )**
 
 ## License
 
-Cleopatra is an open source project by 
-[Mohamed Said](https://moesaid.com) that is licensed under MIT. 
+Cleopatra is an open source project by
+[Mohamed Said](https://moesaid.com) that is licensed under MIT.
 
 [Mohamed Said](https://moesaid.com) reserves the right to change the license of future releases.
-
