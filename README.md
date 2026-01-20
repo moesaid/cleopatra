@@ -50,14 +50,47 @@ There are multiple ways to install Cleopatra.
 <br>
 <br>
 
-**Compile dist files**
+## Development
 
-your work station is the src file
-you can list files as you wish **( file get compile with gulp )**
+**Install dependencies:**
+```bash
+npm install
+```
 
-- first run `yarn`
-- Optional: `yarn dev` (developer mode, autocompile with **browsersync** support for live demo) , will open on port `8080` , `http://localhost:8080/` change that as you want from **gulpfile.js**
-- `npm run build` (compile css/js files for production)
+**Development mode:**
+```bash
+npm run dev
+```
+This will start the Vite dev server on `http://localhost:8081/` with hot module replacement.
+
+**Build for production:**
+```bash
+npm run build
+```
+This compiles and optimizes all files to the `dist/` directory.
+
+**Preview production build:**
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+cleopatra/
+├── src/                    # Source files
+│   ├── index.html         # Main dashboard (root entry)
+│   ├── views/             # Additional pages
+│   │   ├── partials/      # Reusable HTML partials
+│   │   └── index/         # Dashboard components
+│   ├── css/               # Styles (Sass/SCSS)
+│   ├── js/                # JavaScript modules
+│   └── img/               # Images
+├── public/                # Static assets
+├── dist/                  # Build output
+└── vite.config.js         # Vite configuration
+```
+
 
 
 <br>

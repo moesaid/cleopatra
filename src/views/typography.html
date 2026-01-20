@@ -1,27 +1,25 @@
-@include('./base/start.html')
+{{> start}}
 
 
-@include('./base/navbar.html')
+{{> navbar}}
 
 
 <!-- strat wrapper -->
-<div class="h-screen flex flex-row flex-wrap">
-  
-  @include('./base/sidebar.html')
+<div class="min-h-screen">
+
+  {{> sidebar}}
 
   <!-- strat content -->
-  <div class="bg-gray-100 flex-1 p-6 md:mt-16">
-    
-    @include('./ui/typography/head.html')
-    
-    @include('./ui/typography/heading_1.html')    
+  <div class="bg-gray-100 flex-1 p-6 mt-20 md:ml-64">
+
+    {{> ui/typography/head}}
+
+    {{> ui/typography/heading_1}}
 
   </div>
   <!-- end content -->
 
 </div>
-<!-- end wrapper --> 
+<!-- end wrapper -->
 
-
-
-@include('./base/end.html')
+{{> end}}

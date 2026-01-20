@@ -1,0 +1,25 @@
+@use "animations";
+@use "code-block";
+
+@import "./tailwind.css";
+
+/* Base Styles (formerly in apply/_typography.scss) */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+   text-transform: capitalize;
+}
+
+p {
+   letter-spacing: 0.05em;
+   font-size: 0.875rem;
+   /* text-sm */
+   color: #6b7280;
+   /* text-gray-500 */
+}

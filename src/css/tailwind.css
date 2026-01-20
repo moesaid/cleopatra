@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* ============================================
+   Tailwind CSS v4 Configuration
+   ============================================ */
+
+@theme {
+    /* Mobile-First Breakpoints (min-width) */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    /* Color Palette using OKLCH */
+    --color-primary: oklch(0.65 0.25 250);
+    --color-primary-dark: oklch(0.55 0.25 250);
+    --color-secondary: oklch(0.70 0.20 180);
+    --color-accent: oklch(0.75 0.22 160);
+
+    /* Semantic Colors */
+    --color-success: oklch(0.70 0.20 145);
+    --color-warning: oklch(0.75 0.18 85);
+    --color-error: oklch(0.65 0.25 25);
+    --color-info: oklch(0.68 0.22 230);
+
+    /* Neutral Colors */
+    --color-gray-50: oklch(0.98 0.00 0);
+    --color-gray-100: oklch(0.96 0.00 0);
+    --color-gray-200: oklch(0.92 0.00 0);
+    --color-gray-300: oklch(0.85 0.00 0);
+    --color-gray-400: oklch(0.70 0.00 0);
+    --color-gray-500: oklch(0.55 0.00 0);
+    --color-gray-600: oklch(0.45 0.00 0);
+    --color-gray-700: oklch(0.35 0.00 0);
+    --color-gray-800: oklch(0.25 0.00 0);
+    --color-gray-900: oklch(0.15 0.00 0);
+
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    /* Typography */
+    --font-sans: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Courier New', monospace;
+
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-full: 9999px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* Animation Timings */
+    --duration-fast: 150ms;
+    --duration-base: 300ms;
+    --duration-slow: 500ms;
+    --duration-slower: 700ms;
+
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+@layer base {
+    * {
+        border-color: var(--color-gray-300);
+    }
+
+    body {
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 600;
+        letter-spacing: -0.025em;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+/* ============================================
+   Custom Utilities
+   ============================================ */
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .text-pretty {
+        text-wrap: pretty;
+    }
+
+    .container-query {
+        container-type: inline-size;
+    }
+
+    .animate-in {
+        animation: fadeIn var(--duration-base) var(--ease-out);
+    }
+
+    .animate-out {
+        animation: fadeOut var(--duration-base) var(--ease-in);
+    }
+}

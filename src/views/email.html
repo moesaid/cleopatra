@@ -1,19 +1,19 @@
-@include('./base/start.html')
+{{> start}}
 
 
-@include('./base/navbar.html')
+{{> navbar}}
 
 
 <!-- strat wrapper -->
-<div class="h-screen flex flex-row flex-wrap">
-  
-  @include('./base/sidebar.html')
+<div class="min-h-screen">
+
+  {{> sidebar}}
 
   <!-- strat content -->
-  <div class="bg-gray-100 flex-1 p-6 md:mt-16 grid grid-cols-8"> 
-    
-    @include('./email/email-links.html')
-    @include('./email/email-body.html')
+  <div class="bg-gray-100 flex-1 p-6 mt-20 md:ml-64 grid grid-cols-8">
+
+    {{> email/email-links}}
+    {{> email/email-body}}
 
   </div>
   <!-- end content -->
@@ -21,4 +21,4 @@
 </div>
 <!-- end wrapper -->
 
-@include('./base/end.html')
+{{> end}}

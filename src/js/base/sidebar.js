@@ -1,38 +1,64 @@
-// work with sidebar
-var btn     = document.getElementById('sliderBtn'),
-    sideBar = document.getElementById('sideBar'),
-    sideBarHideBtn = document.getElementById('sideBarHideBtn');
+// ============================================
+// Sidebar Module
+// ============================================
 
-    // show sidebar 
-    btn.addEventListener('click' , function(){    
-        if (sideBar.classList.contains('md:-ml-64')) {
-            sideBar.classList.replace('md:-ml-64' , 'md:ml-0');
-            sideBar.classList.remove('md:slideOutLeft');
-            sideBar.classList.add('md:slideInLeft');
-        };
+export function initSidebar() {
+    const btn = document.getElementById('sliderBtn');
+    const sideBar = document.getElementById('mobileSidebar');
+    const sideBarHideBtn = document.getElementById('sideBarHideBtn');
+    const backdrop = document.getElementById('sidebarBackdrop');
+
+    if (!btn || !sideBar || !sideBarHideBtn) {
+        console.warn('Sidebar elements not found');
+        return;
+    }
+
+    // Show sidebar
+    btn.addEventListener('click', () => {
+        sideBar.classList.add('open', 'opening');
+        sideBar.classList.remove('closing');
+        if (backdrop) {
+            backdrop.classList.add('active');
+        }
+
+        // Remove opening class after animation
+        setTimeout(() => {
+            sideBar.classList.remove('opening');
+        }, 300);
     });
 
-    // hide sideBar    
-    sideBarHideBtn.addEventListener('click' , function(){            
-        if (sideBar.classList.contains('md:ml-0' , 'slideInLeft')) {      
-            var _class = function(){
-                sideBar.classList.remove('md:slideInLeft');
-                sideBar.classList.add('md:slideOutLeft');
-        
-                console.log('hide');              
-            };
-            var animate = async function(){
-                await _class();
+    // Hide sidebar
+    const hideSidebar = () => {
+        sideBar.classList.add('closing');
+        sideBar.classList.remove('open', 'opening');
+        if (backdrop) {
+            backdrop.classList.remove('active');
+        }
 
-                setTimeout(function(){
-                    sideBar.classList.replace('md:ml-0' , 'md:-ml-64');
-                    console.log('animated');
-                } , 300);                                                
-                
-            };            
-                    
-            _class(); 
-            animate();
-        };
+        // Remove closing class after animation
+        setTimeout(() => {
+            sideBar.classList.remove('closing');
+        }, 300);
+    };
+
+    sideBarHideBtn.addEventListener('click', hideSidebar);
+
+    // Close sidebar when clicking backdrop
+    if (backdrop) {
+        backdrop.addEventListener('click', hideSidebar);
+    }
+
+    // Close sidebar on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sideBar.classList.contains('open')) {
+            hideSidebar();
+        }
     });
-// end with sidebar
+}
+
+// Auto-initialize
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebar);
+} else {
+    initSidebar();
+}

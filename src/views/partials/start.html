@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="/img/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
+  <title>{{title}}</title>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- Loading Screen (Inline Styles for Immediate Render) -->
+  <style>
+    /* Critical CSS for loading screen */
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #f3f4f6;
+      /* gray-100 matches body */
+      z-index: 99999;
+      /* Ensure it covers everything */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loader {
+      border: 4px solid #e5e7eb;
+      /* gray-200 */
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      animation: spinner 1s linear infinite;
+    }
+
+    @keyframes spinner {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <div id="loading">
+    <div class="loader"></div>
+  </div>

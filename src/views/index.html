@@ -1,38 +1,34 @@
-@include('./base/start.html')
+{{> start}}
 
+{{> navbar}}
 
-@include('./base/navbar.html')
+<!-- start wrapper -->
+<div class="min-h-screen">
 
+  {{> sidebar}}
 
-<!-- strat wrapper -->
-<div class="h-screen flex flex-row flex-wrap">
-
-  @include('./base/sidebar.html')
-
-  <!-- strat content -->
-  <div class="bg-gray-100 flex-1 p-6 md:mt-16">
-
+  <!-- start content -->
+  <div class="bg-gray-100 flex-1 p-6 mt-20 md:ml-64">
 
     <!-- General Report -->
-    @include('./index/generalReport.html')
+    {{> index/generalReport}}
     <!-- End General Report -->
 
-    <!-- strat Analytics -->
-    @include('./index/analytics-1.html')
+    <!-- start Analytics -->
+    {{> index/analytics-1}}
     <!-- end Analytics -->
 
     <!-- Sales Overview -->
-    @include('./index/salesOverview.html')
+    {{> index/salesOverview}}
     <!-- end Sales Overview -->
 
     <!-- start numbers -->
-    @include('./index/numbers.html')
-    <!-- end nmbers -->
+    {{> index/numbers}}
+    <!-- end numbers -->
 
     <!-- start quick Info -->
-    @include('./index/quickInfo.html')
+    {{> index/quickInfo}}
     <!-- end quick Info -->
-
 
   </div>
   <!-- end content -->
@@ -40,4 +36,4 @@
 </div>
 <!-- end wrapper -->
 
-@include('./base/end.html')
+{{> end}}

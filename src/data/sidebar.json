@@ -1,0 +1,102 @@
+[
+    {
+        "category": "homes",
+        "items": [
+            {
+                "label": "Analytics dashboard",
+                "url": "./index.html",
+                "icon": "fad fa-chart-pie"
+            },
+            {
+                "label": "ecommerce dashboard",
+                "url": "./index-1.html",
+                "icon": "fad fa-shopping-cart"
+            }
+        ]
+    },
+    {
+        "category": "apps",
+        "items": [
+            {
+                "label": "email",
+                "url": "./email.html",
+                "icon": "fad fa-envelope-open-text"
+            },
+            {
+                "label": "chat",
+                "url": "#",
+                "icon": "fad fa-comments"
+            },
+            {
+                "label": "todo",
+                "url": "#",
+                "icon": "fad fa-shield-check"
+            },
+            {
+                "label": "calendar",
+                "url": "#",
+                "icon": "fad fa-calendar-edit"
+            },
+            {
+                "label": "invoice",
+                "url": "#",
+                "icon": "fad fa-file-invoice-dollar"
+            },
+            {
+                "label": "file manager",
+                "url": "#",
+                "icon": "fad fa-folder-open"
+            }
+        ]
+    },
+    {
+        "category": "UI Elements",
+        "items": [
+            {
+                "label": "typography",
+                "url": "./typography.html",
+                "icon": "fad fa-text"
+            },
+            {
+                "label": "alerts",
+                "url": "./alert.html",
+                "icon": "fad fa-whistle"
+            },
+            {
+                "label": "buttons",
+                "url": "./buttons.html",
+                "icon": "fad fa-cricket"
+            },
+            {
+                "label": "Content",
+                "url": "#",
+                "icon": "fad fa-box-open"
+            },
+            {
+                "label": "colors",
+                "url": "#",
+                "icon": "fad fa-swatchbook"
+            },
+            {
+                "label": "icons",
+                "url": "#",
+                "icon": "fad fa-atom-alt"
+            },
+            {
+                "label": "card",
+                "url": "#",
+                "icon": "fad fa-club"
+            },
+            {
+                "label": "Widgets",
+                "url": "#",
+                "icon": "fad fa-cheese-swiss"
+            },
+            {
+                "label": "Components",
+                "url": "#",
+                "icon": "fad fa-computer-classic"
+            }
+        ]
+    }
+]

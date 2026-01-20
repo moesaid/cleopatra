@@ -1,32 +1,32 @@
-@include('./base/start.html')
+{{> start}}
 
 
-@include('./base/navbar.html')
+{{> navbar}}
 
 
 <!-- strat wrapper -->
-<div class="h-screen flex flex-row flex-wrap">
+<div class="min-h-screen">
 
-  @include('./base/sidebar.html')
+  {{> sidebar}}
 
   <!-- strat content -->
-  <div class="bg-gray-100 flex-1 p-6 md:mt-16">
+  <div class="bg-gray-100 flex-1 p-6 mt-20 md:ml-64">
 
     <!-- congrats & summary -->
-    <div class="grid grid-cols-3 lg:grid-cols-1 gap-5">
-      @include('./index/congrats.html')
-      @include('./index/summary.html')
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      {{> index/congrats}}
+      {{> index/summary}}
     </div>
     <!-- end congrats & summary -->
 
     <!-- status -->
-    @include('./index/status.html')
+    {{> index/status}}
     <!-- end status -->
 
     <!-- best seller & traffic -->
-    <div class="grid grid-cols-2 lg:grid-cols-1 gap-5 mt-5">
-      @include('./index/bestSeller.html')
-      @include('./index/recentOrder.html')
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
+      {{> index/bestSeller}}
+      {{> index/recentOrder}}
     </div>
     <!-- end best seller & traffic -->
 
@@ -37,4 +37,4 @@
 </div>
 <!-- end wrapper -->
 
-@include('./base/end.html')
+{{> end}}
