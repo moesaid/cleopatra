@@ -1,0 +1,54 @@
+// Sidebar Component Styles
+// Self-contained styles for the sidebar component
+
+.sidebar {
+    @apply fixed left-0 top-0 z-30 h-full w-56 bg-white border-r border-gray-300 overflow-y-auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-backdrop {
+    @apply fixed inset-0 bg-black bg-opacity-50 z-20 hidden;
+
+    &.active {
+        @apply block;
+    }
+}
+
+// Mobile sidebar animations
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+
+        &.open {
+            transform: translateX(0);
+        }
+
+        &.opening {
+            animation: slideInLeft 0.3s ease-out;
+        }
+
+        &.closing {
+            animation: slideOutLeft 0.3s ease-out;
+        }
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}

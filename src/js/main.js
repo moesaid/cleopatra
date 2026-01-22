@@ -1,35 +1,16 @@
-// Import Tailwind (CSS)
-import '../css/tailwind.css';
+// ============================================
+// Main Application Entry Point
+// ============================================
 
-// Import Custom Component Entry (SCSS)
-import '../css/main.scss';
+// Styles
+import '../styles/tailwind.css';
+import '../styles/global.scss';
 
-// Import base components
-import './base/sidebar.js';
-import './base/navbar.js';
-import './base/dropdown.js';
-import './base/num.js';
-import './base/num.js';
-import './base/alert.js';
-import { initCodeCopy, reinitCodeCopy } from './base/code-copy.js';
-import './base/code-block-transformer.js';
-
-// Expose reinitCodeCopy globally for transformer
-window.reinitCodeCopy = reinitCodeCopy;
-
-// Import chart functionality
-import './charts/init.js';
-
-// Import animations
-import './animations/view-transitions.js';
-import './animations/scroll-reveal.js';
-
-// Import PrismJS
+// PrismJS for code highlighting
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js';
 
-// Configure normalize-whitespace plugin
 Prism.plugins.NormalizeWhitespace.setDefaults({
     'remove-trailing': true,
     'remove-indent': true,
@@ -37,19 +18,51 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
     'right-trim': true,
 });
 
+// Widgets
+import { initNavbar } from '../components/widgets/navbar';
+import { initSidebar } from '../components/widgets/sidebar';
 
+// UI Components
+import { initCodeCopy, reinitCodeCopy } from '../components/ui/code-block';
+import '../components/ui/dropdown';
+import '../components/ui/alert';
 
-console.log('✨ Cleopatra v2.0 - Modern Admin Dashboard');
+// Charts
+import { initAnalytics1 } from '../components/charts/analytics';
+import { initSalesOverview } from '../components/charts/sales-overview';
+import { initSummary } from '../components/charts/summary';
 
-// Loading Screen
-window.addEventListener('load', () => {
-    const loading = document.getElementById('loading');
-    if (loading) {
-        // Fade out
-        loading.style.transition = 'opacity 0.5s ease-out';
-        loading.style.opacity = '0';
-        setTimeout(() => {
-            loading.remove();
-        }, 500);
+// Router
+import { initRouter } from '../components/layout/router';
+
+// Expose for code transformer
+window.reinitCodeCopy = reinitCodeCopy;
+
+// Initialize components
+function initComponents() {
+    initNavbar();
+    initSidebar();
+    initCodeCopy();
+    initAnalytics1();
+    initSalesOverview();
+    initSummary();
+}
+
+// Re-initialize on SPA navigation
+document.addEventListener('page:load', initComponents);
+
+// Initial load
+document.addEventListener('DOMContentLoaded', () => {
+    initComponents();
+    initRouter();
+
+    // Show app after CSS/JS fully loaded
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+    });
+
+    // Fallback if load already fired
+    if (document.readyState === 'complete') {
+        document.body.classList.add('loaded');
     }
 });

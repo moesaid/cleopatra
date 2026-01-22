@@ -17,19 +17,19 @@ const sidebarData = JSON.parse(readFileSync(resolve(__dirname, 'src/data/sidebar
 function getHtmlPages() {
     const pages = {
         // Main entry point at root
-        main: resolve(__dirname, 'src/views/index.html'),
+        main: resolve(__dirname, 'src/pages/index.html'),
     };
 
-    // Add pages from src/views (excluding index.html to avoid duplicate)
-    const viewsDir = resolve(__dirname, 'src/views');
-    const files = readdirSync(viewsDir);
+    // Add pages from src/pages (excluding index.html to avoid duplicate)
+    const pagesDir = resolve(__dirname, 'src/pages');
+    const files = readdirSync(pagesDir);
 
     files.forEach(file => {
         if (file.endsWith('.html') && !file.startsWith('_')) {
             const name = file.replace('.html', '');
             // Skip index.html as it's now at root
             if (name !== 'index') {
-                pages[name] = resolve(viewsDir, file);
+                pages[name] = resolve(pagesDir, file);
             }
         }
     });
@@ -41,19 +41,18 @@ export default defineConfig({
     plugins: [
         handlebars({
             partialDirectory: [
-                resolve(__dirname, 'src/views/partials'),
-                resolve(__dirname, 'src/views'),
+                resolve(__dirname, 'src/components/layout'),
+                resolve(__dirname, 'src/components/ui'),
+                resolve(__dirname, 'src/components/widgets'),
+                resolve(__dirname, 'src/components'),
             ],
-            rewritePartials: {
-                // Map index/* partials to the correct directory
-                'index/*': 'index/$1',
-            },
             context: {
                 title: 'Cleopatra - Modern Admin Dashboard',
                 sidebarLinks: sidebarData,
             },
         }),
-        tailwindcss(), // Removed in favor of PostCSS
+        tailwindcss(),
+
         ViteImageOptimizer({
             png: { quality: 80 },
             jpeg: { quality: 80 },
@@ -63,7 +62,7 @@ export default defineConfig({
     ],
 
     root: 'src',
-    publicDir: resolve(__dirname, 'public'),
+    publicDir: resolve(__dirname, 'src/assets'),
 
     server: {
         port: 8081,
@@ -120,9 +119,14 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': resolve(__dirname, 'src'),
-            '@css': resolve(__dirname, 'src/css'),
+            '@components': resolve(__dirname, 'src/components'),
+            '@styles': resolve(__dirname, 'src/styles'),
+            '@pages': resolve(__dirname, 'src/pages'),
+            '@assets': resolve(__dirname, 'src/assets'),
+            // Legacy aliases for backward compatibility
+            '@css': resolve(__dirname, 'src/styles'),
             '@js': resolve(__dirname, 'src/js'),
-            '@img': resolve(__dirname, 'src/img'),
+            '@img': resolve(__dirname, 'src/assets/images'),
         },
     },
 });

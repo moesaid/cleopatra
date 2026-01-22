@@ -1,0 +1,226 @@
+/* ===========================================
+   Stripe-style Code Block Styles
+   =========================================== */
+
+/* Main code block container */
+.code-block-stripe {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Header styling */
+.code-block-header {
+    background: linear-gradient(to right, rgba(51, 65, 85, 0.8), rgba(51, 65, 85, 0.6));
+}
+
+/* Code content area */
+.code-block-content {
+    background: #0f172a;
+    /* Very dark blue-gray like Stripe */
+    padding: 0;
+}
+
+/* Pre and code styling */
+.code-block-stripe .code-pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+.code-block-stripe .code-content {
+    display: block;
+    padding: 1rem 1.25rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    color: #e2e8f0 !important;
+    background: transparent !important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+}
+
+/* Line numbers via CSS counter */
+.code-block-stripe .code-content.line-numbers {
+    counter-reset: line;
+    padding-left: 3.5rem !important;
+    position: relative;
+}
+
+.code-block-stripe .code-content.line-numbers::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3rem;
+    background: rgba(15, 23, 42, 0.5);
+    border-right: 1px solid rgba(71, 85, 105, 0.3);
+}
+
+/* ===========================================
+   Prism.js Dark Theme (Stripe-style)
+   =========================================== */
+
+/* Override default Prism theme */
+.code-block-stripe code[class*="language-"],
+.code-block-stripe pre[class*="language-"] {
+    color: #e2e8f0 !important;
+    background: none !important;
+    text-shadow: none !important;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
+}
+
+/* Comments */
+.code-block-stripe .token.comment,
+.code-block-stripe .token.prolog,
+.code-block-stripe .token.doctype,
+.code-block-stripe .token.cdata {
+    color: #64748b !important;
+    font-style: italic;
+}
+
+/* Punctuation */
+.code-block-stripe .token.punctuation {
+    color: #94a3b8 !important;
+}
+
+/* Properties and variables */
+.code-block-stripe .token.property,
+.code-block-stripe .token.tag,
+.code-block-stripe .token.constant,
+.code-block-stripe .token.symbol,
+.code-block-stripe .token.deleted {
+    color: #f472b6 !important;
+    /* Pink */
+}
+
+/* Booleans and numbers */
+.code-block-stripe .token.boolean,
+.code-block-stripe .token.number {
+    color: #c084fc !important;
+    /* Purple */
+}
+
+/* Selectors, strings, chars */
+.code-block-stripe .token.selector,
+.code-block-stripe .token.attr-name,
+.code-block-stripe .token.string,
+.code-block-stripe .token.char,
+.code-block-stripe .token.builtin,
+.code-block-stripe .token.inserted {
+    color: #5eead4 !important;
+    /* Cyan/Teal - like Stripe */
+}
+
+/* Operators and entities */
+.code-block-stripe .token.operator,
+.code-block-stripe .token.entity,
+.code-block-stripe .token.url,
+.language-css .code-block-stripe .token.string,
+.style .code-block-stripe .token.string {
+    color: #fbbf24 !important;
+    /* Yellow */
+}
+
+/* Keywords, at-rules, atrule */
+.code-block-stripe .token.atrule,
+.code-block-stripe .token.attr-value,
+.code-block-stripe .token.keyword {
+    color: #818cf8 !important;
+    /* Indigo - like Stripe */
+}
+
+/* Functions */
+.code-block-stripe .token.function,
+.code-block-stripe .token.class-name {
+    color: #fbbf24 !important;
+    /* Yellow */
+}
+
+/* Regex and important */
+.code-block-stripe .token.regex,
+.code-block-stripe .token.important,
+.code-block-stripe .token.variable {
+    color: #fb923c !important;
+    /* Orange */
+}
+
+/* Important and bold */
+.code-block-stripe .token.important,
+.code-block-stripe .token.bold {
+    font-weight: bold;
+}
+
+/* Italic */
+.code-block-stripe .token.italic {
+    font-style: italic;
+}
+
+/* Entity */
+.code-block-stripe .token.entity {
+    cursor: help;
+}
+
+/* Line highlighting */
+.code-block-stripe .line-highlight {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05)) !important;
+    border-left: 3px solid #10b981 !important;
+    margin-left: -1.25rem;
+    padding-left: calc(1.25rem - 3px);
+    display: block;
+}
+
+/* HTML/Markup specific */
+.code-block-stripe .token.tag .token.tag {
+    color: #f472b6 !important;
+}
+
+.code-block-stripe .token.tag .token.attr-name {
+    color: #a5b4fc !important;
+}
+
+.code-block-stripe .token.tag .token.attr-value {
+    color: #5eead4 !important;
+}
+
+/* Copy button transitions */
+.code-block-stripe .copy-btn {
+    transition: all 0.2s ease-out;
+}
+
+.code-block-stripe .copy-btn:active {
+    transform: scale(0.95);
+}
+
+/* Copied state styling */
+.code-block-stripe .copy-btn.copied {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+.code-block-stripe .copy-btn.copied .copy-icon-default {
+    display: none !important;
+}
+
+.code-block-stripe .copy-btn.copied .copy-icon-success {
+    display: flex !important;
+}
+
+/* Scrollbar styling */
+.code-block-stripe .code-block-content::-webkit-scrollbar {
+    height: 8px;
+}
+
+.code-block-stripe .code-block-content::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.code-block-stripe .code-block-content::-webkit-scrollbar-thumb {
+    background: rgba(71, 85, 105, 0.5);
+    border-radius: 4px;
+}
+
+.code-block-stripe .code-block-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(71, 85, 105, 0.7);
+}

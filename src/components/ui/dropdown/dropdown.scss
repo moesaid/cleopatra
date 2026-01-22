@@ -1,0 +1,42 @@
+// Dropdown Component Styles
+// Self-contained styles for dropdown menus
+
+.dropdown {
+    @apply relative;
+
+    .menu-btn {
+        @apply focus:outline-none focus:shadow-outline flex flex-wrap items-center cursor-pointer;
+    }
+
+    .menu-overflow {
+        @apply hidden fixed top-0 left-0 z-10 w-full h-full;
+    }
+
+    .menu {
+        @apply text-gray-500 hidden rounded bg-white shadow-md absolute z-20 right-0 mt-5 py-2 animated faster;
+
+        &.fadeIn {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        a {
+            @apply px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white transition-all duration-300 ease-in-out;
+
+            &:hover {
+                @apply bg-gray-200 text-gray-900;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

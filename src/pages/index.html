@@ -1,0 +1,27 @@
+{{> start}}
+
+<!-- Dashboard Stats -->
+{{> quick-info/quick-info}}
+
+<!-- Analytics & Sales Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+  {{> analytics/analytics}}
+  {{> sales-overview/sales-overview}}
+</div>
+
+<!-- Summary -->
+{{> summary/summary}}
+
+<!-- Numbers -->
+{{> numbers/numbers}}
+
+<!-- Best Sellers & Recent Orders -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+  {{> best-seller/best-seller}}
+  {{> recent-orders/recent-orders}}
+</div>
+
+<!-- Status -->
+{{> status/status}}
+
+{{> end}}

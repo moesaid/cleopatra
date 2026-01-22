@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png" href="/images/fav.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+
+    <!-- Critical CSS - Loads instantly to prevent FOUC -->
+    <style>
+        /* Hide everything except loading until ready */
+        #app {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Loading screen */
+        #loading {
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        #loading .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e5e7eb;
+            border-top-color: #111;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* When loaded, show app and hide loading */
+        .loaded #app {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.2s ease-out;
+        }
+
+        .loaded #loading {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease-out;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Loading - Shows immediately -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- App Shell - Hidden until CSS/JS loaded -->
+    <div id="app">
+        {{> navbar/navbar}}
+
+        <div class="min-h-screen flex">
+            {{> sidebar/sidebar}}
+
+            <!-- Main Content -->
+            <main id="content" class="flex-1 p-6 mt-16 md:ml-64 bg-gray-100">
