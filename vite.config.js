@@ -46,6 +46,8 @@ export default defineConfig({
             partialDirectory: [
                 resolve(__dirname, 'src/components/layout'),
                 resolve(__dirname, 'src/components/ui'),
+                resolve(__dirname, 'src/components/ui/code-block'),
+                resolve(__dirname, 'src/components/ui/button'),
                 resolve(__dirname, 'src/components/widgets'),
                 resolve(__dirname, 'src/components'),
             ],

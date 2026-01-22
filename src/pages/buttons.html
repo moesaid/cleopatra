@@ -1,85 +1,253 @@
-{{#> start pageTitle="Buttons" pageDescription="Button styles and variations"}}{{/start}}
+{{> start pageTitle="Buttons" pageDescription="Button component with multiple variants, sizes, and states"}}
 
-<!-- Primary Buttons -->
-<div class="bg-white rounded-xl p-6 border border-gray-100 mb-5">
-  <h3 class="font-semibold text-gray-900 mb-4">Primary Buttons</h3>
-  <div class="flex flex-wrap gap-3">
-    <button
-      class="px-4 py-2.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition">Primary</button>
-    <button
-      class="px-4 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition">Secondary</button>
-    <button
-      class="px-4 py-2.5 bg-emerald-600 text-white text-sm font-medium rounded-lg hover:bg-emerald-700 transition">Success</button>
-    <button
-      class="px-4 py-2.5 bg-rose-600 text-white text-sm font-medium rounded-lg hover:bg-rose-700 transition">Danger</button>
-    <button
-      class="px-4 py-2.5 bg-amber-500 text-white text-sm font-medium rounded-lg hover:bg-amber-600 transition">Warning</button>
+<!-- Component Preview Header -->
+<div class="flex items-center justify-between mb-6">
+  <div>
+    <p class="text-sm text-gray-500">Buttons trigger actions or navigation. Built on a composable base with variants.
+    </p>
+  </div>
+  <a href="https://github.com/moesaid/cleopatra" target="_blank" class="btn btn-outline btn-sm">
+    <i class="ri-github-line"></i> View Source
+  </a>
+</div>
+
+<!-- Default Buttons -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">Default</h3>
+    <span class="text-xs text-gray-400 font-mono">.btn</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn">Default</button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre
+        class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn"&gt;Default&lt;/button&gt;</code></pre>
+    </div>
   </div>
 </div>
 
-<!-- Outline Buttons -->
-<div class="bg-white rounded-xl p-6 border border-gray-100 mb-5">
-  <h3 class="font-semibold text-gray-900 mb-4">Outline Buttons</h3>
-  <div class="flex flex-wrap gap-3">
-    <button
-      class="px-4 py-2.5 border border-indigo-600 text-indigo-600 text-sm font-medium rounded-lg hover:bg-indigo-50 transition">Primary</button>
-    <button
-      class="px-4 py-2.5 border border-gray-900 text-gray-900 text-sm font-medium rounded-lg hover:bg-gray-50 transition">Secondary</button>
-    <button
-      class="px-4 py-2.5 border border-emerald-600 text-emerald-600 text-sm font-medium rounded-lg hover:bg-emerald-50 transition">Success</button>
-    <button
-      class="px-4 py-2.5 border border-rose-600 text-rose-600 text-sm font-medium rounded-lg hover:bg-rose-50 transition">Danger</button>
+<!-- Variants -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">Variants</h3>
+    <span class="text-xs text-gray-400 font-mono">.btn-{variant}</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn">Default</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-destructive">Destructive</button>
+      <button class="btn btn-outline">Outline</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-link">Link</button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn"&gt;Default&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="btn btn-destructive"&gt;Destructive&lt;/button&gt;
+&lt;button class="btn btn-outline"&gt;Outline&lt;/button&gt;
+&lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;
+&lt;button class="btn btn-link"&gt;Link&lt;/button&gt;</code></pre>
+    </div>
   </div>
 </div>
 
-<!-- Soft Buttons -->
-<div class="bg-white rounded-xl p-6 border border-gray-100 mb-5">
-  <h3 class="font-semibold text-gray-900 mb-4">Soft Buttons</h3>
-  <div class="flex flex-wrap gap-3">
-    <button
-      class="px-4 py-2.5 bg-indigo-50 text-indigo-600 text-sm font-medium rounded-lg hover:bg-indigo-100 transition">Primary</button>
-    <button
-      class="px-4 py-2.5 bg-gray-100 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-200 transition">Secondary</button>
-    <button
-      class="px-4 py-2.5 bg-emerald-50 text-emerald-600 text-sm font-medium rounded-lg hover:bg-emerald-100 transition">Success</button>
-    <button
-      class="px-4 py-2.5 bg-rose-50 text-rose-600 text-sm font-medium rounded-lg hover:bg-rose-100 transition">Danger</button>
+<!-- Semantic Colors -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">Semantic Colors</h3>
+    <span class="text-xs text-gray-400 font-mono">.btn-{color}</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-warning">Warning</button>
+      <button class="btn btn-info">Info</button>
+      <button class="btn btn-destructive">Destructive</button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+&lt;button class="btn btn-destructive"&gt;Destructive&lt;/button&gt;</code></pre>
+    </div>
   </div>
 </div>
 
-<!-- Button Sizes -->
-<div class="bg-white rounded-xl p-6 border border-gray-100 mb-5">
-  <h3 class="font-semibold text-gray-900 mb-4">Button Sizes</h3>
-  <div class="flex flex-wrap items-center gap-3">
-    <button
-      class="px-3 py-1.5 bg-indigo-600 text-white text-xs font-medium rounded-lg hover:bg-indigo-700 transition">Small</button>
-    <button
-      class="px-4 py-2.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition">Default</button>
-    <button
-      class="px-5 py-3 bg-indigo-600 text-white text-base font-medium rounded-lg hover:bg-indigo-700 transition">Large</button>
+<!-- Soft Variants -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">Soft Variants</h3>
+    <span class="text-xs text-gray-400 font-mono">.btn-soft-{color}</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn btn-soft-primary">Primary</button>
+      <button class="btn btn-soft-success">Success</button>
+      <button class="btn btn-soft-warning">Warning</button>
+      <button class="btn btn-soft-info">Info</button>
+      <button class="btn btn-soft-destructive">Destructive</button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn btn-soft-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="btn btn-soft-success"&gt;Success&lt;/button&gt;
+&lt;button class="btn btn-soft-warning"&gt;Warning&lt;/button&gt;</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Sizes -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">Sizes</h3>
+    <span class="text-xs text-gray-400 font-mono">.btn-{size}</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn btn-sm">Small</button>
+      <button class="btn">Default</button>
+      <button class="btn btn-lg">Large</button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn btn-sm"&gt;Small&lt;/button&gt;
+&lt;button class="btn"&gt;Default&lt;/button&gt;
+&lt;button class="btn btn-lg"&gt;Large&lt;/button&gt;</code></pre>
+    </div>
   </div>
 </div>
 
 <!-- Icon Buttons -->
-<div class="bg-white rounded-xl p-6 border border-gray-100">
-  <h3 class="font-semibold text-gray-900 mb-4">Icon Buttons</h3>
-  <div class="flex flex-wrap gap-3">
-    <button
-      class="w-10 h-10 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition flex items-center justify-center">
-      <i class="ri-add-line text-lg"></i>
-    </button>
-    <button
-      class="w-10 h-10 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition flex items-center justify-center">
-      <i class="ri-check-line text-lg"></i>
-    </button>
-    <button
-      class="w-10 h-10 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition flex items-center justify-center">
-      <i class="ri-delete-bin-line text-lg"></i>
-    </button>
-    <button
-      class="w-10 h-10 border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50 transition flex items-center justify-center">
-      <i class="ri-settings-3-line text-lg"></i>
-    </button>
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">Icon Buttons</h3>
+    <span class="text-xs text-gray-400 font-mono">.btn-icon</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn btn-icon"><i class="ri-add-line"></i></button>
+      <button class="btn btn-icon btn-secondary"><i class="ri-settings-3-line"></i></button>
+      <button class="btn btn-icon btn-outline"><i class="ri-search-line"></i></button>
+      <button class="btn btn-icon btn-ghost"><i class="ri-more-2-fill"></i></button>
+      <button class="btn btn-icon btn-destructive"><i class="ri-delete-bin-line"></i></button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn btn-icon"&gt;&lt;i class="ri-add-line"&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button class="btn btn-icon btn-outline"&gt;&lt;i class="ri-search-line"&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- With Icons -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">With Icons</h3>
+    <span class="text-xs text-gray-400 font-mono">Icon + Text</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn"><i class="ri-mail-line"></i> Login with Email</button>
+      <button class="btn btn-outline"><i class="ri-github-line"></i> GitHub</button>
+      <button class="btn btn-secondary">Next <i class="ri-arrow-right-line"></i></button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn"&gt;&lt;i class="ri-mail-line"&gt;&lt;/i&gt; Login with Email&lt;/button&gt;
+&lt;button class="btn btn-outline"&gt;&lt;i class="ri-github-line"&gt;&lt;/i&gt; GitHub&lt;/button&gt;</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- States -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">States</h3>
+    <span class="text-xs text-gray-400 font-mono">disabled, loading</span>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn" disabled>Disabled</button>
+      <button class="btn btn-outline" disabled>Disabled Outline</button>
+      <button class="btn btn-loading">Loading</button>
+      <button class="btn btn-secondary btn-loading">Loading</button>
+    </div>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn" disabled&gt;Disabled&lt;/button&gt;
+&lt;button class="btn btn-loading"&gt;Loading&lt;/button&gt;</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Full Width -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
+  <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between">
+    <h3 class="font-semibold text-gray-900">Full Width</h3>
+    <span class="text-xs text-gray-400 font-mono">.btn-full</span>
+  </div>
+  <div class="p-6">
+    <button class="btn btn-full">Full Width Button</button>
+  </div>
+  <div class="code-block-stripe border-t border-gray-100 rounded-none">
+    <div class="code-block-content">
+      <pre
+        class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-html code-content text-xs !bg-transparent">&lt;button class="btn btn-full"&gt;Full Width Button&lt;/button&gt;</code></pre>
+    </div>
+  </div>
+</div>
+
+<!-- Usage / Installation -->
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+  <div class="px-6 py-4 border-b border-gray-100">
+    <h3 class="font-semibold text-gray-900">Usage</h3>
+  </div>
+  <div class="p-6 space-y-4">
+    <p class="text-sm text-gray-600">The button component is located at <code
+        class="px-1.5 py-0.5 bg-gray-100 text-gray-800 text-xs rounded font-mono">src/components/ui/button/button.scss</code>
+    </p>
+
+    {{> code-block language="scss" id="btn-usage" code="/* Import in your SCSS */
+    @import \"../components/ui/button/button.scss\";
+
+    /* Or extend base button */
+    .my-button {
+    @extend .btn;
+    }" }}
+
+    <div class="mt-6">
+      <h4 class="text-sm font-medium text-gray-900 mb-3">Available Classes</h4>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-secondary</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-destructive</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-outline</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-ghost</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-link</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-success</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-warning</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-info</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-sm</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-lg</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-icon</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-full</div>
+        <div class="bg-gray-50 px-3 py-2 rounded font-mono">.btn-loading</div>
+      </div>
+    </div>
   </div>
 </div>
 

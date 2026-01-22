@@ -6,6 +6,7 @@
 @import "../components/widgets/sidebar/sidebar.scss";
 
 // UI component styles
+@import "../components/ui/button/button.scss";
 @import "../components/ui/dropdown/dropdown.scss";
 @import "../components/ui/code-block/code-block.scss";
 
@@ -22,8 +23,18 @@ a {
    text-transform: capitalize;
 }
 
+/* Exclude code elements from capitalization */
+code,
+pre,
+.code-block-stripe,
+.code-content,
+.font-mono,
+[class*="language-"] {
+   text-transform: none !important;
+}
+
 p {
    letter-spacing: 0.05em;
    font-size: 0.875rem;
-   color: #6b7280;
+   color: hsl(var(--muted-foreground, 215.4 16.3% 46.9%));
 }
