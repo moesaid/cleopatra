@@ -2,25 +2,172 @@
 
 <!-- Page Content -->
 <div class="space-y-6">
-    <!-- Theme Overview -->
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-2">Theme Configuration</h3>
-        <p class="text-sm text-gray-500 mb-6">Cleopatra uses CSS variables for theming, inspired by <a
-                href="https://ui.shadcn.com" class="text-blue-600 hover:underline">shadcn/ui</a>. Customize your theme
-            by editing <code class="px-1.5 py-0.5 bg-gray-100 text-gray-800 text-xs rounded">src/styles/theme.css</code>
+    <!-- Theme Switcher Section -->
+    <div class="bg-card text-card-foreground rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-2">Theme Switcher</h3>
+        <p class="text-sm text-muted-foreground mb-6">Click any theme to preview it live. Your choice is automatically saved and
+            will persist across sessions.</p>
+
+        <!-- Theme Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4" id="theme-preview-grid">
+            <!-- Neutral -->
+            <button data-theme="neutral"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-muted-foreground transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-gray-900 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Neutral</p>
+                <p class="text-xs text-muted-foreground">Classic grayscale</p>
+            </button>
+
+            <!-- Blue -->
+            <button data-theme="blue"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-blue-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-blue-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Blue</p>
+                <p class="text-xs text-muted-foreground">Professional</p>
+            </button>
+
+            <!-- Green -->
+            <button data-theme="green"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-emerald-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-emerald-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Green</p>
+                <p class="text-xs text-muted-foreground">Fresh & vibrant</p>
+            </button>
+
+            <!-- Orange -->
+            <button data-theme="orange"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-orange-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-orange-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Orange</p>
+                <p class="text-xs text-muted-foreground">Warm & energetic</p>
+            </button>
+
+            <!-- Yellow -->
+            <button data-theme="yellow"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-yellow-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-yellow-400 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Yellow</p>
+                <p class="text-xs text-muted-foreground">Bright & cheerful</p>
+            </button>
+
+            <!-- Stone -->
+            <button data-theme="stone"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-stone-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-stone-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Stone</p>
+                <p class="text-xs text-muted-foreground">Warm & earthy</p>
+            </button>
+
+            <!-- Slate -->
+            <button data-theme="slate"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-slate-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-slate-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Slate</p>
+                <p class="text-xs text-muted-foreground">Cool & modern</p>
+            </button>
+
+            <!-- Sky -->
+            <button data-theme="sky"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-sky-400 transition-all cursor-pointer bg-card">
+                <div class="w-full aspect-square rounded-lg bg-sky-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Sky</p>
+                <p class="text-xs text-muted-foreground">Light & airy</p>
+            </button>
+
+            <!-- Azure -->
+            <button data-theme="azure"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-indigo-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-indigo-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Azure</p>
+                <p class="text-xs text-muted-foreground">Deep & rich</p>
+            </button>
+
+            <!-- Rose -->
+            <button data-theme="rose"
+                class="theme-preview-btn group p-4 rounded-xl border-2 border-border hover:border-rose-400 transition-all cursor-pointer bg-card">
+                <div
+                    class="w-full aspect-square rounded-lg bg-rose-500 mb-3 group-hover:scale-105 transition-transform">
+                </div>
+                <p class="text-sm font-medium">Rose</p>
+                <p class="text-xs text-muted-foreground">Bold & stylish</p>
+            </button>
+        </div>
+    </div>
+
+    <!-- Live Color Preview -->
+    <div class="bg-card text-card-foreground rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-4">Live Color Preview</h3>
+        <p class="text-sm text-muted-foreground mb-6">These swatches update automatically based on your selected theme.</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div>
+                <div class="h-20 rounded-lg bg-primary mb-2"></div>
+                <p class="text-xs font-medium">Primary</p>
+                <code class="text-xs text-muted-foreground">--primary</code>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-secondary border border-border mb-2"></div>
+                <p class="text-xs font-medium">Secondary</p>
+                <code class="text-xs text-muted-foreground">--secondary</code>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-muted mb-2"></div>
+                <p class="text-xs font-medium">Muted</p>
+                <code class="text-xs text-muted-foreground">--muted</code>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-accent mb-2"></div>
+                <p class="text-xs font-medium">Accent</p>
+                <code class="text-xs text-muted-foreground">--accent</code>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-destructive mb-2"></div>
+                <p class="text-xs font-medium">Destructive</p>
+                <code class="text-xs text-muted-foreground">--destructive</code>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg border-2 border-border mb-2 bg-background"></div>
+                <p class="text-xs font-medium">Border</p>
+                <code class="text-xs text-muted-foreground">--border</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Variables Reference -->
+    <div class="bg-card text-card-foreground rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-2">Theme Configuration</h3>
+        <p class="text-sm text-muted-foreground mb-6">Cleopatra uses CSS variables for theming. Customize your theme
+            by editing <code class="px-1.5 py-0.5 bg-muted text-foreground text-xs rounded">src/styles/theme.css</code>
         </p>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- Color Variables -->
             <div>
-                <h4 class="text-sm font-semibold text-gray-900 mb-3">Color Variables</h4>
+                <h4 class="text-sm font-semibold mb-3">Core Variables</h4>
                 <div class="space-y-2 text-sm font-mono">
                     <div class="flex items-center gap-3">
                         <span class="w-6 h-6 rounded bg-primary"></span>
                         <code>--primary</code>
                     </div>
                     <div class="flex items-center gap-3">
-                        <span class="w-6 h-6 rounded bg-secondary border border-gray-200"></span>
+                        <span class="w-6 h-6 rounded bg-secondary border border-border"></span>
                         <code>--secondary</code>
                     </div>
                     <div class="flex items-center gap-3">
@@ -44,154 +191,109 @@
 
             <!-- Usage Example -->
             <div>
-                <h4 class="text-sm font-semibold text-gray-900 mb-3">How to Use</h4>
-                <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-x-auto"><code>/* In your CSS */
+                <h4 class="text-sm font-semibold mb-3">How to Use</h4>
+                {{> code-block 
+                    language="css" 
+                    filename="styles.css"
+                    id="theme-usage-example"
+                    code="/* In your CSS */
 .my-button {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background: var(--primary);
+  color: var(--primary-foreground);
   border-radius: var(--radius);
 }
 
 /* Or use utility classes */
 .my-element {
   @apply bg-primary text-primary-foreground;
-}</code></pre>
+}"
+                }}
             </div>
         </div>
     </div>
 
-    <!-- Color Palette Preview -->
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Color Palette</h3>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            <div>
-                <div class="h-20 rounded-lg bg-primary mb-2"></div>
-                <p class="text-xs font-medium text-gray-900">Primary</p>
-                <p class="text-xs text-gray-500">Rose 500</p>
-            </div>
-            <div>
-                <div class="h-20 rounded-lg bg-secondary border border-gray-200 mb-2"></div>
-                <p class="text-xs font-medium text-gray-900">Secondary</p>
-                <p class="text-xs text-gray-500">Gray 100</p>
-            </div>
-            <div>
-                <div class="h-20 rounded-lg bg-success mb-2"></div>
-                <p class="text-xs font-medium text-gray-900">Success</p>
-                <p class="text-xs text-gray-500">Green 600</p>
-            </div>
-            <div>
-                <div class="h-20 rounded-lg bg-warning mb-2"></div>
-                <p class="text-xs font-medium text-gray-900">Warning</p>
-                <p class="text-xs text-gray-500">Yellow 500</p>
-            </div>
-            <div>
-                <div class="h-20 rounded-lg bg-destructive mb-2"></div>
-                <p class="text-xs font-medium text-gray-900">Destructive</p>
-                <p class="text-xs text-gray-500">Red 500</p>
-            </div>
-            <div>
-                <div class="h-20 rounded-lg bg-info mb-2"></div>
-                <p class="text-xs font-medium text-gray-900">Info</p>
-                <p class="text-xs text-gray-500">Blue 600</p>
-            </div>
+    <!-- Dark Mode Info -->
+    <div class="bg-card text-card-foreground rounded-xl border border-border p-6">
+        <h3 class="text-lg font-semibold mb-4">Dark Mode</h3>
+        <p class="text-sm text-muted-foreground mb-4">Toggle dark mode using the theme switcher in the navbar. The mode is saved
+            to localStorage and persists across sessions.</p>
+
+        <div class="flex flex-wrap gap-3">
+            <button
+                onclick="document.documentElement.classList.remove('dark'); localStorage.setItem('cleopatra-mode', 'light');"
+                class="px-4 py-2 text-sm font-medium bg-background border border-border rounded-lg hover:bg-muted transition-colors flex items-center gap-2">
+                <i class="ri-sun-line"></i> Light Mode
+            </button>
+            <button
+                onclick="document.documentElement.classList.add('dark'); localStorage.setItem('cleopatra-mode', 'dark');"
+                class="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-colors flex items-center gap-2">
+                <i class="ri-moon-line"></i> Dark Mode
+            </button>
         </div>
     </div>
 
-    <!-- Border Radius -->
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Border Radius</h3>
-        <div class="flex flex-wrap gap-6">
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gray-200 rounded-theme-sm mb-2 mx-auto"></div>
-                <code class="text-xs">--radius-sm</code>
+    <!-- Theme Persistence Info -->
+    <div class="bg-primary/10 rounded-xl border border-primary/20 p-6">
+        <div class="flex gap-4">
+            <div class="flex-shrink-0">
+                <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+                    <i class="ri-save-line text-primary-foreground text-lg"></i>
+                </div>
             </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gray-200 rounded-theme mb-2 mx-auto"></div>
-                <code class="text-xs">--radius</code>
-            </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gray-200 rounded-theme-md mb-2 mx-auto"></div>
-                <code class="text-xs">--radius-md</code>
-            </div>
-            <div class="text-center">
-                <div class="w-20 h-20 bg-gray-200 rounded-theme-lg mb-2 mx-auto"></div>
-                <code class="text-xs">--radius-lg</code>
+            <div>
+                <h4 class="font-semibold mb-1">Automatic Persistence</h4>
+                <p class="text-sm text-muted-foreground">Your theme preference is automatically saved to <code
+                        class="px-1 py-0.5 bg-muted rounded text-xs">localStorage</code> under the keys <code
+                        class="px-1 py-0.5 bg-muted rounded text-xs">cleopatra-theme</code> and <code
+                        class="px-1 py-0.5 bg-muted rounded text-xs">cleopatra-mode</code>.</p>
             </div>
         </div>
-    </div>
-
-    <!-- Shadows -->
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Shadows</h3>
-        <div class="flex flex-wrap gap-6">
-            <div class="text-center">
-                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-sm mb-2"></div>
-                <code class="text-xs">--shadow-sm</code>
-            </div>
-            <div class="text-center">
-                <div class="w-24 h-24 bg-white rounded-lg shadow-theme mb-2"></div>
-                <code class="text-xs">--shadow</code>
-            </div>
-            <div class="text-center">
-                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-md mb-2"></div>
-                <code class="text-xs">--shadow-md</code>
-            </div>
-            <div class="text-center">
-                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-lg mb-2"></div>
-                <code class="text-xs">--shadow-lg</code>
-            </div>
-            <div class="text-center">
-                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-xl mb-2"></div>
-                <code class="text-xs">--shadow-xl</code>
-            </div>
-        </div>
-    </div>
-
-    <!-- Full Variables Reference -->
-    <div class="bg-white rounded-xl border border-gray-200 p-6">
-        <h3 class="text-lg font-semibold text-gray-900 mb-4">Full Variables Reference</h3>
-        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-x-auto max-h-96"><code>:root {
-  /* Base Colors */
-  --background: 0 0% 98%;
-  --foreground: 222.2 84% 4.9%;
-  
-  /* Primary - Brand Color */
-  --primary: 346.8 77.2% 49.8%;
-  --primary-foreground: 355.7 100% 97.3%;
-  
-  /* Secondary */
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  
-  /* Muted */
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  
-  /* Accent */
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  
-  /* Destructive */
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  
-  /* Success */
-  --success: 142.1 76.2% 36.3%;
-  --success-foreground: 355.7 100% 97.3%;
-  
-  /* Warning */
-  --warning: 38 92% 50%;
-  --warning-foreground: 48 96% 89%;
-  
-  /* Info */
-  --info: 221.2 83.2% 53.3%;
-  --info-foreground: 210 40% 98%;
-  
-  /* Border & Radius */
-  --border: 214.3 31.8% 91.4%;
-  --radius: 0.5rem;
-}</code></pre>
     </div>
 </div>
+
+<!-- Theme Preview Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const previewButtons = document.querySelectorAll('.theme-preview-btn');
+
+        // Apply current theme indicator
+        function updateActiveIndicator() {
+            const currentTheme = localStorage.getItem('cleopatra-theme') || 'neutral';
+            previewButtons.forEach(btn => {
+                if (btn.dataset.theme === currentTheme) {
+                    btn.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
+                    btn.classList.remove('border-border');
+                } else {
+                    btn.classList.remove('ring-2', 'ring-primary', 'ring-offset-2');
+                    btn.classList.add('border-border');
+                }
+            });
+        }
+
+        // Handle theme preview clicks
+        previewButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('cleopatra-theme', theme);
+                updateActiveIndicator();
+
+                // Also update navbar buttons if they exist
+                const navButtons = document.querySelectorAll('.theme-color-btn');
+                navButtons.forEach(navBtn => {
+                    if (navBtn.dataset.theme === theme) {
+                        navBtn.classList.remove('ring-transparent');
+                        navBtn.classList.add('ring-gray-900');
+                    } else {
+                        navBtn.classList.remove('ring-gray-900');
+                        navBtn.classList.add('ring-transparent');
+                    }
+                });
+            });
+        });
+
+        updateActiveIndicator();
+    });
+</script>
 
 {{> end}}

@@ -2,6 +2,7 @@
 
 /* ============================================
    Tailwind CSS v4 Configuration
+   Cleopatra Theme Integration
    ============================================ */
 
 @theme {
@@ -12,73 +13,102 @@
     --breakpoint-xl: 1280px;
     --breakpoint-2xl: 1536px;
 
-    /* Color Palette using OKLCH */
-    --color-primary: oklch(0.65 0.25 250);
-    --color-primary-dark: oklch(0.55 0.25 250);
-    --color-secondary: oklch(0.70 0.20 180);
-    --color-accent: oklch(0.75 0.22 160);
+    /* ============================================
+       Semantic Colors from Theme System
+       These reference the CSS variables defined in theme.css
+       ============================================ */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
 
-    /* Semantic Colors */
-    --color-success: oklch(0.70 0.20 145);
-    --color-warning: oklch(0.75 0.18 85);
-    --color-error: oklch(0.65 0.25 25);
-    --color-info: oklch(0.68 0.22 230);
+    /* Status Colors */
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
 
-    /* Neutral Colors */
-    --color-gray-50: oklch(0.98 0.00 0);
-    --color-gray-100: oklch(0.96 0.00 0);
-    --color-gray-200: oklch(0.92 0.00 0);
-    --color-gray-300: oklch(0.85 0.00 0);
-    --color-gray-400: oklch(0.70 0.00 0);
-    --color-gray-500: oklch(0.55 0.00 0);
-    --color-gray-600: oklch(0.45 0.00 0);
-    --color-gray-700: oklch(0.35 0.00 0);
-    --color-gray-800: oklch(0.25 0.00 0);
-    --color-gray-900: oklch(0.15 0.00 0);
+    /* Chart Colors */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
 
-    /* Spacing */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 3rem;
-    --spacing-3xl: 4rem;
+    /* Sidebar Colors */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* ============================================
+       Component Sizes
+       Reference the size system from theme.css
+       ============================================ */
+    --size-xs: var(--size-xs);
+    --size-sm: var(--size-sm);
+    --size-md: var(--size-md);
+    --size-lg: var(--size-lg);
+    --size-xl: var(--size-xl);
+    --size-2xl: var(--size-2xl);
 
     /* Typography */
-    --font-sans: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-mono: 'Courier New', monospace;
 
-    /* Font Sizes */
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
-    --font-size-5xl: 3rem;
+    /* Font Sizes - Reference theme.css variables */
+    --font-size-xs: var(--text-xs);
+    --font-size-sm: var(--text-sm);
+    --font-size-base: var(--text-base);
+    --font-size-lg: var(--text-lg);
+    --font-size-xl: var(--text-xl);
+    --font-size-2xl: var(--text-2xl);
+    --font-size-3xl: var(--text-3xl);
+    --font-size-4xl: var(--text-4xl);
+    --font-size-5xl: var(--text-5xl);
 
-    /* Border Radius */
-    --radius-sm: 0.25rem;
-    --radius-md: 0.375rem;
-    --radius-lg: 0.5rem;
-    --radius-xl: 0.75rem;
-    --radius-2xl: 1rem;
-    --radius-full: 9999px;
+    /* Border Radius - Reference theme variable */
+    --radius-none: var(--radius-none);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+    --radius-2xl: var(--radius-2xl);
+    --radius-3xl: var(--radius-3xl);
+    --radius-full: var(--radius-full);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    /* Shadows - Reference theme variables */
+    --shadow-sm: var(--shadow-sm);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
 
     /* Animation Timings */
-    --duration-fast: 150ms;
-    --duration-base: 300ms;
-    --duration-slow: 500ms;
-    --duration-slower: 700ms;
+    --duration-fast: var(--duration-150);
+    --duration-base: var(--duration-300);
+    --duration-slow: var(--duration-500);
+    --duration-slower: var(--duration-700);
 
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -92,11 +122,13 @@
 
 @layer base {
     * {
-        border-color: var(--color-gray-300);
+        border-color: var(--border);
     }
 
     body {
         font-family: var(--font-sans);
+        background-color: var(--background);
+        color: var(--foreground);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
@@ -109,6 +141,7 @@
     h6 {
         font-weight: 600;
         letter-spacing: -0.025em;
+        color: var(--foreground);
     }
 
     html {
@@ -153,5 +186,110 @@
 
     .animate-out {
         animation: fadeOut var(--duration-base) var(--ease-in);
+    }
+
+    /* Size utilities */
+    .h-size-xs {
+        height: var(--size-xs);
+    }
+
+    .h-size-sm {
+        height: var(--size-sm);
+    }
+
+    .h-size-md {
+        height: var(--size-md);
+    }
+
+    .h-size-lg {
+        height: var(--size-lg);
+    }
+
+    .h-size-xl {
+        height: var(--size-xl);
+    }
+
+    .h-size-2xl {
+        height: var(--size-2xl);
+    }
+
+    .w-size-xs {
+        width: var(--size-xs);
+    }
+
+    .w-size-sm {
+        width: var(--size-sm);
+    }
+
+    .w-size-md {
+        width: var(--size-md);
+    }
+
+    .w-size-lg {
+        width: var(--size-lg);
+    }
+
+    .w-size-xl {
+        width: var(--size-xl);
+    }
+
+    .w-size-2xl {
+        width: var(--size-2xl);
+    }
+
+    .size-xs {
+        width: var(--size-xs);
+        height: var(--size-xs);
+    }
+
+    .size-sm {
+        width: var(--size-sm);
+        height: var(--size-sm);
+    }
+
+    .size-md {
+        width: var(--size-md);
+        height: var(--size-md);
+    }
+
+    .size-lg {
+        width: var(--size-lg);
+        height: var(--size-lg);
+    }
+
+    .size-xl {
+        width: var(--size-xl);
+        height: var(--size-xl);
+    }
+
+    .size-2xl {
+        width: var(--size-2xl);
+        height: var(--size-2xl);
+    }
+
+    /* Icon size utilities */
+    .icon-xs {
+        width: var(--icon-xs);
+        height: var(--icon-xs);
+    }
+
+    .icon-sm {
+        width: var(--icon-sm);
+        height: var(--icon-sm);
+    }
+
+    .icon-md {
+        width: var(--icon-md);
+        height: var(--icon-md);
+    }
+
+    .icon-lg {
+        width: var(--icon-lg);
+        height: var(--icon-lg);
+    }
+
+    .icon-xl {
+        width: var(--icon-xl);
+        height: var(--icon-xl);
     }
 }

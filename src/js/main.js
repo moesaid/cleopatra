@@ -24,6 +24,7 @@ import { initSidebar } from '../components/widgets/sidebar';
 
 // UI Components
 import { initCodeCopy, reinitCodeCopy } from '../components/ui/code-block';
+import { initCodeBlockTransformer } from '../components/ui/code-block/code-block-transformer.js';
 import '../components/ui/dropdown';
 import '../components/ui/alert';
 
@@ -37,6 +38,8 @@ import { initRouter } from '../components/layout/router';
 
 // Expose for code transformer
 window.reinitCodeCopy = reinitCodeCopy;
+// Expose Prism globally for SPA navigation
+window.Prism = Prism;
 
 // Initialize components
 function initComponents() {
@@ -48,8 +51,14 @@ function initComponents() {
     initSummary();
 }
 
-// Re-initialize on SPA navigation
-document.addEventListener('page:load', initComponents);
+// Re-initialize on SPA navigation (including code highlighting)
+document.addEventListener('page:load', () => {
+    initComponents();
+    // Re-run code block transformer for new content
+    initCodeBlockTransformer();
+    // Re-highlight all code blocks with Prism
+    Prism.highlightAll();
+});
 
 // Initial load
 document.addEventListener('DOMContentLoaded', () => {

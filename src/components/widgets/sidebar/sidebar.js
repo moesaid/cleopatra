@@ -1,5 +1,6 @@
 // ============================================
 // Sidebar Component - Data-Driven Navigation
+// Theme-Aware Colors
 // ============================================
 
 // Menu Data Structure
@@ -160,16 +161,16 @@ function renderMenu(container) {
     attachMenuListeners(container);
 }
 
-// Render Category Header
+// Render Category Header - THEME-AWARE
 function renderCategory(item) {
     return `
-        <div class="category-label px-6 py-2 text-[11px] font-semibold text-gray-400 uppercase tracking-wider mt-4">
+        <div class="category-label px-6 py-2 text-[11px] font-semibold text-sidebar-foreground/50 uppercase tracking-wider mt-4">
             <span class="category-text">${item.label}</span>
         </div>
     `;
 }
 
-// Render Menu Item with Children
+// Render Menu Item with Children - THEME-AWARE
 function renderMenuItem(item) {
     const hasActiveChild = item.children?.some(child => isUrlMatch(child.href));
 
@@ -181,41 +182,41 @@ function renderMenuItem(item) {
                 <a href="${child.href}" 
                    data-id="${child.id}"
                    class="submenu-link flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all duration-200
-                          ${isActive ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'}">
-                    ${isActive ? '<span class="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></span>' : ''}
+                          ${isActive ? 'bg-primary/10 text-primary font-medium' : 'text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground'}">
+                    ${isActive ? '<span class="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>' : ''}
                     <span>${child.label}</span>
                 </a>
             `;
         }).join('');
     }
 
-    // Popover links for hover
+    // Popover links for hover - THEME-AWARE
     const popoverLinks = item.children?.map(child => `
-        <a href="${child.href}" class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors">${child.label}</a>
+        <a href="${child.href}" class="block px-4 py-2 text-sm text-popover-foreground/70 hover:bg-muted hover:text-popover-foreground transition-colors">${child.label}</a>
     `).join('') || '';
 
     return `
         <div class="menu-item relative ${hasActiveChild ? 'is-open' : ''}" data-id="${item.id}">
-            <button class="menu-toggle w-full h-11 flex items-center px-6 text-gray-700 hover:bg-gray-50 transition-all duration-200 group">
-                <i class="${item.icon} text-[18px] text-gray-400 group-hover:text-gray-600 transition-colors w-5 flex-shrink-0"></i>
+            <button class="menu-toggle w-full h-11 flex items-center px-6 text-sidebar-foreground hover:bg-sidebar-accent transition-all duration-200 group">
+                <i class="${item.icon} text-[18px] text-sidebar-foreground/50 group-hover:text-sidebar-foreground transition-colors w-5 flex-shrink-0"></i>
                 <span class="menu-text flex-1 text-left text-sm font-medium ml-3 truncate">${item.label}</span>
-                <i class="menu-arrow ri-add-line text-gray-400 transition-transform duration-300 ${hasActiveChild ? 'rotate-45' : ''}"></i>
+                <i class="menu-arrow ri-add-line text-sidebar-foreground/50 transition-transform duration-300 ${hasActiveChild ? 'rotate-45' : ''}"></i>
             </button>
             <div class="submenu transition-all duration-300 overflow-hidden ${hasActiveChild ? 'max-h-[500px]' : 'max-h-0'}">
                 <div class="py-1 pl-14 pr-4">
                     ${childrenHtml}
                 </div>
             </div>
-            <!-- Hover Popover -->
-            <div class="menu-popover absolute left-full top-0 ml-1 bg-white rounded-lg shadow-xl border border-gray-200 py-2 min-w-[200px] z-[100] opacity-0 invisible transition-all duration-200">
-                <div class="px-4 py-2 text-sm font-semibold text-gray-900 border-b border-gray-100">${item.label}</div>
+            <!-- Hover Popover - THEME-AWARE -->
+            <div class="menu-popover absolute left-full top-0 ml-1 bg-popover text-popover-foreground rounded-lg shadow-xl border border-border py-2 min-w-[200px] z-[100] opacity-0 invisible transition-all duration-200">
+                <div class="px-4 py-2 text-sm font-semibold border-b border-border">${item.label}</div>
                 ${popoverLinks}
             </div>
         </div>
     `;
 }
 
-// Render Simple Link
+// Render Simple Link - THEME-AWARE
 function renderLink(item) {
     const isActive = isUrlMatch(item.href);
     const isDisabled = item.disabled;
@@ -224,14 +225,14 @@ function renderLink(item) {
         <div class="menu-link relative" data-id="${item.id}">
             <a href="${isDisabled ? '#' : item.href || '#'}" 
                class="w-full h-11 flex items-center px-6 transition-all duration-200 group
-                      ${isActive ? 'bg-blue-50 text-blue-600' : isDisabled ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-50'}"
+                      ${isActive ? 'bg-primary/10 text-primary' : isDisabled ? 'text-sidebar-foreground/30 cursor-not-allowed' : 'text-sidebar-foreground hover:bg-sidebar-accent'}"
                ${isDisabled ? 'onclick="return false;"' : ''}>
-                <i class="${item.icon} text-[18px] ${isActive ? 'text-blue-600' : isDisabled ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-600'} w-5 flex-shrink-0 transition-colors"></i>
+                <i class="${item.icon} text-[18px] ${isActive ? 'text-primary' : isDisabled ? 'text-sidebar-foreground/20' : 'text-sidebar-foreground/50 group-hover:text-sidebar-foreground'} w-5 flex-shrink-0 transition-colors"></i>
                 <span class="menu-text flex-1 text-left text-sm font-medium ml-3 truncate">${item.label}</span>
-                ${item.status ? `<span class="status-badge text-[10px] bg-gray-100 text-gray-500 px-2 py-0.5 rounded font-medium">${item.status}</span>` : ''}
+                ${item.status ? `<span class="status-badge text-[10px] bg-muted text-muted-foreground px-2 py-0.5 rounded font-medium">${item.status}</span>` : ''}
             </a>
-            <!-- Hover Tooltip -->
-            <div class="menu-tooltip absolute left-full top-1/2 -translate-y-1/2 ml-3 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg whitespace-nowrap z-[100] opacity-0 invisible transition-all duration-200">
+            <!-- Hover Tooltip - THEME-AWARE -->
+            <div class="menu-tooltip absolute left-full top-1/2 -translate-y-1/2 ml-3 px-3 py-1.5 bg-popover text-popover-foreground text-xs rounded-lg border border-border whitespace-nowrap z-[100] opacity-0 invisible transition-all duration-200">
                 ${item.label}
             </div>
         </div>
@@ -284,28 +285,28 @@ function handleMenuToggle(e) {
     }
 }
 
-// Set Active by Current URL
+// Set Active by Current URL - THEME-AWARE
 function setActiveByUrl() {
     const container = document.getElementById('sidebar');
     if (!container) return;
 
-    // Clear all active states
+    // Clear all active states - remove old hardcoded colors, apply theme colors
     container.querySelectorAll('.submenu-link, .menu-link a').forEach(link => {
-        link.classList.remove('bg-blue-50', 'text-blue-600', 'font-medium');
-        link.classList.add('text-gray-600', 'hover:bg-gray-100', 'hover:text-gray-900');
+        link.classList.remove('bg-primary/10', 'text-primary', 'font-medium');
+        link.classList.add('text-sidebar-foreground/70', 'hover:bg-sidebar-accent', 'hover:text-sidebar-foreground');
         const bullet = link.querySelector('.w-1\\.5');
         if (bullet) bullet.remove();
     });
 
-    // Set active based on URL
+    // Set active based on URL with theme colors
     container.querySelectorAll('.submenu-link, .menu-link a').forEach(link => {
         if (isUrlMatch(link.getAttribute('href'))) {
-            link.classList.remove('text-gray-600', 'hover:bg-gray-100', 'hover:text-gray-900');
-            link.classList.add('bg-blue-50', 'text-blue-600', 'font-medium');
+            link.classList.remove('text-sidebar-foreground/70', 'hover:bg-sidebar-accent', 'hover:text-sidebar-foreground');
+            link.classList.add('bg-primary/10', 'text-primary', 'font-medium');
 
             if (!link.querySelector('.w-1\\.5') && link.classList.contains('submenu-link')) {
                 const bullet = document.createElement('span');
-                bullet.className = 'w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0';
+                bullet.className = 'w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0';
                 link.insertBefore(bullet, link.firstChild);
             }
 

@@ -1,3 +1,7 @@
+// ============================================
+// Sidebar Component Styles - Theme-Aware
+// ============================================
+
 // Sidebar collapsed state styles
 .sidebar {
     &.is-collapsed {
@@ -22,7 +26,8 @@
                 content: '•••';
                 font-size: 8px;
                 letter-spacing: 2px;
-                color: hsl(var(--muted-foreground));
+                color: var(--sidebar-foreground);
+                opacity: 0.5;
             }
         }
 
@@ -72,4 +77,24 @@
 // Arrow rotation
 .menu-arrow.rotate-45 {
     transform: rotate(45deg);
+}
+
+// Sidebar base - theme-aware
+#sidebar {
+    background-color: var(--sidebar);
+    color: var(--sidebar-foreground);
+    border-right-color: var(--sidebar-border);
+}
+
+// Menu toggle active state - theme-aware
+.menu-toggle:hover,
+.menu-link a:hover {
+    background-color: var(--sidebar-accent);
+}
+
+// Active menu item - theme-aware  
+.menu-link a.active,
+.submenu-link.active {
+    background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+    color: var(--primary);
 }
