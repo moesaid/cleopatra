@@ -38,6 +38,9 @@ function getHtmlPages() {
 }
 
 export default defineConfig({
+    // Base path for GitHub Pages deployment
+    base: process.env.GITHUB_ACTIONS ? '/cleopatra/' : '/',
+
     plugins: [
         handlebars({
             partialDirectory: [
