@@ -1,22 +1,26 @@
 /* ===========================================
-   Stripe-style Code Block Styles
+   Theme-Aware Code Block Styles
+   Uses semantic color variables
    =========================================== */
 
 /* Main code block container */
 .code-block-stripe {
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 0.5rem);
 }
 
-/* Header styling */
+/* Header styling - Theme aware */
 .code-block-header {
-    background: linear-gradient(to right, rgba(51, 65, 85, 0.8), rgba(51, 65, 85, 0.6));
+    background-color: var(--muted);
+    border-bottom: 1px solid var(--border);
 }
 
-/* Code content area */
+/* Code content area - Theme aware */
 .code-block-content {
-    background: #0f172a;
-    /* Very dark blue-gray like Stripe */
+    background-color: var(--secondary);
     padding: 0;
 }
 
@@ -33,7 +37,7 @@
     padding: 1rem 1.25rem !important;
     font-size: 0.875rem !important;
     line-height: 1.6 !important;
-    color: #e2e8f0 !important;
+    color: var(--foreground) !important;
     background: transparent !important;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -54,18 +58,18 @@
     top: 0;
     bottom: 0;
     width: 3rem;
-    background: rgba(15, 23, 42, 0.5);
-    border-right: 1px solid rgba(71, 85, 105, 0.3);
+    background: color-mix(in srgb, var(--muted) 50%, transparent);
+    border-right: 1px solid var(--border);
 }
 
 /* ===========================================
-   Prism.js Dark Theme (Stripe-style)
+   Prism.js Theme - Uses CSS variables
    =========================================== */
 
 /* Override default Prism theme */
 .code-block-stripe code[class*="language-"],
 .code-block-stripe pre[class*="language-"] {
-    color: #e2e8f0 !important;
+    color: var(--foreground) !important;
     background: none !important;
     text-shadow: none !important;
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
@@ -76,13 +80,13 @@
 .code-block-stripe .token.prolog,
 .code-block-stripe .token.doctype,
 .code-block-stripe .token.cdata {
-    color: #64748b !important;
+    color: var(--muted-foreground) !important;
     font-style: italic;
 }
 
 /* Punctuation */
 .code-block-stripe .token.punctuation {
-    color: #94a3b8 !important;
+    color: var(--muted-foreground) !important;
 }
 
 /* Properties and variables */
@@ -91,15 +95,13 @@
 .code-block-stripe .token.constant,
 .code-block-stripe .token.symbol,
 .code-block-stripe .token.deleted {
-    color: #f472b6 !important;
-    /* Pink */
+    color: var(--destructive) !important;
 }
 
 /* Booleans and numbers */
 .code-block-stripe .token.boolean,
 .code-block-stripe .token.number {
-    color: #c084fc !important;
-    /* Purple */
+    color: var(--chart-4, #c084fc) !important;
 }
 
 /* Selectors, strings, chars */
@@ -109,8 +111,7 @@
 .code-block-stripe .token.char,
 .code-block-stripe .token.builtin,
 .code-block-stripe .token.inserted {
-    color: #5eead4 !important;
-    /* Cyan/Teal - like Stripe */
+    color: var(--success, #10b981) !important;
 }
 
 /* Operators and entities */
@@ -119,31 +120,27 @@
 .code-block-stripe .token.url,
 .language-css .code-block-stripe .token.string,
 .style .code-block-stripe .token.string {
-    color: #fbbf24 !important;
-    /* Yellow */
+    color: var(--warning, #fbbf24) !important;
 }
 
 /* Keywords, at-rules, atrule */
 .code-block-stripe .token.atrule,
 .code-block-stripe .token.attr-value,
 .code-block-stripe .token.keyword {
-    color: #818cf8 !important;
-    /* Indigo - like Stripe */
+    color: var(--primary) !important;
 }
 
 /* Functions */
 .code-block-stripe .token.function,
 .code-block-stripe .token.class-name {
-    color: #fbbf24 !important;
-    /* Yellow */
+    color: var(--info, #3b82f6) !important;
 }
 
 /* Regex and important */
 .code-block-stripe .token.regex,
 .code-block-stripe .token.important,
 .code-block-stripe .token.variable {
-    color: #fb923c !important;
-    /* Orange */
+    color: var(--chart-5, #fb923c) !important;
 }
 
 /* Important and bold */
@@ -164,8 +161,8 @@
 
 /* Line highlighting */
 .code-block-stripe .line-highlight {
-    background: linear-gradient(to right, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05)) !important;
-    border-left: 3px solid #10b981 !important;
+    background: linear-gradient(to right, color-mix(in srgb, var(--success) 15%, transparent), color-mix(in srgb, var(--success) 5%, transparent)) !important;
+    border-left: 3px solid var(--success) !important;
     margin-left: -1.25rem;
     padding-left: calc(1.25rem - 3px);
     display: block;
@@ -173,20 +170,29 @@
 
 /* HTML/Markup specific */
 .code-block-stripe .token.tag .token.tag {
-    color: #f472b6 !important;
+    color: var(--destructive) !important;
 }
 
 .code-block-stripe .token.tag .token.attr-name {
-    color: #a5b4fc !important;
+    color: var(--primary) !important;
 }
 
 .code-block-stripe .token.tag .token.attr-value {
-    color: #5eead4 !important;
+    color: var(--success, #10b981) !important;
 }
 
-/* Copy button transitions */
+/* Copy button - Theme aware */
 .code-block-stripe .copy-btn {
     transition: all 0.2s ease-out;
+    background-color: var(--muted);
+    border: 1px solid var(--border);
+    color: var(--muted-foreground);
+}
+
+.code-block-stripe .copy-btn:hover {
+    background-color: var(--accent);
+    border-color: var(--border);
+    color: var(--accent-foreground);
 }
 
 .code-block-stripe .copy-btn:active {
@@ -195,8 +201,8 @@
 
 /* Copied state styling */
 .code-block-stripe .copy-btn.copied {
-    background: rgba(16, 185, 129, 0.15) !important;
-    border-color: rgba(16, 185, 129, 0.4) !important;
+    background: color-mix(in srgb, var(--success) 15%, transparent) !important;
+    border-color: color-mix(in srgb, var(--success) 40%, transparent) !important;
 }
 
 .code-block-stripe .copy-btn.copied .copy-icon-default {
@@ -207,20 +213,29 @@
     display: flex !important;
 }
 
-/* Scrollbar styling */
+/* Scrollbar styling - Theme aware */
 .code-block-stripe .code-block-content::-webkit-scrollbar {
     height: 8px;
 }
 
 .code-block-stripe .code-block-content::-webkit-scrollbar-track {
-    background: rgba(15, 23, 42, 0.5);
+    background: var(--muted);
 }
 
 .code-block-stripe .code-block-content::-webkit-scrollbar-thumb {
-    background: rgba(71, 85, 105, 0.5);
+    background: color-mix(in srgb, var(--muted-foreground) 30%, transparent);
     border-radius: 4px;
 }
 
 .code-block-stripe .code-block-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(71, 85, 105, 0.7);
+    background: color-mix(in srgb, var(--muted-foreground) 50%, transparent);
+}
+
+/* Title text - Theme aware */
+.code-block-stripe .code-block-header span {
+    color: var(--foreground);
+}
+
+.code-block-stripe .code-block-header svg {
+    color: var(--muted-foreground);
 }

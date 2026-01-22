@@ -1,0 +1,180 @@
+/* ============================================
+   Checkbox Component - Theme-Aware
+   Custom styled checkboxes
+   ============================================ */
+
+.checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2, 0.5rem);
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm, 0.25rem);
+    background-color: var(--background);
+    cursor: pointer;
+    position: relative;
+    transition: all var(--duration-150, 150ms) ease;
+    flex-shrink: 0;
+
+    &:hover {
+        border-color: var(--primary);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+    }
+
+    &:checked {
+        background-color: var(--primary);
+        border-color: var(--primary);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            width: 0.25rem;
+            height: 0.5rem;
+            border: solid var(--primary-foreground);
+            border-width: 0 2px 2px 0;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    &:indeterminate {
+        background-color: var(--primary);
+        border-color: var(--primary);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0.5rem;
+            height: 2px;
+            background-color: var(--primary-foreground);
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.checkbox-label {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--foreground);
+    cursor: pointer;
+    user-select: none;
+
+    .checkbox:disabled+& {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.checkbox-description {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--muted-foreground);
+    margin-top: 0.125rem;
+}
+
+/* ============================================
+   Checkbox Sizes
+   ============================================ */
+
+.checkbox-sm {
+    width: 0.875rem;
+    height: 0.875rem;
+
+    &:checked::after {
+        width: 0.2rem;
+        height: 0.4rem;
+    }
+}
+
+.checkbox-lg {
+    width: 1.25rem;
+    height: 1.25rem;
+
+    &:checked::after {
+        width: 0.3rem;
+        height: 0.6rem;
+    }
+}
+
+/* ============================================
+   Checkbox Variants
+   ============================================ */
+
+.checkbox-success {
+    &:checked {
+        background-color: var(--success);
+        border-color: var(--success);
+    }
+}
+
+.checkbox-warning {
+    &:checked {
+        background-color: var(--warning);
+        border-color: var(--warning);
+    }
+}
+
+.checkbox-destructive {
+    &:checked {
+        background-color: var(--destructive);
+        border-color: var(--destructive);
+    }
+}
+
+/* ============================================
+   Checkbox Group
+   ============================================ */
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2, 0.5rem);
+}
+
+.checkbox-group-horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-4, 1rem);
+}
+
+/* ============================================
+   Checkbox Card (boxed style)
+   ============================================ */
+
+.checkbox-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3, 0.75rem);
+    padding: var(--spacing-3, 0.75rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 0.5rem);
+    background-color: var(--background);
+    cursor: pointer;
+    transition: all var(--duration-150, 150ms) ease;
+
+    &:hover {
+        border-color: var(--primary);
+        background-color: var(--muted);
+    }
+
+    &.is-checked {
+        border-color: var(--primary);
+        background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+    }
+}

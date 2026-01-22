@@ -1,0 +1,112 @@
+{{> docs-start
+pageTitle="Collapse"
+pageDescription="Expandable content areas with smooth animations"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- FAQ Style -->
+{{> example-block
+title="FAQ Style"
+description="Card-based collapsible content, perfect for FAQs."
+id="collapse-faq"
+code="<div class=\"space-y-3\">
+    <div class=\"collapse-card is-open\">
+        <button class=\"collapse-trigger\" aria-expanded=\"true\">
+            <span>What is Cleopatra Dashboard?</span>
+            <i class=\"ri-arrow-down-s-line collapse-icon\"></i>
+        </button>
+        <div class=\"collapse is-open\">
+            <div class=\"collapse-inner\">
+                <div class=\"collapse-content\">
+                    Cleopatra is a modern dashboard template built with Vite, Tailwind CSS, and vanilla JavaScript.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=\"collapse-card\">
+        <button class=\"collapse-trigger\" aria-expanded=\"false\">
+            <span>How do I customize the theme?</span>
+            <i class=\"ri-arrow-down-s-line collapse-icon\"></i>
+        </button>
+        <div class=\"collapse\">
+            <div class=\"collapse-inner\">
+                <div class=\"collapse-content\">
+                    Themes are defined in src/styles/theme.css using CSS custom properties.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>"
+language="html"
+}}
+
+<!-- Animation Speeds -->
+{{> example-block
+title="Animation Speeds"
+description="Different animation timing options."
+id="collapse-animations"
+code="<div class=\"grid grid-cols-1 md:grid-cols-2 gap-6\">
+    <div class=\"collapse-fast\">
+        <div class=\"collapse-card\">
+            <button class=\"collapse-trigger\" aria-expanded=\"false\">
+                <span>Fast Animation (150ms)</span>
+                <i class=\"ri-arrow-down-s-line collapse-icon\"></i>
+            </button>
+            <div class=\"collapse\">
+                <div class=\"collapse-inner\">
+                    <div class=\"collapse-content\">Snappy animation for quick toggles.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=\"collapse-slow\">
+        <div class=\"collapse-card\">
+            <button class=\"collapse-trigger\" aria-expanded=\"false\">
+                <span>Slow Animation (500ms)</span>
+                <i class=\"ri-arrow-down-s-line collapse-icon\"></i>
+            </button>
+            <div class=\"collapse\">
+                <div class=\"collapse-inner\">
+                    <div class=\"collapse-content\">Dramatic reveal for important content.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>"
+language="html"
+}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="collapse-usage-code"
+    code="<div class=\"collapse-card\">
+        <button class=\"collapse-trigger\" aria-expanded=\"false\">
+            <span>Title</span>
+            <i class=\"ri-arrow-down-s-line collapse-icon\"></i>
+        </button>
+        <div class=\"collapse\">
+            <div class=\"collapse-inner\">
+                <div class=\"collapse-content\">Content here...</div>
+            </div>
+        </div>
+    </div>"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse-card</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse-trigger</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse-content</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse-fast</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse-slow</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse-bounce</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.collapse-fade</div>
+</div>
+
+{{> docs-end}}

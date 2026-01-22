@@ -1,0 +1,48 @@
+/* ============================================
+   Kbd Component - Theme-Aware
+   Keyboard key indicators
+   ============================================ */
+
+.kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-1, 0.25rem) var(--spacing-2, 0.5rem);
+    font-size: var(--text-xs, 0.75rem);
+    font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace);
+    font-weight: var(--font-medium, 500);
+    color: var(--muted-foreground);
+    background-color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm, 0.25rem);
+    box-shadow: 0 1px 0 0 var(--border);
+    white-space: nowrap;
+}
+
+/* Sizes */
+.kbd-sm {
+    padding: 0.125rem var(--spacing-1, 0.25rem);
+    font-size: 0.625rem;
+}
+
+.kbd-lg {
+    padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+}
+
+/* With icon */
+.kbd-icon {
+    gap: var(--spacing-1, 0.25rem);
+}
+
+/* Key group */
+.kbd-group {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-1, 0.25rem);
+}
+
+.kbd-separator {
+    color: var(--muted-foreground);
+    margin: 0 var(--spacing-1, 0.25rem);
+}

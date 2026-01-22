@@ -116,6 +116,14 @@
     --chart-3: hsl(197 37% 24%);
     --chart-4: hsl(43 74% 66%);
     --chart-5: hsl(27 87% 67%);
+    --sidebar: hsl(0 0% 100%);
+    --sidebar-foreground: hsl(222.2 84% 4.9%);
+    --sidebar-primary: hsl(221.2 83.2% 53.3%);
+    --sidebar-primary-foreground: hsl(210 40% 98%);
+    --sidebar-accent: hsl(210 40% 96.1%);
+    --sidebar-accent-foreground: hsl(222.2 47.4% 11.2%);
+    --sidebar-border: hsl(214.3 31.8% 91.4%);
+    --sidebar-ring: hsl(221.2 83.2% 53.3%);
 }
 
 [data-theme="blue"].dark,
@@ -144,6 +152,14 @@
     --chart-3: hsl(30 80% 55%);
     --chart-4: hsl(280 65% 60%);
     --chart-5: hsl(340 75% 55%);
+    --sidebar: hsl(222.2 84% 6%);
+    --sidebar-foreground: hsl(210 40% 98%);
+    --sidebar-primary: hsl(217.2 91.2% 59.8%);
+    --sidebar-primary-foreground: hsl(210 40% 98%);
+    --sidebar-accent: hsl(217.2 32.6% 17.5%);
+    --sidebar-accent-foreground: hsl(210 40% 98%);
+    --sidebar-border: hsl(217.2 32.6% 17.5%);
+    --sidebar-ring: hsl(224.3 76.3% 48%);
 }
 
 /* ===========================================
@@ -176,6 +192,14 @@
     --chart-3: hsl(197 37% 24%);
     --chart-4: hsl(43 74% 66%);
     --chart-5: hsl(27 87% 67%);
+    --sidebar: hsl(0 0% 100%);
+    --sidebar-foreground: hsl(240 10% 3.9%);
+    --sidebar-primary: hsl(142.1 76.2% 36.3%);
+    --sidebar-primary-foreground: hsl(355.7 100% 97.3%);
+    --sidebar-accent: hsl(240 4.8% 95.9%);
+    --sidebar-accent-foreground: hsl(240 5.9% 10%);
+    --sidebar-border: hsl(240 5.9% 90%);
+    --sidebar-ring: hsl(142.1 76.2% 36.3%);
 }
 
 [data-theme="green"].dark,
@@ -204,6 +228,14 @@
     --chart-3: hsl(30 80% 55%);
     --chart-4: hsl(280 65% 60%);
     --chart-5: hsl(340 75% 55%);
+    --sidebar: hsl(20 14.3% 6%);
+    --sidebar-foreground: hsl(0 0% 95%);
+    --sidebar-primary: hsl(142.1 70.6% 45.3%);
+    --sidebar-primary-foreground: hsl(0 0% 95%);
+    --sidebar-accent: hsl(12 6.5% 15.1%);
+    --sidebar-accent-foreground: hsl(0 0% 95%);
+    --sidebar-border: hsl(240 3.7% 15.9%);
+    --sidebar-ring: hsl(142.4 71.8% 29.2%);
 }
 
 /* ===========================================
@@ -236,6 +268,14 @@
     --chart-3: hsl(197 37% 24%);
     --chart-4: hsl(43 74% 66%);
     --chart-5: hsl(27 87% 67%);
+    --sidebar: hsl(0 0% 100%);
+    --sidebar-foreground: hsl(20 14.3% 4.1%);
+    --sidebar-primary: hsl(24.6 95% 53.1%);
+    --sidebar-primary-foreground: hsl(60 9.1% 97.8%);
+    --sidebar-accent: hsl(60 4.8% 95.9%);
+    --sidebar-accent-foreground: hsl(24 9.8% 10%);
+    --sidebar-border: hsl(20 5.9% 90%);
+    --sidebar-ring: hsl(24.6 95% 53.1%);
 }
 
 [data-theme="orange"].dark,
@@ -264,6 +304,14 @@
     --chart-3: hsl(30 80% 55%);
     --chart-4: hsl(280 65% 60%);
     --chart-5: hsl(340 75% 55%);
+    --sidebar: hsl(20 14.3% 6%);
+    --sidebar-foreground: hsl(60 9.1% 97.8%);
+    --sidebar-primary: hsl(20.5 90.2% 48.2%);
+    --sidebar-primary-foreground: hsl(60 9.1% 97.8%);
+    --sidebar-accent: hsl(12 6.5% 15.1%);
+    --sidebar-accent-foreground: hsl(60 9.1% 97.8%);
+    --sidebar-border: hsl(12 6.5% 15.1%);
+    --sidebar-ring: hsl(20.5 90.2% 48.2%);
 }
 
 /* ===========================================
@@ -296,6 +344,14 @@
     --chart-3: hsl(197 37% 24%);
     --chart-4: hsl(43 74% 66%);
     --chart-5: hsl(27 87% 67%);
+    --sidebar: hsl(0 0% 100%);
+    --sidebar-foreground: hsl(20 14.3% 4.1%);
+    --sidebar-primary: hsl(47.9 95.8% 53.1%);
+    --sidebar-primary-foreground: hsl(26 83.3% 14.1%);
+    --sidebar-accent: hsl(60 4.8% 95.9%);
+    --sidebar-accent-foreground: hsl(24 9.8% 10%);
+    --sidebar-border: hsl(20 5.9% 90%);
+    --sidebar-ring: hsl(20 14.3% 4.1%);
 }
 
 [data-theme="yellow"].dark,
@@ -324,6 +380,14 @@
     --chart-3: hsl(30 80% 55%);
     --chart-4: hsl(280 65% 60%);
     --chart-5: hsl(340 75% 55%);
+    --sidebar: hsl(20 14.3% 6%);
+    --sidebar-foreground: hsl(60 9.1% 97.8%);
+    --sidebar-primary: hsl(47.9 95.8% 53.1%);
+    --sidebar-primary-foreground: hsl(26 83.3% 14.1%);
+    --sidebar-accent: hsl(12 6.5% 15.1%);
+    --sidebar-accent-foreground: hsl(60 9.1% 97.8%);
+    --sidebar-border: hsl(12 6.5% 15.1%);
+    --sidebar-ring: hsl(35.5 91.7% 32.9%);
 }
 
 /* ===========================================
@@ -660,6 +724,14 @@
     --chart-3: hsl(197 37% 24%);
     --chart-4: hsl(43 74% 66%);
     --chart-5: hsl(27 87% 67%);
+    --sidebar: hsl(0 0% 100%);
+    --sidebar-foreground: hsl(346.8 5% 4%);
+    --sidebar-primary: hsl(346.8 77.2% 49.8%);
+    --sidebar-primary-foreground: hsl(355.7 100% 97.3%);
+    --sidebar-accent: hsl(350 40% 96%);
+    --sidebar-accent-foreground: hsl(346.8 77.2% 30%);
+    --sidebar-border: hsl(350 20% 90%);
+    --sidebar-ring: hsl(346.8 77.2% 49.8%);
 }
 
 [data-theme="rose"].dark,
@@ -688,6 +760,14 @@
     --chart-3: hsl(30 80% 55%);
     --chart-4: hsl(280 65% 60%);
     --chart-5: hsl(340 75% 55%);
+    --sidebar: hsl(346.8 5% 8%);
+    --sidebar-foreground: hsl(0 0% 95%);
+    --sidebar-primary: hsl(346.8 77.2% 55%);
+    --sidebar-primary-foreground: hsl(0 0% 95%);
+    --sidebar-accent: hsl(346.8 10% 15%);
+    --sidebar-accent-foreground: hsl(0 0% 95%);
+    --sidebar-border: hsl(346.8 10% 17%);
+    --sidebar-ring: hsl(346.8 77.2% 55%);
 }
 
 /* ===========================================

@@ -1,0 +1,127 @@
+{{> docs-start
+pageTitle="Toast"
+pageDescription="Notification toasts"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Interactive Demo -->
+{{> example-block
+title="Interactive Demo"
+description="Click buttons to trigger different toast types."
+id="toast-demo"
+code="<div class=\"flex flex-wrap gap-3\">
+    <button onclick=\"toast.show({ title: 'Notification' , description: 'This is a default toast message.' })\"
+        class=\"btn btn-outline\">
+        Default
+    </button>
+    <button onclick=\"toast.success({ title: 'Success!' , description: 'Your changes have been saved.' })\" class=\"btn
+        btn-outline\">
+        <i class=\"ri-check-circle-line text-success mr-1\"></i> Success
+    </button>
+    <button onclick=\"toast.warning({ title: 'Warning' , description: 'Please review before proceeding.' })\"
+        class=\"btn btn-outline\">
+        <i class=\"ri-alert-line text-warning mr-1\"></i> Warning
+    </button>
+    <button onclick=\"toast.error({ title: 'Error' , description: 'Something went wrong.' })\" class=\"btn
+        btn-outline\">
+        <i class=\"ri-close-circle-line text-destructive mr-1\"></i> Error
+    </button>
+    <button onclick=\"toast.info({ title: 'Info' , description: 'Here is some helpful information.' })\" class=\"btn
+        btn-outline\">
+        <i class=\"ri-information-line text-info mr-1\"></i> Info
+    </button>
+</div>"
+language="html"
+}}
+
+<!-- Positions -->
+{{> example-block
+title="Positions"
+description="Toast can appear in different screen positions."
+id="toast-positions"
+code="<div class=\"grid grid-cols-3 gap-3\">
+    <button onclick=\"showToast({ title: 'Top Left' , position: 'top-left' })\" class=\"btn btn-outline btn-sm\">Top
+        Left</button>
+    <button onclick=\"showToast({ title: 'Top Center' , position: 'top-center' })\" class=\"btn btn-outline btn-sm\">Top
+        Center</button>
+    <button onclick=\"showToast({ title: 'Top Right' , position: 'top-right' })\" class=\"btn btn-outline btn-sm\">Top
+        Right</button>
+    <button onclick=\"showToast({ title: 'Bottom Left' , position: 'bottom-left' })\" class=\"btn btn-outline
+        btn-sm\">Bottom Left</button>
+    <button onclick=\"showToast({ title: 'Bottom Center' , position: 'bottom-center' })\" class=\"btn btn-outline
+        btn-sm\">Bottom Center</button>
+    <button onclick=\"showToast({ title: 'Bottom Right' , position: 'bottom-right' })\" class=\"btn btn-outline
+        btn-sm\">Bottom Right</button>
+</div>"
+language="html"
+}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="javascript" id="toast-usage-code"
+    code="// Simple toast
+    toast.show({ title: 'Hello!', description: 'This is a toast.' });
+
+    // With variant
+    toast.success({ title: 'Saved!', description: 'Changes saved.' });
+    toast.error({ title: 'Error', description: 'Something failed.' });
+    toast.warning({ title: 'Warning', description: 'Be careful!' });
+    toast.info({ title: 'Info', description: 'FYI...' });
+
+    // With options
+    showToast({
+    title: 'Custom',
+    description: 'With custom options',
+    variant: 'success',
+    position: 'bottom-right',
+    duration: 3000,
+    closable: true
+    });"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="options">Options</h3>
+<div class="overflow-x-auto">
+    <table class="w-full text-sm">
+        <thead>
+            <tr class="border-b border-border">
+                <th class="text-left py-2 px-3 font-medium">Option</th>
+                <th class="text-left py-2 px-3 font-medium">Type</th>
+                <th class="text-left py-2 px-3 font-medium">Default</th>
+            </tr>
+        </thead>
+        <tbody class="text-muted-foreground">
+            <tr class="border-b border-border">
+                <td class="py-2 px-3 font-mono text-xs">title</td>
+                <td class="py-2 px-3">string</td>
+                <td class="py-2 px-3">''</td>
+            </tr>
+            <tr class="border-b border-border">
+                <td class="py-2 px-3 font-mono text-xs">description</td>
+                <td class="py-2 px-3">string</td>
+                <td class="py-2 px-3">''</td>
+            </tr>
+            <tr class="border-b border-border">
+                <td class="py-2 px-3 font-mono text-xs">variant</td>
+                <td class="py-2 px-3">default | success | warning | destructive | info</td>
+                <td class="py-2 px-3">'default'</td>
+            </tr>
+            <tr class="border-b border-border">
+                <td class="py-2 px-3 font-mono text-xs">position</td>
+                <td class="py-2 px-3">top-right | top-left | bottom-right | etc.</td>
+                <td class="py-2 px-3">'top-right'</td>
+            </tr>
+            <tr class="border-b border-border">
+                <td class="py-2 px-3 font-mono text-xs">duration</td>
+                <td class="py-2 px-3">number (ms)</td>
+                <td class="py-2 px-3">5000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{{> docs-end}}

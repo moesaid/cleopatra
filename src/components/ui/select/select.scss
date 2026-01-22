@@ -1,0 +1,152 @@
+/* ============================================
+   Select Component - Theme-Aware
+   Custom styled select dropdowns
+   ============================================ */
+
+.select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--foreground);
+    background-color: var(--background);
+    border: 1px solid var(--input);
+    border-radius: var(--radius-md, 0.375rem);
+    cursor: pointer;
+    transition: border-color var(--duration-150, 150ms) ease;
+
+    &:hover {
+        border-color: var(--border);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--ring);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 20%, transparent);
+    }
+}
+
+.select-value {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select-placeholder {
+    color: var(--muted-foreground);
+}
+
+.select-icon {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    color: var(--muted-foreground);
+    transition: transform var(--duration-200, 200ms) ease;
+
+    .select.is-open & {
+        transform: rotate(180deg);
+    }
+}
+
+.select-content {
+    position: absolute;
+    z-index: 50;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: var(--spacing-1, 0.25rem);
+    max-height: 15rem;
+    overflow-y: auto;
+    background-color: var(--popover);
+    color: var(--popover-foreground);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 0.375rem);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all var(--duration-200, 200ms) ease;
+
+    .select.is-open & {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+.select-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2, 0.5rem);
+    padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+    cursor: pointer;
+    transition: background-color var(--duration-150, 150ms) ease;
+
+    &:hover {
+        background-color: var(--muted);
+    }
+
+    &.is-selected {
+        background-color: var(--primary);
+        color: var(--primary-foreground);
+    }
+
+    &.is-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.select-group-label {
+    padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--font-semibold, 600);
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+}
+
+/* Sizes */
+.select-sm .select-trigger {
+    padding: var(--spacing-1, 0.25rem) var(--spacing-2, 0.5rem);
+    font-size: var(--text-xs, 0.75rem);
+}
+
+.select-lg .select-trigger {
+    padding: var(--spacing-3, 0.75rem) var(--spacing-4, 1rem);
+    font-size: var(--text-base, 1rem);
+}
+
+/* Native select styling */
+select.select-native {
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: var(--spacing-2, 0.5rem) var(--spacing-8, 2rem) var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--foreground);
+    background-color: var(--background);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    border: 1px solid var(--input);
+    border-radius: var(--radius-md, 0.375rem);
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+        border-color: var(--ring);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 20%, transparent);
+    }
+}

@@ -1,0 +1,91 @@
+/* ============================================
+   Skeleton Component - Theme-Aware
+   Loading placeholder animations
+   ============================================ */
+
+.skeleton {
+    background-color: var(--muted);
+    border-radius: var(--radius-md, 0.375rem);
+    animation: skeletonPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes skeletonPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Shimmer variant */
+.skeleton-shimmer {
+    background: linear-gradient(90deg,
+            var(--muted) 0%,
+            color-mix(in srgb, var(--muted) 80%, var(--background)) 50%,
+            var(--muted) 100%);
+    background-size: 200% 100%;
+    animation: skeletonShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Common shapes */
+.skeleton-text {
+    height: 1rem;
+    width: 100%;
+}
+
+.skeleton-heading {
+    height: 1.5rem;
+    width: 60%;
+}
+
+.skeleton-circle {
+    border-radius: 50%;
+}
+
+.skeleton-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.skeleton-avatar-sm {
+    width: 2rem;
+    height: 2rem;
+}
+
+.skeleton-avatar-lg {
+    width: 4rem;
+    height: 4rem;
+}
+
+.skeleton-button {
+    height: 2.25rem;
+    width: 6rem;
+    border-radius: var(--radius-md, 0.375rem);
+}
+
+.skeleton-card {
+    height: 10rem;
+    width: 100%;
+    border-radius: var(--radius-lg, 0.5rem);
+}
+
+.skeleton-image {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: var(--radius-lg, 0.5rem);
+}

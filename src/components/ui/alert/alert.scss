@@ -1,0 +1,204 @@
+/* ============================================
+   Alert Component - Theme-Aware
+   Notification and status messages
+   ============================================ */
+
+.alert {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3, 0.75rem);
+    padding: var(--spacing-4, 1rem);
+    border-radius: var(--radius-xl, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+}
+
+.alert-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-lg, 0.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.alert-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.alert-title {
+    font-weight: var(--font-medium, 500);
+    margin-bottom: 0.25rem;
+}
+
+.alert-description {
+    opacity: 0.9;
+}
+
+.alert-close {
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity var(--duration-150, 150ms) ease;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   Alert Variants - Theme Colors
+   ============================================ */
+
+/* Info */
+.alert-info {
+    background-color: color-mix(in srgb, var(--info) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--info) 20%, transparent);
+    color: var(--foreground);
+
+    .alert-icon {
+        background-color: color-mix(in srgb, var(--info) 15%, transparent);
+        color: var(--info);
+    }
+
+    .alert-title {
+        color: var(--info);
+    }
+
+    .alert-close {
+        color: var(--info);
+    }
+}
+
+/* Success */
+.alert-success {
+    background-color: color-mix(in srgb, var(--success) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--success) 20%, transparent);
+    color: var(--foreground);
+
+    .alert-icon {
+        background-color: color-mix(in srgb, var(--success) 15%, transparent);
+        color: var(--success);
+    }
+
+    .alert-title {
+        color: var(--success);
+    }
+
+    .alert-close {
+        color: var(--success);
+    }
+}
+
+/* Warning */
+.alert-warning {
+    background-color: color-mix(in srgb, var(--warning) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--warning) 20%, transparent);
+    color: var(--foreground);
+
+    .alert-icon {
+        background-color: color-mix(in srgb, var(--warning) 15%, transparent);
+        color: var(--warning);
+    }
+
+    .alert-title {
+        color: var(--warning);
+    }
+
+    .alert-close {
+        color: var(--warning);
+    }
+}
+
+/* Destructive/Error */
+.alert-destructive,
+.alert-error {
+    background-color: color-mix(in srgb, var(--destructive) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--destructive) 20%, transparent);
+    color: var(--foreground);
+
+    .alert-icon {
+        background-color: color-mix(in srgb, var(--destructive) 15%, transparent);
+        color: var(--destructive);
+    }
+
+    .alert-title {
+        color: var(--destructive);
+    }
+
+    .alert-close {
+        color: var(--destructive);
+    }
+}
+
+/* ============================================
+   Minimal Alert - Left Border Style
+   ============================================ */
+
+.alert-minimal {
+    padding: var(--spacing-3, 0.75rem) var(--spacing-4, 1rem);
+    border-left: 4px solid;
+    border-radius: 0 var(--radius-lg, 0.5rem) var(--radius-lg, 0.5rem) 0;
+    background-color: var(--muted);
+    border-color: var(--border);
+
+    &.alert-info {
+        border-left-color: var(--info);
+        background-color: color-mix(in srgb, var(--info) 5%, var(--background));
+    }
+
+    &.alert-success {
+        border-left-color: var(--success);
+        background-color: color-mix(in srgb, var(--success) 5%, var(--background));
+    }
+
+    &.alert-warning {
+        border-left-color: var(--warning);
+        background-color: color-mix(in srgb, var(--warning) 5%, var(--background));
+    }
+
+    &.alert-destructive,
+    &.alert-error {
+        border-left-color: var(--destructive);
+        background-color: color-mix(in srgb, var(--destructive) 5%, var(--background));
+    }
+}
+
+/* ============================================
+   Alert Animations
+   ============================================ */
+
+.alert {
+    animation: alertSlideIn var(--duration-300, 300ms) ease-out;
+}
+
+.alert-exit {
+    animation: alertSlideOut var(--duration-200, 200ms) ease-in forwards;
+}
+
+@keyframes alertSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes alertSlideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+}

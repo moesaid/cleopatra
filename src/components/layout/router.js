@@ -80,8 +80,11 @@ async function loadPage(path, pushState = true) {
 }
 
 function reinitializeComponents() {
-    // Dispatch event for components to reinitialize
-    document.dispatchEvent(new CustomEvent('page:load'));
+    // Wait for DOM to be fully painted before re-initializing
+    requestAnimationFrame(() => {
+        // Dispatch event for components to reinitialize
+        document.dispatchEvent(new CustomEvent('page:load'));
+    });
 }
 
 function sleep(ms) {

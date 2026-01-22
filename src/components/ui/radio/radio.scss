@@ -1,0 +1,112 @@
+/* ============================================
+   Radio Component - Theme-Aware
+   Radio button inputs
+   ============================================ */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2, 0.5rem);
+}
+
+.radio-group-horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--spacing-4, 1rem);
+}
+
+.radio-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2, 0.5rem);
+    cursor: pointer;
+}
+
+.radio {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    background-color: var(--background);
+    cursor: pointer;
+    transition: all var(--duration-150, 150ms) ease;
+    flex-shrink: 0;
+
+    &:hover {
+        border-color: var(--primary);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+    }
+
+    &:checked {
+        border-color: var(--primary);
+        background-color: var(--primary);
+        box-shadow: inset 0 0 0 3px var(--background);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.radio-label {
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--foreground);
+    cursor: pointer;
+    user-select: none;
+
+    .radio:disabled+& {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.radio-description {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--muted-foreground);
+    margin-top: 0.125rem;
+}
+
+/* Card variant */
+.radio-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-3, 0.75rem);
+    padding: var(--spacing-3, 0.75rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 0.5rem);
+    background-color: var(--background);
+    cursor: pointer;
+    transition: all var(--duration-150, 150ms) ease;
+
+    &:hover {
+        border-color: var(--primary);
+        background-color: var(--muted);
+    }
+
+    &.is-selected {
+        border-color: var(--primary);
+        background-color: color-mix(in srgb, var(--primary) 5%, transparent);
+    }
+}
+
+/* Color variants */
+.radio-success:checked {
+    border-color: var(--success);
+    background-color: var(--success);
+}
+
+.radio-warning:checked {
+    border-color: var(--warning);
+    background-color: var(--warning);
+}
+
+.radio-destructive:checked {
+    border-color: var(--destructive);
+    background-color: var(--destructive);
+}

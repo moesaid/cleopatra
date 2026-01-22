@@ -10,6 +10,7 @@ export { num, numArr, initNumbers } from './widgets/numbers';
 
 // UI Components
 export { initCodeCopy, reinitCodeCopy } from './ui/code-block';
+export { initExampleBlocks } from './ui/example-block';
 
 // Charts
 export { initAnalytics1 as AnalyticsChart } from './charts/analytics';

@@ -1,0 +1,67 @@
+/* ============================================
+   Link Component - Theme-Aware
+   Styled anchor links
+   ============================================ */
+
+.link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--duration-150, 150ms) ease;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+        border-radius: var(--radius-sm, 0.25rem);
+    }
+}
+
+/* Variants */
+.link-muted {
+    color: var(--muted-foreground);
+
+    &:hover {
+        color: var(--foreground);
+    }
+}
+
+.link-underline {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.link-subtle {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--primary);
+    }
+}
+
+/* External link indicator */
+.link-external::after {
+    content: '';
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    margin-left: 0.25em;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3e%3cpath d='M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3'/%3e%3c/svg%3e");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+/* Sizes */
+.link-sm {
+    font-size: var(--text-sm, 0.875rem);
+}
+
+.link-lg {
+    font-size: var(--text-lg, 1.125rem);
+}

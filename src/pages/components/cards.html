@@ -1,0 +1,102 @@
+{{> docs-start
+pageTitle="Cards"
+pageDescription="Card components for displaying content"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Basic Card -->
+{{> example-block
+title="Basic Card"
+description="Simple card with just content area."
+id="card-basic"
+code="<div class=\"bg-card text-card-foreground rounded-xl border border-border overflow-hidden\">
+    <div class=\"p-6\">
+        <h3 class=\"text-lg font-semibold mb-2\">Basic Card</h3>
+        <p class=\"text-sm text-muted-foreground\">This is a basic card with just a body content area.</p>
+    </div>
+</div>"
+language="html"
+}}
+
+<!-- Card with Header -->
+{{> example-block
+title="Card with Header"
+description="Card with separated header section."
+id="card-header"
+code="<div class=\"bg-card text-card-foreground rounded-xl border border-border overflow-hidden\">
+    <div class=\"px-6 py-4 border-b border-border\">
+        <h3 class=\"text-lg font-semibold\">Card Header</h3>
+    </div>
+    <div class=\"p-6\">
+        <p class=\"text-sm text-muted-foreground\">Card content goes here.</p>
+    </div>
+</div>"
+language="html"
+}}
+
+<!-- Card with Footer -->
+{{> example-block
+title="Card with Footer"
+description="Card with footer section for actions."
+id="card-footer"
+code="<div class=\"bg-card text-card-foreground rounded-xl border border-border overflow-hidden\">
+    <div class=\"p-6\">
+        <h3 class=\"text-lg font-semibold mb-2\">Card Title</h3>
+        <p class=\"text-sm text-muted-foreground\">Card content area.</p>
+    </div>
+    <div class=\"px-6 py-4 border-t border-border bg-muted\">
+        <button class=\"text-sm text-primary hover:text-primary/80 font-medium\">Learn More →</button>
+    </div>
+</div>"
+language="html"
+}}
+
+<!-- Feature Card -->
+{{> example-block
+title="Feature Card"
+description="Card with icon for highlighting features."
+id="card-feature"
+code="<div class=\"bg-card text-card-foreground rounded-xl border border-border p-6\">
+    <div class=\"w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4\">
+        <i class=\"ri-rocket-line text-xl text-primary\"></i>
+    </div>
+    <h3 class=\"text-lg font-semibold mb-2\">Feature Card</h3>
+    <p class=\"text-sm text-muted-foreground\">Highlight features with visual icons.</p>
+</div>"
+language="html"
+}}
+
+<!-- Stats Card -->
+{{> example-block
+title="Stats Card"
+description="Card for displaying metrics and statistics."
+id="card-stats"
+code="<div class=\"bg-card text-card-foreground rounded-xl border border-border p-6\">
+    <div class=\"flex items-center justify-between mb-4\">
+        <span class=\"text-sm text-muted-foreground\">Total Revenue</span>
+        <span class=\"badge badge-soft-success\">+12.5%</span>
+    </div>
+    <h3 class=\"text-2xl font-bold\">$45,231</h3>
+    <p class=\"text-xs text-muted-foreground mt-1\">Compared to last month</p>
+</div>"
+language="html"
+}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Cards use semantic theme classes:</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Theme Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.bg-card</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.text-card-foreground</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.border-border</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.bg-muted</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.text-muted-foreground</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.text-primary</div>
+</div>
+
+{{> docs-end}}

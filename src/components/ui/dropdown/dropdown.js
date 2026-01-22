@@ -1,54 +1,94 @@
-// check if the page have dropdwon menu
-var dropdown = document.getElementsByClassName('dropdown');
+// ============================================
+// Dropdown Component - Interactive Behavior
+// ============================================
 
-if (dropdown.length >= 1) {
-    
-    for (let i = 0; i < dropdown.length; i++) {
-        const item = dropdown[i];
+export function initDropdown() {
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+        if (dropdown.hasAttribute('data-dropdown-init')) return;
+        dropdown.setAttribute('data-dropdown-init', 'true');
 
-        var menu,btn,overflow;
-        
-        item.addEventListener('click' , function(){            
+        const trigger = dropdown.querySelector('.dropdown-trigger, .menu-btn, [data-dropdown-trigger]');
+        const menu = dropdown.querySelector('.dropdown-menu, .menu');
 
-            for (let i = 0; i < this.children.length; i++) {
-                const e = this.children[i];
+        if (!trigger || !menu) return;
 
-                if (e.classList.contains('menu')) {
-                    menu = e;                  
-                }else if (e.classList.contains('menu-btn')) {
-                    btn = e;
-                }else if (e.classList.contains('menu-overflow')) {
-                    overflow = e;
+        // Toggle on click
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = menu.classList.contains('is-open');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-menu.is-open, .dropdown .menu:not(.hidden)').forEach(m => {
+                if (m !== menu) {
+                    m.classList.remove('is-open');
+                    m.classList.add('hidden');
                 }
-                              
+            });
+
+            // Toggle current menu
+            if (menu.classList.contains('dropdown-menu')) {
+                menu.classList.toggle('is-open');
+            } else {
+                menu.classList.toggle('hidden');
             }
-            
-            if (menu.classList.contains('hidden')) {
-                // show the menu
-                showMenu();
-            }else{
-                // hide the menu
-                hideMenu()
-            }      
+        });
+    });
 
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-menu.is-open').forEach(menu => {
+                menu.classList.remove('is-open');
+            });
+            document.querySelectorAll('.dropdown .menu:not(.hidden)').forEach(menu => {
+                menu.classList.add('hidden');
+            });
+        }
+    });
 
-        });        
-        
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.dropdown-menu.is-open').forEach(menu => {
+                menu.classList.remove('is-open');
+            });
+            document.querySelectorAll('.dropdown .menu:not(.hidden)').forEach(menu => {
+                menu.classList.add('hidden');
+            });
+        }
+    });
+}
 
-        var showMenu = function(){
-            menu.classList.remove('hidden');
-            menu.classList.add('fadeIn');
-            overflow.classList.remove('hidden');            
-        };
+export function reinitDropdown() {
+    initDropdown();
+}
 
-        var hideMenu = function(){
-            menu.classList.add('hidden');
-            overflow.classList.add('hidden');            
-            menu.classList.remove('fadeIn');            
-        };
-        
-                
-        
-    }    
-    
+// Auto-init
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initDropdown);
+    } else {
+        initDropdown();
+    }
+}
+
+// Export legacy toggle function for inline onclick
+window.toggleDropdown = function (id) {
+    const menu = document.getElementById(id);
+    if (!menu) return;
+
+    // Close all other menus
+    document.querySelectorAll('[id$="-menu"], .dropdown-menu.is-open').forEach(m => {
+        if (m.id !== id && m !== menu) {
+            m.classList.add('hidden');
+            m.classList.remove('is-open');
+        }
+    });
+
+    // Toggle current
+    if (menu.classList.contains('dropdown-menu')) {
+        menu.classList.toggle('is-open');
+    } else {
+        menu.classList.toggle('hidden');
+    }
 };

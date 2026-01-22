@@ -1,0 +1,79 @@
+{{> docs-start
+pageTitle="Skeleton"
+pageDescription="Loading placeholder animations"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Basic Shapes -->
+{{> example-block
+title="Basic Shapes"
+description="Different skeleton shape presets for common UI elements."
+id="skeleton-basic"
+code="<div class=\"flex items-center gap-4\">
+    <div class=\"skeleton skeleton-avatar\"></div>
+    <div class=\"flex-1 space-y-2\">
+        <div class=\"skeleton skeleton-heading\"></div>
+        <div class=\"skeleton skeleton-text\"></div>
+    </div>
+</div>
+<div class=\"flex gap-4 mt-6\">
+    <div class=\"skeleton skeleton-avatar-sm\"></div>
+    <div class=\"skeleton skeleton-avatar\"></div>
+    <div class=\"skeleton skeleton-avatar-lg\"></div>
+</div>
+<div class=\"flex gap-4 mt-4\">
+    <div class=\"skeleton skeleton-button\"></div>
+    <div class=\"skeleton skeleton-button\" style=\"width: 8rem;\"></div>
+</div>"
+language="html"
+}}
+
+<!-- Shimmer Variant -->
+{{> example-block
+title="Shimmer Animation"
+description="Add shimmer effect with <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">.skeleton-shimmer</code> class."
+id="skeleton-shimmer"
+code="<div class=\"flex items-center gap-4\">
+    <div class=\"skeleton skeleton-shimmer skeleton-avatar\"></div>
+    <div class=\"flex-1 space-y-2\">
+        <div class=\"skeleton skeleton-shimmer skeleton-heading\"></div>
+        <div class=\"skeleton skeleton-shimmer skeleton-text\"></div>
+    </div>
+</div>"
+language="html"
+}}
+
+<!-- Card Skeleton -->
+{{> example-block
+title="Card Loading"
+description="Complete card skeleton pattern."
+id="skeleton-card"
+code="<div class=\"border border-border rounded-lg p-4 space-y-3\" style=\"max-width: 300px;\">
+    <div class=\"skeleton skeleton-shimmer skeleton-image\"></div>
+    <div class=\"skeleton skeleton-shimmer skeleton-heading\" style=\"width: 70%\"></div>
+    <div class=\"skeleton skeleton-shimmer skeleton-text\"></div>
+    <div class=\"skeleton skeleton-shimmer skeleton-text\" style=\"width: 80%\"></div>
+    <div class=\"skeleton skeleton-shimmer skeleton-button\" style=\"width: 100%\"></div>
+</div>"
+language="html"
+}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="skeleton-usage-code"
+    code="<!-- Basic skeleton -->
+    <div class=\"skeleton skeleton-text\"></div>
+    <div class=\"skeleton skeleton-avatar\"></div>
+    <div class=\"skeleton skeleton-button\"></div>
+
+    <!-- With shimmer -->
+    <div class=\"skeleton skeleton-shimmer skeleton-text\"></div>"
+    }}
+</div>
+
+{{> docs-end}}

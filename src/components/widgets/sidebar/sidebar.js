@@ -25,11 +25,21 @@ const menuData = [
         label: 'Components',
         icon: 'ri-stack-line',
         children: [
-            { id: 'buttons', label: 'Buttons', href: '/pages/buttons.html' },
-            { id: 'alerts', label: 'Alerts', href: '/pages/alert.html' },
-            { id: 'badges', label: 'Badges', href: '/pages/badges.html' },
-            { id: 'cards', label: 'Cards', href: '/pages/cards.html' },
-            { id: 'dropdowns', label: 'Dropdowns', href: '/pages/dropdowns.html' }
+            { id: 'accordion', label: 'Accordion', href: '/pages/components/accordion.html' },
+            { id: 'alerts', label: 'Alerts', href: '/pages/components/alert.html' },
+            { id: 'avatar', label: 'Avatar', href: '/pages/components/avatar.html' },
+            { id: 'badges', label: 'Badges', href: '/pages/components/badges.html' },
+            { id: 'breadcrumb', label: 'Breadcrumb', href: '/pages/components/breadcrumb.html' },
+            { id: 'buttons', label: 'Buttons', href: '/pages/components/buttons.html' },
+            { id: 'cards', label: 'Cards', href: '/pages/components/cards.html' },
+            { id: 'checkbox', label: 'Checkbox', href: '/pages/components/checkbox.html' },
+            { id: 'collapse', label: 'Collapse', href: '/pages/components/collapse.html' },
+            { id: 'dropdowns', label: 'Dropdowns', href: '/pages/components/dropdowns.html' },
+            { id: 'pagination', label: 'Pagination', href: '/pages/components/pagination.html' },
+            { id: 'progress', label: 'Progress', href: '/pages/components/progress.html' },
+            { id: 'skeleton', label: 'Skeleton', href: '/pages/components/skeleton.html' },
+            { id: 'tabs', label: 'Tabs', href: '/pages/components/tabs.html' },
+            { id: 'toast', label: 'Toast', href: '/pages/components/toast.html' }
         ]
     },
     {
@@ -38,8 +48,8 @@ const menuData = [
         label: 'Forms',
         icon: 'ri-file-list-3-line',
         children: [
-            { id: 'form-elements', label: 'Form Elements', href: '/pages/forms.html' },
-            { id: 'form-validation', label: 'Validation', href: '/pages/validation.html' }
+            { id: 'form-elements', label: 'Form Elements', href: '/pages/forms/forms.html' },
+            { id: 'form-validation', label: 'Validation', href: '/pages/forms/validation.html' }
         ]
     },
     {
@@ -48,9 +58,9 @@ const menuData = [
         label: 'Content',
         icon: 'ri-text',
         children: [
-            { id: 'typography', label: 'Typography', href: '/pages/typography.html' },
-            { id: 'tables', label: 'Tables', href: '/pages/tables.html' },
-            { id: 'code-blocks', label: 'Code Blocks', href: '/pages/code-blocks.html' }
+            { id: 'typography', label: 'Typography', href: '/pages/content/typography.html' },
+            { id: 'tables', label: 'Tables', href: '/pages/content/tables.html' },
+            { id: 'code-blocks', label: 'Code Blocks', href: '/pages/content/code-blocks.html' }
         ]
     },
     {
@@ -59,8 +69,8 @@ const menuData = [
         label: 'Overlays',
         icon: 'ri-window-line',
         children: [
-            { id: 'modals', label: 'Modals', href: '/pages/modals.html' },
-            { id: 'tooltips', label: 'Tooltips', href: '/pages/tooltips.html' }
+            { id: 'modal', label: 'Modal', href: '/pages/overlays/modal.html' },
+            { id: 'tooltip', label: 'Tooltip', href: '/pages/overlays/tooltip.html' }
         ]
     },
     {
@@ -72,14 +82,14 @@ const menuData = [
         id: 'email',
         label: 'Email',
         icon: 'ri-mail-line',
-        href: '/pages/email.html'
+        href: '/pages/apps/email.html'
     },
     {
         type: 'link',
         id: 'blank-page',
         label: 'Blank Page',
         icon: 'ri-file-line',
-        href: '/pages/blank.html'
+        href: '/pages/settings/blank.html'
     },
     {
         type: 'category',
@@ -90,7 +100,7 @@ const menuData = [
         id: 'theme',
         label: 'Theme',
         icon: 'ri-palette-line',
-        href: '/pages/theme.html'
+        href: '/pages/settings/theme.html'
     }
 ];
 
@@ -299,6 +309,7 @@ function setActiveByUrl() {
     });
 
     // Set active based on URL with theme colors
+    let activeLink = null;
     container.querySelectorAll('.submenu-link, .menu-link a').forEach(link => {
         if (isUrlMatch(link.getAttribute('href'))) {
             link.classList.remove('text-sidebar-foreground/70', 'hover:bg-sidebar-accent', 'hover:text-sidebar-foreground');
@@ -315,8 +326,17 @@ function setActiveByUrl() {
             if (menuItem && !menuItem.classList.contains('is-open')) {
                 menuItem.querySelector('.menu-toggle')?.click();
             }
+
+            activeLink = link;
         }
     });
+
+    // Scroll active link into view (centered in sidebar)
+    if (activeLink) {
+        setTimeout(() => {
+            activeLink.scrollIntoView({ behavior: 'instant', block: 'center' });
+        }, 100);
+    }
 }
 
 // Toggle Sidebar Collapse (Desktop)

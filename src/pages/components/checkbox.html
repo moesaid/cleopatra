@@ -1,0 +1,152 @@
+{{> docs-start
+pageTitle="Checkbox"
+pageDescription="Custom styled checkbox inputs"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Checkbox -->
+{{> example-block
+title="Default"
+description="Basic checkbox with label."
+id="checkbox-default"
+code="<div class=\"flex flex-col gap-4\">
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox\">
+        <span class=\"checkbox-label\">Default checkbox</span>
+    </label>
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox\" checked>
+        <span class=\"checkbox-label\">Checked checkbox</span>
+    </label>
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox\" disabled>
+        <span class=\"checkbox-label\">Disabled checkbox</span>
+    </label>
+</div>"
+language="html"
+}}
+
+<!-- Sizes -->
+{{> example-block
+title="Sizes"
+description="Small, default, and large checkbox sizes."
+id="checkbox-sizes"
+code="<div class=\"flex flex-col gap-4\">
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox checkbox-sm\" checked>
+        <span class=\"checkbox-label\">Small checkbox</span>
+    </label>
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox\" checked>
+        <span class=\"checkbox-label\">Default checkbox</span>
+    </label>
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox checkbox-lg\" checked>
+        <span class=\"checkbox-label\">Large checkbox</span>
+    </label>
+</div>"
+language="html"
+}}
+
+<!-- Color Variants -->
+{{> example-block
+title="Color Variants"
+description="Semantic color options for checkboxes."
+id="checkbox-colors"
+code="<div class=\"flex flex-col gap-4\">
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox\" checked>
+        <span class=\"checkbox-label\">Primary (default)</span>
+    </label>
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox checkbox-success\" checked>
+        <span class=\"checkbox-label\">Success</span>
+    </label>
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox checkbox-warning\" checked>
+        <span class=\"checkbox-label\">Warning</span>
+    </label>
+    <label class=\"checkbox-wrapper\">
+        <input type=\"checkbox\" class=\"checkbox checkbox-destructive\" checked>
+        <span class=\"checkbox-label\">Destructive</span>
+    </label>
+</div>"
+language="html"
+}}
+
+<!-- With Description -->
+{{> example-block
+title="With Description"
+description="Checkbox with supporting text."
+id="checkbox-description"
+code="<div class=\"flex flex-col gap-4\">
+    <label class=\"checkbox-wrapper items-start\">
+        <input type=\"checkbox\" class=\"checkbox mt-0.5\">
+        <div>
+            <span class=\"checkbox-label\">Marketing emails</span>
+            <p class=\"checkbox-description\">Receive emails about new products, features, and more.</p>
+        </div>
+    </label>
+    <label class=\"checkbox-wrapper items-start\">
+        <input type=\"checkbox\" class=\"checkbox mt-0.5\" checked>
+        <div>
+            <span class=\"checkbox-label\">Security alerts</span>
+            <p class=\"checkbox-description\">Get notified about important security updates.</p>
+        </div>
+    </label>
+</div>"
+language="html"
+}}
+
+<!-- Card Style -->
+{{> example-block
+title="Card Style"
+description="Card-style checkbox selection."
+id="checkbox-card"
+code="<div class=\"grid grid-cols-1 md:grid-cols-2 gap-3\">
+    <label class=\"checkbox-card\">
+        <input type=\"checkbox\" class=\"checkbox\" checked>
+        <div>
+            <span class=\"checkbox-label\">Pro Plan</span>
+            <p class=\"checkbox-description\">Best for growing teams</p>
+        </div>
+    </label>
+    <label class=\"checkbox-card\">
+        <input type=\"checkbox\" class=\"checkbox\">
+        <div>
+            <span class=\"checkbox-label\">Enterprise Plan</span>
+            <p class=\"checkbox-description\">For large organizations</p>
+        </div>
+    </label>
+</div>"
+language="html"
+}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Import the checkbox component:</p>
+
+<div class="mb-6">
+    {{> code-block language="javascript" id="checkbox-usage-code"
+    code="import { initCheckbox } from '../components/ui/checkbox';
+    initCheckbox();"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-wrapper</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-label</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-description</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-sm</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-lg</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-success</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-group</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-card</div>
+</div>
+
+{{> docs-end}}

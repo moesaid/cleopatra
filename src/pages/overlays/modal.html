@@ -1,0 +1,157 @@
+{{> docs-start
+pageTitle="Modal"
+pageDescription="Dialog overlays with animations"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Interactive Demo -->
+{{> example-block
+title="Interactive Demo"
+description="Click buttons to open different modal types."
+id="modal-demo"
+code="<div class=\"flex flex-wrap gap-3\">
+    <button onclick=\"openModal('modal-default')\" class=\"btn\">Open Modal</button>
+    <button onclick=\"openModal('modal-lg')\" class=\"btn btn-outline\">Large Modal</button>
+    <button onclick=\"openModal('modal-confirm')\" class=\"btn btn-destructive\">Confirm Delete</button>
+</div>"
+language="html"
+}}
+
+<!-- Sizes -->
+{{> example-block
+title="Sizes"
+description="Modal in different sizes."
+id="modal-sizes"
+code="<div class=\"flex flex-wrap gap-3\">
+    <button onclick=\"openModal('modal-sm')\" class=\"btn btn-outline btn-sm\">Small</button>
+    <button onclick=\"openModal('modal-default')\" class=\"btn btn-outline btn-sm\">Default</button>
+    <button onclick=\"openModal('modal-lg')\" class=\"btn btn-outline btn-sm\">Large</button>
+    <button onclick=\"openModal('modal-xl')\" class=\"btn btn-outline btn-sm\">Extra Large</button>
+</div>"
+language="html"
+}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="modal-usage-code"
+    code="<!-- Trigger -->
+    <button onclick=\"openModal('my-modal')\">Open</button>
+
+    <!-- Modal -->
+    <div class=\"modal-backdrop\"></div>
+    <div id=\"my-modal\" class=\"modal\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h3 class=\"modal-title\">Title</h3>
+                <button class=\"modal-close\" onclick=\"closeModal('my-modal')\">
+                    <i class=\"ri-close-line\"></i>
+                </button>
+            </div>
+            <div class=\"modal-body\">Content</div>
+            <div class=\"modal-footer\">
+                <button class=\"btn btn-outline\">Cancel</button>
+                <button class=\"btn\">Confirm</button>
+            </div>
+        </div>
+    </div>"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal-content</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal-header</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal-body</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal-footer</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal-sm</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal-lg</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.modal-xl</div>
+</div>
+
+<!-- Modal Templates (hidden, used by demo) -->
+<div class="modal-backdrop"></div>
+
+<div id="modal-default" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Default Modal</h3>
+            <button class="modal-close" onclick="closeModal('modal-default')"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-muted-foreground">This is a default modal dialog.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" onclick="closeModal('modal-default')">Cancel</button>
+            <button class="btn" onclick="closeModal('modal-default')">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-sm" class="modal modal-sm">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Small Modal</h3>
+            <button class="modal-close" onclick="closeModal('modal-sm')"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-muted-foreground">A compact modal for simple messages.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-sm" onclick="closeModal('modal-sm')">Got it</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-lg" class="modal modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Large Modal</h3>
+            <button class="modal-close" onclick="closeModal('modal-lg')"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-muted-foreground">A larger modal with more space for forms.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" onclick="closeModal('modal-lg')">Cancel</button>
+            <button class="btn" onclick="closeModal('modal-lg')">Save Changes</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-xl" class="modal modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Extra Large Modal</h3>
+            <button class="modal-close" onclick="closeModal('modal-xl')"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-muted-foreground">Extra large for complex content.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" onclick="closeModal('modal-xl')">Close</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal-confirm" class="modal modal-sm">
+    <div class="modal-content">
+        <div class="modal-body text-center pt-6">
+            <div class="w-12 h-12 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="ri-delete-bin-line text-xl text-destructive"></i>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Delete Item?</h3>
+            <p class="text-muted-foreground text-sm">This action cannot be undone.</p>
+        </div>
+        <div class="modal-footer justify-center">
+            <button class="btn btn-outline" onclick="closeModal('modal-confirm')">Cancel</button>
+            <button class="btn btn-destructive" onclick="closeModal('modal-confirm')">Delete</button>
+        </div>
+    </div>
+</div>
+
+{{> docs-end}}

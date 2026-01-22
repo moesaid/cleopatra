@@ -13,27 +13,38 @@ const __dirname = dirname(__filename);
 // Load sidebar data
 const sidebarData = JSON.parse(readFileSync(resolve(__dirname, 'src/data/sidebar.json'), 'utf-8'));
 
-// Get all HTML files for multi-page setup
+// Get all HTML files for multi-page setup (recursively scans subfolders)
 function getHtmlPages() {
     const pages = {
         // Main entry point at root
         main: resolve(__dirname, 'src/pages/index.html'),
     };
 
-    // Add pages from src/pages (excluding index.html to avoid duplicate)
     const pagesDir = resolve(__dirname, 'src/pages');
-    const files = readdirSync(pagesDir);
 
-    files.forEach(file => {
-        if (file.endsWith('.html') && !file.startsWith('_')) {
-            const name = file.replace('.html', '');
-            // Skip index.html as it's now at root
-            if (name !== 'index') {
-                pages[name] = resolve(pagesDir, file);
+    // Recursively get all HTML files
+    function scanDir(dir, prefix = '') {
+        const entries = readdirSync(dir, { withFileTypes: true });
+
+        entries.forEach(entry => {
+            const fullPath = resolve(dir, entry.name);
+
+            if (entry.isDirectory()) {
+                // Recursively scan subdirectories
+                scanDir(fullPath, prefix + entry.name + '/');
+            } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
+                const name = entry.name.replace('.html', '');
+                // Skip root index.html as it's handled specially
+                if (prefix === '' && name === 'index') return;
+
+                // Create unique key with folder prefix (e.g., 'components_accordion')
+                const key = prefix ? prefix.replace(/\//g, '_') + name : name;
+                pages[key] = fullPath;
             }
-        }
-    });
+        });
+    }
 
+    scanDir(pagesDir);
     return pages;
 }
 
@@ -47,6 +58,7 @@ export default defineConfig({
                 resolve(__dirname, 'src/components/layout'),
                 resolve(__dirname, 'src/components/ui'),
                 resolve(__dirname, 'src/components/ui/code-block'),
+                resolve(__dirname, 'src/components/ui/example-block'),
                 resolve(__dirname, 'src/components/ui/button'),
                 resolve(__dirname, 'src/components/widgets'),
                 resolve(__dirname, 'src/components'),

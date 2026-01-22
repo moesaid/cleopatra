@@ -98,3 +98,31 @@
     background-color: color-mix(in srgb, var(--primary) 10%, transparent);
     color: var(--primary);
 }
+
+// Submenu scroll for long menus like Components
+.submenu {
+
+    // Inner content max-height for scrolling
+    >div {
+        max-height: 280px;
+        overflow-y: auto;
+
+        // Custom scrollbar
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: color-mix(in srgb, var(--sidebar-foreground) 30%, transparent);
+            border-radius: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: color-mix(in srgb, var(--sidebar-foreground) 50%, transparent);
+        }
+    }
+}
