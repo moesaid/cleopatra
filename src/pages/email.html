@@ -1,26 +1,88 @@
-{{> start}}
+{{#> start pageTitle="Email" pageDescription="Email inbox interface"}}{{/start}}
 
-<!-- Email -->
-<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-  <div class="bg-white rounded-md border border-gray-100 p-4 shadow-md">
-    <h3 class="font-semibold mb-4">Folders</h3>
-    <ul class="space-y-2 text-sm">
-      <li><a href="#" class="text-blue-600 hover:underline">Inbox</a></li>
-      <li><a href="#" class="text-gray-600 hover:underline">Sent</a></li>
-      <li><a href="#" class="text-gray-600 hover:underline">Drafts</a></li>
-      <li><a href="#" class="text-gray-600 hover:underline">Trash</a></li>
-    </ul>
-  </div>
+<div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
+  <div class="grid grid-cols-12">
+    <!-- Sidebar -->
+    <div class="col-span-3 border-r border-gray-100 p-4">
+      <button
+        class="w-full px-4 py-2.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition mb-6">
+        <i class="ri-add-line mr-2"></i>Compose
+      </button>
 
-  <div class="lg:col-span-3 bg-white rounded-md border border-gray-100 p-6 shadow-md">
-    <h3 class="font-semibold mb-4">Messages</h3>
-    <div class="space-y-4">
-      <div class="border-b pb-4">
-        <div class="flex justify-between mb-2">
-          <span class="font-medium">Welcome to Cleopatra</span>
-          <span class="text-xs text-gray-500">2 hours ago</span>
+      <nav class="space-y-1">
+        <a href="#"
+          class="flex items-center justify-between px-3 py-2.5 bg-indigo-50 text-indigo-600 rounded-lg font-medium">
+          <span class="flex items-center gap-3">
+            <i class="ri-inbox-line"></i>
+            <span class="text-sm">Inbox</span>
+          </span>
+          <span class="text-xs bg-indigo-600 text-white px-2 py-0.5 rounded-full">24</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
+          <i class="ri-send-plane-line text-gray-400"></i>
+          <span class="text-sm">Sent</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
+          <i class="ri-draft-line text-gray-400"></i>
+          <span class="text-sm">Drafts</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
+          <i class="ri-star-line text-gray-400"></i>
+          <span class="text-sm">Starred</span>
+        </a>
+        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
+          <i class="ri-delete-bin-line text-gray-400"></i>
+          <span class="text-sm">Trash</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Email List -->
+    <div class="col-span-9">
+      <div class="border-b border-gray-100 px-4 py-3 flex items-center gap-4">
+        <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
+        <button class="text-gray-400 hover:text-gray-600"><i class="ri-refresh-line"></i></button>
+        <button class="text-gray-400 hover:text-gray-600"><i class="ri-archive-line"></i></button>
+        <button class="text-gray-400 hover:text-gray-600"><i class="ri-delete-bin-line"></i></button>
+      </div>
+
+      <!-- Email Items -->
+      <div class="divide-y divide-gray-100">
+        <div class="px-4 py-3 flex items-center gap-4 hover:bg-gray-50 cursor-pointer bg-indigo-50/30">
+          <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
+          <button class="text-amber-400"><i class="ri-star-fill"></i></button>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-medium text-gray-900 text-sm">Team Cleopatra</span>
+              <span class="text-xs text-gray-400">10:42 AM</span>
+            </div>
+            <p class="text-sm text-gray-600 truncate">Welcome to Cleopatra Dashboard - Your journey starts here...</p>
+          </div>
         </div>
-        <p class="text-sm text-gray-600">Thank you for using our admin dashboard...</p>
+
+        <div class="px-4 py-3 flex items-center gap-4 hover:bg-gray-50 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
+          <button class="text-gray-300 hover:text-amber-400"><i class="ri-star-line"></i></button>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-medium text-gray-900 text-sm">Support</span>
+              <span class="text-xs text-gray-400">Yesterday</span>
+            </div>
+            <p class="text-sm text-gray-500 truncate">Your ticket #1234 has been resolved</p>
+          </div>
+        </div>
+
+        <div class="px-4 py-3 flex items-center gap-4 hover:bg-gray-50 cursor-pointer">
+          <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
+          <button class="text-gray-300 hover:text-amber-400"><i class="ri-star-line"></i></button>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-gray-600 text-sm">Newsletter</span>
+              <span class="text-xs text-gray-400">2 days ago</span>
+            </div>
+            <p class="text-sm text-gray-500 truncate">Check out the latest features and updates...</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

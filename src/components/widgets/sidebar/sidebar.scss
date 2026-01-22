@@ -1,54 +1,75 @@
-// Sidebar Component Styles
-// Self-contained styles for the sidebar component
-
+// Sidebar collapsed state styles
 .sidebar {
-    @apply fixed left-0 top-0 z-30 h-full w-56 bg-white border-r border-gray-300 overflow-y-auto;
-    transition: transform 0.3s ease-in-out;
-}
+    &.is-collapsed {
+        overflow: visible !important;
 
-.sidebar-backdrop {
-    @apply fixed inset-0 bg-black bg-opacity-50 z-20 hidden;
-
-    &.active {
-        @apply block;
-    }
-}
-
-// Mobile sidebar animations
-@media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%);
-
-        &.open {
-            transform: translateX(0);
+        .sidebar-nav {
+            padding-left: 0;
+            padding-right: 0;
         }
 
-        &.opening {
-            animation: slideInLeft 0.3s ease-out;
+        .category-label {
+            display: flex;
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+
+            .category-text {
+                display: none;
+            }
+
+            &::after {
+                content: '•••';
+                font-size: 8px;
+                letter-spacing: 2px;
+                color: #9ca3af;
+            }
         }
 
-        &.closing {
-            animation: slideOutLeft 0.3s ease-out;
+        .menu-toggle,
+        .menu-link>a {
+            justify-content: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .menu-text,
+        .menu-arrow,
+        .status-badge {
+            display: none;
+        }
+
+        .submenu {
+            display: none !important;
+        }
+
+        // Hover shows popover
+        .menu-item:hover .menu-popover {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-link:hover .menu-tooltip {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
 
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-    }
+// Popover styles
+.menu-popover {
+    pointer-events: none;
 
-    to {
-        transform: translateX(0);
+    .sidebar.is-collapsed .menu-item:hover & {
+        pointer-events: auto;
     }
 }
 
-@keyframes slideOutLeft {
-    from {
-        transform: translateX(0);
-    }
+.menu-tooltip {
+    pointer-events: none;
+}
 
-    to {
-        transform: translateX(-100%);
-    }
+// Arrow rotation
+.menu-arrow.rotate-45 {
+    transform: rotate(45deg);
 }

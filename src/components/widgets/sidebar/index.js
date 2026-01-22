@@ -1,1 +1,1 @@
-export { initSidebar, initSidebar as default } from './sidebar.js';
+export { initSidebar } from './sidebar.js';

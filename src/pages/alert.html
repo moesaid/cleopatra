@@ -1,60 +1,76 @@
-{{> start}}
+{{#> start pageTitle="Alerts" pageDescription="Notification and alert styles"}}{{/start}}
 
-<!-- Alerts -->
-<div class="space-y-4">
-  <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-    <div class="flex items-center">
-      <div class="flex-shrink-0">
-        <i class="ri-information-line text-blue-500 text-xl"></i>
-      </div>
-      <div class="ml-3">
-        <p class="text-sm text-blue-700">This is an info alert. It provides helpful information.</p>
-      </div>
-      <button class="ml-auto alert-btn-close text-blue-500 hover:text-blue-700">
-        <i class="ri-close-line"></i>
-      </button>
-    </div>
+<!-- Info Alert -->
+<div class="bg-indigo-50 border border-indigo-100 rounded-xl p-4 mb-4 flex items-start gap-3">
+  <div class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-information-line text-indigo-600"></i>
   </div>
-
-  <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-    <div class="flex items-center">
-      <div class="flex-shrink-0">
-        <i class="ri-check-line text-green-500 text-xl"></i>
-      </div>
-      <div class="ml-3">
-        <p class="text-sm text-green-700">Success! Your changes have been saved.</p>
-      </div>
-      <button class="ml-auto alert-btn-close text-green-500 hover:text-green-700">
-        <i class="ri-close-line"></i>
-      </button>
-    </div>
+  <div class="flex-1">
+    <h4 class="font-medium text-indigo-900 mb-1">Information</h4>
+    <p class="text-sm text-indigo-700">This is an informational alert. It provides helpful context.</p>
   </div>
+  <button class="text-indigo-400 hover:text-indigo-600 alert-btn-close">
+    <i class="ri-close-line text-lg"></i>
+  </button>
+</div>
 
-  <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
-    <div class="flex items-center">
-      <div class="flex-shrink-0">
-        <i class="ri-alert-line text-yellow-500 text-xl"></i>
-      </div>
-      <div class="ml-3">
-        <p class="text-sm text-yellow-700">Warning! Please review your input.</p>
-      </div>
-      <button class="ml-auto alert-btn-close text-yellow-500 hover:text-yellow-700">
-        <i class="ri-close-line"></i>
-      </button>
-    </div>
+<!-- Success Alert -->
+<div class="bg-emerald-50 border border-emerald-100 rounded-xl p-4 mb-4 flex items-start gap-3">
+  <div class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-check-line text-emerald-600"></i>
   </div>
+  <div class="flex-1">
+    <h4 class="font-medium text-emerald-900 mb-1">Success</h4>
+    <p class="text-sm text-emerald-700">Your changes have been saved successfully.</p>
+  </div>
+  <button class="text-emerald-400 hover:text-emerald-600 alert-btn-close">
+    <i class="ri-close-line text-lg"></i>
+  </button>
+</div>
 
-  <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-    <div class="flex items-center">
-      <div class="flex-shrink-0">
-        <i class="ri-error-warning-line text-red-500 text-xl"></i>
-      </div>
-      <div class="ml-3">
-        <p class="text-sm text-red-700">Error! Something went wrong.</p>
-      </div>
-      <button class="ml-auto alert-btn-close text-red-500 hover:text-red-700">
-        <i class="ri-close-line"></i>
-      </button>
+<!-- Warning Alert -->
+<div class="bg-amber-50 border border-amber-100 rounded-xl p-4 mb-4 flex items-start gap-3">
+  <div class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-alert-line text-amber-600"></i>
+  </div>
+  <div class="flex-1">
+    <h4 class="font-medium text-amber-900 mb-1">Warning</h4>
+    <p class="text-sm text-amber-700">Please review your input before submitting.</p>
+  </div>
+  <button class="text-amber-400 hover:text-amber-600 alert-btn-close">
+    <i class="ri-close-line text-lg"></i>
+  </button>
+</div>
+
+<!-- Error Alert -->
+<div class="bg-rose-50 border border-rose-100 rounded-xl p-4 mb-4 flex items-start gap-3">
+  <div class="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center flex-shrink-0">
+    <i class="ri-error-warning-line text-rose-600"></i>
+  </div>
+  <div class="flex-1">
+    <h4 class="font-medium text-rose-900 mb-1">Error</h4>
+    <p class="text-sm text-rose-700">Something went wrong. Please try again.</p>
+  </div>
+  <button class="text-rose-400 hover:text-rose-600 alert-btn-close">
+    <i class="ri-close-line text-lg"></i>
+  </button>
+</div>
+
+<!-- Minimal Alerts -->
+<div class="bg-white rounded-xl p-6 border border-gray-100 mt-6">
+  <h3 class="font-semibold text-gray-900 mb-4">Minimal Style</h3>
+  <div class="space-y-3">
+    <div class="border-l-4 border-indigo-500 bg-indigo-50/50 px-4 py-3 rounded-r-lg">
+      <p class="text-sm text-indigo-900">A simple info message with left border.</p>
+    </div>
+    <div class="border-l-4 border-emerald-500 bg-emerald-50/50 px-4 py-3 rounded-r-lg">
+      <p class="text-sm text-emerald-900">A simple success message with left border.</p>
+    </div>
+    <div class="border-l-4 border-amber-500 bg-amber-50/50 px-4 py-3 rounded-r-lg">
+      <p class="text-sm text-amber-900">A simple warning message with left border.</p>
+    </div>
+    <div class="border-l-4 border-rose-500 bg-rose-50/50 px-4 py-3 rounded-r-lg">
+      <p class="text-sm text-rose-900">A simple error message with left border.</p>
     </div>
   </div>
 </div>
