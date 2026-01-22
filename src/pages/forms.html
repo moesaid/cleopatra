@@ -1,0 +1,149 @@
+{{> start pageTitle="Forms" pageDescription="Form elements and input components"}}
+
+<!-- Page Content -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Text Inputs -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Text Inputs</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Default Input</label>
+                <input type="text" placeholder="Enter text..."
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">With Icon</label>
+                <div class="relative">
+                    <i class="ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" placeholder="Search..."
+                        class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Disabled</label>
+                <input type="text" placeholder="Disabled input" disabled
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm bg-gray-50 cursor-not-allowed text-gray-400">
+            </div>
+        </div>
+    </div>
+
+    <!-- Select & Dropdown -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Select & Dropdown</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Default Select</label>
+                <select
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <option>Select an option</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Multiple Select</label>
+                <select multiple
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-24">
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                    <option>Option 4</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkbox & Radio -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Checkboxes & Radio</h3>
+        <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-3">
+                <h4 class="text-sm font-medium text-gray-700">Checkboxes</h4>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" checked
+                        class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <span class="text-sm text-gray-700">Option 1</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <span class="text-sm text-gray-700">Option 2</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" disabled class="w-4 h-4 border-gray-300 rounded">
+                    <span class="text-sm text-gray-400">Disabled</span>
+                </label>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-medium text-gray-700">Radio Buttons</h4>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="radio" checked
+                        class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <span class="text-sm text-gray-700">Option A</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="radio" class="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <span class="text-sm text-gray-700">Option B</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="radio" name="radio" disabled class="w-4 h-4 border-gray-300">
+                    <span class="text-sm text-gray-400">Disabled</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toggle Switches -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Toggle Switches</h3>
+        <div class="space-y-4">
+            <label class="flex items-center justify-between cursor-pointer">
+                <span class="text-sm text-gray-700">Notifications</span>
+                <button class="w-11 h-6 bg-blue-600 rounded-full relative transition-colors">
+                    <span
+                        class="absolute right-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform"></span>
+                </button>
+            </label>
+            <label class="flex items-center justify-between cursor-pointer">
+                <span class="text-sm text-gray-700">Dark Mode</span>
+                <button class="w-11 h-6 bg-gray-200 rounded-full relative transition-colors">
+                    <span
+                        class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform"></span>
+                </button>
+            </label>
+            <label class="flex items-center justify-between cursor-not-allowed opacity-50">
+                <span class="text-sm text-gray-700">Disabled</span>
+                <button class="w-11 h-6 bg-gray-200 rounded-full relative" disabled>
+                    <span class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow"></span>
+                </button>
+            </label>
+        </div>
+    </div>
+
+    <!-- Textarea -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Textarea</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Default Textarea</label>
+                <textarea rows="4" placeholder="Enter your message..."
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Upload -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">File Upload</h3>
+        <div class="space-y-4">
+            <div
+                class="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center hover:border-blue-400 transition-colors cursor-pointer">
+                <i class="ri-upload-cloud-line text-4xl text-gray-400 mb-2"></i>
+                <p class="text-sm text-gray-600 mb-1">Drag & drop files here</p>
+                <p class="text-xs text-gray-400">or click to browse</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> end}}

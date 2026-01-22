@@ -1,0 +1,110 @@
+{{> start pageTitle="Badges" pageDescription="Badge and tag components for status indicators"}}
+
+<!-- Page Content -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Default Badges -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Default Badges</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-0.5 text-xs font-medium bg-gray-100 text-gray-800 rounded">Default</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium bg-primary text-primary-foreground rounded">Primary</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-800 rounded">Info</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800 rounded">Success</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800 rounded">Warning</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium bg-red-100 text-red-800 rounded">Danger</span>
+        </div>
+    </div>
+
+    <!-- Pill Badges -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Pill Badges</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full">Default</span>
+            <span class="px-3 py-1 text-xs font-medium bg-primary text-primary-foreground rounded-full">Primary</span>
+            <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">Info</span>
+            <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full">Success</span>
+            <span class="px-3 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full">Warning</span>
+            <span class="px-3 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full">Danger</span>
+        </div>
+    </div>
+
+    <!-- Outline Badges -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Outline Badges</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-0.5 text-xs font-medium border border-gray-300 text-gray-700 rounded">Default</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium border border-rose-500 text-rose-600 rounded">Primary</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium border border-blue-500 text-blue-600 rounded">Info</span>
+            <span
+                class="px-2.5 py-0.5 text-xs font-medium border border-green-500 text-green-600 rounded">Success</span>
+            <span
+                class="px-2.5 py-0.5 text-xs font-medium border border-yellow-500 text-yellow-600 rounded">Warning</span>
+            <span class="px-2.5 py-0.5 text-xs font-medium border border-red-500 text-red-600 rounded">Danger</span>
+        </div>
+    </div>
+
+    <!-- Badge with Icon -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Badges with Icons</h3>
+        <div class="flex flex-wrap gap-2">
+            <span
+                class="inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-medium bg-green-100 text-green-800 rounded">
+                <i class="ri-check-line"></i> Verified
+            </span>
+            <span
+                class="inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-medium bg-blue-100 text-blue-800 rounded">
+                <i class="ri-star-line"></i> Featured
+            </span>
+            <span
+                class="inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-medium bg-yellow-100 text-yellow-800 rounded">
+                <i class="ri-time-line"></i> Pending
+            </span>
+            <span
+                class="inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-medium bg-red-100 text-red-800 rounded">
+                <i class="ri-close-line"></i> Rejected
+            </span>
+        </div>
+    </div>
+
+    <!-- Dot Badges -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Dot Badges</h3>
+        <div class="flex flex-wrap gap-4">
+            <span class="inline-flex items-center gap-1.5 text-sm text-gray-700">
+                <span class="w-2 h-2 bg-gray-400 rounded-full"></span> Offline
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-sm text-gray-700">
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span> Online
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-sm text-gray-700">
+                <span class="w-2 h-2 bg-yellow-500 rounded-full"></span> Away
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-sm text-gray-700">
+                <span class="w-2 h-2 bg-red-500 rounded-full"></span> Busy
+            </span>
+        </div>
+    </div>
+
+    <!-- Notification Badges -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Notification Badges</h3>
+        <div class="flex flex-wrap gap-6">
+            <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                <i class="ri-notification-3-line text-xl"></i>
+                <span
+                    class="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center text-[10px] font-bold bg-red-500 text-white rounded-full">5</span>
+            </button>
+            <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                <i class="ri-mail-line text-xl"></i>
+                <span
+                    class="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center text-[10px] font-bold bg-blue-500 text-white rounded-full">12</span>
+            </button>
+            <button class="relative p-2 text-gray-500 hover:text-gray-700">
+                <i class="ri-shopping-cart-line text-xl"></i>
+                <span class="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+{{> end}}

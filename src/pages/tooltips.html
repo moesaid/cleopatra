@@ -1,0 +1,170 @@
+{{> start pageTitle="Tooltips" pageDescription="Tooltip components for additional information"}}
+
+<!-- Page Content -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Basic Tooltips -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Basic Tooltips</h3>
+        <p class="text-sm text-gray-500 mb-4">Hover over the buttons to see tooltips.</p>
+        <div class="flex flex-wrap gap-4">
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50">
+                    Hover me
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    This is a tooltip
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-2 h-2 bg-gray-900 rotate-45 -mt-1"></div>
+                </div>
+            </div>
+            <div class="group relative">
+                <button class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                    Primary
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Primary button tooltip
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-2 h-2 bg-gray-900 rotate-45 -mt-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tooltip Positions -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Tooltip Positions</h3>
+        <div class="flex flex-wrap gap-4 items-center justify-center min-h-[120px]">
+            <!-- Top -->
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50">Top</button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Top tooltip
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-2 h-2 bg-gray-900 rotate-45 -mt-1"></div>
+                </div>
+            </div>
+            <!-- Right -->
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50">Right</button>
+                <div
+                    class="absolute left-full top-1/2 -translate-y-1/2 ml-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Right tooltip
+                    <div class="absolute right-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45 -mr-1"></div>
+                </div>
+            </div>
+            <!-- Bottom -->
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50">Bottom</button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Bottom tooltip
+                    <div class="absolute left-1/2 -translate-x-1/2 bottom-full w-2 h-2 bg-gray-900 rotate-45 -mb-1">
+                    </div>
+                </div>
+            </div>
+            <!-- Left -->
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50">Left</button>
+                <div
+                    class="absolute right-full top-1/2 -translate-y-1/2 mr-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Left tooltip
+                    <div class="absolute left-full top-1/2 -translate-y-1/2 w-2 h-2 bg-gray-900 rotate-45 -ml-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icon Tooltips -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Icon Tooltips</h3>
+        <p class="text-sm text-gray-500 mb-4">Common usage with icon buttons.</p>
+        <div class="flex gap-4">
+            <div class="group relative">
+                <button
+                    class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="ri-home-line text-xl"></i>
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Home
+                </div>
+            </div>
+            <div class="group relative">
+                <button
+                    class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="ri-settings-3-line text-xl"></i>
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Settings
+                </div>
+            </div>
+            <div class="group relative">
+                <button
+                    class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="ri-notification-3-line text-xl"></i>
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Notifications
+                </div>
+            </div>
+            <div class="group relative">
+                <button
+                    class="w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
+                    <i class="ri-search-line text-xl"></i>
+                </button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Search
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Colored Tooltips -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Colored Tooltips</h3>
+        <div class="flex flex-wrap gap-4">
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Info</button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-blue-600 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Information tooltip
+                </div>
+            </div>
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-lg hover:bg-green-700">Success</button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-green-600 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Success tooltip
+                </div>
+            </div>
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">Warning</button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-yellow-500 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Warning tooltip
+                </div>
+            </div>
+            <div class="group relative">
+                <button
+                    class="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700">Danger</button>
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-3 py-1.5 bg-red-600 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all whitespace-nowrap">
+                    Danger tooltip
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> end}}

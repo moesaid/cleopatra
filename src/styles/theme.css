@@ -1,0 +1,242 @@
+/* ============================================
+   Cleopatra Theme Configuration
+   Inspired by shadcn/ui theming system
+   ============================================ */
+
+:root {
+    /* Base Colors */
+    --background: 0 0% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    /* Card */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Primary - Brand Color */
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    /* Secondary */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent */
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Success */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 355.7 100% 97.3%;
+
+    /* Warning */
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+
+    /* Info */
+    --info: 221.2 83.2% 53.3%;
+    --info-foreground: 210 40% 98%;
+
+    /* Border & Input */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 346.8 77.2% 49.8%;
+
+    /* Radius */
+    --radius: 0.5rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Theme */
+.dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 346.8 77.2% 49.8%;
+}
+
+/* ============================================
+   Theme Utility Classes
+   ============================================ */
+
+/* Background Colors */
+.bg-background {
+    background-color: hsl(var(--background));
+}
+
+.bg-card {
+    background-color: hsl(var(--card));
+}
+
+.bg-popover {
+    background-color: hsl(var(--popover));
+}
+
+.bg-primary {
+    background-color: hsl(var(--primary));
+}
+
+.bg-secondary {
+    background-color: hsl(var(--secondary));
+}
+
+.bg-muted {
+    background-color: hsl(var(--muted));
+}
+
+.bg-accent {
+    background-color: hsl(var(--accent));
+}
+
+.bg-destructive {
+    background-color: hsl(var(--destructive));
+}
+
+.bg-success {
+    background-color: hsl(var(--success));
+}
+
+.bg-warning {
+    background-color: hsl(var(--warning));
+}
+
+.bg-info {
+    background-color: hsl(var(--info));
+}
+
+/* Text Colors */
+.text-foreground {
+    color: hsl(var(--foreground));
+}
+
+.text-card-foreground {
+    color: hsl(var(--card-foreground));
+}
+
+.text-popover-foreground {
+    color: hsl(var(--popover-foreground));
+}
+
+.text-primary {
+    color: hsl(var(--primary));
+}
+
+.text-primary-foreground {
+    color: hsl(var(--primary-foreground));
+}
+
+.text-secondary-foreground {
+    color: hsl(var(--secondary-foreground));
+}
+
+.text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+}
+
+.text-accent-foreground {
+    color: hsl(var(--accent-foreground));
+}
+
+.text-destructive {
+    color: hsl(var(--destructive));
+}
+
+.text-destructive-foreground {
+    color: hsl(var(--destructive-foreground));
+}
+
+/* Border Colors */
+.border-border {
+    border-color: hsl(var(--border));
+}
+
+.border-input {
+    border-color: hsl(var(--input));
+}
+
+.border-primary {
+    border-color: hsl(var(--primary));
+}
+
+/* Ring */
+.ring-ring {
+    --tw-ring-color: hsl(var(--ring));
+}
+
+/* Border Radius */
+.rounded-theme {
+    border-radius: var(--radius);
+}
+
+.rounded-theme-sm {
+    border-radius: calc(var(--radius) - 2px);
+}
+
+.rounded-theme-md {
+    border-radius: calc(var(--radius) + 2px);
+}
+
+.rounded-theme-lg {
+    border-radius: calc(var(--radius) + 4px);
+}
+
+/* Shadows */
+.shadow-theme-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow-theme {
+    box-shadow: var(--shadow);
+}
+
+.shadow-theme-md {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-theme-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.shadow-theme-xl {
+    box-shadow: var(--shadow-xl);
+}

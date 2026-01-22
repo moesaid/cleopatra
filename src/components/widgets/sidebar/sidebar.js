@@ -16,52 +16,50 @@ const menuData = [
     },
     {
         type: 'category',
-        label: 'USER'
+        label: 'UI ELEMENTS'
     },
     {
         type: 'menu',
-        id: 'public-profile',
-        label: 'Public Profile',
-        icon: 'ri-user-line',
+        id: 'components',
+        label: 'Components',
+        icon: 'ri-stack-line',
         children: [
-            { id: 'profiles', label: 'Profiles', href: '#' },
-            { id: 'projects', label: 'Projects', href: '#' },
-            { id: 'works', label: 'Works', href: '#' }
+            { id: 'buttons', label: 'Buttons', href: '/pages/buttons.html' },
+            { id: 'alerts', label: 'Alerts', href: '/pages/alert.html' },
+            { id: 'badges', label: 'Badges', href: '/pages/badges.html' },
+            { id: 'cards', label: 'Cards', href: '/pages/cards.html' },
+            { id: 'dropdowns', label: 'Dropdowns', href: '/pages/dropdowns.html' }
         ]
     },
     {
         type: 'menu',
-        id: 'my-account',
-        label: 'My Account',
-        icon: 'ri-settings-3-line',
+        id: 'forms',
+        label: 'Forms',
+        icon: 'ri-file-list-3-line',
         children: [
-            { id: 'account-home', label: 'Account Home', href: '#' },
-            { id: 'get-started', label: 'Get Started', href: '#' },
-            { id: 'user-profile', label: 'User Profile', href: '#' },
-            { id: 'company-profile', label: 'Company Profile', href: '#' },
-            { id: 'settings', label: 'Settings', href: '#' }
+            { id: 'form-elements', label: 'Form Elements', href: '/pages/forms.html' },
+            { id: 'form-validation', label: 'Validation', href: '/pages/validation.html' }
         ]
     },
     {
         type: 'menu',
-        id: 'network',
-        label: 'Network',
-        icon: 'ri-group-line',
+        id: 'content',
+        label: 'Content',
+        icon: 'ri-text',
         children: [
-            { id: 'get-started-network', label: 'Get Started', href: '#' },
-            { id: 'user-cards', label: 'User Cards', href: '#' },
-            { id: 'mini-cards', label: 'Mini Cards', href: '#' }
+            { id: 'typography', label: 'Typography', href: '/pages/typography.html' },
+            { id: 'tables', label: 'Tables', href: '/pages/tables.html' },
+            { id: 'code-blocks', label: 'Code Blocks', href: '/pages/code-blocks.html' }
         ]
     },
     {
         type: 'menu',
-        id: 'authentication',
-        label: 'Authentication',
-        icon: 'ri-shield-keyhole-line',
+        id: 'overlays',
+        label: 'Overlays',
+        icon: 'ri-window-line',
         children: [
-            { id: 'sign-in', label: 'Sign In', href: '#' },
-            { id: 'sign-up', label: 'Sign Up', href: '#' },
-            { id: 'reset-password', label: 'Reset Password', href: '#' }
+            { id: 'modals', label: 'Modals', href: '/pages/modals.html' },
+            { id: 'tooltips', label: 'Tooltips', href: '/pages/tooltips.html' }
         ]
     },
     {
@@ -69,47 +67,29 @@ const menuData = [
         label: 'APPS'
     },
     {
-        type: 'menu',
-        id: 'store-client',
-        label: 'Store - Client',
-        icon: 'ri-store-2-line',
-        children: [
-            { id: 'store-home', label: 'Home', href: '#' },
-            { id: 'store-products', label: 'Products', href: '#' },
-            { id: 'store-cart', label: 'Cart', href: '#' }
-        ]
+        type: 'link',
+        id: 'email',
+        label: 'Email',
+        icon: 'ri-mail-line',
+        href: '/pages/email.html'
     },
     {
         type: 'link',
-        id: 'store-admin',
-        label: 'Store - Admin',
-        icon: 'ri-shopping-bag-line',
-        status: 'Soon',
-        disabled: true
+        id: 'blank-page',
+        label: 'Blank Page',
+        icon: 'ri-file-line',
+        href: '/pages/blank.html'
+    },
+    {
+        type: 'category',
+        label: 'SETTINGS'
     },
     {
         type: 'link',
-        id: 'store-services',
-        label: 'Store - Services',
-        icon: 'ri-customer-service-2-line',
-        status: 'Soon',
-        disabled: true
-    },
-    {
-        type: 'link',
-        id: 'ai-prompt',
-        label: 'AI Prompt',
-        icon: 'ri-robot-2-line',
-        status: 'Soon',
-        disabled: true
-    },
-    {
-        type: 'link',
-        id: 'invoice-generator',
-        label: 'Invoice Generator',
-        icon: 'ri-file-text-line',
-        status: 'Soon',
-        disabled: true
+        id: 'theme',
+        label: 'Theme',
+        icon: 'ri-palette-line',
+        href: '/pages/theme.html'
     }
 ];
 
@@ -237,14 +217,16 @@ function renderMenuItem(item) {
 
 // Render Simple Link
 function renderLink(item) {
+    const isActive = isUrlMatch(item.href);
     const isDisabled = item.disabled;
 
     return `
         <div class="menu-link relative" data-id="${item.id}">
             <a href="${isDisabled ? '#' : item.href || '#'}" 
-               class="w-full h-11 flex items-center px-6 transition-all duration-200 group ${isDisabled ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-50'}"
+               class="w-full h-11 flex items-center px-6 transition-all duration-200 group
+                      ${isActive ? 'bg-blue-50 text-blue-600' : isDisabled ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-50'}"
                ${isDisabled ? 'onclick="return false;"' : ''}>
-                <i class="${item.icon} text-[18px] ${isDisabled ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-600'} w-5 flex-shrink-0 transition-colors"></i>
+                <i class="${item.icon} text-[18px] ${isActive ? 'text-blue-600' : isDisabled ? 'text-gray-300' : 'text-gray-400 group-hover:text-gray-600'} w-5 flex-shrink-0 transition-colors"></i>
                 <span class="menu-text flex-1 text-left text-sm font-medium ml-3 truncate">${item.label}</span>
                 ${item.status ? `<span class="status-badge text-[10px] bg-gray-100 text-gray-500 px-2 py-0.5 rounded font-medium">${item.status}</span>` : ''}
             </a>
@@ -264,7 +246,7 @@ function attachMenuListeners(container) {
     });
 
     // Links for mobile close
-    container.querySelectorAll('.submenu-link, .menu-popover a').forEach(link => {
+    container.querySelectorAll('.submenu-link, .menu-popover a, .menu-link a').forEach(link => {
         link.addEventListener('click', () => {
             if (window.innerWidth < 1024) closeMobileSidebar();
         });
@@ -308,7 +290,7 @@ function setActiveByUrl() {
     if (!container) return;
 
     // Clear all active states
-    container.querySelectorAll('.submenu-link').forEach(link => {
+    container.querySelectorAll('.submenu-link, .menu-link a').forEach(link => {
         link.classList.remove('bg-blue-50', 'text-blue-600', 'font-medium');
         link.classList.add('text-gray-600', 'hover:bg-gray-100', 'hover:text-gray-900');
         const bullet = link.querySelector('.w-1\\.5');
@@ -316,12 +298,12 @@ function setActiveByUrl() {
     });
 
     // Set active based on URL
-    container.querySelectorAll('.submenu-link').forEach(link => {
+    container.querySelectorAll('.submenu-link, .menu-link a').forEach(link => {
         if (isUrlMatch(link.getAttribute('href'))) {
             link.classList.remove('text-gray-600', 'hover:bg-gray-100', 'hover:text-gray-900');
             link.classList.add('bg-blue-50', 'text-blue-600', 'font-medium');
 
-            if (!link.querySelector('.w-1\\.5')) {
+            if (!link.querySelector('.w-1\\.5') && link.classList.contains('submenu-link')) {
                 const bullet = document.createElement('span');
                 bullet.className = 'w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0';
                 link.insertBefore(bullet, link.firstChild);

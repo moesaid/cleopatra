@@ -1,0 +1,115 @@
+{{> start pageTitle="Code Blocks" pageDescription="Code display and syntax highlighting"}}
+
+<!-- Page Content -->
+<div class="grid grid-cols-1 gap-6">
+    <!-- Basic Code Block -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Basic Code Block</h3>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet('World');</code></pre>
+    </div>
+
+    <!-- Inline Code -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Inline Code</h3>
+        <p class="text-sm text-gray-600">
+            Use the <code class="px-1.5 py-0.5 bg-gray-100 text-gray-800 text-xs rounded font-mono">console.log()</code>
+            method to print output.
+            You can also use <code
+                class="px-1.5 py-0.5 bg-gray-100 text-gray-800 text-xs rounded font-mono">npm install</code> to add
+            packages.
+        </p>
+    </div>
+
+    <!-- Code with Line Numbers -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">With Line Numbers</h3>
+        <div class="bg-gray-900 rounded-lg overflow-hidden">
+            <div class="flex text-sm">
+                <div class="py-4 px-4 text-gray-500 select-none border-r border-gray-700 text-right">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </div>
+                <pre class="py-4 px-4 text-gray-100 overflow-x-auto flex-1"><code>import React from 'react';
+
+export function App() {
+  return &lt;h1&gt;Hello World&lt;/h1&gt;;
+}
+
+export default App;</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multiple Languages -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Multiple Languages</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 rounded">JavaScript</span>
+                </div>
+                <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>const sum = (a, b) => a + b;
+console.log(sum(2, 3));</code></pre>
+            </div>
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-xs bg-blue-100 text-blue-800 rounded">Python</span>
+                </div>
+                <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>def sum(a, b):
+    return a + b
+print(sum(2, 3))</code></pre>
+            </div>
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-xs bg-orange-100 text-orange-800 rounded">HTML</span>
+                </div>
+                <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>&lt;div class="container"&gt;
+  &lt;h1&gt;Hello&lt;/h1&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            <div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="px-2 py-0.5 text-xs bg-purple-100 text-purple-800 rounded">CSS</span>
+                </div>
+                <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>.container {
+  display: flex;
+  gap: 1rem;
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- With Copy Button -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">With Copy Button</h3>
+        <div class="relative">
+            <button onclick="copyCode(this)"
+                class="absolute top-3 right-3 px-2 py-1 text-xs text-gray-400 hover:text-white bg-gray-800 rounded transition-colors">
+                <i class="ri-file-copy-line mr-1"></i>Copy
+            </button>
+            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto"><code>npm install @cleopatra/ui
+npm run dev</code></pre>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyCode(btn) {
+        const code = btn.parentElement.querySelector('code').textContent;
+        navigator.clipboard.writeText(code);
+        btn.innerHTML = '<i class="ri-check-line mr-1"></i>Copied!';
+        setTimeout(() => {
+            btn.innerHTML = '<i class="ri-file-copy-line mr-1"></i>Copy';
+        }, 2000);
+    }
+</script>
+
+{{> end}}

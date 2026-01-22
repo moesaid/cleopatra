@@ -1,0 +1,94 @@
+{{> start pageTitle="Cards" pageDescription="Card components for displaying content"}}
+
+<!-- Page Content -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Basic Card -->
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Basic Card</h3>
+            <p class="text-sm text-gray-500">This is a basic card with just a body content area. Perfect for simple
+                content display.</p>
+        </div>
+    </div>
+
+    <!-- Card with Header -->
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-100">
+            <h3 class="text-lg font-semibold text-gray-900">Card with Header</h3>
+        </div>
+        <div class="p-6">
+            <p class="text-sm text-gray-500">This card includes a header section with a title, separated by a border.
+            </p>
+        </div>
+    </div>
+
+    <!-- Card with Footer -->
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Card with Footer</h3>
+            <p class="text-sm text-gray-500">This card includes a footer section for actions or additional information.
+            </p>
+        </div>
+        <div class="px-6 py-4 border-t border-gray-100 bg-gray-50">
+            <button class="text-sm text-blue-600 hover:text-blue-800 font-medium">Learn More →</button>
+        </div>
+    </div>
+
+    <!-- Image Card -->
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <div class="h-40 bg-gradient-to-br from-rose-400 to-orange-400"></div>
+        <div class="p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Image Card</h3>
+            <p class="text-sm text-gray-500">Cards can include images or gradients at the top for visual appeal.</p>
+        </div>
+    </div>
+
+    <!-- Card with Icon -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <i class="ri-rocket-line text-xl text-blue-600"></i>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Feature Card</h3>
+        <p class="text-sm text-gray-500">Use icon cards to highlight features or services with visual icons.</p>
+    </div>
+
+    <!-- Card with Badge -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6 relative">
+        <span
+            class="absolute top-4 right-4 px-2 py-0.5 text-xs font-medium bg-green-100 text-green-800 rounded">New</span>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Card with Badge</h3>
+        <p class="text-sm text-gray-500">Add badges to highlight new items, status, or important information.</p>
+    </div>
+
+    <!-- Hoverable Card -->
+    <div
+        class="bg-white rounded-xl border border-gray-200 p-6 transition-all duration-300 hover:shadow-lg hover:border-gray-300 cursor-pointer">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Hoverable Card</h3>
+        <p class="text-sm text-gray-500">This card has a hover effect with shadow and border changes.</p>
+    </div>
+
+    <!-- Stats Card -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-sm text-gray-500">Total Revenue</span>
+            <span class="text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded">+12.5%</span>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900">$45,231</h3>
+        <p class="text-xs text-gray-400 mt-1">Compared to last month</p>
+    </div>
+
+    <!-- User Card -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6 text-center">
+        <div class="w-16 h-16 bg-gradient-to-br from-rose-400 to-orange-400 rounded-full mx-auto mb-4"></div>
+        <h3 class="text-lg font-semibold text-gray-900">Jane Cooper</h3>
+        <p class="text-sm text-gray-500 mb-4">Product Designer</p>
+        <div class="flex justify-center gap-2">
+            <button
+                class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700">Follow</button>
+            <button
+                class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50">Message</button>
+        </div>
+    </div>
+</div>
+
+{{> end}}

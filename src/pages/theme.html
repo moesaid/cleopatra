@@ -1,0 +1,197 @@
+{{> start pageTitle="Theme Configuration" pageDescription="Customize your dashboard theme using CSS variables"}}
+
+<!-- Page Content -->
+<div class="space-y-6">
+    <!-- Theme Overview -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Theme Configuration</h3>
+        <p class="text-sm text-gray-500 mb-6">Cleopatra uses CSS variables for theming, inspired by <a
+                href="https://ui.shadcn.com" class="text-blue-600 hover:underline">shadcn/ui</a>. Customize your theme
+            by editing <code class="px-1.5 py-0.5 bg-gray-100 text-gray-800 text-xs rounded">src/styles/theme.css</code>
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Color Variables -->
+            <div>
+                <h4 class="text-sm font-semibold text-gray-900 mb-3">Color Variables</h4>
+                <div class="space-y-2 text-sm font-mono">
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded bg-primary"></span>
+                        <code>--primary</code>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded bg-secondary border border-gray-200"></span>
+                        <code>--secondary</code>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded bg-destructive"></span>
+                        <code>--destructive</code>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded bg-success"></span>
+                        <code>--success</code>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded bg-warning"></span>
+                        <code>--warning</code>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 rounded bg-info"></span>
+                        <code>--info</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Usage Example -->
+            <div>
+                <h4 class="text-sm font-semibold text-gray-900 mb-3">How to Use</h4>
+                <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-x-auto"><code>/* In your CSS */
+.my-button {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: var(--radius);
+}
+
+/* Or use utility classes */
+.my-element {
+  @apply bg-primary text-primary-foreground;
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Palette Preview -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Color Palette</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div>
+                <div class="h-20 rounded-lg bg-primary mb-2"></div>
+                <p class="text-xs font-medium text-gray-900">Primary</p>
+                <p class="text-xs text-gray-500">Rose 500</p>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-secondary border border-gray-200 mb-2"></div>
+                <p class="text-xs font-medium text-gray-900">Secondary</p>
+                <p class="text-xs text-gray-500">Gray 100</p>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-success mb-2"></div>
+                <p class="text-xs font-medium text-gray-900">Success</p>
+                <p class="text-xs text-gray-500">Green 600</p>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-warning mb-2"></div>
+                <p class="text-xs font-medium text-gray-900">Warning</p>
+                <p class="text-xs text-gray-500">Yellow 500</p>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-destructive mb-2"></div>
+                <p class="text-xs font-medium text-gray-900">Destructive</p>
+                <p class="text-xs text-gray-500">Red 500</p>
+            </div>
+            <div>
+                <div class="h-20 rounded-lg bg-info mb-2"></div>
+                <p class="text-xs font-medium text-gray-900">Info</p>
+                <p class="text-xs text-gray-500">Blue 600</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Border Radius -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Border Radius</h3>
+        <div class="flex flex-wrap gap-6">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gray-200 rounded-theme-sm mb-2 mx-auto"></div>
+                <code class="text-xs">--radius-sm</code>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gray-200 rounded-theme mb-2 mx-auto"></div>
+                <code class="text-xs">--radius</code>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gray-200 rounded-theme-md mb-2 mx-auto"></div>
+                <code class="text-xs">--radius-md</code>
+            </div>
+            <div class="text-center">
+                <div class="w-20 h-20 bg-gray-200 rounded-theme-lg mb-2 mx-auto"></div>
+                <code class="text-xs">--radius-lg</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shadows -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Shadows</h3>
+        <div class="flex flex-wrap gap-6">
+            <div class="text-center">
+                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-sm mb-2"></div>
+                <code class="text-xs">--shadow-sm</code>
+            </div>
+            <div class="text-center">
+                <div class="w-24 h-24 bg-white rounded-lg shadow-theme mb-2"></div>
+                <code class="text-xs">--shadow</code>
+            </div>
+            <div class="text-center">
+                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-md mb-2"></div>
+                <code class="text-xs">--shadow-md</code>
+            </div>
+            <div class="text-center">
+                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-lg mb-2"></div>
+                <code class="text-xs">--shadow-lg</code>
+            </div>
+            <div class="text-center">
+                <div class="w-24 h-24 bg-white rounded-lg shadow-theme-xl mb-2"></div>
+                <code class="text-xs">--shadow-xl</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Variables Reference -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Full Variables Reference</h3>
+        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg text-xs overflow-x-auto max-h-96"><code>:root {
+  /* Base Colors */
+  --background: 0 0% 98%;
+  --foreground: 222.2 84% 4.9%;
+  
+  /* Primary - Brand Color */
+  --primary: 346.8 77.2% 49.8%;
+  --primary-foreground: 355.7 100% 97.3%;
+  
+  /* Secondary */
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  
+  /* Muted */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  /* Accent */
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  
+  /* Destructive */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  
+  /* Success */
+  --success: 142.1 76.2% 36.3%;
+  --success-foreground: 355.7 100% 97.3%;
+  
+  /* Warning */
+  --warning: 38 92% 50%;
+  --warning-foreground: 48 96% 89%;
+  
+  /* Info */
+  --info: 221.2 83.2% 53.3%;
+  --info-foreground: 210 40% 98%;
+  
+  /* Border & Radius */
+  --border: 214.3 31.8% 91.4%;
+  --radius: 0.5rem;
+}</code></pre>
+    </div>
+</div>
+
+{{> end}}

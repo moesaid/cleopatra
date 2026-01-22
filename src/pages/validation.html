@@ -1,0 +1,145 @@
+{{> start pageTitle="Validation" pageDescription="Form validation examples and patterns"}}
+
+<!-- Page Content -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <!-- Success State -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Success State</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <div class="relative">
+                    <input type="email" value="valid@email.com"
+                        class="w-full px-4 py-2 border border-green-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500 pr-10">
+                    <i class="ri-check-line absolute right-3 top-1/2 -translate-y-1/2 text-green-500"></i>
+                </div>
+                <p class="text-xs text-green-600 mt-1">Email is valid</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error State -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Error State</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <div class="relative">
+                    <input type="password" value="123"
+                        class="w-full px-4 py-2 border border-red-500 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-red-500 pr-10">
+                    <i class="ri-error-warning-line absolute right-3 top-1/2 -translate-y-1/2 text-red-500"></i>
+                </div>
+                <p class="text-xs text-red-600 mt-1">Password must be at least 8 characters</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complete Form Example -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6 lg:col-span-2">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Registration Form</h3>
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">First Name <span
+                        class="text-red-500">*</span></label>
+                <input type="text" placeholder="John"
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name <span
+                        class="text-red-500">*</span></label>
+                <input type="text" placeholder="Doe"
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+            </div>
+            <div class="md:col-span-2">
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email <span
+                        class="text-red-500">*</span></label>
+                <input type="email" placeholder="john@example.com"
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Password <span
+                        class="text-red-500">*</span></label>
+                <input type="password" placeholder="••••••••"
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+                <p class="text-xs text-gray-400 mt-1">At least 8 characters</p>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password <span
+                        class="text-red-500">*</span></label>
+                <input type="password" placeholder="••••••••"
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+            </div>
+            <div class="md:col-span-2">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" required
+                        class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                    <span class="text-sm text-gray-700">I agree to the <a href="#"
+                            class="text-blue-600 hover:underline">Terms and Conditions</a></span>
+                </label>
+            </div>
+            <div class="md:col-span-2">
+                <button type="submit"
+                    class="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+                    Create Account
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Password Strength -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Password Strength</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                <input type="password" placeholder="Enter password..."
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <div class="flex gap-1 mb-2">
+                    <div class="h-1 flex-1 bg-red-500 rounded"></div>
+                    <div class="h-1 flex-1 bg-yellow-500 rounded"></div>
+                    <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+                    <div class="h-1 flex-1 bg-gray-200 rounded"></div>
+                </div>
+                <p class="text-xs text-yellow-600">Medium strength</p>
+            </div>
+            <ul class="text-xs space-y-1">
+                <li class="flex items-center gap-2 text-green-600"><i class="ri-check-line"></i> At least 8 characters
+                </li>
+                <li class="flex items-center gap-2 text-green-600"><i class="ri-check-line"></i> Contains uppercase</li>
+                <li class="flex items-center gap-2 text-gray-400"><i class="ri-close-line"></i> Contains number</li>
+                <li class="flex items-center gap-2 text-gray-400"><i class="ri-close-line"></i> Contains special
+                    character</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Required Fields -->
+    <div class="bg-white rounded-xl border border-gray-200 p-6">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Required Field Indicators</h3>
+        <div class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Required Field <span class="text-red-500">*</span>
+                </label>
+                <input type="text" placeholder="This field is required"
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Optional Field <span class="text-gray-400 font-normal">(optional)</span>
+                </label>
+                <input type="text" placeholder="This field is optional"
+                    class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> end}}
