@@ -1,0 +1,84 @@
+<!-- CEO Pulse Bar - Real-Time Vitals Strip -->
+<div class="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border">
+    <div class="max-w-[1600px] mx-auto px-3 sm:px-4 lg:px-8">
+        <div class="flex items-center justify-between h-12 sm:h-14 gap-2 sm:gap-4 overflow-x-auto scrollbar-hide">
+
+            <!-- Concurrent Users -->
+            <div class="flex items-center gap-2 sm:gap-3 min-w-fit">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <span class="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-primary"></span>
+                    </span>
+                    <span
+                        class="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider hidden xs:inline">Live
+                        Users</span>
+                </div>
+                <span id="pulse-concurrent-users"
+                    class="text-sm sm:text-lg font-bold font-mono text-foreground tabular-nums">245,031,202</span>
+            </div>
+
+            <div class="w-px h-6 sm:h-8 bg-border hidden sm:block"></div>
+
+            <!-- Ad Velocity -->
+            <div class="flex items-center gap-2 sm:gap-3 min-w-fit">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                    <span
+                        class="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:inline">Ad
+                        Velocity</span>
+                </div>
+                <span class="text-sm sm:text-lg font-bold font-mono text-amber-500 tabular-nums">
+                    <span id="pulse-ad-velocity">$12,450</span><span
+                        class="text-[10px] sm:text-xs text-muted-foreground">/min</span>
+                </span>
+            </div>
+
+            <div class="w-px h-6 sm:h-8 bg-border hidden sm:block"></div>
+
+            <!-- Server Health -->
+            <div class="flex items-center gap-2 sm:gap-3 min-w-fit">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+                    </svg>
+                    <span
+                        class="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wider hidden sm:inline">Systems</span>
+                </div>
+                <span
+                    class="inline-flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-semibold bg-primary/10 text-primary font-mono">
+                    <span class="w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full bg-primary"></span>
+                    <span id="pulse-server-health">99.998%</span>
+                </span>
+            </div>
+
+            <div class="w-px h-6 sm:h-8 bg-border hidden sm:block"></div>
+
+            <!-- Stock Ticker -->
+            <div class="flex items-center gap-2 sm:gap-3 min-w-fit">
+                <div class="flex items-center gap-1.5 sm:gap-2">
+                    <span class="text-[10px] sm:text-xs font-bold text-muted-foreground">$SOCL</span>
+                </div>
+                <div class="flex items-center gap-1 sm:gap-1.5">
+                    <span id="pulse-stock-price"
+                        class="text-sm sm:text-lg font-bold font-mono text-foreground tabular-nums">$342.87</span>
+                    <span class="inline-flex items-center gap-0.5 text-[10px] sm:text-xs font-semibold text-primary">
+                        <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                        <span id="pulse-stock-change">+2.34%</span>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

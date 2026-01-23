@@ -12,7 +12,7 @@ const menuData = [
         icon: 'ri-layout-grid-line',
         children: [
             { id: 'analytics-dashboard', label: 'Analytics Dashboard', href: '/pages/' },
-            { id: 'crm-dashboard', label: 'CRM Dashboard', href: '/pages/index-1.html' }
+            { id: 'mission-control', label: 'Mission Control', href: '/pages/index-mission-control.html' }
         ]
     },
     {

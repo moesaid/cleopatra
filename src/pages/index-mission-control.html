@@ -1,0 +1,40 @@
+{{> start title="Mission Control" hidePageHeader=true }}
+
+<!-- CEO Pulse Bar - Sticky Real-Time Vitals -->
+{{> widgets/ceo-pulse-bar/ceo-pulse-bar }}
+
+<!-- Dashboard Content -->
+<div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6">
+
+  <!-- Mission Control Header Widget -->
+  {{> widgets/mission-control-header/mission-control-header }}
+
+  <!-- Main Grid: Sentiment Map (2/3) + Crisis Monitor (1/3) -->
+  <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 sm:gap-6">
+    <!-- Global Sentiment Map - Spans 2 columns -->
+    <div class="xl:col-span-2">
+      {{> widgets/global-sentiment-map/global-sentiment-map }}
+    </div>
+
+    <!-- Crisis Monitor - 1 column -->
+    <div class="xl:col-span-1">
+      {{> widgets/crisis-monitor/crisis-monitor }}
+    </div>
+  </div>
+
+  <!-- Bottom Row: Retention Chart + Revenue Breakdown -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+    <!-- User Retention Chart -->
+    <div>
+      {{> widgets/user-retention-chart/user-retention-chart }}
+    </div>
+
+    <!-- Revenue Breakdown -->
+    <div>
+      {{> widgets/revenue-breakdown/revenue-breakdown }}
+    </div>
+  </div>
+
+</div>
+
+{{> end }}

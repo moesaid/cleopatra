@@ -1,0 +1,128 @@
+<!-- Crisis Monitor - Moderation Queue & Advertiser Health -->
+<div class="flex flex-col gap-3 sm:gap-4 h-full">
+
+    <!-- Moderation Load Card -->
+    <div class="bg-card border border-border rounded-xl shadow-sm flex-1">
+        <div class="p-3 sm:p-4 border-b border-border">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xs sm:text-sm font-semibold text-foreground">Moderation Load</h3>
+                <span
+                    class="inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-semibold bg-amber-500/10 text-amber-500">
+                    <span class="w-1 h-1 rounded-full bg-amber-500"></span>
+                    ELEVATED
+                </span>
+            </div>
+        </div>
+        <div class="p-3 sm:p-4 space-y-3 sm:space-y-4">
+            <!-- AI Queue - Uses primary color -->
+            <div class="space-y-1.5 sm:space-y-2">
+                <div class="flex items-center justify-between text-[10px] sm:text-xs">
+                    <span class="text-muted-foreground">AI Moderation</span>
+                    <span class="font-mono font-medium text-foreground">1.24M / 5M</span>
+                </div>
+                <div class="h-1.5 sm:h-2 bg-muted rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 25%"></div>
+                </div>
+                <p class="text-[9px] sm:text-[10px] text-muted-foreground">Processing: 45,000/sec</p>
+            </div>
+
+            <!-- Human Queue -->
+            <div class="space-y-1.5 sm:space-y-2">
+                <div class="flex items-center justify-between text-[10px] sm:text-xs">
+                    <span class="text-muted-foreground">Human Review</span>
+                    <span class="font-mono font-medium text-amber-500">89.2K / 100K</span>
+                </div>
+                <div class="h-1.5 sm:h-2 bg-muted rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 rounded-full transition-all duration-500" style="width: 89%"></div>
+                </div>
+                <p class="text-[9px] sm:text-[10px] text-amber-500">⚠ Queue nearing capacity • Avg wait: 4.2 min</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-3 gap-1.5 sm:gap-2 pt-2 border-t border-border">
+                <div class="text-center">
+                    <p class="text-xs sm:text-sm font-bold font-mono text-red-500">234K</p>
+                    <p class="text-[8px] sm:text-[10px] text-muted-foreground">Removed</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-xs sm:text-sm font-bold font-mono text-amber-500">12.4K</p>
+                    <p class="text-[8px] sm:text-[10px] text-muted-foreground">Escalated</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-xs sm:text-sm font-bold font-mono text-primary">892K</p>
+                    <p class="text-[8px] sm:text-[10px] text-muted-foreground">Cleared</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advertiser Health Card -->
+    <div class="bg-card border border-border rounded-xl shadow-sm flex-1">
+        <div class="p-3 sm:p-4 border-b border-border">
+            <h3 class="text-xs sm:text-sm font-semibold text-foreground">Top Advertisers</h3>
+        </div>
+        <div class="p-3 sm:p-4">
+            <div class="space-y-2 sm:space-y-3">
+                <!-- Nike - Active -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-primary"></span>
+                        <span class="text-xs sm:text-sm font-medium text-foreground">Nike</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[10px] sm:text-xs font-mono text-muted-foreground">$2.4M/day</span>
+                        <span class="text-[9px] sm:text-[10px] text-primary ml-1">+12%</span>
+                    </div>
+                </div>
+
+                <!-- Coca-Cola - Paused -->
+                <div
+                    class="flex items-center justify-between bg-red-500/5 -mx-3 sm:-mx-4 px-3 sm:px-4 py-1.5 sm:py-2 border-l-2 border-red-500">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-red-500"></span>
+                        <span class="text-xs sm:text-sm font-medium text-foreground">Coca-Cola</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[9px] sm:text-[10px] text-red-500 font-medium">PAUSED</span>
+                    </div>
+                </div>
+                <p class="text-[9px] sm:text-[10px] text-red-500 -mt-1 pl-3.5 sm:pl-4">Brand Safety Review Required</p>
+
+                <!-- Samsung - Active -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-primary"></span>
+                        <span class="text-xs sm:text-sm font-medium text-foreground">Samsung</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[10px] sm:text-xs font-mono text-muted-foreground">$1.6M/day</span>
+                        <span class="text-[9px] sm:text-[10px] text-primary ml-1">+8%</span>
+                    </div>
+                </div>
+
+                <!-- Amazon - Active but declining -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-primary"></span>
+                        <span class="text-xs sm:text-sm font-medium text-foreground">Amazon</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[10px] sm:text-xs font-mono text-muted-foreground">$1.4M/day</span>
+                        <span class="text-[9px] sm:text-[10px] text-red-500 ml-1">-3%</span>
+                    </div>
+                </div>
+
+                <!-- Disney - Reduced -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-amber-500"></span>
+                        <span class="text-xs sm:text-sm font-medium text-foreground">Disney</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-[9px] sm:text-[10px] text-amber-500 font-medium">REDUCED</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
