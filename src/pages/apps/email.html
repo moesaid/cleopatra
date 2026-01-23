@@ -1,91 +1,52 @@
-{{#> start pageTitle="Email" pageDescription="Email inbox interface"}}{{/start}}
+{{> start title="Email" hidePageHeader=true }}
 
-<div class="bg-white rounded-xl border border-gray-100 overflow-hidden">
-  <div class="grid grid-cols-12">
-    <!-- Sidebar -->
-    <div class="col-span-3 border-r border-gray-100 p-4">
+<!-- Email App Container -->
+<div class="h-[calc(100vh-120px)] flex flex-col">
+
+  <!-- Email Header -->
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
+    <h1 class="text-xl sm:text-2xl font-bold text-foreground">Emails</h1>
+    <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
+      <!-- Search Bar -->
+      <div class="relative flex-1 sm:flex-none">
+        <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" fill="none"
+          stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" placeholder="Search Email"
+          class="pl-10 pr-4 py-2 w-full sm:w-48 md:w-64 bg-card border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors">
+      </div>
+      <!-- New Message Button -->
       <button
-        class="w-full px-4 py-2.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition mb-6">
-        <i class="ri-add-line mr-2"></i>Compose
+        class="px-3 sm:px-4 py-2 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors flex items-center gap-2 text-sm flex-shrink-0">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+        </svg>
+        <span class="hidden sm:inline">New Message</span>
+        <span class="sm:hidden">New</span>
       </button>
+    </div>
+  </div>
 
-      <nav class="space-y-1">
-        <a href="#"
-          class="flex items-center justify-between px-3 py-2.5 bg-indigo-50 text-indigo-600 rounded-lg font-medium">
-          <span class="flex items-center gap-3">
-            <i class="ri-inbox-line"></i>
-            <span class="text-sm">Inbox</span>
-          </span>
-          <span class="text-xs bg-indigo-600 text-white px-2 py-0.5 rounded-full">24</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
-          <i class="ri-send-plane-line text-gray-400"></i>
-          <span class="text-sm">Sent</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
-          <i class="ri-draft-line text-gray-400"></i>
-          <span class="text-sm">Drafts</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
-          <i class="ri-star-line text-gray-400"></i>
-          <span class="text-sm">Starred</span>
-        </a>
-        <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-gray-600 hover:bg-gray-50 rounded-lg">
-          <i class="ri-delete-bin-line text-gray-400"></i>
-          <span class="text-sm">Trash</span>
-        </a>
-      </nav>
+  <!-- Main Email Grid - Responsive Layout -->
+  <!-- Mobile: only email list | Tablet (md): list + content | Desktop (xl): all 3 columns -->
+  <div class="flex-1 bg-card border border-border rounded-xl overflow-hidden flex flex-col md:flex-row">
+
+    <!-- Column 1: Email List (always visible) -->
+    {{> email/email-list }}
+
+    <!-- Column 2: Email Content (hidden on mobile) -->
+    <div class="hidden md:flex md:flex-1 md:flex-col md:border-l md:border-border">
+      {{> email/email-content }}
     </div>
 
-    <!-- Email List -->
-    <div class="col-span-9">
-      <div class="border-b border-gray-100 px-4 py-3 flex items-center gap-4">
-        <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
-        <button class="text-gray-400 hover:text-gray-600"><i class="ri-refresh-line"></i></button>
-        <button class="text-gray-400 hover:text-gray-600"><i class="ri-archive-line"></i></button>
-        <button class="text-gray-400 hover:text-gray-600"><i class="ri-delete-bin-line"></i></button>
-      </div>
-
-      <!-- Email Items -->
-      <div class="divide-y divide-gray-100">
-        <div class="px-4 py-3 flex items-center gap-4 hover:bg-gray-50 cursor-pointer bg-indigo-50/30">
-          <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
-          <button class="text-amber-400"><i class="ri-star-fill"></i></button>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 mb-1">
-              <span class="font-medium text-gray-900 text-sm">Team Cleopatra</span>
-              <span class="text-xs text-gray-400">10:42 AM</span>
-            </div>
-            <p class="text-sm text-gray-600 truncate">Welcome to Cleopatra Dashboard - Your journey starts here...</p>
-          </div>
-        </div>
-
-        <div class="px-4 py-3 flex items-center gap-4 hover:bg-gray-50 cursor-pointer">
-          <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
-          <button class="text-gray-300 hover:text-amber-400"><i class="ri-star-line"></i></button>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 mb-1">
-              <span class="font-medium text-gray-900 text-sm">Support</span>
-              <span class="text-xs text-gray-400">Yesterday</span>
-            </div>
-            <p class="text-sm text-gray-500 truncate">Your ticket #1234 has been resolved</p>
-          </div>
-        </div>
-
-        <div class="px-4 py-3 flex items-center gap-4 hover:bg-gray-50 cursor-pointer">
-          <input type="checkbox" class="w-4 h-4 rounded border-gray-300">
-          <button class="text-gray-300 hover:text-amber-400"><i class="ri-star-line"></i></button>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 mb-1">
-              <span class="text-gray-600 text-sm">Newsletter</span>
-              <span class="text-xs text-gray-400">2 days ago</span>
-            </div>
-            <p class="text-sm text-gray-500 truncate">Check out the latest features and updates...</p>
-          </div>
-        </div>
-      </div>
+    <!-- Column 3: Reply Composer (hidden on mobile/tablet) -->
+    <div class="hidden xl:flex xl:w-96 xl:flex-col xl:border-l xl:border-border">
+      {{> email/email-composer }}
     </div>
+
   </div>
 </div>
 
-{{> end}}
+{{> end }}

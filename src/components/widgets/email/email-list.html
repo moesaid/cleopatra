@@ -1,0 +1,188 @@
+<!-- Email List Widget - Column 1 -->
+<div class="w-full md:w-80 md:border-r border-border flex flex-col flex-shrink-0">
+    <!-- Tabs -->
+    <div class="p-2 sm:p-3 border-b border-border flex items-center gap-1 overflow-x-auto">
+        <button class="px-4 py-2 text-sm font-medium text-foreground bg-muted rounded-lg">All</button>
+        <button
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-muted/50 rounded-lg transition-colors">Unread</button>
+        <button
+            class="px-4 py-2 text-sm font-medium text-muted-foreground hover:bg-muted/50 rounded-lg transition-colors">Archive</button>
+        <button class="p-2 text-muted-foreground hover:bg-muted/50 rounded-lg transition-colors ml-auto">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="5" r="2" />
+                <circle cx="12" cy="12" r="2" />
+                <circle cx="12" cy="19" r="2" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Email List Items -->
+    <div class="flex-1 overflow-y-auto">
+        <!-- Email Item -->
+        <div class="px-4 py-3 border-b border-border/50 hover:bg-muted/30 cursor-pointer group">
+            <div class="flex items-start gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                    ML
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-medium text-foreground text-sm">Michael Lee</span>
+                        <span class="text-xs text-muted-foreground">9:00</span>
+                    </div>
+                    <p class="text-sm font-medium text-foreground truncate mb-0.5">Follow-Up: Product Demo Feedba...</p>
+                    <p class="text-xs text-muted-foreground truncate">Hi John, Thank you for attending the product...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selected Email Item -->
+        <div
+            class="px-4 py-3 border-b border-border/50 bg-muted/50 cursor-pointer border-l-2 border-primary group relative">
+            <div class="flex items-start gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                    JD
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-semibold text-foreground text-sm">Jane Doe</span>
+                        <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    </div>
+                    <p class="text-sm font-medium text-foreground truncate mb-0.5">Proposal for Partnership 🎉</p>
+                    <p class="text-xs text-muted-foreground truncate">Hi John, Hope this email finds you well. I'm
+                        rea...</p>
+                </div>
+            </div>
+            <!-- Hover Actions -->
+            <div
+                class="absolute right-3 top-3 hidden group-hover:flex items-center gap-1 bg-card border border-border rounded-lg shadow-lg p-1">
+                <button
+                    class="p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                    </svg>
+                </button>
+                <button
+                    class="p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                    </svg>
+                </button>
+                <button
+                    class="p-1.5 text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="2" />
+                        <circle cx="12" cy="12" r="2" />
+                        <circle cx="12" cy="19" r="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- More Email Items -->
+        <div class="px-4 py-3 border-b border-border/50 hover:bg-muted/30 cursor-pointer group">
+            <div class="flex items-start gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                    ST
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="font-medium text-foreground text-sm">Support Team</span>
+                        <span class="text-xs text-muted-foreground">11 Dec</span>
+                    </div>
+                    <p class="text-sm font-medium text-foreground truncate mb-0.5">Contract Renewal Due 🚨</p>
+                    <p class="text-xs text-muted-foreground truncate">Dear John, This is a reminder that the contract...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 py-3 border-b border-border/50 hover:bg-muted/30 cursor-pointer group">
+            <div class="flex items-start gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-violet-400 to-purple-600 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                    SC
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-foreground text-sm">Sarah Connor</span>
+                        <span class="text-xs text-muted-foreground">11 Dec</span>
+                    </div>
+                    <p class="text-sm text-foreground truncate mb-0.5">Meeting Recap: Strategies for 2...</p>
+                    <p class="text-xs text-muted-foreground truncate">Hi John, Thank you for your insights during ye...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 py-3 border-b border-border/50 hover:bg-muted/30 cursor-pointer group">
+            <div class="flex items-start gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-pink-600 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                    DJ
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-foreground text-sm">Downe Johnson</span>
+                        <span class="text-xs text-muted-foreground">11 Dec</span>
+                    </div>
+                    <p class="text-sm text-foreground truncate mb-0.5">Invitation: Annual Client Appreci...</p>
+                    <p class="text-xs text-muted-foreground truncate">Dear John, We are delighted to invite you to o...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 py-3 border-b border-border/50 hover:bg-muted/30 cursor-pointer group">
+            <div class="flex items-start gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                    LA
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-foreground text-sm">Lily Alexa</span>
+                        <span class="text-xs text-muted-foreground">10 Dec</span>
+                    </div>
+                    <p class="text-sm text-foreground truncate mb-0.5">Technical Support Update</p>
+                    <p class="text-xs text-muted-foreground truncate">Dear John, Your issue regarding server conne...
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-4 py-3 border-b border-border/50 hover:bg-muted/30 cursor-pointer group">
+            <div class="flex items-start gap-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white text-sm font-medium flex-shrink-0">
+                    NB
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-foreground text-sm">Natasha Brown</span>
+                        <span class="text-xs text-muted-foreground">10 Dec</span>
+                    </div>
+                    <p class="text-sm text-foreground truncate mb-0.5">Happy Holidays from Kozuki tea...</p>
+                    <p class="text-xs text-muted-foreground truncate">Hi John, As the holiday season approaches, w...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="p-2 sm:p-3 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+        <div class="hidden sm:flex items-center gap-2">
+            <div class="w-24 h-1.5 bg-muted rounded-full overflow-hidden">
+                <div class="w-3/5 h-full bg-primary rounded-full"></div>
+            </div>
+            <span>6.2GB of 10GB</span>
+        </div>
+        <span class="sm:ml-auto">1-20 of 2,312</span>
+    </div>
+</div>
