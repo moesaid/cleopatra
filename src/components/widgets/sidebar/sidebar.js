@@ -29,11 +29,15 @@ const menuData = [
         href: '/pages/apps/email.html'
     },
     {
+        type: 'category',
+        label: 'EXTRA'
+    },
+    {
         type: 'link',
         id: 'blank-page',
         label: 'Blank Page',
         icon: 'ri-file-line',
-        href: '/pages/settings/blank.html'
+        href: '/pages/extra/blank.html'
     },
     {
         type: 'category',
