@@ -1,0 +1,70 @@
+<!-- AI Chat Quick Actions Widget -->
+<!-- Grid of action cards for common AI tasks -->
+<!-- Uses semantic theme colors: info, primary, success -->
+
+<div class="w-full max-w-3xl mb-8">
+    <div class="flex items-center justify-between mb-4">
+        <h3 class="text-sm font-semibold text-foreground">Quick Actions</h3>
+        <button class="text-sm text-muted-foreground hover:text-foreground flex items-center gap-1.5 transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            Edit Actions
+        </button>
+    </div>
+
+    <!-- Action Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- Card 1: View Sales Performance (Info color) -->
+        <button
+            class="group relative bg-info/5 dark:bg-info/10 border border-info/20 dark:border-info/30 rounded-xl p-4 text-left hover:bg-info/10 dark:hover:bg-info/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 bg-info rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+            </div>
+            <div class="font-medium text-foreground">View</div>
+            <div class="text-sm text-muted-foreground">Sales Performance</div>
+            <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <!-- Card 2: Generate Sales Forecast (Primary color) -->
+        <button
+            class="group relative bg-primary/5 dark:bg-primary/10 border border-primary/20 dark:border-primary/30 rounded-xl p-4 text-left hover:bg-primary/10 dark:hover:bg-primary/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+            </div>
+            <div class="font-medium text-foreground">Generate</div>
+            <div class="text-sm text-muted-foreground">Sales Forecast</div>
+            <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <!-- Card 3: Identify Performing Products (Success color) -->
+        <button
+            class="group relative bg-success/5 dark:bg-success/10 border border-success/20 dark:border-success/30 rounded-xl p-4 text-left hover:bg-success/10 dark:hover:bg-success/20 hover:shadow-md transition-all">
+            <div class="w-10 h-10 bg-success rounded-lg flex items-center justify-center mb-3">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <div class="font-medium text-foreground">Identify</div>
+            <div class="text-sm text-muted-foreground">Performing Products</div>
+            <svg class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+</div>

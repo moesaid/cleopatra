@@ -1,0 +1,20 @@
+{{> start title="AI Chat" hidePageHeader=true }}
+
+<!-- AI Chat App Container -->
+<div class="min-h-[calc(100vh-120px)] flex flex-col items-center px-4 py-8">
+
+    <!-- 1. Greeting Section -->
+    {{> ai-chat/ai-chat-greeting }}
+
+    <!-- 2. Quick Actions Grid -->
+    {{> ai-chat/ai-chat-quick-actions }}
+
+    <!-- 3. Chat Input -->
+    {{> ai-chat/ai-chat-input }}
+
+    <!-- 4. Prompt Suggestions -->
+    {{> ai-chat/ai-chat-prompts }}
+
+</div>
+
+{{> end }}

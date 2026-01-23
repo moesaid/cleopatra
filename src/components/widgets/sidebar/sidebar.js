@@ -29,6 +29,62 @@ const menuData = [
         href: '/pages/apps/email.html'
     },
     {
+        type: 'link',
+        id: 'calendar',
+        label: 'Calendar',
+        icon: 'ri-calendar-line',
+        href: '/pages/apps/calendar.html'
+    },
+    {
+        type: 'link',
+        id: 'ai-chat',
+        label: 'AI Chat',
+        icon: 'ri-chat-ai-line',
+        href: '/pages/apps/ai-chat.html'
+    },
+    {
+        type: 'link',
+        id: 'user-management',
+        label: 'User Management',
+        icon: 'ri-user-settings-line',
+        href: '/pages/apps/user-management.html'
+    },
+    {
+        type: 'link',
+        id: 'todo',
+        label: 'Todo',
+        icon: 'ri-checkbox-line',
+        href: '/pages/apps/todo.html'
+    },
+    {
+        type: 'link',
+        id: 'retail-store',
+        label: 'Retail Store',
+        icon: 'ri-store-2-line',
+        href: '/pages/apps/retail-store.html'
+    },
+    {
+        type: 'link',
+        id: 'crm',
+        label: 'CRM',
+        icon: 'ri-contacts-book-line',
+        href: '/pages/apps/crm.html'
+    },
+    {
+        type: 'link',
+        id: 'inventory',
+        label: 'Inventory',
+        icon: 'ri-box-3-line',
+        href: '/pages/apps/inventory.html'
+    },
+    {
+        type: 'link',
+        id: 'real-estate',
+        label: 'Real Estate',
+        icon: 'ri-home-4-line',
+        href: '/pages/apps/real-estate.html'
+    },
+    {
         type: 'category',
         label: 'EXTRA'
     },
