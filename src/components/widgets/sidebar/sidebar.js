@@ -14,6 +14,7 @@ const menuData = [
             { id: 'analytics-dashboard', label: 'Analytics Dashboard', href: '/pages/' },
             { id: 'mission-control', label: 'Mission Control', href: '/pages/index-mission-control.html' },
             { id: 'index-e-commerce', label: 'eCommerce', href: '/pages/index-e-commerce.html' },
+            { id: 'index-crypto', label: 'Crypto Dashboard', href: '/pages/index-crypto.html' },
         ]
     },
     {
