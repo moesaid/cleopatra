@@ -1,0 +1,25 @@
+<!-- Revenue Chart Widget - ApexCharts Bar Chart -->
+<div class="bg-card border border-border rounded-xl shadow-sm h-full">
+    <!-- Card Header with Tabs -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 border-b border-border">
+        <h3 class="text-base font-semibold text-foreground">Revenue Overview</h3>
+        <div class="flex items-center gap-1 p-1 bg-muted/50 rounded-lg">
+            <button
+                class="revenue-tab-btn active px-3 py-1.5 text-xs font-medium bg-card text-foreground rounded-md shadow-sm"
+                data-tab="overview">Overview</button>
+            <button
+                class="revenue-tab-btn px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                data-tab="analytics">Analytics</button>
+            <button
+                class="revenue-tab-btn px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                data-tab="reports">Reports</button>
+            <button
+                class="revenue-tab-btn px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground rounded-md transition-colors"
+                data-tab="notifications">Notifications</button>
+        </div>
+    </div>
+    <!-- Chart Container with proper sizing -->
+    <div class="p-5">
+        <div id="revenue-chart" class="w-full min-h-[320px]"></div>
+    </div>
+</div>

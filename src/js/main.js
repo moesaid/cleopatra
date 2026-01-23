@@ -31,6 +31,11 @@ import { initAnalytics1 } from '../components/charts/analytics';
 import { initSalesOverview } from '../components/charts/sales-overview';
 import { initSummary } from '../components/charts/summary';
 
+// Dashboard Widgets
+import { initMetricsRow } from '../components/widgets/metrics-row/metrics-row.js';
+import { initRevenueChart } from '../components/widgets/revenue-chart/revenue-chart.js';
+import { initMonthlyGoal } from '../components/widgets/monthly-goal/monthly-goal.js';
+
 // Router
 import { initRouter } from '../components/layout/router';
 
@@ -54,6 +59,11 @@ function initComponents() {
     initAnalytics1();
     initSalesOverview();
     initSummary();
+
+    // Dashboard widgets
+    initMetricsRow();
+    initRevenueChart();
+    initMonthlyGoal();
 }
 
 // Re-initialize on SPA navigation (including code highlighting)

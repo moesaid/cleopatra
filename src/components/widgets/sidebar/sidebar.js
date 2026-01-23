@@ -11,8 +11,8 @@ const menuData = [
         label: 'Dashboards',
         icon: 'ri-layout-grid-line',
         children: [
-            { id: 'light-sidebar', label: 'Light Sidebar', href: '/pages/' },
-            { id: 'dark-sidebar', label: 'Dark Sidebar', href: '/pages/index-1.html' }
+            { id: 'analytics-dashboard', label: 'Analytics Dashboard', href: '/pages/' },
+            { id: 'crm-dashboard', label: 'CRM Dashboard', href: '/pages/index-1.html' }
         ]
     },
     {

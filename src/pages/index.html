@@ -1,174 +1,36 @@
-{{#> start pageTitle="Dashboard" pageDescription="Central Hub for Personal Customization"}}{{/start}}
+{{> start title="Dashboard" hidePageHeader=true }}
 
-<!-- Stats Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mb-6">
-  <div class="bg-card text-card-foreground rounded-xl p-5 border border-border">
-    <div class="flex items-center justify-between mb-4">
-      <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-        <i class="ri-user-line text-xl text-primary"></i>
-      </div>
-      <span class="text-xs font-medium text-success bg-success/10 px-2 py-1 rounded-full">+12%</span>
+<!-- Dashboard Content -->
+<div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+  <!-- Page Header -->
+  {{> dashboard-header/dashboard-header }}
+
+  <!-- Top Metrics Row -->
+  {{> metrics-row/metrics-row }}
+
+  <!-- Middle Section: Charts Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Revenue Overview Chart (2/3) -->
+    <div class="lg:col-span-2">
+      {{> revenue-chart/revenue-chart }}
     </div>
-    <h3 class="text-2xl font-semibold mb-1">2,420</h3>
-    <p class="text-sm text-muted-foreground">Total Users</p>
+
+    <!-- Sales by Country (1/3) -->
+    {{> sales-by-country/sales-by-country }}
   </div>
 
-  <div class="bg-card text-card-foreground rounded-xl p-5 border border-border">
-    <div class="flex items-center justify-between mb-4">
-      <div class="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center">
-        <i class="ri-shopping-cart-line text-xl text-success"></i>
-      </div>
-      <span class="text-xs font-medium text-success bg-success/10 px-2 py-1 rounded-full">+8%</span>
+  <!-- Bottom Content Row: 2:1 Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Transaction Table (Span 2) -->
+    <div class="lg:col-span-2">
+      {{> transactions-table/transactions-table }}
     </div>
-    <h3 class="text-2xl font-semibold mb-1">1,210</h3>
-    <p class="text-sm text-muted-foreground">Orders</p>
+
+    <!-- Monthly Goal Card (Span 1) -->
+    {{> monthly-goal/monthly-goal }}
   </div>
 
-  <div class="bg-card text-card-foreground rounded-xl p-5 border border-border">
-    <div class="flex items-center justify-between mb-4">
-      <div class="w-12 h-12 bg-warning/10 rounded-xl flex items-center justify-center">
-        <i class="ri-money-dollar-circle-line text-xl text-warning"></i>
-      </div>
-      <span class="text-xs font-medium text-destructive bg-destructive/10 px-2 py-1 rounded-full">-3%</span>
-    </div>
-    <h3 class="text-2xl font-semibold mb-1">$34.5k</h3>
-    <p class="text-sm text-muted-foreground">Revenue</p>
-  </div>
-
-  <div class="bg-card text-card-foreground rounded-xl p-5 border border-border">
-    <div class="flex items-center justify-between mb-4">
-      <div class="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center">
-        <i class="ri-line-chart-line text-xl text-destructive"></i>
-      </div>
-      <span class="text-xs font-medium text-success bg-success/10 px-2 py-1 rounded-full">+18%</span>
-    </div>
-    <h3 class="text-2xl font-semibold mb-1">87.5%</h3>
-    <p class="text-sm text-muted-foreground">Growth</p>
-  </div>
 </div>
 
-<!-- Charts Row -->
-<div class="grid grid-cols-1 xl:grid-cols-3 gap-5 mb-6">
-  <div class="xl:col-span-2 bg-card text-card-foreground rounded-xl p-5 border border-border">
-    <div class="flex items-center justify-between mb-5">
-      <h3 class="font-semibold">Analytics Overview</h3>
-      <select
-        class="text-sm border border-input bg-background rounded-lg px-3 py-1.5 text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring">
-        <option>Last 7 days</option>
-        <option>Last 30 days</option>
-        <option>Last 90 days</option>
-      </select>
-    </div>
-    <div id="analytics_1" class="h-72"></div>
-  </div>
-
-  <div class="bg-card text-card-foreground rounded-xl p-5 border border-border">
-    <div class="flex items-center justify-between mb-5">
-      <h3 class="font-semibold">Sales Overview</h3>
-      <button class="text-muted-foreground hover:text-foreground">
-        <i class="ri-more-2-fill"></i>
-      </button>
-    </div>
-    <div id="sales_overview" class="h-72"></div>
-  </div>
-</div>
-
-<!-- Table & Activity Row -->
-<div class="grid grid-cols-1 xl:grid-cols-3 gap-5">
-  <div class="xl:col-span-2 bg-card text-card-foreground rounded-xl border border-border overflow-hidden">
-    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
-      <h3 class="font-semibold">Recent Orders</h3>
-      <a href="#" class="text-sm text-primary hover:text-primary/80">View All</a>
-    </div>
-    <table class="w-full">
-      <thead class="bg-muted/50">
-        <tr>
-          <th class="px-5 py-3 text-left text-xs font-medium text-muted-foreground uppercase">Order</th>
-          <th class="px-5 py-3 text-left text-xs font-medium text-muted-foreground uppercase">Customer</th>
-          <th class="px-5 py-3 text-left text-xs font-medium text-muted-foreground uppercase">Status</th>
-          <th class="px-5 py-3 text-left text-xs font-medium text-muted-foreground uppercase">Amount</th>
-        </tr>
-      </thead>
-      <tbody class="divide-y divide-border">
-        <tr class="hover:bg-muted/50">
-          <td class="px-5 py-4 text-sm">#ORD-2341</td>
-          <td class="px-5 py-4 text-sm text-muted-foreground">John Doe</td>
-          <td class="px-5 py-4"><span
-              class="text-xs font-medium bg-success/10 text-success px-2 py-1 rounded-full">Completed</span></td>
-          <td class="px-5 py-4 text-sm font-medium">$129.00</td>
-        </tr>
-        <tr class="hover:bg-muted/50">
-          <td class="px-5 py-4 text-sm">#ORD-2340</td>
-          <td class="px-5 py-4 text-sm text-muted-foreground">Sarah Smith</td>
-          <td class="px-5 py-4"><span
-              class="text-xs font-medium bg-warning/10 text-warning px-2 py-1 rounded-full">Pending</span></td>
-          <td class="px-5 py-4 text-sm font-medium">$89.00</td>
-        </tr>
-        <tr class="hover:bg-muted/50">
-          <td class="px-5 py-4 text-sm">#ORD-2339</td>
-          <td class="px-5 py-4 text-sm text-muted-foreground">Mike Wilson</td>
-          <td class="px-5 py-4"><span
-              class="text-xs font-medium bg-success/10 text-success px-2 py-1 rounded-full">Completed</span></td>
-          <td class="px-5 py-4 text-sm font-medium">$249.00</td>
-        </tr>
-        <tr class="hover:bg-muted/50">
-          <td class="px-5 py-4 text-sm">#ORD-2338</td>
-          <td class="px-5 py-4 text-sm text-muted-foreground">Emma Brown</td>
-          <td class="px-5 py-4"><span
-              class="text-xs font-medium bg-destructive/10 text-destructive px-2 py-1 rounded-full">Cancelled</span>
-          </td>
-          <td class="px-5 py-4 text-sm font-medium">$59.00</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="bg-card text-card-foreground rounded-xl border border-border">
-    <div class="flex items-center justify-between px-5 py-4 border-b border-border">
-      <h3 class="font-semibold">Activity</h3>
-      <button class="text-muted-foreground hover:text-foreground">
-        <i class="ri-more-2-fill"></i>
-      </button>
-    </div>
-    <div class="p-5 space-y-4">
-      <div class="flex gap-3">
-        <div class="w-9 h-9 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-          <i class="ri-user-add-line text-primary"></i>
-        </div>
-        <div>
-          <p class="text-sm">New user registered</p>
-          <p class="text-xs text-muted-foreground mt-0.5">2 minutes ago</p>
-        </div>
-      </div>
-      <div class="flex gap-3">
-        <div class="w-9 h-9 bg-success/10 rounded-full flex items-center justify-center flex-shrink-0">
-          <i class="ri-shopping-bag-line text-success"></i>
-        </div>
-        <div>
-          <p class="text-sm">New order placed</p>
-          <p class="text-xs text-muted-foreground mt-0.5">15 minutes ago</p>
-        </div>
-      </div>
-      <div class="flex gap-3">
-        <div class="w-9 h-9 bg-warning/10 rounded-full flex items-center justify-center flex-shrink-0">
-          <i class="ri-message-2-line text-warning"></i>
-        </div>
-        <div>
-          <p class="text-sm">Support ticket opened</p>
-          <p class="text-xs text-muted-foreground mt-0.5">1 hour ago</p>
-        </div>
-      </div>
-      <div class="flex gap-3">
-        <div class="w-9 h-9 bg-destructive/10 rounded-full flex items-center justify-center flex-shrink-0">
-          <i class="ri-refund-line text-destructive"></i>
-        </div>
-        <div>
-          <p class="text-sm">Refund requested</p>
-          <p class="text-xs text-muted-foreground mt-0.5">3 hours ago</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-{{> end}}
+{{> end }}

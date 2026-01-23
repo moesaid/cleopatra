@@ -1,0 +1,125 @@
+<!-- Metrics Row Widget - 4 metric cards with sparklines -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+    <!-- Total Revenue -->
+    <div
+        class="bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200">
+        <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-muted-foreground">Total Revenue</p>
+            <div class="p-2 bg-primary/10 rounded-lg">
+                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="text-2xl font-bold text-foreground">$45,231.89</p>
+            <div class="flex items-center gap-2 mt-1">
+                <span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    +20.1%
+                </span>
+                <span class="text-xs text-muted-foreground">vs last month</span>
+            </div>
+        </div>
+        <div id="metric-sparkline-revenue" class="mt-4 h-10 w-full"></div>
+    </div>
+
+    <!-- Subscriptions -->
+    <div
+        class="bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200">
+        <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-muted-foreground">Subscriptions</p>
+            <div class="p-2 bg-primary/10 rounded-lg">
+                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="text-2xl font-bold text-foreground">+2,350</p>
+            <div class="flex items-center gap-2 mt-1">
+                <span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    +180.1%
+                </span>
+                <span class="text-xs text-muted-foreground">from last month</span>
+            </div>
+        </div>
+        <div id="metric-sparkline-subs" class="mt-4 h-10 w-full"></div>
+    </div>
+
+    <!-- Bounce Rate -->
+    <div
+        class="bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200">
+        <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-muted-foreground">Bounce Rate</p>
+            <div class="p-2 bg-red-500/10 rounded-lg">
+                <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+            </div>
+        </div>
+        <div class="mt-3">
+            <p class="text-2xl font-bold text-foreground">12.5%</p>
+            <div class="flex items-center gap-2 mt-1">
+                <span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                    -4.0%
+                </span>
+                <span class="text-xs text-muted-foreground">from last week</span>
+            </div>
+        </div>
+        <div id="metric-sparkline-bounce" class="mt-4 h-10 w-full"></div>
+    </div>
+
+    <!-- Active Now -->
+    <div
+        class="bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200">
+        <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-muted-foreground">Active Now</p>
+            <div class="p-2 bg-primary/10 rounded-lg">
+                <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+            </div>
+        </div>
+        <div class="mt-3">
+            <div class="flex items-center gap-2">
+                <p class="text-2xl font-bold text-foreground">+573</p>
+                <span class="relative flex h-2.5 w-2.5">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+            </div>
+            <div class="flex items-center gap-2 mt-1">
+                <span class="inline-flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                    </svg>
+                    +201
+                </span>
+                <span class="text-xs text-muted-foreground">since last hour</span>
+            </div>
+        </div>
+        <div id="metric-sparkline-active" class="mt-4 h-10 w-full"></div>
+    </div>
+
+</div>

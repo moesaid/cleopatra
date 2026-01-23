@@ -44,9 +44,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p,
-a {
+h6 {
    text-transform: capitalize;
 }
 
@@ -61,9 +59,9 @@ pre,
 }
 
 p {
-   letter-spacing: 0.05em;
    font-size: var(--text-sm);
    color: var(--muted-foreground);
+   line-height: 1.6;
 }
 
 /* Global Theme Integration */
@@ -80,7 +78,7 @@ body {
    background-color: var(--card);
    color: var(--card-foreground);
    border: 1px solid var(--border);
-   border-radius: var(--radius-lg);
+   border-radius: var(--radius-2xl);
 }
 
 /* Popover/Dropdown Styles */
@@ -89,7 +87,7 @@ body {
    background-color: var(--popover);
    color: var(--popover-foreground);
    border: 1px solid var(--border);
-   border-radius: var(--radius-lg);
+   border-radius: var(--radius-xl);
    box-shadow: var(--shadow-lg);
 }
 
