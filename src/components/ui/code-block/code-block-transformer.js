@@ -1,57 +1,137 @@
 /**
  * Code Block Transformer
  * Automatically transforms <script type="text/plain"> elements into 
- * Stripe-style code blocks with copy functionality
+ * Stripe-style code blocks with Shiki syntax highlighting
  */
+
+import { codeToHtml } from 'shiki';
 
 let codeBlockCounter = 0;
 
-export function initCodeBlockTransformer() {
+// Shiki theme configuration - Always dark mode for code blocks
+const SHIKI_THEME = 'github-dark-default';
+const CODE_BLOCK_BG = '#0d1117'; // GitHub dark background
+
+// Map of common language aliases to Shiki language identifiers
+const LANGUAGE_MAP = {
+    'js': 'javascript',
+    'ts': 'typescript',
+    'jsx': 'jsx',
+    'tsx': 'tsx',
+    'html': 'html',
+    'markup': 'html',
+    'css': 'css',
+    'scss': 'scss',
+    'sass': 'sass',
+    'json': 'json',
+    'bash': 'bash',
+    'sh': 'bash',
+    'shell': 'bash',
+    'zsh': 'bash',
+    'terminal': 'bash',
+    'console': 'bash',
+    'powershell': 'powershell',
+    'cmd': 'bat',
+    'python': 'python',
+    'py': 'python',
+    'ruby': 'ruby',
+    'rb': 'ruby',
+    'java': 'java',
+    'c': 'c',
+    'cpp': 'cpp',
+    'csharp': 'csharp',
+    'cs': 'csharp',
+    'go': 'go',
+    'rust': 'rust',
+    'php': 'php',
+    'sql': 'sql',
+    'yaml': 'yaml',
+    'yml': 'yaml',
+    'xml': 'xml',
+    'markdown': 'markdown',
+    'md': 'markdown',
+    'code': 'text',
+    'text': 'text',
+    'plaintext': 'text'
+};
+
+export async function initCodeBlockTransformer() {
     // Find all script tags used for code display
     const codeScripts = document.querySelectorAll('script[type="text/plain"]');
 
-    codeScripts.forEach((script) => {
+    // Process all code blocks in parallel
+    const transformPromises = Array.from(codeScripts).map(async (script) => {
         // Generate unique ID
         const id = `auto-code-${++codeBlockCounter}`;
 
         // Extract language from class (e.g., "language-html" or "language-markup")
         const classList = script.className.split(' ');
-        let language = 'code';
+        let language = 'text';
         classList.forEach(cls => {
             if (cls.startsWith('language-')) {
                 language = cls.replace('language-', '');
             }
         });
 
+        // Normalize language to Shiki identifier
+        const shikiLang = LANGUAGE_MAP[language.toLowerCase()] || language;
+
         // Get the code content and dedent it (remove common leading whitespace)
         const rawContent = script.innerHTML;
         const codeContent = dedent(rawContent);
 
-        // Create the Stripe-style code block
-        const codeBlock = createCodeBlock(id, language, codeContent);
+        // Create the Stripe-style code block with Shiki highlighting
+        const codeBlock = await createCodeBlock(id, language, shikiLang, codeContent);
 
         // Replace the script tag with the code block
         script.parentNode.replaceChild(codeBlock, script);
     });
 
+    // Wait for all transformations to complete
+    await Promise.all(transformPromises);
+
     // Re-initialize copy functionality for new buttons
     if (typeof window.reinitCodeCopy === 'function') {
         window.reinitCodeCopy();
     }
-
-    // Apply syntax highlighting
-    if (typeof Prism !== 'undefined') {
-        Prism.highlightAll();
-    }
 }
 
 /**
- * Create a Stripe-style code block element
+ * Create a Stripe-style code block element with Shiki highlighting
  */
-function createCodeBlock(id, language, code) {
+async function createCodeBlock(id, displayLang, shikiLang, code) {
+    // Get highlighted HTML from Shiki
+    let highlightedCode;
+    try {
+        highlightedCode = await codeToHtml(code, {
+            lang: shikiLang,
+            theme: SHIKI_THEME,
+
+        });
+    } catch (e) {
+        // Fallback to plain text if language not supported
+        console.warn(`Shiki: Language "${shikiLang}" not supported, using plain text`, e);
+        highlightedCode = await codeToHtml(code, {
+            lang: 'text',
+            theme: SHIKI_THEME,
+
+        });
+    }
+
+    // Extract the inner content from Shiki's output (it returns <pre><code>...</code></pre>)
+    // We'll use a temporary element to parse it
+    const temp = document.createElement('div');
+    temp.innerHTML = highlightedCode;
+    const shikiPre = temp.querySelector('pre');
+    const shikiCode = temp.querySelector('code');
+
+    // Get the highlighted code HTML
+    const codeHtml = shikiCode ? shikiCode.innerHTML : escapeHtml(code);
+
     const wrapper = document.createElement('div');
-    wrapper.className = 'code-block-stripe relative rounded-lg overflow-hidden my-4 border border-slate-700/50 bg-slate-900 text-left font-mono';
+    wrapper.className = 'code-block-stripe relative rounded-lg overflow-hidden my-4 border border-slate-700/50 text-left font-mono';
     wrapper.setAttribute('data-code-block', '');
+    wrapper.style.backgroundColor = CODE_BLOCK_BG;
 
     wrapper.innerHTML = `
         <!-- Header bar with filename and actions -->
@@ -63,7 +143,7 @@ function createCodeBlock(id, language, code) {
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
                 <!-- Language -->
-                <span class="text-sm text-slate-300 font-medium">${escapeHtml(language)}</span>
+                <span class="text-sm text-slate-300 font-medium">${escapeHtml(displayLang)}</span>
             </div>
 
             <!-- Right side: Copy button -->
@@ -94,19 +174,11 @@ function createCodeBlock(id, language, code) {
 
         <!-- Code content -->
         <div class="code-block-content relative overflow-x-auto">
-            <pre class="code-pre line-numbers !m-0 !bg-transparent${isShellLanguage(language) ? ' command-line' : ''}"${isShellLanguage(language) ? ` data-user="user" data-host="localhost"` : ''}><code id="code-${id}" class="language-${escapeHtml(language)} code-content !bg-transparent text-sm">${code}</code></pre>
+            <pre class="code-pre shiki-code !m-0 !bg-transparent"><code id="code-${id}" class="shiki-code-inner !bg-transparent text-sm">${codeHtml}</code></pre>
         </div>
     `;
 
     return wrapper;
-}
-
-/**
- * Check if language is a shell/terminal language for command-line styling
- */
-function isShellLanguage(lang) {
-    const shellLanguages = ['bash', 'sh', 'shell', 'zsh', 'terminal', 'console', 'powershell', 'cmd'];
-    return shellLanguages.includes(lang.toLowerCase());
 }
 
 /**

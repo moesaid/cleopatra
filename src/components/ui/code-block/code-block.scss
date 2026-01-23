@@ -1,26 +1,31 @@
 /* ===========================================
-   Theme-Aware Code Block Styles
-   Uses semantic color variables
+   Code Block Styles - Always Dark Mode
+   Code blocks stay dark regardless of app theme
    =========================================== */
 
-/* Main code block container */
+/* Main code block container - Always dark */
 .code-block-stripe {
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-    box-shadow: var(--shadow-lg);
-    background-color: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg, 0.5rem);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background-color: #0d1117;
+    /* GitHub dark background */
+    border: 1px solid #30363d;
+    /* GitHub dark border */
+    border-radius: 0.5rem;
+    color: #e6edf3;
+    /* GitHub dark text */
 }
 
-/* Header styling - Theme aware */
+/* Header styling - Dark */
 .code-block-header {
-    background-color: var(--muted);
-    border-bottom: 1px solid var(--border);
+    background-color: #161b22;
+    /* GitHub dark header */
+    border-bottom: 1px solid #30363d;
 }
 
-/* Code content area - Theme aware */
+/* Code content area - Dark */
 .code-block-content {
-    background-color: var(--secondary);
+    background-color: #0d1117;
     padding: 0;
 }
 
@@ -44,180 +49,74 @@
     overflow-x: auto;
 }
 
-/* Line numbers - PrismJS line-numbers plugin support */
-.code-block-stripe pre.line-numbers {
+/* ===========================================
+   Shiki Syntax Highlighting - Line Numbers
+   =========================================== */
+
+/* Shiki code block styling */
+.code-block-stripe .shiki-code {
+    padding: 1rem 1.25rem 1rem 3.5em !important;
+    counter-reset: line;
     position: relative;
-    padding-left: 3.8em !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-    padding-right: 1.25rem !important;
-    counter-reset: linenumber;
 }
 
-.code-block-stripe pre.line-numbers>code {
-    position: relative;
-    white-space: inherit;
-    padding: 0 !important;
-}
-
-.code-block-stripe .line-numbers .line-numbers-rows {
-    position: absolute;
-    pointer-events: none;
-    top: 1rem;
-    font-size: 0.875rem;
-    left: -3.8em;
-    width: 3em;
-    letter-spacing: -1px;
-    border-right: 1px solid var(--border);
-    user-select: none;
-    background: color-mix(in srgb, var(--muted) 30%, transparent);
-}
-
-.code-block-stripe .line-numbers-rows>span {
+.code-block-stripe .shiki-code-inner {
     display: block;
-    counter-increment: linenumber;
-    padding-right: 0.8em;
-    text-align: right;
-    color: var(--muted-foreground);
+}
+
+/* Each line in Shiki output gets line number via CSS counter */
+.code-block-stripe .shiki-code-inner .line {
+    display: block;
+    position: relative;
     line-height: 1.6;
 }
 
-.code-block-stripe .line-numbers-rows>span::before {
-    content: counter(linenumber);
-    display: block;
+.code-block-stripe .shiki-code-inner .line::before {
+    counter-increment: line;
+    content: counter(line);
+    position: absolute;
+    left: -2.5em;
+    width: 2em;
+    text-align: right;
+    color: #8b949e;
+    /* GitHub dark muted text */
+    opacity: 0.6;
+    font-size: 0.875rem;
+    user-select: none;
+    pointer-events: none;
 }
 
-/* ===========================================
-   Prism.js Theme - Uses CSS variables
-   =========================================== */
+/* Line numbers gutter background */
+.code-block-stripe .shiki-code::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3em;
+    background: rgba(48, 54, 61, 0.3);
+    /* GitHub dark gutter */
+    border-right: 1px solid #30363d;
+}
 
-/* Override default Prism theme */
-.code-block-stripe code[class*="language-"],
-.code-block-stripe pre[class*="language-"] {
-    color: var(--foreground) !important;
-    background: none !important;
-    text-shadow: none !important;
+/* Font family for code */
+.code-block-stripe .shiki-code,
+.code-block-stripe .shiki-code-inner {
     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
 }
 
-/* Comments */
-.code-block-stripe .token.comment,
-.code-block-stripe .token.prolog,
-.code-block-stripe .token.doctype,
-.code-block-stripe .token.cdata {
-    color: var(--muted-foreground) !important;
-    font-style: italic;
-}
-
-/* Punctuation */
-.code-block-stripe .token.punctuation {
-    color: var(--muted-foreground) !important;
-}
-
-/* Properties and variables */
-.code-block-stripe .token.property,
-.code-block-stripe .token.tag,
-.code-block-stripe .token.constant,
-.code-block-stripe .token.symbol,
-.code-block-stripe .token.deleted {
-    color: var(--destructive) !important;
-}
-
-/* Booleans and numbers */
-.code-block-stripe .token.boolean,
-.code-block-stripe .token.number {
-    color: var(--chart-4, #c084fc) !important;
-}
-
-/* Selectors, strings, chars */
-.code-block-stripe .token.selector,
-.code-block-stripe .token.attr-name,
-.code-block-stripe .token.string,
-.code-block-stripe .token.char,
-.code-block-stripe .token.builtin,
-.code-block-stripe .token.inserted {
-    color: var(--success, #10b981) !important;
-}
-
-/* Operators and entities */
-.code-block-stripe .token.operator,
-.code-block-stripe .token.entity,
-.code-block-stripe .token.url,
-.language-css .code-block-stripe .token.string,
-.style .code-block-stripe .token.string {
-    color: var(--warning, #fbbf24) !important;
-}
-
-/* Keywords, at-rules, atrule */
-.code-block-stripe .token.atrule,
-.code-block-stripe .token.attr-value,
-.code-block-stripe .token.keyword {
-    color: var(--primary) !important;
-}
-
-/* Functions */
-.code-block-stripe .token.function,
-.code-block-stripe .token.class-name {
-    color: var(--info, #3b82f6) !important;
-}
-
-/* Regex and important */
-.code-block-stripe .token.regex,
-.code-block-stripe .token.important,
-.code-block-stripe .token.variable {
-    color: var(--chart-5, #fb923c) !important;
-}
-
-/* Important and bold */
-.code-block-stripe .token.important,
-.code-block-stripe .token.bold {
-    font-weight: bold;
-}
-
-/* Italic */
-.code-block-stripe .token.italic {
-    font-style: italic;
-}
-
-/* Entity */
-.code-block-stripe .token.entity {
-    cursor: help;
-}
-
-/* Line highlighting */
-.code-block-stripe .line-highlight {
-    background: linear-gradient(to right, color-mix(in srgb, var(--success) 15%, transparent), color-mix(in srgb, var(--success) 5%, transparent)) !important;
-    border-left: 3px solid var(--success) !important;
-    margin-left: -1.25rem;
-    padding-left: calc(1.25rem - 3px);
-    display: block;
-}
-
-/* HTML/Markup specific */
-.code-block-stripe .token.tag .token.tag {
-    color: var(--destructive) !important;
-}
-
-.code-block-stripe .token.tag .token.attr-name {
-    color: var(--primary) !important;
-}
-
-.code-block-stripe .token.tag .token.attr-value {
-    color: var(--success, #10b981) !important;
-}
-
-/* Copy button - Theme aware */
+/* Copy button - Always dark */
 .code-block-stripe .copy-btn {
     transition: all 0.2s ease-out;
-    background-color: var(--muted);
-    border: 1px solid var(--border);
-    color: var(--muted-foreground);
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #8b949e;
 }
 
 .code-block-stripe .copy-btn:hover {
-    background-color: var(--accent);
-    border-color: var(--border);
-    color: var(--accent-foreground);
+    background-color: #30363d;
+    border-color: #484f58;
+    color: #e6edf3;
 }
 
 .code-block-stripe .copy-btn:active {
@@ -226,8 +125,8 @@
 
 /* Copied state styling */
 .code-block-stripe .copy-btn.copied {
-    background: color-mix(in srgb, var(--success) 15%, transparent) !important;
-    border-color: color-mix(in srgb, var(--success) 40%, transparent) !important;
+    background: rgba(35, 134, 54, 0.15) !important;
+    border-color: rgba(35, 134, 54, 0.4) !important;
 }
 
 .code-block-stripe .copy-btn.copied .copy-icon-default {
@@ -238,27 +137,31 @@
     display: flex !important;
 }
 
-/* Scrollbar styling - Theme aware */
+/* Scrollbar styling - Dark */
 .code-block-stripe .code-block-content::-webkit-scrollbar {
     height: 8px;
 }
 
 .code-block-stripe .code-block-content::-webkit-scrollbar-track {
-    background: var(--muted);
+    background: #161b22;
 }
 
 .code-block-stripe .code-block-content::-webkit-scrollbar-thumb {
-    background: color-mix(in srgb, var(--muted-foreground) 30%, transparent);
+    background: rgba(139, 148, 158, 0.3);
     border-radius: 4px;
 }
 
 .code-block-stripe .code-block-content::-webkit-scrollbar-thumb:hover {
-    background: color-mix(in srgb, var(--muted-foreground) 50%, transparent);
+    background: rgba(139, 148, 158, 0.5);
 }
 
-/* Title text - Theme aware */
+/* Title text - Always light for dark background */
 .code-block-stripe .code-block-header span {
-    color: var(--foreground);
+    color: #e6edf3;
+}
+
+.code-block-stripe .code-block-header svg {
+    color: #8b949e;
 }
 
 .code-block-stripe .code-block-header svg {

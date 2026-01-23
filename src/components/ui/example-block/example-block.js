@@ -1,9 +1,15 @@
 /**
  * Example Block Component
  * Handles tab switching, RTL toggle, dark mode toggle, and copy functionality
+ * Uses Shiki for syntax highlighting
  */
 
-export function initExampleBlocks() {
+import { codeToHtml } from 'shiki';
+
+// Shiki configuration
+const SHIKI_THEME = 'github-dark';
+
+export async function initExampleBlocks() {
     // Tab switching
     document.querySelectorAll('.example-tab').forEach(tab => {
         tab.addEventListener('click', (e) => {
@@ -97,8 +103,8 @@ export function initExampleBlocks() {
         });
     });
 
-    // Populate code blocks from preview content (for partial block usage)
-    document.querySelectorAll('.example-block').forEach(block => {
+    // Populate code blocks from preview content and apply Shiki highlighting
+    const highlightPromises = Array.from(document.querySelectorAll('.example-block')).map(async block => {
         const codeElement = block.querySelector('.example-code code');
         const previewContent = block.querySelector('.example-preview-content');
 
@@ -106,11 +112,34 @@ export function initExampleBlocks() {
         if (codeElement && previewContent && codeElement.hasAttribute('data-from-preview')) {
             // Extract innerHTML from preview and format it
             const rawHtml = previewContent.innerHTML.trim();
-            // Format the HTML with proper indentation
             const formatted = formatHtml(rawHtml);
-            codeElement.textContent = formatted;
+
+            // Apply Shiki highlighting
+            try {
+                const highlightedHtml = await codeToHtml(formatted, {
+                    lang: 'html',
+                    theme: SHIKI_THEME
+                });
+
+                // Extract just the code content from Shiki's output
+                const temp = document.createElement('div');
+                temp.innerHTML = highlightedHtml;
+                const shikiCode = temp.querySelector('code');
+
+                if (shikiCode) {
+                    codeElement.innerHTML = shikiCode.innerHTML;
+                } else {
+                    codeElement.textContent = formatted;
+                }
+            } catch (e) {
+                // Fallback to plain text
+                console.warn('Shiki highlighting failed:', e);
+                codeElement.textContent = formatted;
+            }
         }
     });
+
+    await Promise.all(highlightPromises);
 }
 
 /**

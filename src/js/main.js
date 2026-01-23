@@ -6,25 +6,7 @@
 import '../styles/tailwind.css';
 import '../styles/global.scss';
 
-// PrismJS for code highlighting
-import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
-
-// PrismJS Plugins
-import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/plugins/command-line/prism-command-line.js';
-import 'prismjs/plugins/command-line/prism-command-line.css';
-
-Prism.plugins.NormalizeWhitespace.setDefaults({
-    'remove-trailing': true,
-    'remove-indent': true,
-    'left-trim': true,
-    'right-trim': true,
-});
-
-// Prism.plugins.lineNumbers();
+// Syntax highlighting is now handled by Shiki in code-block-transformer.js
 
 // Widgets
 import { initNavbar } from '../components/widgets/navbar';
@@ -54,8 +36,7 @@ import { initRouter } from '../components/layout/router';
 
 // Expose for code transformer
 window.reinitCodeCopy = reinitCodeCopy;
-// Expose Prism globally for SPA navigation
-window.Prism = Prism;
+
 
 // Initialize components
 function initComponents() {
@@ -80,8 +61,7 @@ document.addEventListener('page:load', () => {
     initComponents();
     // Re-run code block transformer for new content
     initCodeBlockTransformer();
-    // Re-highlight all code blocks with Prism
-    Prism.highlightAll();
+
 });
 
 // Initial load
