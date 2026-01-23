@@ -7,125 +7,97 @@ pageDescription="Button component with multiple variants, sizes, and states"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Default Button -->
-{{> example-block
+{{#> example-block
 title="Default"
 description="Basic button with primary styling."
 id="btn-default"
-code="<button class=\"btn\">Default</button>"
 language="html"
 }}
+{{> button/examples/default}}
+{{/example-block}}
 
 <!-- Variants -->
-{{> example-block
+{{#> example-block
 title="Variants"
 description="Available button style variants."
 id="btn-variants"
-code="<div class=\"flex flex-wrap items-center gap-4\">
-  <button class=\"btn\">Default</button>
-  <button class=\"btn btn-secondary\">Secondary</button>
-  <button class=\"btn btn-destructive\">Destructive</button>
-  <button class=\"btn btn-outline\">Outline</button>
-  <button class=\"btn btn-ghost\">Ghost</button>
-  <button class=\"btn btn-link\">Link</button>
-</div>"
 language="html"
 }}
+{{> button/examples/variants}}
+{{/example-block}}
 
 <!-- Semantic Colors -->
-{{> example-block
+{{#> example-block
 title="Semantic Colors"
 description="Buttons with semantic color meanings."
 id="btn-semantic"
-code="<div class=\"flex flex-wrap items-center gap-4\">
-  <button class=\"btn btn-success\">Success</button>
-  <button class=\"btn btn-warning\">Warning</button>
-  <button class=\"btn btn-info\">Info</button>
-  <button class=\"btn btn-destructive\">Destructive</button>
-</div>"
 language="html"
 }}
+{{> button/examples/semantic}}
+{{/example-block}}
 
 <!-- Soft Variants -->
-{{> example-block
+{{#> example-block
 title="Soft Variants"
 description="Subtle background with colored text using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
   font-mono\">.btn-soft-{color}</code> class."
 id="btn-soft"
-code="<div class=\"flex flex-wrap items-center gap-4\">
-  <button class=\"btn btn-soft-primary\">Primary</button>
-  <button class=\"btn btn-soft-success\">Success</button>
-  <button class=\"btn btn-soft-warning\">Warning</button>
-  <button class=\"btn btn-soft-info\">Info</button>
-  <button class=\"btn btn-soft-destructive\">Destructive</button>
-</div>"
 language="html"
 }}
+{{> button/examples/soft}}
+{{/example-block}}
 
 <!-- Sizes -->
-{{> example-block
+{{#> example-block
 title="Sizes"
 description="Small, default, and large button sizes."
 id="btn-sizes"
-code="<div class=\"flex flex-wrap items-center gap-4\">
-  <button class=\"btn btn-sm\">Small</button>
-  <button class=\"btn\">Default</button>
-  <button class=\"btn btn-lg\">Large</button>
-</div>"
 language="html"
 }}
+{{> button/examples/sizes}}
+{{/example-block}}
 
 <!-- Icon Buttons -->
-{{> example-block
+{{#> example-block
 title="Icon Buttons"
 description="Square icon-only buttons using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
   font-mono\">.btn-icon</code> class."
 id="btn-icon"
-code="<div class=\"flex flex-wrap items-center gap-4\">
-  <button class=\"btn btn-icon\"><i class=\"ri-add-line\"></i></button>
-  <button class=\"btn btn-icon btn-secondary\"><i class=\"ri-settings-3-line\"></i></button>
-  <button class=\"btn btn-icon btn-outline\"><i class=\"ri-search-line\"></i></button>
-  <button class=\"btn btn-icon btn-ghost\"><i class=\"ri-more-2-fill\"></i></button>
-  <button class=\"btn btn-icon btn-destructive\"><i class=\"ri-delete-bin-line\"></i></button>
-</div>"
 language="html"
 }}
+{{> button/examples/icon}}
+{{/example-block}}
 
 <!-- With Icons -->
-{{> example-block
+{{#> example-block
 title="With Icons"
 description="Buttons with icon and text together."
 id="btn-with-icons"
-code="<div class=\"flex flex-wrap items-center gap-4\">
-  <button class=\"btn\"><i class=\"ri-mail-line\"></i> Login with Email</button>
-  <button class=\"btn btn-outline\"><i class=\"ri-github-line\"></i> GitHub</button>
-  <button class=\"btn btn-secondary\">Next <i class=\"ri-arrow-right-line\"></i></button>
-</div>"
 language="html"
 }}
+{{> button/examples/with-icons}}
+{{/example-block}}
 
 <!-- States -->
-{{> example-block
+{{#> example-block
 title="States"
 description="Disabled and loading button states."
 id="btn-states"
-code="<div class=\"flex flex-wrap items-center gap-4\">
-  <button class=\"btn\" disabled>Disabled</button>
-  <button class=\"btn btn-outline\" disabled>Disabled Outline</button>
-  <button class=\"btn btn-loading\">Loading</button>
-  <button class=\"btn btn-secondary btn-loading\">Loading</button>
-</div>"
 language="html"
 }}
+{{> button/examples/states}}
+{{/example-block}}
 
 <!-- Full Width -->
-{{> example-block
+{{#> example-block
 title="Full Width"
 description="Full-width button using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm font-mono\">.btn-full</code>
 class."
 id="btn-full"
-code="<button class=\"btn btn-full\">Full Width Button</button>"
 language="html"
 }}
+{{> button/examples/full}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
@@ -136,15 +108,15 @@ language="html"
       class="px-1.5 py-0.5 bg-muted text-foreground text-xs rounded font-mono">src/components/ui/button/button.scss</code>
   </p>
 
-  {{> code-block language="scss" id="btn-scss-usage"
-  code="/* Import in your SCSS */
-  @import \"../components/ui/button/button.scss\";
+  <script type="text/plain" class="language-scss">
+/* Import in your SCSS */
+@use "../components/ui/button/button.scss";
 
-  /* Or extend base button */
-  .my-button {
+/* Or extend base button */
+.my-button {
   @extend .btn;
-  }"
-  }}
+}
+  </script>
 </div>
 
 <h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>

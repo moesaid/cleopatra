@@ -7,184 +7,64 @@ pageDescription="Beautiful validation states and patterns inspired by shadcn/ui"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Validation States -->
-{{> example-block
+{{#> example-block
 title="Validation States"
 description="Visual indicators for valid, invalid, and warning states."
 id="validation-states"
-code="<div class=\"space-y-6 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Valid Input</label>
-        <div class=\"relative\">
-            <input type=\"email\" value=\"valid@email.com\" class=\"flex h-10 w-full rounded-md border border-success
-                bg-background px-3 py-2 text-sm pr-10 focus-visible:outline-none focus-visible:ring-2
-                focus-visible:ring-success focus-visible:ring-offset-2\">
-            <i class=\"ri-check-line absolute right-3 top-1/2 -translate-y-1/2 text-success\"></i>
-        </div>
-        <p class=\"text-[0.8rem] text-success flex items-center gap-1\"><i class=\"ri-checkbox-circle-fill\"></i> Email
-            address is valid</p>
-    </div>
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Invalid Input</label>
-        <div class=\"relative\">
-            <input type=\"password\" value=\"123\" class=\"flex h-10 w-full rounded-md border border-destructive
-                bg-background px-3 py-2 text-sm pr-10 focus-visible:outline-none focus-visible:ring-2
-                focus-visible:ring-destructive focus-visible:ring-offset-2\">
-            <i class=\"ri-error-warning-line absolute right-3 top-1/2 -translate-y-1/2 text-destructive\"></i>
-        </div>
-        <p class=\"text-[0.8rem] text-destructive flex items-center gap-1\"><i class=\"ri-error-warning-fill\"></i>
-            Password must be at least 8 characters</p>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/validation-states}}
+{{/example-block}}
 
 <!-- Inline Error Message -->
-{{> example-block
+{{#> example-block
 title="Inline Error"
 description="Error message displayed inline with the input."
 id="validation-inline"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Email</label>
-        <input type=\"email\" value=\"invalid-email\" aria-invalid=\"true\" class=\"flex h-10 w-full rounded-md border
-            border-destructive bg-destructive/5 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2
-            focus-visible:ring-destructive focus-visible:ring-offset-2\">
-        <p class=\"text-[0.8rem] text-destructive\">Please enter a valid email address</p>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/inline-error}}
+{{/example-block}}
 
 <!-- Required Fields -->
-{{> example-block
+{{#> example-block
 title="Required Fields"
 description="Indicators for required and optional fields."
 id="validation-required"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Required <span class=\"text-destructive\">*</span></label>
-        <input type=\"text\" placeholder=\"This field is required\" class=\"flex h-10 w-full rounded-md border
-            border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none
-            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-    </div>
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Optional <span class=\"text-muted-foreground
-                font-normal\">(optional)</span></label>
-        <input type=\"text\" placeholder=\"This field is optional\" class=\"flex h-10 w-full rounded-md border
-            border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none
-            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/required}}
+{{/example-block}}
 
 <!-- Password Strength -->
-{{> example-block
+{{#> example-block
 title="Password Strength"
 description="Visual password strength indicator."
 id="validation-password"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Password</label>
-        <input type=\"password\" placeholder=\"Create a password\" class=\"flex h-10 w-full rounded-md border
-            border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none
-            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-    </div>
-    <div class=\"space-y-2\">
-        <div class=\"flex gap-1\">
-            <div class=\"h-1.5 flex-1 rounded-full bg-destructive\"></div>
-            <div class=\"h-1.5 flex-1 rounded-full bg-warning\"></div>
-            <div class=\"h-1.5 flex-1 rounded-full bg-muted\"></div>
-            <div class=\"h-1.5 flex-1 rounded-full bg-muted\"></div>
-        </div>
-        <p class=\"text-[0.8rem] text-warning font-medium\">Medium strength</p>
-    </div>
-    <div class=\"space-y-2 rounded-lg border border-border p-4\">
-        <p class=\"text-sm font-medium\">Password requirements:</p>
-        <ul class=\"space-y-1.5\">
-            <li class=\"flex items-center gap-2 text-[0.8rem] text-success\"><i class=\"ri-checkbox-circle-fill\"></i>
-                At least 8 characters</li>
-            <li class=\"flex items-center gap-2 text-[0.8rem] text-success\"><i class=\"ri-checkbox-circle-fill\"></i>
-                Contains uppercase letter</li>
-            <li class=\"flex items-center gap-2 text-[0.8rem] text-muted-foreground\"><i
-                    class=\"ri-checkbox-blank-circle-line\"></i> Contains a number</li>
-            <li class=\"flex items-center gap-2 text-[0.8rem] text-muted-foreground\"><i
-                    class=\"ri-checkbox-blank-circle-line\"></i> Contains special character</li>
-        </ul>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/password-strength}}
+{{/example-block}}
 
 <!-- Form Card with Validation -->
-{{> example-block
+{{#> example-block
 title="Registration Form"
 description="Complete registration form with validation states."
 id="validation-form"
-code="<div class=\"max-w-md mx-auto rounded-xl border border-border bg-card p-6\">
-    <div class=\"space-y-1.5 mb-6\">
-        <h3 class=\"text-xl font-semibold\">Create account</h3>
-        <p class=\"text-sm text-muted-foreground\">Enter your information to get started</p>
-    </div>
-    <form class=\"space-y-4\">
-        <div class=\"grid grid-cols-2 gap-4\">
-            <div class=\"space-y-2\">
-                <label class=\"text-sm font-medium\">First name</label>
-                <input type=\"text\" value=\"John\" class=\"flex h-10 w-full rounded-md border border-success
-                    bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2
-                    focus-visible:ring-ring focus-visible:ring-offset-2\">
-            </div>
-            <div class=\"space-y-2\">
-                <label class=\"text-sm font-medium\">Last name</label>
-                <input type=\"text\" placeholder=\"Doe\" class=\"flex h-10 w-full rounded-md border border-input
-                    bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none
-                    focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-            </div>
-        </div>
-        <div class=\"space-y-2\">
-            <label class=\"text-sm font-medium\">Email <span class=\"text-destructive\">*</span></label>
-            <input type=\"email\" value=\"invalid-email\" class=\"flex h-10 w-full rounded-md border border-destructive
-                bg-destructive/5 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2
-                focus-visible:ring-destructive focus-visible:ring-offset-2\">
-            <p class=\"text-[0.8rem] text-destructive\">Please enter a valid email address</p>
-        </div>
-        <div class=\"space-y-2\">
-            <label class=\"text-sm font-medium\">Password <span class=\"text-destructive\">*</span></label>
-            <input type=\"password\" placeholder=\"Create a password\" class=\"flex h-10 w-full rounded-md border
-                border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-            <p class=\"text-[0.8rem] text-muted-foreground\">Minimum 8 characters</p>
-        </div>
-        <div class=\"flex items-start space-x-2\">
-            <input type=\"checkbox\" id=\"terms-check\" class=\"h-4 w-4 shrink-0 rounded-sm border border-primary mt-0.5
-                accent-primary\">
-            <label for=\"terms-check\" class=\"text-sm\">I agree to the <a href=\"#\" class=\"text-primary
-                    hover:underline\">Terms of Service</a> and <a href=\"#\" class=\"text-primary
-                    hover:underline\">Privacy Policy</a></label>
-        </div>
-        <button type=\"submit\" class=\"btn w-full\">Create account</button>
-    </form>
-</div>"
 language="html"
 }}
+{{> form/examples/registration-form}}
+{{/example-block}}
 
 <!-- Input with Hint -->
-{{> example-block
+{{#> example-block
 title="Input with Hint"
 description="Helpful hint text below input."
 id="validation-hint"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Username</label>
-        <input type=\"text\" placeholder=\"Enter username\" class=\"flex h-10 w-full rounded-md border border-input
-            bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none
-            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-        <p class=\"text-[0.8rem] text-muted-foreground\">Username can only contain letters, numbers, and underscores.
-        </p>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/hint}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

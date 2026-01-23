@@ -7,136 +7,54 @@ pageDescription="User profile images with fallback and status indicators"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Default Avatars -->
-{{> example-block
+{{#> example-block
 title="Default"
 description="Basic avatar with profile image."
 id="avatar-default"
-code="<div class=\"flex items-center gap-4\">
-    <div class=\"avatar\">
-        <img src=\"https://i.pravatar.cc/150?img=1\" alt=\"User\" class=\"avatar-image\">
-    </div>
-    <div class=\"avatar\">
-        <img src=\"https://i.pravatar.cc/150?img=2\" alt=\"User\" class=\"avatar-image\">
-    </div>
-    <div class=\"avatar\">
-        <img src=\"https://i.pravatar.cc/150?img=3\" alt=\"User\" class=\"avatar-image\">
-    </div>
-</div>"
 language="html"
 }}
+{{> default}}
+{{/example-block}}
 
 <!-- Sizes -->
-{{> example-block
+{{#> example-block
 title="Sizes"
 description="Avatar in different sizes from xs to 3xl."
 id="avatar-sizes"
-code="<div class=\"flex items-end gap-4\">
-    <div class=\"avatar avatar-xs\">
-        <img src=\"https://i.pravatar.cc/150?img=4\" alt=\"User\" class=\"avatar-image\">
-    </div>
-    <div class=\"avatar avatar-sm\">
-        <img src=\"https://i.pravatar.cc/150?img=4\" alt=\"User\" class=\"avatar-image\">
-    </div>
-    <div class=\"avatar\">
-        <img src=\"https://i.pravatar.cc/150?img=4\" alt=\"User\" class=\"avatar-image\">
-    </div>
-    <div class=\"avatar avatar-lg\">
-        <img src=\"https://i.pravatar.cc/150?img=4\" alt=\"User\" class=\"avatar-image\">
-    </div>
-    <div class=\"avatar avatar-xl\">
-        <img src=\"https://i.pravatar.cc/150?img=4\" alt=\"User\" class=\"avatar-image\">
-    </div>
-    <div class=\"avatar avatar-2xl\">
-        <img src=\"https://i.pravatar.cc/150?img=4\" alt=\"User\" class=\"avatar-image\">
-    </div>
-</div>"
 language="html"
 }}
+{{> sizes}}
+{{/example-block}}
 
 <!-- Fallback -->
-{{> example-block
+{{#> example-block
 title="Fallback"
 description="Display initials when no image is available."
 id="avatar-fallback"
-code="<div class=\"flex gap-4 flex-wrap\">
-    <div class=\"avatar\">
-        <div class=\"avatar-fallback\">B.A</div>
-    </div>
-    <div class=\"avatar\">
-        <div class=\"avatar-fallback text-destructive bg-destructive/10\">A.J</div>
-    </div>
-    <div class=\"avatar\">
-        <div class=\"avatar-fallback text-primary bg-primary/10\">
-            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\"
-                stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"
-                class=\"lucide lucide-user size-4\" aria-hidden=\"true\">
-                <path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"></path>
-                <circle cx=\"12\" cy=\"7\" r=\"4\"></circle>
-            </svg>
-        </div>
-    </div>
-</div>"
 language="html"
 }}
+{{> fallback}}
+{{/example-block}}
 
 <!-- Status Indicators -->
-{{> example-block
+{{#> example-block
 title="Status Indicators"
 description="Show online, offline, busy, or away status."
 id="avatar-status"
-code="<div class=\"flex items-center gap-6\">
-    <div class=\"text-center\">
-        <div class=\"avatar avatar-lg avatar-status status-online\">
-            <img src=\"https://i.pravatar.cc/150?img=5\" alt=\"User\" class=\"avatar-image\">
-        </div>
-        <p class=\"text-xs text-muted-foreground mt-2\">Online</p>
-    </div>
-    <div class=\"text-center\">
-        <div class=\"avatar avatar-lg avatar-status status-offline\">
-            <img src=\"https://i.pravatar.cc/150?img=6\" alt=\"User\" class=\"avatar-image\">
-        </div>
-        <p class=\"text-xs text-muted-foreground mt-2\">Offline</p>
-    </div>
-    <div class=\"text-center\">
-        <div class=\"avatar avatar-lg avatar-status status-busy\">
-            <img src=\"https://i.pravatar.cc/150?img=7\" alt=\"User\" class=\"avatar-image\">
-        </div>
-        <p class=\"text-xs text-muted-foreground mt-2\">Busy</p>
-    </div>
-    <div class=\"text-center\">
-        <div class=\"avatar avatar-lg avatar-status status-away\">
-            <img src=\"https://i.pravatar.cc/150?img=8\" alt=\"User\" class=\"avatar-image\">
-        </div>
-        <p class=\"text-xs text-muted-foreground mt-2\">Away</p>
-    </div>
-</div>"
 language="html"
 }}
+{{> status}}
+{{/example-block}}
 
 <!-- Avatar Group -->
-{{> example-block
+{{#> example-block
 title="Avatar Group"
 description="Stacked avatars with overlap effect."
 id="avatar-group"
-code="<div class=\"flex items-center gap-8\">
-    <div class=\"avatar-group\">
-        <div class=\"avatar\"><img src=\"https://i.pravatar.cc/150?img=11\" alt=\"User\" class=\"avatar-image\"></div>
-        <div class=\"avatar\"><img src=\"https://i.pravatar.cc/150?img=12\" alt=\"User\" class=\"avatar-image\"></div>
-        <div class=\"avatar\"><img src=\"https://i.pravatar.cc/150?img=13\" alt=\"User\" class=\"avatar-image\"></div>
-        <div class=\"avatar\"><img src=\"https://i.pravatar.cc/150?img=14\" alt=\"User\" class=\"avatar-image\"></div>
-    </div>
-    <div class=\"avatar-group\">
-        <div class=\"avatar avatar-lg avatar-group-count\">+5</div>
-        <div class=\"avatar avatar-lg\"><img src=\"https://i.pravatar.cc/150?img=15\" alt=\"User\"
-                class=\"avatar-image\"></div>
-        <div class=\"avatar avatar-lg\"><img src=\"https://i.pravatar.cc/150?img=16\" alt=\"User\"
-                class=\"avatar-image\"></div>
-        <div class=\"avatar avatar-lg\"><img src=\"https://i.pravatar.cc/150?img=17\" alt=\"User\"
-                class=\"avatar-image\"></div>
-    </div>
-</div>"
 language="html"
 }}
+{{> group}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

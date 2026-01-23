@@ -96,4 +96,58 @@ export function initExampleBlocks() {
             }
         });
     });
+
+    // Populate code blocks from preview content (for partial block usage)
+    document.querySelectorAll('.example-block').forEach(block => {
+        const codeElement = block.querySelector('.example-code code');
+        const previewContent = block.querySelector('.example-preview-content');
+
+        // Check if this code block should be populated from preview
+        if (codeElement && previewContent && codeElement.hasAttribute('data-from-preview')) {
+            // Extract innerHTML from preview and format it
+            const rawHtml = previewContent.innerHTML.trim();
+            // Format the HTML with proper indentation
+            const formatted = formatHtml(rawHtml);
+            codeElement.textContent = formatted;
+        }
+    });
+}
+
+/**
+ * Simple HTML formatter for display in code blocks
+ */
+function formatHtml(html) {
+    // Remove excess whitespace between tags
+    let formatted = html
+        .replace(/>\s+</g, '>\n<')
+        .replace(/\n\s*\n/g, '\n');
+
+    // Add proper indentation
+    const lines = formatted.split('\n');
+    let indent = 0;
+    const indentSize = 4;
+
+    return lines.map(line => {
+        const trimmed = line.trim();
+        if (!trimmed) return '';
+
+        // Decrease indent for closing tags
+        if (trimmed.startsWith('</') || trimmed.startsWith('-->')) {
+            indent = Math.max(0, indent - indentSize);
+        }
+
+        const result = ' '.repeat(indent) + trimmed;
+
+        // Increase indent for opening tags (not self-closing or void)
+        if (trimmed.startsWith('<') && !trimmed.startsWith('</') &&
+            !trimmed.startsWith('<!') && !trimmed.endsWith('/>') &&
+            !/(br|hr|img|input|meta|link)[\s>]/i.test(trimmed)) {
+            // Check if it's not a self-contained tag like <span>text</span>
+            if (!trimmed.includes('</')) {
+                indent += indentSize;
+            }
+        }
+
+        return result;
+    }).filter(line => line.trim()).join('\n');
 }

@@ -23,8 +23,9 @@ export function initCodeBlockTransformer() {
             }
         });
 
-        // Get the code content
-        const codeContent = script.innerHTML.trim();
+        // Get the code content and dedent it (remove common leading whitespace)
+        const rawContent = script.innerHTML;
+        const codeContent = dedent(rawContent);
 
         // Create the Stripe-style code block
         const codeBlock = createCodeBlock(id, language, codeContent);
@@ -93,11 +94,47 @@ function createCodeBlock(id, language, code) {
 
         <!-- Code content -->
         <div class="code-block-content relative overflow-x-auto">
-            <pre class="code-pre !m-0 !p-0 !bg-transparent"><code id="code-${id}" class="language-${escapeHtml(language)} code-content !bg-transparent text-sm">${code}</code></pre>
+            <pre class="code-pre line-numbers !m-0 !bg-transparent${isShellLanguage(language) ? ' command-line' : ''}"${isShellLanguage(language) ? ` data-user="user" data-host="localhost"` : ''}><code id="code-${id}" class="language-${escapeHtml(language)} code-content !bg-transparent text-sm">${code}</code></pre>
         </div>
     `;
 
     return wrapper;
+}
+
+/**
+ * Check if language is a shell/terminal language for command-line styling
+ */
+function isShellLanguage(lang) {
+    const shellLanguages = ['bash', 'sh', 'shell', 'zsh', 'terminal', 'console', 'powershell', 'cmd'];
+    return shellLanguages.includes(lang.toLowerCase());
+}
+
+/**
+ * Remove common leading whitespace from a string (like Python's textwrap.dedent)
+ */
+function dedent(text) {
+    // Split into lines
+    const lines = text.split('\n');
+
+    // Remove empty first and last lines (common with template strings)
+    while (lines.length && !lines[0].trim()) lines.shift();
+    while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
+
+    if (!lines.length) return '';
+
+    // Find minimum indentation (ignoring empty lines)
+    let minIndent = Infinity;
+    lines.forEach(line => {
+        if (line.trim()) {
+            const indent = line.match(/^(\s*)/)[1].length;
+            minIndent = Math.min(minIndent, indent);
+        }
+    });
+
+    if (minIndent === Infinity) minIndent = 0;
+
+    // Remove the common indentation from all lines
+    return lines.map(line => line.slice(minIndent)).join('\n');
 }
 
 /**

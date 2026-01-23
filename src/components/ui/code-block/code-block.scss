@@ -44,22 +44,47 @@
     overflow-x: auto;
 }
 
-/* Line numbers via CSS counter */
-.code-block-stripe .code-content.line-numbers {
-    counter-reset: line;
-    padding-left: 3.5rem !important;
+/* Line numbers - PrismJS line-numbers plugin support */
+.code-block-stripe pre.line-numbers {
     position: relative;
+    padding-left: 3.8em !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-right: 1.25rem !important;
+    counter-reset: linenumber;
 }
 
-.code-block-stripe .code-content.line-numbers::before {
-    content: '';
+.code-block-stripe pre.line-numbers>code {
+    position: relative;
+    white-space: inherit;
+    padding: 0 !important;
+}
+
+.code-block-stripe .line-numbers .line-numbers-rows {
     position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3rem;
-    background: color-mix(in srgb, var(--muted) 50%, transparent);
+    pointer-events: none;
+    top: 1rem;
+    font-size: 0.875rem;
+    left: -3.8em;
+    width: 3em;
+    letter-spacing: -1px;
     border-right: 1px solid var(--border);
+    user-select: none;
+    background: color-mix(in srgb, var(--muted) 30%, transparent);
+}
+
+.code-block-stripe .line-numbers-rows>span {
+    display: block;
+    counter-increment: linenumber;
+    padding-right: 0.8em;
+    text-align: right;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+}
+
+.code-block-stripe .line-numbers-rows>span::before {
+    content: counter(linenumber);
+    display: block;
 }
 
 /* ===========================================

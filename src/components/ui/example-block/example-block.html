@@ -3,7 +3,7 @@ Example Block Component
 A component for displaying component examples with Preview/Code tabs, RTL toggle, dark mode toggle, and copy
 functionality.
 
-Usage:
+Usage (inline code - legacy):
 {{> example-block
 title="Basic Usage"
 description="Use the accordion selector to enable accordion behavior."
@@ -12,12 +12,18 @@ code="<div class='accordion'>...</div>"
 language="html"
 }}
 
+Usage (block syntax with partial):
+{{#> example-block title="Basic Usage" id="accordion-basic" language="html"}}
+{{> accordion/examples/default}}
+{{/example-block}}
+
 Parameters:
 - title: Section title for the example
 - description: Optional description text
 - id: Unique identifier for the example (used for copy and anchors)
-- code: HTML code string - displayed in Preview (rendered) and Code tab (source)
+- code: (Optional) HTML code string - for legacy inline approach
 - language: Programming language for syntax highlighting (defaults to "html")
+- Block content: Pass example via {{#> example-block}}...{{/example-block}} syntax
 --}}
 
 <section class="example-block mb-8" id="{{id}}">
@@ -71,16 +77,21 @@ Parameters:
 
     {{!-- Preview Panel with browser chrome --}}
     <div class="example-panel example-preview active" data-panel="preview" data-id="{{id}}">
-        <div class="example-preview-container border border-border rounded-xl overflow-hidden bg-background">
+        <div class="example-preview-container border border-border rounded-xl  bg-background">
             {{!-- Browser chrome header --}}
-            <div class="example-browser-bar flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border">
+            <div
+                class="example-browser-bar flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border  rounded-t-xl">
                 <span class="w-3 h-3 rounded-full bg-muted-foreground/30"></span>
                 <span class="w-3 h-3 rounded-full bg-muted-foreground/30"></span>
                 <span class="w-3 h-3 rounded-full bg-muted-foreground/30"></span>
             </div>
-            {{!-- Preview content --}}
-            <div class="example-preview-content p-6">
+            {{!-- Preview content: Use block content if provided, otherwise use code attribute --}}
+            <div class="example-preview-content p-6 rounded-b-xl">
+                {{#if code}}
                 {{{code}}}
+                {{else}}
+                {{> @partial-block}}
+                {{/if}}
             </div>
         </div>
     </div>
@@ -109,7 +120,7 @@ Parameters:
             {{!-- Code content --}}
             <div class="code-block-content relative overflow-x-auto">
                 <pre
-                    class="code-pre !m-0 !p-0 !bg-transparent"><code id="code-{{id}}" class="language-{{#if language}}{{language}}{{else}}html{{/if}} code-content !bg-transparent text-sm">{{code}}</code></pre>
+                    class="code-pre line-numbers !m-0 !bg-transparent"><code id="code-{{id}}" class="language-{{#if language}}{{language}}{{else}}html{{/if}} code-content !bg-transparent text-sm" {{#unless code}}data-from-preview="true"{{/unless}}>{{#if code}}{{code}}{{/if}}</code></pre>
             </div>
         </div>
     </div>

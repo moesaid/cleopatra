@@ -7,136 +7,36 @@ pageDescription="Collapsible content sections with smooth animations"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Default Accordion -->
-{{> example-block
+{{#> example-block
 title="Default"
 description="Basic accordion with single item open at a time."
 id="accordion-default"
-code="<div class=\"accordion\">
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"true\">
-            <span>Is it accessible?</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content is-open\">
-            <div class=\"accordion-body\">
-                Yes. It adheres to the WAI-ARIA design pattern with proper aria-expanded attributes and keyboard
-                navigation support.
-            </div>
-        </div>
-    </div>
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>Is it styled?</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                Yes. It comes with theme-aware default styles that match your design system.
-            </div>
-        </div>
-    </div>
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>Is it animated?</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                Yes. It's animated by default with smooth height transitions.
-            </div>
-        </div>
-    </div>
-</div>"
 language="html"
 }}
+{{> accordion/examples/default}}
+{{/example-block}}
 
 <!-- Separated Variant -->
-{{> example-block
+{{#> example-block
 title="Separated"
 description="Accordion with visual separation between items using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
     font-mono\">.accordion-separated</code> class."
 id="accordion-separated"
-code="<div class=\"accordion accordion-separated\">
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>What payment methods do you accept?</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                We accept all major credit cards, PayPal, and bank transfers.
-            </div>
-        </div>
-    </div>
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>Can I cancel my subscription?</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                Yes, you can cancel at any time. Access continues until billing period ends.
-            </div>
-        </div>
-    </div>
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>Do you offer refunds?</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                We offer a 14-day money-back guarantee.
-            </div>
-        </div>
-    </div>
-</div>"
 language="html"
 }}
+{{> accordion/examples/separated}}
+{{/example-block}}
 
 <!-- Allow Multiple -->
-{{> example-block
+{{#> example-block
 title="Allow Multiple Open"
 description="Enable multiple items to be open simultaneously with <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
     font-mono\">data-allow-multiple</code> attribute."
 id="accordion-multiple"
-code="<div class=\"accordion\" data-allow-multiple>
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>Feature One</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                Multiple items can be open at the same time.
-            </div>
-        </div>
-    </div>
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>Feature Two</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                Compare information across different sections.
-            </div>
-        </div>
-    </div>
-    <div class=\"accordion-item\">
-        <button class=\"accordion-trigger\" aria-expanded=\"false\">
-            <span>Feature Three</span>
-            <i class=\"ri-arrow-down-s-line accordion-icon\"></i>
-        </button>
-        <div class=\"accordion-content\">
-            <div class=\"accordion-body\">
-                Great for FAQ pages or documentation.
-            </div>
-        </div>
-    </div>
-</div>"
 language="html"
 }}
+{{> accordion/examples/multiple}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
@@ -144,12 +44,12 @@ language="html"
 <div class="mb-6">
     <p class="text-sm text-muted-foreground mb-4">Import the accordion component in your JavaScript:</p>
 
-    {{> code-block language="javascript" id="accordion-js-usage"
-    code="import { initAccordion } from '../components/ui/accordion';
+    <script type="text/plain" class="language-javascript">
+import { initAccordion } from '../components/ui/accordion';
 
-    // Initialize all accordions
-    initAccordion();"
-    }}
+// Initialize all accordions
+initAccordion();
+    </script>
 </div>
 
 <!-- Available Classes -->

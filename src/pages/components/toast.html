@@ -7,56 +7,24 @@ pageDescription="Notification toasts"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Interactive Demo -->
-{{> example-block
+{{#> example-block
 title="Interactive Demo"
 description="Click buttons to trigger different toast types."
 id="toast-demo"
-code="<div class=\"flex flex-wrap gap-3\">
-    <button onclick=\"toast.show({ title: 'Notification' , description: 'This is a default toast message.' })\"
-        class=\"btn btn-outline\">
-        Default
-    </button>
-    <button onclick=\"toast.success({ title: 'Success!' , description: 'Your changes have been saved.' })\" class=\"btn
-        btn-outline\">
-        <i class=\"ri-check-circle-line text-success mr-1\"></i> Success
-    </button>
-    <button onclick=\"toast.warning({ title: 'Warning' , description: 'Please review before proceeding.' })\"
-        class=\"btn btn-outline\">
-        <i class=\"ri-alert-line text-warning mr-1\"></i> Warning
-    </button>
-    <button onclick=\"toast.error({ title: 'Error' , description: 'Something went wrong.' })\" class=\"btn
-        btn-outline\">
-        <i class=\"ri-close-circle-line text-destructive mr-1\"></i> Error
-    </button>
-    <button onclick=\"toast.info({ title: 'Info' , description: 'Here is some helpful information.' })\" class=\"btn
-        btn-outline\">
-        <i class=\"ri-information-line text-info mr-1\"></i> Info
-    </button>
-</div>"
 language="html"
 }}
+{{> toast/examples/demo}}
+{{/example-block}}
 
 <!-- Positions -->
-{{> example-block
+{{#> example-block
 title="Positions"
 description="Toast can appear in different screen positions."
 id="toast-positions"
-code="<div class=\"grid grid-cols-3 gap-3\">
-    <button onclick=\"showToast({ title: 'Top Left' , position: 'top-left' })\" class=\"btn btn-outline btn-sm\">Top
-        Left</button>
-    <button onclick=\"showToast({ title: 'Top Center' , position: 'top-center' })\" class=\"btn btn-outline btn-sm\">Top
-        Center</button>
-    <button onclick=\"showToast({ title: 'Top Right' , position: 'top-right' })\" class=\"btn btn-outline btn-sm\">Top
-        Right</button>
-    <button onclick=\"showToast({ title: 'Bottom Left' , position: 'bottom-left' })\" class=\"btn btn-outline
-        btn-sm\">Bottom Left</button>
-    <button onclick=\"showToast({ title: 'Bottom Center' , position: 'bottom-center' })\" class=\"btn btn-outline
-        btn-sm\">Bottom Center</button>
-    <button onclick=\"showToast({ title: 'Bottom Right' , position: 'bottom-right' })\" class=\"btn btn-outline
-        btn-sm\">Bottom Right</button>
-</div>"
 language="html"
 }}
+{{> toast/examples/positions}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

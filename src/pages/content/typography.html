@@ -1,54 +1,96 @@
-{{#> start pageTitle="Typography" pageDescription="Text styles and formatting"}}{{/start}}
+{{> docs-start
+pageTitle="Typography"
+pageDescription="Text styles, headings, and formatting utilities"
+}}
 
-<div class="bg-white rounded-xl p-6 border border-gray-100 mb-5">
-  <h3 class="font-semibold text-gray-900 mb-6">Headings</h3>
-  <div class="space-y-4">
-    <h1 class="text-4xl font-bold text-gray-900">Heading 1 - The quick brown fox</h1>
-    <h2 class="text-3xl font-bold text-gray-900">Heading 2 - The quick brown fox</h2>
-    <h3 class="text-2xl font-bold text-gray-900">Heading 3 - The quick brown fox</h3>
-    <h4 class="text-xl font-bold text-gray-900">Heading 4 - The quick brown fox</h4>
-    <h5 class="text-lg font-bold text-gray-900">Heading 5 - The quick brown fox</h5>
-    <h6 class="text-base font-bold text-gray-900">Heading 6 - The quick brown fox</h6>
-  </div>
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Headings -->
+{{#> example-block
+title="Headings"
+description="Six levels of headings with consistent tracking and weight."
+id="typography-headings"
+language="html"
+}}
+{{> content/examples/headings}}
+{{/example-block}}
+
+<!-- Paragraphs -->
+{{#> example-block
+title="Paragraphs"
+description="Text sizes for different content hierarchy."
+id="typography-paragraphs"
+language="html"
+}}
+{{> content/examples/paragraphs}}
+{{/example-block}}
+
+<!-- Text Colors -->
+{{#> example-block
+title="Text Colors"
+description="Semantic color classes for text."
+id="typography-colors"
+language="html"
+}}
+{{> content/examples/colors}}
+{{/example-block}}
+
+<!-- Font Weights -->
+{{#> example-block
+title="Font Weights"
+description="Available font weight utilities."
+id="typography-weights"
+language="html"
+}}
+{{> content/examples/weights}}
+{{/example-block}}
+
+<!-- Inline Code -->
+{{#> example-block
+title="Inline Code"
+description="Code snippets within paragraph text."
+id="typography-inline"
+language="html"
+}}
+{{> content/examples/inline-code}}
+{{/example-block}}
+
+<!-- Blockquote -->
+{{#> example-block
+title="Blockquote"
+description="Styled quotation blocks."
+id="typography-blockquote"
+language="html"
+}}
+{{> content/examples/blockquote}}
+{{/example-block}}
+
+<!-- Lists -->
+{{#> example-block
+title="Lists"
+description="Ordered and unordered list styles."
+id="typography-lists"
+language="html"
+}}
+{{> content/examples/lists}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Typography uses semantic classes for theming support:</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Key Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-foreground</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-muted-foreground</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-primary</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-destructive</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-success</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-warning</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">leading-7</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">tracking-tight</div>
 </div>
 
-<div class="bg-white rounded-xl p-6 border border-gray-100 mb-5">
-  <h3 class="font-semibold text-gray-900 mb-6">Paragraph Styles</h3>
-  <div class="space-y-4">
-    <p class="text-xl text-gray-600 leading-relaxed">Large text - Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Sed do eiusmod tempor incididunt ut labore.</p>
-    <p class="text-base text-gray-600 leading-relaxed">Default text - Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <p class="text-sm text-gray-500 leading-relaxed">Small text - Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit. Sed do eiusmod tempor incididunt ut labore.</p>
-    <p class="text-xs text-gray-400 leading-relaxed">Extra small text - Lorem ipsum dolor sit amet, consectetur
-      adipiscing elit.</p>
-  </div>
-</div>
-
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
-  <div class="bg-white rounded-xl p-6 border border-gray-100">
-    <h3 class="font-semibold text-gray-900 mb-4">Text Colors</h3>
-    <div class="space-y-2">
-      <p class="text-gray-900">Gray 900 - Primary text</p>
-      <p class="text-gray-600">Gray 600 - Secondary text</p>
-      <p class="text-gray-400">Gray 400 - Muted text</p>
-      <p class="text-indigo-600">Indigo 600 - Link text</p>
-      <p class="text-emerald-600">Emerald 600 - Success text</p>
-      <p class="text-rose-600">Rose 600 - Error text</p>
-    </div>
-  </div>
-
-  <div class="bg-white rounded-xl p-6 border border-gray-100">
-    <h3 class="font-semibold text-gray-900 mb-4">Font Weights</h3>
-    <div class="space-y-2">
-      <p class="font-light text-gray-900">Light (300)</p>
-      <p class="font-normal text-gray-900">Regular (400)</p>
-      <p class="font-medium text-gray-900">Medium (500)</p>
-      <p class="font-semibold text-gray-900">Semibold (600)</p>
-      <p class="font-bold text-gray-900">Bold (700)</p>
-    </div>
-  </div>
-</div>
-
-{{> end}}
+{{> docs-end}}

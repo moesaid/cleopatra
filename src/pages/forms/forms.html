@@ -7,286 +7,114 @@ pageDescription="Beautiful form inputs and controls inspired by shadcn/ui"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Text Inputs -->
-{{> example-block
+{{#> example-block
 title="Text Inputs"
 description="Clean, minimal input fields with focus states."
 id="form-text-inputs"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Email</label>
-        <input type=\"email\" placeholder=\"m@example.com\" class=\"flex h-10 w-full rounded-md border border-input
-            bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-            disabled:cursor-not-allowed disabled:opacity-50\">
-    </div>
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Password</label>
-        <input type=\"password\" placeholder=\"••••••••\" class=\"flex h-10 w-full rounded-md border border-input
-            bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/text-inputs}}
+{{/example-block}}
 
 <!-- Input with Label and Description -->
-{{> example-block
+{{#> example-block
 title="With Description"
 description="Input fields with helper text for additional context."
 id="form-with-description"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Username</label>
-        <input type=\"text\" placeholder=\"johndoe\" class=\"flex h-10 w-full rounded-md border border-input
-            bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-        <p class=\"text-[0.8rem] text-muted-foreground\">This is your public display name.</p>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/with-description}}
+{{/example-block}}
 
 <!-- Input with Icons -->
-{{> example-block
+{{#> example-block
 title="With Icons"
 description="Inputs enhanced with leading or trailing icons."
 id="form-icons"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Search</label>
-        <div class=\"relative\">
-            <i class=\"ri-search-line absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground\"></i>
-            <input type=\"text\" placeholder=\"Search...\" class=\"flex h-10 w-full rounded-md border border-input
-                bg-background pl-10 pr-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-        </div>
-    </div>
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Amount</label>
-        <div class=\"relative\">
-            <span class=\"absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-sm\">$</span>
-            <input type=\"number\" placeholder=\"0.00\" class=\"flex h-10 w-full rounded-md border border-input
-                bg-background pl-7 pr-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-        </div>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/with-icons}}
+{{/example-block}}
 
 <!-- Select -->
-{{> example-block
+{{#> example-block
 title="Select"
 description="Dropdown selection with custom styling."
 id="form-select"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Framework</label>
-        <select class=\"flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3
-            py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2
-            focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50\">
-            <option value=\"\">Select a framework</option>
-            <option value=\"next\">Next.js</option>
-            <option value=\"sveltekit\">SvelteKit</option>
-            <option value=\"astro\">Astro</option>
-            <option value=\"nuxt\">Nuxt.js</option>
-        </select>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/select}}
+{{/example-block}}
 
 <!-- Textarea -->
-{{> example-block
+{{#> example-block
 title="Textarea"
 description="Multi-line text input for longer content."
 id="form-textarea"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Bio</label>
-        <textarea placeholder=\"Tell us a little about yourself\" rows=\"4\" class=\"flex min-h-[80px] w-full rounded-md
-            border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-            disabled:cursor-not-allowed disabled:opacity-50 resize-none\"></textarea>
-        <p class=\"text-[0.8rem] text-muted-foreground\">You can @mention other users and organizations.</p>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/textarea}}
+{{/example-block}}
 
 <!-- Checkbox -->
-{{> example-block
+{{#> example-block
 title="Checkbox"
 description="Checkboxes for multiple selections."
 id="form-checkbox"
-code="<div class=\"space-y-4\">
-    <div class=\"flex items-center space-x-2\">
-        <input type=\"checkbox\" id=\"terms\" class=\"h-4 w-4 shrink-0 rounded-sm border border-primary
-            ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
-            focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 accent-primary\">
-        <label for=\"terms\" class=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed
-            peer-disabled:opacity-70\">Accept terms and conditions</label>
-    </div>
-    <div class=\"flex items-start space-x-2\">
-        <input type=\"checkbox\" id=\"marketing\" class=\"h-4 w-4 shrink-0 rounded-sm border border-primary
-            ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring
-            focus-visible:ring-offset-2 mt-0.5 accent-primary\">
-        <div class=\"grid gap-1.5 leading-none\">
-            <label for=\"marketing\" class=\"text-sm font-medium leading-none\">Marketing emails</label>
-            <p class=\"text-[0.8rem] text-muted-foreground\">Receive emails about new products and features.</p>
-        </div>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/checkbox}}
+{{/example-block}}
 
 <!-- Radio Group -->
-{{> example-block
+{{#> example-block
 title="Radio Group"
 description="Single selection from multiple options."
 id="form-radio"
-code="<div class=\"space-y-3\">
-    <label class=\"text-sm font-medium leading-none\">Notify me about...</label>
-    <div class=\"space-y-2\">
-        <div class=\"flex items-center space-x-2\">
-            <input type=\"radio\" id=\"all\" name=\"notify\" value=\"all\" class=\"h-4 w-4 border-primary text-primary
-                focus:ring-ring accent-primary\" checked>
-            <label for=\"all\" class=\"text-sm font-normal\">All new messages</label>
-        </div>
-        <div class=\"flex items-center space-x-2\">
-            <input type=\"radio\" id=\"mentions\" name=\"notify\" value=\"mentions\" class=\"h-4 w-4 border-primary
-                text-primary focus:ring-ring accent-primary\">
-            <label for=\"mentions\" class=\"text-sm font-normal\">Direct messages and mentions</label>
-        </div>
-        <div class=\"flex items-center space-x-2\">
-            <input type=\"radio\" id=\"none\" name=\"notify\" value=\"none\" class=\"h-4 w-4 border-primary text-primary
-                focus:ring-ring accent-primary\">
-            <label for=\"none\" class=\"text-sm font-normal\">Nothing</label>
-        </div>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/radio}}
+{{/example-block}}
 
 <!-- Switch Toggle -->
-{{> example-block
+{{#> example-block
 title="Switch"
 description="Toggle switches for on/off settings."
 id="form-switch"
-code="<div class=\"space-y-4 max-w-md\">
-    <label class=\"flex items-center justify-between rounded-lg border border-border p-4 cursor-pointer\">
-        <div class=\"space-y-0.5\">
-            <span class=\"text-sm font-medium\">Marketing emails</span>
-            <p class=\"text-[0.8rem] text-muted-foreground\">Receive emails about new products.</p>
-        </div>
-        <div class=\"relative\">
-            <input type=\"checkbox\" class=\"sr-only peer\" checked>
-            <div class=\"w-11 h-6 bg-muted rounded-full peer peer-checked:bg-primary transition-colors\"></div>
-            <div class=\"absolute top-0.5 start-0.5 w-5 h-5 bg-background rounded-full shadow transition-all
-                peer-checked:start-5\"></div>
-        </div>
-    </label>
-    <label class=\"flex items-center justify-between rounded-lg border border-border p-4 cursor-pointer\">
-        <div class=\"space-y-0.5\">
-            <span class=\"text-sm font-medium\">Security emails</span>
-            <p class=\"text-[0.8rem] text-muted-foreground\">Receive important security alerts.</p>
-        </div>
-        <div class=\"relative\">
-            <input type=\"checkbox\" class=\"sr-only peer\">
-            <div class=\"w-11 h-6 bg-muted rounded-full peer peer-checked:bg-primary transition-colors\"></div>
-            <div class=\"absolute top-0.5 start-0.5 w-5 h-5 bg-background rounded-full shadow transition-all
-                peer-checked:start-5\"></div>
-        </div>
-    </label>
-</div>"
 language="html"
 }}
+{{> form/examples/switch}}
+{{/example-block}}
 
 <!-- File Upload -->
-{{> example-block
+{{#> example-block
 title="File Input"
 description="Clean file upload with drag and drop zone."
 id="form-file"
-code="<div class=\"max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Upload</label>
-        <label class=\"flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-border
-            rounded-lg cursor-pointer bg-muted/30 hover:bg-muted/50 hover:border-primary/50 transition-all\">
-            <div class=\"flex flex-col items-center justify-center py-4\">
-                <i class=\"ri-upload-cloud-2-line text-3xl text-muted-foreground mb-2\"></i>
-                <p class=\"text-sm text-muted-foreground\"><span class=\"font-semibold text-primary\">Click to
-                        upload</span> or drag and drop</p>
-                <p class=\"text-xs text-muted-foreground mt-1\">SVG, PNG, JPG or GIF (max. 800x400px)</p>
-            </div>
-            <input type=\"file\" class=\"hidden\">
-        </label>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/file}}
+{{/example-block}}
 
 <!-- Complete Form -->
-{{> example-block
+{{#> example-block
 title="Complete Form"
 description="A complete login form example."
 id="form-complete"
-code="<div class=\"max-w-sm mx-auto space-y-6\">
-    <div class=\"space-y-2 text-center\">
-        <h3 class=\"text-2xl font-semibold tracking-tight\">Create an account</h3>
-        <p class=\"text-sm text-muted-foreground\">Enter your email below to create your account</p>
-    </div>
-    <div class=\"space-y-4\">
-        <div class=\"grid grid-cols-2 gap-4\">
-            <button class=\"btn btn-outline w-full\"><i class=\"ri-github-fill mr-2\"></i> GitHub</button>
-            <button class=\"btn btn-outline w-full\"><i class=\"ri-google-fill mr-2\"></i> Google</button>
-        </div>
-        <div class=\"relative\">
-            <div class=\"absolute inset-0 flex items-center\"><span class=\"w-full border-t border-border\"></span>
-            </div>
-            <div class=\"relative flex justify-center text-xs uppercase\"><span class=\"bg-card px-2
-                    text-muted-foreground\">Or continue with</span></div>
-        </div>
-        <div class=\"space-y-2\">
-            <label class=\"text-sm font-medium leading-none\">Email</label>
-            <input type=\"email\" placeholder=\"m@example.com\" class=\"flex h-10 w-full rounded-md border border-input
-                bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none
-                focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\">
-        </div>
-        <div class=\"space-y-2\">
-            <label class=\"text-sm font-medium leading-none\">Password</label>
-            <input type=\"password\" class=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2
-                text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2
-                focus-visible:ring-ring focus-visible:ring-offset-2\">
-        </div>
-        <button class=\"btn w-full\">Create account</button>
-    </div>
-    <p class=\"text-center text-sm text-muted-foreground\">By clicking continue, you agree to our <a href=\"#\"
-            class=\"underline underline-offset-4 hover:text-primary\">Terms of Service</a> and <a href=\"#\"
-            class=\"underline underline-offset-4 hover:text-primary\">Privacy Policy</a>.</p>
-</div>"
 language="html"
 }}
+{{> form/examples/complete}}
+{{/example-block}}
 
 <!-- Disabled States -->
-{{> example-block
+{{#> example-block
 title="Disabled State"
 description="Inputs in disabled state."
 id="form-disabled"
-code="<div class=\"space-y-4 max-w-sm\">
-    <div class=\"space-y-2\">
-        <label class=\"text-sm font-medium leading-none\">Disabled Input</label>
-        <input type=\"text\" placeholder=\"Disabled\" disabled class=\"flex h-10 w-full rounded-md border border-input
-            bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground
-            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-            disabled:cursor-not-allowed disabled:opacity-50\">
-    </div>
-    <div class=\"flex items-center space-x-2 opacity-50\">
-        <input type=\"checkbox\" disabled class=\"h-4 w-4 shrink-0 rounded-sm border border-primary\">
-        <label class=\"text-sm font-medium leading-none cursor-not-allowed\">Disabled checkbox</label>
-    </div>
-</div>"
 language="html"
 }}
+{{> form/examples/disabled}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

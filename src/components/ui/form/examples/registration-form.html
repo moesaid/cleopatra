@@ -1,0 +1,44 @@
+<div class="max-w-md mx-auto rounded-xl border border-border bg-card p-6">
+    <div class="space-y-1.5 mb-6">
+        <h3 class="text-xl font-semibold">Create account</h3>
+        <p class="text-sm text-muted-foreground">Enter your information to get started</p>
+    </div>
+    <form class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+            <div class="space-y-2">
+                <label class="text-sm font-medium">First name</label>
+                <input type="text" value="John" class="flex h-10 w-full rounded-md border border-success
+                    bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2
+                    focus-visible:ring-ring focus-visible:ring-offset-2">
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-medium">Last name</label>
+                <input type="text" placeholder="Doe" class="flex h-10 w-full rounded-md border border-input
+                    bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none
+                    focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+            </div>
+        </div>
+        <div class="space-y-2">
+            <label class="text-sm font-medium">Email <span class="text-destructive">*</span></label>
+            <input type="email" value="invalid-email" class="flex h-10 w-full rounded-md border border-destructive
+                bg-destructive/5 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2
+                focus-visible:ring-destructive focus-visible:ring-offset-2">
+            <p class="text-[0.8rem] text-destructive">Please enter a valid email address</p>
+        </div>
+        <div class="space-y-2">
+            <label class="text-sm font-medium">Password <span class="text-destructive">*</span></label>
+            <input type="password" placeholder="Create a password" class="flex h-10 w-full rounded-md border
+                border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+            <p class="text-[0.8rem] text-muted-foreground">Minimum 8 characters</p>
+        </div>
+        <div class="flex items-start space-x-2">
+            <input type="checkbox" id="terms-check" class="h-4 w-4 shrink-0 rounded-sm border border-primary mt-0.5
+                accent-primary">
+            <label for="terms-check" class="text-sm">I agree to the <a href="#" class="text-primary
+                    hover:underline">Terms of Service</a> and <a href="#" class="text-primary
+                    hover:underline">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="btn w-full">Create account</button>
+    </form>
+</div>

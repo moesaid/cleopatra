@@ -9,7 +9,13 @@ import '../styles/global.scss';
 // PrismJS for code highlighting
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
+
+// PrismJS Plugins
 import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.js';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs/plugins/command-line/prism-command-line.js';
+import 'prismjs/plugins/command-line/prism-command-line.css';
 
 Prism.plugins.NormalizeWhitespace.setDefaults({
     'remove-trailing': true,
@@ -17,6 +23,8 @@ Prism.plugins.NormalizeWhitespace.setDefaults({
     'left-trim': true,
     'right-trim': true,
 });
+
+// Prism.plugins.lineNumbers();
 
 // Widgets
 import { initNavbar } from '../components/widgets/navbar';
@@ -80,6 +88,8 @@ document.addEventListener('page:load', () => {
 document.addEventListener('DOMContentLoaded', () => {
     initComponents();
     initRouter();
+    // Transform code blocks and apply Prism highlighting on initial load
+    initCodeBlockTransformer();
 
     // Show app after CSS/JS fully loaded
     window.addEventListener('load', () => {

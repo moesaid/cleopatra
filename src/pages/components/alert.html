@@ -7,92 +7,35 @@ pageDescription="Notification and alert styles with theme-aware colors"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Standard Alerts -->
-{{> example-block
+{{#> example-block
 title="Standard Alerts"
 description="Full alerts with icon, title, description, and close button."
 id="alert-standard"
-code="<div class=\"alert alert-info\">
-  <div class=\"alert-icon\"><i class=\"ri-information-line\"></i></div>
-  <div class=\"alert-content\">
-    <h4 class=\"alert-title\">Information</h4>
-    <p class=\"alert-description\">This is an informational alert. It provides helpful context.</p>
-  </div>
-  <button class=\"alert-close alert-btn-close\"><i class=\"ri-close-line text-lg\"></i></button>
-</div>
-
-<div class=\"alert alert-success\">
-  <div class=\"alert-icon\"><i class=\"ri-check-line\"></i></div>
-  <div class=\"alert-content\">
-    <h4 class=\"alert-title\">Success</h4>
-    <p class=\"alert-description\">Your changes have been saved successfully.</p>
-  </div>
-  <button class=\"alert-close alert-btn-close\"><i class=\"ri-close-line text-lg\"></i></button>
-</div>
-
-<div class=\"alert alert-warning\">
-  <div class=\"alert-icon\"><i class=\"ri-alert-line\"></i></div>
-  <div class=\"alert-content\">
-    <h4 class=\"alert-title\">Warning</h4>
-    <p class=\"alert-description\">Please review your input before submitting.</p>
-  </div>
-  <button class=\"alert-close alert-btn-close\"><i class=\"ri-close-line text-lg\"></i></button>
-</div>
-
-<div class=\"alert alert-destructive\">
-  <div class=\"alert-icon\"><i class=\"ri-error-warning-line\"></i></div>
-  <div class=\"alert-content\">
-    <h4 class=\"alert-title\">Error</h4>
-    <p class=\"alert-description\">Something went wrong. Please try again.</p>
-  </div>
-  <button class=\"alert-close alert-btn-close\"><i class=\"ri-close-line text-lg\"></i></button>
-</div>"
 language="html"
 }}
+{{> standard}}
+{{/example-block}}
 
 <!-- Minimal Style -->
-{{> example-block
+{{#> example-block
 title="Minimal Style"
 description="Simple alerts with left border accent using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
   font-mono\">.alert-minimal</code> class."
 id="alert-minimal"
-code="<div class=\"alert alert-minimal alert-info\">
-  <p class=\"text-sm\">A simple info message with left border accent.</p>
-</div>
-
-<div class=\"alert alert-minimal alert-success\">
-  <p class=\"text-sm\">A simple success message with left border accent.</p>
-</div>
-
-<div class=\"alert alert-minimal alert-warning\">
-  <p class=\"text-sm\">A simple warning message with left border accent.</p>
-</div>
-
-<div class=\"alert alert-minimal alert-destructive\">
-  <p class=\"text-sm\">A simple error message with left border accent.</p>
-</div>"
 language="html"
 }}
+{{> minimal}}
+{{/example-block}}
 
 <!-- Without Title -->
-{{> example-block
+{{#> example-block
 title="Without Title"
 description="Simpler alerts with just description and icon."
 id="alert-no-title"
-code="<div class=\"alert alert-info\">
-  <div class=\"alert-icon\"><i class=\"ri-information-line\"></i></div>
-  <div class=\"alert-content\">
-    <p class=\"alert-description\">You can use alerts without titles for simpler messages.</p>
-  </div>
-</div>
-
-<div class=\"alert alert-success\">
-  <div class=\"alert-icon\"><i class=\"ri-check-line\"></i></div>
-  <div class=\"alert-content\">
-    <p class=\"alert-description\">Your profile has been updated successfully!</p>
-  </div>
-</div>"
 language="html"
 }}
+{{> without-title}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

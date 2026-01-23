@@ -7,31 +7,24 @@ pageDescription="Dialog overlays with animations"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Interactive Demo -->
-{{> example-block
+{{#> example-block
 title="Interactive Demo"
 description="Click buttons to open different modal types."
 id="modal-demo"
-code="<div class=\"flex flex-wrap gap-3\">
-    <button onclick=\"openModal('modal-default')\" class=\"btn\">Open Modal</button>
-    <button onclick=\"openModal('modal-lg')\" class=\"btn btn-outline\">Large Modal</button>
-    <button onclick=\"openModal('modal-confirm')\" class=\"btn btn-destructive\">Confirm Delete</button>
-</div>"
 language="html"
 }}
+{{> modal/examples/demo}}
+{{/example-block}}
 
 <!-- Sizes -->
-{{> example-block
+{{#> example-block
 title="Sizes"
 description="Modal in different sizes."
 id="modal-sizes"
-code="<div class=\"flex flex-wrap gap-3\">
-    <button onclick=\"openModal('modal-sm')\" class=\"btn btn-outline btn-sm\">Small</button>
-    <button onclick=\"openModal('modal-default')\" class=\"btn btn-outline btn-sm\">Default</button>
-    <button onclick=\"openModal('modal-lg')\" class=\"btn btn-outline btn-sm\">Large</button>
-    <button onclick=\"openModal('modal-xl')\" class=\"btn btn-outline btn-sm\">Extra Large</button>
-</div>"
 language="html"
 }}
+{{> modal/examples/sizes}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

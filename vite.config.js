@@ -48,21 +48,52 @@ function getHtmlPages() {
     return pages;
 }
 
+// Dynamically discover all partial directories
+function getPartialDirectories() {
+    const dirs = [
+        resolve(__dirname, 'src/components/layout'),
+        resolve(__dirname, 'src/components/widgets'),
+        resolve(__dirname, 'src/components'),
+    ];
+
+    // Auto-discover all UI component directories and their examples
+    const uiDir = resolve(__dirname, 'src/components/ui');
+    dirs.push(uiDir);
+
+    try {
+        const uiComponents = readdirSync(uiDir, { withFileTypes: true });
+        uiComponents.forEach(entry => {
+            if (entry.isDirectory()) {
+                const componentDir = resolve(uiDir, entry.name);
+                dirs.push(componentDir);
+
+                // Check for examples subdirectory
+                try {
+                    const subDirs = readdirSync(componentDir, { withFileTypes: true });
+                    subDirs.forEach(subEntry => {
+                        if (subEntry.isDirectory() && subEntry.name === 'examples') {
+                            dirs.push(resolve(componentDir, 'examples'));
+                        }
+                    });
+                } catch (e) {
+                    // Ignore errors for individual component dirs
+                }
+            }
+        });
+    } catch (e) {
+        console.warn('Could not scan UI components directory:', e.message);
+    }
+
+    return dirs;
+}
+
 export default defineConfig({
     // Base path for GitHub Pages deployment
     base: process.env.GITHUB_ACTIONS ? '/cleopatra/' : '/',
 
     plugins: [
         handlebars({
-            partialDirectory: [
-                resolve(__dirname, 'src/components/layout'),
-                resolve(__dirname, 'src/components/ui'),
-                resolve(__dirname, 'src/components/ui/code-block'),
-                resolve(__dirname, 'src/components/ui/example-block'),
-                resolve(__dirname, 'src/components/ui/button'),
-                resolve(__dirname, 'src/components/widgets'),
-                resolve(__dirname, 'src/components'),
-            ],
+            partialDirectory: getPartialDirectories(),
             context: {
                 title: 'Cleopatra - Modern Admin Dashboard',
                 sidebarLinks: sidebarData,

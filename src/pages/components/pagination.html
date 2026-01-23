@@ -7,81 +7,34 @@ pageDescription="Page navigation controls"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Default -->
-{{> example-block
+{{#> example-block
 title="Default"
 description="Standard pagination with page numbers and navigation arrows."
 id="pagination-default"
-code="<nav class=\"pagination\">
-    <button class=\"pagination-item\" disabled><i class=\"ri-arrow-left-s-line\"></i></button>
-    <button class=\"pagination-item is-active\">1</button>
-    <button class=\"pagination-item\">2</button>
-    <button class=\"pagination-item\">3</button>
-    <span class=\"pagination-ellipsis\">...</span>
-    <button class=\"pagination-item\">10</button>
-    <button class=\"pagination-item\"><i class=\"ri-arrow-right-s-line\"></i></button>
-</nav>"
 language="html"
 }}
+{{> pagination/examples/default}}
+{{/example-block}}
 
 <!-- Sizes -->
-{{> example-block
+{{#> example-block
 title="Sizes"
 description="Small, default, and large pagination sizes."
 id="pagination-sizes"
-code="<div class=\"space-y-6\">
-    <div>
-        <span class=\"text-xs text-muted-foreground font-mono mb-2 block\">.pagination-sm</span>
-        <nav class=\"pagination pagination-sm\">
-            <button class=\"pagination-item\"><i class=\"ri-arrow-left-s-line\"></i></button>
-            <button class=\"pagination-item is-active\">1</button>
-            <button class=\"pagination-item\">2</button>
-            <button class=\"pagination-item\">3</button>
-            <button class=\"pagination-item\"><i class=\"ri-arrow-right-s-line\"></i></button>
-        </nav>
-    </div>
-    <div>
-        <span class=\"text-xs text-muted-foreground font-mono mb-2 block\">.pagination-lg</span>
-        <nav class=\"pagination pagination-lg\">
-            <button class=\"pagination-item\"><i class=\"ri-arrow-left-s-line\"></i></button>
-            <button class=\"pagination-item is-active\">1</button>
-            <button class=\"pagination-item\">2</button>
-            <button class=\"pagination-item\">3</button>
-            <button class=\"pagination-item\"><i class=\"ri-arrow-right-s-line\"></i></button>
-        </nav>
-    </div>
-</div>"
 language="html"
 }}
+{{> pagination/examples/sizes}}
+{{/example-block}}
 
 <!-- Variants -->
-{{> example-block
+{{#> example-block
 title="Variants"
 description="Different visual styles for pagination."
 id="pagination-variants"
-code="<div class=\"space-y-6\">
-    <div>
-        <span class=\"text-xs text-muted-foreground mb-2 block\">Simple (no border)</span>
-        <nav class=\"pagination pagination-simple\">
-            <button class=\"pagination-item\"><i class=\"ri-arrow-left-s-line\"></i></button>
-            <button class=\"pagination-item is-active\">1</button>
-            <button class=\"pagination-item\">2</button>
-            <button class=\"pagination-item\">3</button>
-            <button class=\"pagination-item\"><i class=\"ri-arrow-right-s-line\"></i></button>
-        </nav>
-    </div>
-    <div>
-        <span class=\"text-xs text-muted-foreground mb-2 block\">Outline</span>
-        <nav class=\"pagination pagination-outline\">
-            <button class=\"pagination-item\"><i class=\"ri-arrow-left-s-line\"></i></button>
-            <button class=\"pagination-item is-active\">1</button>
-            <button class=\"pagination-item\">2</button>
-            <button class=\"pagination-item\">3</button>
-            <button class=\"pagination-item\"><i class=\"ri-arrow-right-s-line\"></i></button>
-        </nav>
-    </div>
-</div>"
 language="html"
 }}
+{{> pagination/examples/variants}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

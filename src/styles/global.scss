@@ -1,40 +1,40 @@
-@import "./tailwind.css";
-@import "./theme.css";
+@use "./tailwind.css";
+@use "./theme.css";
 
 // Widget styles
-@import "../components/widgets/navbar/navbar.scss";
-@import "../components/widgets/sidebar/sidebar.scss";
+@use "../components/widgets/navbar/navbar.scss";
+@use "../components/widgets/sidebar/sidebar.scss";
 
 // UI component styles
-@import "../components/ui/button/button.scss";
-@import "../components/ui/dropdown/dropdown.scss";
-@import "../components/ui/code-block/code-block.scss";
-@import "../components/ui/accordion/accordion.scss";
-@import "../components/ui/alert/alert.scss";
-@import "../components/ui/avatar/avatar.scss";
-@import "../components/ui/badge/badge.scss";
-@import "../components/ui/breadcrumb/breadcrumb.scss";
-@import "../components/ui/checkbox/checkbox.scss";
-@import "../components/ui/collapse/collapse.scss";
-@import "../components/ui/drawer/drawer.scss";
-@import "../components/ui/input/input.scss";
-@import "../components/ui/kbd/kbd.scss";
-@import "../components/ui/link/link.scss";
-@import "../components/ui/modal/modal.scss";
-@import "../components/ui/pagination/pagination.scss";
-@import "../components/ui/progress/progress.scss";
-@import "../components/ui/radio/radio.scss";
-@import "../components/ui/select/select.scss";
-@import "../components/ui/separator/separator.scss";
-@import "../components/ui/skeleton/skeleton.scss";
-@import "../components/ui/stepper/stepper.scss";
-@import "../components/ui/switch/switch.scss";
-@import "../components/ui/tabs/tabs.scss";
-@import "../components/ui/toast/toast.scss";
-@import "../components/ui/toggle/toggle.scss";
-@import "../components/ui/tooltip/tooltip.scss";
-@import "../components/ui/example-block/example-block.scss";
-@import "../components/layout/docs-right-sidebar.scss";
+@use "../components/ui/button/button.scss";
+@use "../components/ui/dropdown/dropdown.scss";
+@use "../components/ui/code-block/code-block.scss";
+@use "../components/ui/accordion/accordion.scss";
+@use "../components/ui/alert/alert.scss";
+@use "../components/ui/avatar/avatar.scss";
+@use "../components/ui/badge/badge.scss";
+@use "../components/ui/breadcrumb/breadcrumb.scss";
+@use "../components/ui/checkbox/checkbox.scss";
+@use "../components/ui/collapse/collapse.scss";
+@use "../components/ui/drawer/drawer.scss";
+@use "../components/ui/input/input.scss";
+@use "../components/ui/kbd/kbd.scss";
+@use "../components/ui/link/link.scss";
+@use "../components/ui/modal/modal.scss";
+@use "../components/ui/pagination/pagination.scss";
+@use "../components/ui/progress/progress.scss";
+@use "../components/ui/radio/radio.scss";
+@use "../components/ui/select/select.scss";
+@use "../components/ui/separator/separator.scss";
+@use "../components/ui/skeleton/skeleton.scss";
+@use "../components/ui/stepper/stepper.scss";
+@use "../components/ui/switch/switch.scss";
+@use "../components/ui/tabs/tabs.scss";
+@use "../components/ui/toast/toast.scss";
+@use "../components/ui/toggle/toggle.scss";
+@use "../components/ui/tooltip/tooltip.scss";
+@use "../components/ui/example-block/example-block.scss";
+@use "../components/layout/docs-right-sidebar.scss";
 
 
 /* Base Typography */

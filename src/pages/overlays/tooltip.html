@@ -7,75 +7,35 @@ pageDescription="Hover tooltips"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Positions -->
-{{> example-block
+{{#> example-block
 title="Positions"
 description="Tooltip can appear in four positions around the trigger element."
 id="tooltip-positions"
-code="<div class=\"flex flex-wrap items-center justify-center gap-8 py-4\">
-    <div class=\"tooltip tooltip-top\">
-        <button class=\"btn btn-outline\">Top</button>
-        <span class=\"tooltip-content\">Tooltip on top</span>
-    </div>
-    <div class=\"tooltip tooltip-bottom\">
-        <button class=\"btn btn-outline\">Bottom</button>
-        <span class=\"tooltip-content\">Tooltip on bottom</span>
-    </div>
-    <div class=\"tooltip tooltip-left\">
-        <button class=\"btn btn-outline\">Left</button>
-        <span class=\"tooltip-content\">Tooltip on left</span>
-    </div>
-    <div class=\"tooltip tooltip-right\">
-        <button class=\"btn btn-outline\">Right</button>
-        <span class=\"tooltip-content\">Tooltip on right</span>
-    </div>
-</div>"
 language="html"
 }}
+{{> tooltip/examples/positions}}
+{{/example-block}}
 
 <!-- Dark Variant -->
-{{> example-block
+{{#> example-block
 title="Dark Variant"
 description="Dark themed tooltips using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
     font-mono\">.tooltip-dark</code> class."
 id="tooltip-dark"
-code="<div class=\"flex flex-wrap items-center justify-center gap-8 py-4\">
-    <div class=\"tooltip tooltip-top tooltip-dark\">
-        <button class=\"btn\">Dark Top</button>
-        <span class=\"tooltip-content\">Dark tooltip</span>
-    </div>
-    <div class=\"tooltip tooltip-bottom tooltip-dark\">
-        <button class=\"btn\">Dark Bottom</button>
-        <span class=\"tooltip-content\">Dark tooltip</span>
-    </div>
-</div>"
 language="html"
 }}
+{{> tooltip/examples/dark}}
+{{/example-block}}
 
 <!-- Icon Buttons -->
-{{> example-block
+{{#> example-block
 title="Icon Buttons with Tooltips"
 description="Common pattern for providing context to icon-only buttons."
 id="tooltip-icons"
-code="<div class=\"flex flex-wrap items-center justify-center gap-4\">
-    <div class=\"tooltip tooltip-top\">
-        <button class=\"btn btn-icon btn-ghost\"><i class=\"ri-edit-line\"></i></button>
-        <span class=\"tooltip-content\">Edit</span>
-    </div>
-    <div class=\"tooltip tooltip-top\">
-        <button class=\"btn btn-icon btn-ghost\"><i class=\"ri-file-copy-line\"></i></button>
-        <span class=\"tooltip-content\">Copy</span>
-    </div>
-    <div class=\"tooltip tooltip-top\">
-        <button class=\"btn btn-icon btn-ghost\"><i class=\"ri-share-line\"></i></button>
-        <span class=\"tooltip-content\">Share</span>
-    </div>
-    <div class=\"tooltip tooltip-top tooltip-dark\">
-        <button class=\"btn btn-icon btn-ghost\"><i class=\"ri-delete-bin-line text-destructive\"></i></button>
-        <span class=\"tooltip-content\">Delete</span>
-    </div>
-</div>"
 language="html"
 }}
+{{> tooltip/examples/icons}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>

@@ -1,0 +1,63 @@
+<div class="rounded-lg border border-border overflow-hidden">
+    <table class="w-full">
+        <thead class="bg-muted/50 border-b border-border">
+            <tr>
+                <th class="w-8 px-4 py-3">
+                    <input type="checkbox" class="h-4 w-4 rounded border-border">
+                </th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">User
+                </th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Email
+                </th>
+                <th class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Status</th>
+                <th class="px-4 py-3 text-right text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Actions</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-border">
+            <tr class="hover:bg-muted/30 transition-colors">
+                <td class="px-4 py-3"><input type="checkbox" class="h-4 w-4 rounded border-border"></td>
+                <td class="px-4 py-3">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-gradient-to-br from-primary to-primary/50 rounded-full flex items-center justify-center text-primary-foreground text-xs font-medium">
+                            JD</div>
+                        <span class="text-sm font-medium">John Doe</span>
+                    </div>
+                </td>
+                <td class="px-4 py-3 text-sm text-muted-foreground">john@example.com</td>
+                <td class="px-4 py-3"><span class="badge badge-success">Active</span></td>
+                <td class="px-4 py-3 text-right">
+                    <button class="btn btn-ghost btn-icon btn-sm"><i class="ri-more-2-fill"></i></button>
+                </td>
+            </tr>
+            <tr class="hover:bg-muted/30 transition-colors">
+                <td class="px-4 py-3"><input type="checkbox" class="h-4 w-4 rounded border-border"></td>
+                <td class="px-4 py-3">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-gradient-to-br from-success to-success/50 rounded-full flex items-center justify-center text-success-foreground text-xs font-medium">
+                            JS</div>
+                        <span class="text-sm font-medium">Jane Smith</span>
+                    </div>
+                </td>
+                <td class="px-4 py-3 text-sm text-muted-foreground">jane@example.com</td>
+                <td class="px-4 py-3"><span class="badge badge-warning">Pending</span></td>
+                <td class="px-4 py-3 text-right">
+                    <button class="btn btn-ghost btn-icon btn-sm"><i class="ri-more-2-fill"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Pagination -->
+    <div class="px-4 py-3 border-t border-border flex items-center justify-between bg-muted/30">
+        <p class="text-sm text-muted-foreground">Showing 1 to 2 of 24 results</p>
+        <div class="flex gap-1">
+            <button class="btn btn-outline btn-sm">Previous</button>
+            <button class="btn btn-sm">1</button>
+            <button class="btn btn-outline btn-sm">2</button>
+            <button class="btn btn-outline btn-sm">Next</button>
+        </div>
+    </div>
+</div>

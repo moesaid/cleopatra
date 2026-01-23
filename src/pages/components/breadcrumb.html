@@ -7,81 +7,45 @@ pageDescription="Navigation path indicator component"
 <h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
 
 <!-- Default Breadcrumb -->
-{{> example-block
+{{#> example-block
 title="Default"
 description="Basic breadcrumb navigation."
 id="breadcrumb-default"
-code="<nav class=\"breadcrumb\">
-    <ol class=\"breadcrumb-list\">
-        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Home</a></li>
-        <li class=\"breadcrumb-separator\"><i class=\"ri-arrow-right-s-line\"></i></li>
-        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Components</a></li>
-        <li class=\"breadcrumb-separator\"><i class=\"ri-arrow-right-s-line\"></i></li>
-        <li class=\"breadcrumb-item\"><span class=\"breadcrumb-page\">Breadcrumb</span></li>
-    </ol>
-</nav>"
 language="html"
 }}
+{{> breadcrumb/examples/default}}
+{{/example-block}}
 
 <!-- With Icons -->
-{{> example-block
+{{#> example-block
 title="With Icons"
 description="Breadcrumb links with icons."
 id="breadcrumb-icons"
-code="<nav class=\"breadcrumb\">
-    <ol class=\"breadcrumb-list\">
-        <li class=\"breadcrumb-item\">
-            <a href=\"#\" class=\"breadcrumb-link breadcrumb-icon\"><i class=\"ri-home-4-line\"></i> Home</a>
-        </li>
-        <li class=\"breadcrumb-separator\"><i class=\"ri-arrow-right-s-line\"></i></li>
-        <li class=\"breadcrumb-item\">
-            <a href=\"#\" class=\"breadcrumb-link breadcrumb-icon\"><i class=\"ri-folder-line\"></i> Library</a>
-        </li>
-        <li class=\"breadcrumb-separator\"><i class=\"ri-arrow-right-s-line\"></i></li>
-        <li class=\"breadcrumb-item\">
-            <span class=\"breadcrumb-page breadcrumb-icon\"><i class=\"ri-file-text-line\"></i> Document</span>
-        </li>
-    </ol>
-</nav>"
 language="html"
 }}
+{{> breadcrumb/examples/icons}}
+{{/example-block}}
 
 <!-- Contained Variant -->
-{{> example-block
+{{#> example-block
 title="Contained"
 description="Contained style with background using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
     font-mono\">.breadcrumb-contained</code>."
 id="breadcrumb-contained"
-code="<nav class=\"breadcrumb breadcrumb-contained\">
-    <ol class=\"breadcrumb-list\">
-        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Dashboard</a></li>
-        <li class=\"breadcrumb-separator\">/</li>
-        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Settings</a></li>
-        <li class=\"breadcrumb-separator\">/</li>
-        <li class=\"breadcrumb-item\"><span class=\"breadcrumb-page\">Profile</span></li>
-    </ol>
-</nav>"
 language="html"
 }}
+{{> breadcrumb/examples/contained}}
+{{/example-block}}
 
 <!-- With Ellipsis -->
-{{> example-block
+{{#> example-block
 title="With Ellipsis"
 description="Collapsed breadcrumb for long paths."
 id="breadcrumb-ellipsis"
-code="<nav class=\"breadcrumb\">
-    <ol class=\"breadcrumb-list\">
-        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Home</a></li>
-        <li class=\"breadcrumb-separator\"><i class=\"ri-arrow-right-s-line\"></i></li>
-        <li class=\"breadcrumb-item\"><span class=\"breadcrumb-ellipsis\"><i class=\"ri-more-fill\"></i></span></li>
-        <li class=\"breadcrumb-separator\"><i class=\"ri-arrow-right-s-line\"></i></li>
-        <li class=\"breadcrumb-item\"><a href=\"#\" class=\"breadcrumb-link\">Components</a></li>
-        <li class=\"breadcrumb-separator\"><i class=\"ri-arrow-right-s-line\"></i></li>
-        <li class=\"breadcrumb-item\"><span class=\"breadcrumb-page\">Breadcrumb</span></li>
-    </ol>
-</nav>"
 language="html"
 }}
+{{> breadcrumb/examples/ellipsis}}
+{{/example-block}}
 
 <!-- Usage Section -->
 <h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
