@@ -1,0 +1,21 @@
+<!-- E-commerce Dashboard Header Widget -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+    <div>
+        <h1 class="text-2xl font-bold text-foreground">Store Overview</h1>
+        <p class="text-sm text-muted-foreground mt-1">Welcome back! Here's what's happening with your store today.</p>
+    </div>
+    <div class="flex items-center gap-3">
+        <select
+            class="text-xs bg-card border border-border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground">
+            <option>Last 7 days</option>
+            <option>Last 30 days</option>
+            <option>Last 90 days</option>
+            <option>This year</option>
+        </select>
+        <span
+            class="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-lg text-xs font-medium">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+            Store Online
+        </span>
+    </div>
+</div>

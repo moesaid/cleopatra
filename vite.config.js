@@ -84,6 +84,19 @@ function getPartialDirectories() {
         console.warn('Could not scan UI components directory:', e.message);
     }
 
+    // Auto-discover all widget subdirectories (e.g., ecommerce/, analytics/)
+    const widgetsDir = resolve(__dirname, 'src/components/widgets');
+    try {
+        const widgetDirs = readdirSync(widgetsDir, { withFileTypes: true });
+        widgetDirs.forEach(entry => {
+            if (entry.isDirectory()) {
+                dirs.push(resolve(widgetsDir, entry.name));
+            }
+        });
+    } catch (e) {
+        console.warn('Could not scan widgets directory:', e.message);
+    }
+
     return dirs;
 }
 
@@ -97,6 +110,9 @@ export default defineConfig({
             context: {
                 title: 'Cleopatra - Modern Admin Dashboard',
                 sidebarLinks: sidebarData,
+            },
+            helpers: {
+                eq: (a, b) => a === b,
             },
         }),
         tailwindcss(),

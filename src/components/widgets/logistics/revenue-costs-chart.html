@@ -1,0 +1,59 @@
+<!-- Revenue & Costs Chart Widget -->
+<div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm p-6">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <div>
+            <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">Financial Performance</h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400">Revenue vs Costs Breakdown</p>
+        </div>
+        <div class="flex items-center gap-2">
+            <button
+                class="p-2 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+            </button>
+            <button
+                class="p-2 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chart Container -->
+    <div id="logistics-revenue-chart" class="w-full h-[320px]"></div>
+
+    <!-- Custom Legend / Toggles -->
+    <div
+        class="flex flex-wrap items-center justify-center gap-6 mt-6 pt-6 border-t border-zinc-100 dark:border-zinc-800">
+        <label class="inline-flex items-center cursor-pointer group">
+            <input type="checkbox" checked
+                class="form-checkbox w-4 h-4 text-primary rounded border-zinc-300 dark:border-zinc-600 focus:ring-primary/20"
+                onchange="toggleLogisticsSeries(0)" />
+            <span
+                class="ml-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-zinc-100">Revenue</span>
+            <span class="ml-1.5 w-2 h-2 rounded-full bg-primary"></span>
+        </label>
+        <label class="inline-flex items-center cursor-pointer group">
+            <input type="checkbox" checked
+                class="form-checkbox w-4 h-4 text-primary rounded border-zinc-300 dark:border-zinc-600 focus:ring-primary/20"
+                onchange="toggleLogisticsSeries(1)" />
+            <span
+                class="ml-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-zinc-100">Costs</span>
+            <span class="ml-1.5 w-2 h-2 rounded-full bg-rose-500"></span>
+        </label>
+        <label class="inline-flex items-center cursor-pointer group">
+            <input type="checkbox" checked
+                class="form-checkbox w-4 h-4 text-primary rounded border-zinc-300 dark:border-zinc-600 focus:ring-primary/20"
+                onchange="toggleLogisticsSeries(2)" />
+            <span
+                class="ml-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 group-hover:text-zinc-900 dark:group-hover:text-zinc-100">Net
+                Profit</span>
+            <span class="ml-1.5 w-2 h-2 rounded-full bg-zinc-800 dark:bg-white"></span>
+        </label>
+    </div>
+</div>

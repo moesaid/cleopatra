@@ -1,0 +1,197 @@
+<!-- Invoices Module Widget (Right Column) -->
+<div
+    class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm h-full flex flex-col">
+
+    <!-- Finance Header (Summary) -->
+    <div class="p-6 border-b border-zinc-200 dark:border-zinc-800">
+        <h3 class="text-base font-bold text-zinc-900 dark:text-zinc-50 mb-4">Invoices Summary</h3>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-3 gap-2 mb-4">
+            <div>
+                <p class="text-xs text-zinc-500 uppercase tracking-wide">Paid</p>
+                <p class="text-lg font-bold text-zinc-900 dark:text-zinc-50">$169k</p>
+            </div>
+            <div class="text-center">
+                <p class="text-xs text-zinc-500 uppercase tracking-wide">Resent</p>
+                <p class="text-lg font-bold text-zinc-900 dark:text-zinc-50">$95k</p>
+            </div>
+            <div class="text-right">
+                <p class="text-xs text-zinc-500 uppercase tracking-wide">Unpaid</p>
+                <p class="text-lg font-bold text-zinc-900 dark:text-zinc-50">$64k</p>
+            </div>
+        </div>
+
+        <!-- Segmented Progress Bar -->
+        <div class="flex h-3 w-full rounded-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+            <div class="bg-emerald-500 h-full" style="width: 52%"></div> <!-- Paid -->
+            <div class="bg-lime-400 h-full" style="width: 28%"></div> <!-- Resent -->
+            <div class="bg-zinc-300 dark:bg-zinc-600 h-full" style="width: 20%"></div> <!-- Unpaid -->
+        </div>
+
+        <!-- Legend -->
+        <div class="flex items-center justify-between text-xs text-zinc-500 mt-2">
+            <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 52%</div>
+            <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-lime-400"></span> 28%</div>
+            <div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-zinc-300 dark:bg-zinc-600"></span>
+                20%</div>
+        </div>
+    </div>
+
+    <!-- Invoices List -->
+    <div class="flex-1 flex flex-col min-h-0">
+
+        <!-- Controls: Tabs & Search -->
+        <div class="px-6 py-4 flex flex-col gap-3">
+            <!-- Tabs -->
+            <div class="flex p-1 bg-zinc-100 dark:bg-zinc-800 rounded-lg self-start">
+                <button
+                    class="px-3 py-1 text-xs font-medium text-zinc-900 dark:text-zinc-50 bg-white dark:bg-zinc-700 shadow-sm rounded-md transition-all">All</button>
+                <button
+                    class="px-3 py-1 text-xs font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Unpaid</button>
+                <button
+                    class="px-3 py-1 text-xs font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Paid</button>
+            </div>
+            <!-- Search -->
+            <div class="relative w-full">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-zinc-400" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" placeholder="Search invoices..."
+                    class="w-full pl-8 pr-4 py-2 text-sm bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-primary/50 text-zinc-900 dark:text-zinc-100" />
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="flex-1 overflow-y-auto">
+            <table class="w-full">
+                <tbody class="divide-y divide-zinc-100 dark:divide-zinc-800">
+
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors group">
+                        <td class="pl-6 py-3 w-8">
+                            <input type="checkbox"
+                                class="rounded border-zinc-300 text-primary focus:ring-primary/20 cursor-pointer" />
+                        </td>
+                        <td class="px-3 py-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-zinc-900 text-white flex items-center justify-center">
+                                    <i class="fab fa-uber text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">Uber</p>
+                                    <p class="text-xs text-zinc-500">Invoice #001</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-3 hidden xl:table-cell">
+                            <p class="text-xs text-zinc-500">08/12/26</p>
+                        </td>
+                        <td class="px-3 py-3 text-right pr-6">
+                            <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$12,450</p>
+                            <p class="text-xs text-rose-500 font-medium">Unpaid</p>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors group">
+                        <td class="pl-6 py-3 w-8">
+                            <input type="checkbox"
+                                class="rounded border-zinc-300 text-primary focus:ring-primary/20 cursor-pointer" />
+                        </td>
+                        <td class="px-3 py-3">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#635BFF] text-white flex items-center justify-center">
+                                    <i class="fab fa-stripe-s text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">Stripe</p>
+                                    <p class="text-xs text-zinc-500">Invoice #002</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-3 hidden xl:table-cell">
+                            <p class="text-xs text-zinc-500">08/11/26</p>
+                        </td>
+                        <td class="px-3 py-3 text-right pr-6">
+                            <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$8,230</p>
+                            <p class="text-xs text-lime-600 dark:text-lime-400 font-medium">Resent</p>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors group">
+                        <td class="pl-6 py-3 w-8">
+                            <input type="checkbox"
+                                class="rounded border-zinc-300 text-primary focus:ring-primary/20 cursor-pointer" />
+                        </td>
+                        <td class="px-3 py-3">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#FF5A5F] text-white flex items-center justify-center">
+                                    <i class="fab fa-airbnb text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">Airbnb</p>
+                                    <p class="text-xs text-zinc-500">Invoice #003</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-3 hidden xl:table-cell">
+                            <p class="text-xs text-zinc-500">08/10/26</p>
+                        </td>
+                        <td class="px-3 py-3 text-right pr-6">
+                            <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$15,100</p>
+                            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Paid</p>
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr class="hover:bg-zinc-50 dark:hover:bg-zinc-900/30 transition-colors group">
+                        <td class="pl-6 py-3 w-8">
+                            <input type="checkbox"
+                                class="rounded border-zinc-300 text-primary focus:ring-primary/20 cursor-pointer" />
+                        </td>
+                        <td class="px-3 py-3">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-[#1DB954] text-white flex items-center justify-center">
+                                    <i class="fab fa-spotify text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">Spotify</p>
+                                    <p class="text-xs text-zinc-500">Invoice #004</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-3 py-3 hidden xl:table-cell">
+                            <p class="text-xs text-zinc-500">08/09/26</p>
+                        </td>
+                        <td class="px-3 py-3 text-right pr-6">
+                            <p class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$5,600</p>
+                            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Paid</p>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer / Pagination -->
+        <div
+            class="p-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs text-zinc-500">
+            <span>Showing 4 of 24</span>
+            <div class="flex items-center gap-2">
+                <button
+                    class="w-6 h-6 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded transition-colors">&lt;</button>
+                <span class="font-medium text-zinc-900 dark:text-zinc-100">1 / 4</span>
+                <button
+                    class="w-6 h-6 flex items-center justify-center hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded transition-colors">&gt;</button>
+            </div>
+        </div>
+
+    </div>
+</div>

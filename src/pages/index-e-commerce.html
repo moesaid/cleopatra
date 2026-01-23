@@ -1,0 +1,64 @@
+{{> start title="E-commerce Dashboard" hidePageHeader=true }}
+
+<!-- Dashboard Content -->
+<div class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6">
+
+  <!-- Page Header -->
+  {{> widgets/ecommerce/ecommerce-header }}
+
+  <!-- Top Metrics Row -->
+  {{> widgets/ecommerce/ecommerce-metrics }}
+
+  <!-- Main Grid Layout -->
+  <div class="grid grid-cols-12 gap-4">
+
+    <!-- LEFT COLUMN (8 cols) -->
+    <div class="col-span-12 xl:col-span-8 space-y-4">
+
+      <!-- Sales Overview Chart -->
+      {{> widgets/ecommerce/ecommerce-sales-chart }}
+
+      <!-- Row: Top Products + Sales by Category -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Top Products -->
+        {{> widgets/ecommerce/top-products }}
+
+        <!-- Sales by Category -->
+        {{> widgets/ecommerce/ecommerce-category-chart }}
+      </div>
+
+      <!-- Recent Orders Table -->
+      {{> widgets/ecommerce/recent-orders }}
+
+    </div>
+
+    <!-- RIGHT COLUMN (4 cols) -->
+    <div class="col-span-12 xl:col-span-4 space-y-4">
+
+      <!-- Low Stock Alert -->
+      {{> widgets/ecommerce/low-stock-alert }}
+
+      <!-- Traffic Sources -->
+      {{> widgets/ecommerce/traffic-sources }}
+
+      <!-- Recent Activity -->
+      {{> widgets/ecommerce/ecommerce-activity }}
+
+      <!-- Quick Actions -->
+      {{> widgets/ecommerce/quick-actions }}
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- E-commerce Charts Initialization -->
+<script type="module">
+  import { initEcommerceCharts } from '/js/ecommerce-charts.js';
+  document.addEventListener('DOMContentLoaded', () => {
+    initEcommerceCharts();
+  });
+</script>
+
+{{> end }}

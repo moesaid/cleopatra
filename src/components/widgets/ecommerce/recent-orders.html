@@ -1,0 +1,134 @@
+<!-- E-commerce Recent Orders Widget -->
+<!-- Uses semantic color tokens for theme awareness -->
+
+<div class="bg-card border border-border rounded-xl overflow-hidden shadow-sm">
+    <div class="p-5 border-b border-border flex items-center justify-between">
+        <div>
+            <h3 class="text-sm font-bold text-foreground">Recent Orders</h3>
+            <p class="text-xs text-muted-foreground mt-0.5">Latest transactions from your store</p>
+        </div>
+        <a href="#" class="text-xs text-primary hover:underline">View All Orders →</a>
+    </div>
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead class="bg-muted/50">
+                <tr>
+                    <th class="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Order</th>
+                    <th class="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Customer</th>
+                    <th class="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Product</th>
+                    <th class="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Date</th>
+                    <th class="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Amount</th>
+                    <th class="text-left px-5 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Status</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+                <tr class="hover:bg-muted/30 transition-colors">
+                    <td class="px-5 py-4 text-xs font-mono text-primary">#ORD-7892</td>
+                    <td class="px-5 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-400 to-violet-600 flex items-center justify-center text-white text-xs font-bold">
+                                JD</div>
+                            <div>
+                                <p class="font-medium text-foreground">John Doe</p>
+                                <p class="text-xs text-muted-foreground">john@example.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-5 py-4 text-muted-foreground">Nike Air Max 270</td>
+                    <td class="px-5 py-4 text-muted-foreground text-xs">Jan 23, 2026</td>
+                    <td class="px-5 py-4 font-bold text-foreground">$189.00</td>
+                    <td class="px-5 py-4"><span
+                            class="px-2.5 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-full">Delivered</span>
+                    </td>
+                </tr>
+                <tr class="hover:bg-muted/30 transition-colors">
+                    <td class="px-5 py-4 text-xs font-mono text-primary">#ORD-7891</td>
+                    <td class="px-5 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white text-xs font-bold">
+                                SM</div>
+                            <div>
+                                <p class="font-medium text-foreground">Sarah Miller</p>
+                                <p class="text-xs text-muted-foreground">sarah@example.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-5 py-4 text-muted-foreground">Apple Watch Series 9</td>
+                    <td class="px-5 py-4 text-muted-foreground text-xs">Jan 23, 2026</td>
+                    <td class="px-5 py-4 font-bold text-foreground">$429.00</td>
+                    <td class="px-5 py-4"><span
+                            class="px-2.5 py-1 text-xs font-medium bg-blue-500/10 text-blue-700 dark:text-blue-400 rounded-full">Shipped</span>
+                    </td>
+                </tr>
+                <tr class="hover:bg-muted/30 transition-colors">
+                    <td class="px-5 py-4 text-xs font-mono text-primary">#ORD-7890</td>
+                    <td class="px-5 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white text-xs font-bold">
+                                MJ</div>
+                            <div>
+                                <p class="font-medium text-foreground">Mike Johnson</p>
+                                <p class="text-xs text-muted-foreground">mike@example.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-5 py-4 text-muted-foreground">Sony WH-1000XM5</td>
+                    <td class="px-5 py-4 text-muted-foreground text-xs">Jan 22, 2026</td>
+                    <td class="px-5 py-4 font-bold text-foreground">$349.00</td>
+                    <td class="px-5 py-4"><span
+                            class="px-2.5 py-1 text-xs font-medium bg-amber-500/10 text-amber-700 dark:text-amber-400 rounded-full">Processing</span>
+                    </td>
+                </tr>
+                <tr class="hover:bg-muted/30 transition-colors">
+                    <td class="px-5 py-4 text-xs font-mono text-primary">#ORD-7889</td>
+                    <td class="px-5 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-xs font-bold">
+                                EW</div>
+                            <div>
+                                <p class="font-medium text-foreground">Emily Wilson</p>
+                                <p class="text-xs text-muted-foreground">emily@example.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-5 py-4 text-muted-foreground">Coach Leather Bag</td>
+                    <td class="px-5 py-4 text-muted-foreground text-xs">Jan 22, 2026</td>
+                    <td class="px-5 py-4 font-bold text-foreground">$295.00</td>
+                    <td class="px-5 py-4"><span
+                            class="px-2.5 py-1 text-xs font-medium bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 rounded-full">Delivered</span>
+                    </td>
+                </tr>
+                <tr class="hover:bg-muted/30 transition-colors">
+                    <td class="px-5 py-4 text-xs font-mono text-primary">#ORD-7888</td>
+                    <td class="px-5 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white text-xs font-bold">
+                                RB</div>
+                            <div>
+                                <p class="font-medium text-foreground">Robert Brown</p>
+                                <p class="text-xs text-muted-foreground">robert@example.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-5 py-4 text-muted-foreground">North Face Jacket</td>
+                    <td class="px-5 py-4 text-muted-foreground text-xs">Jan 21, 2026</td>
+                    <td class="px-5 py-4 font-bold text-foreground">$249.00</td>
+                    <td class="px-5 py-4"><span
+                            class="px-2.5 py-1 text-xs font-medium bg-rose-500/10 text-rose-700 dark:text-rose-400 rounded-full">Cancelled</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

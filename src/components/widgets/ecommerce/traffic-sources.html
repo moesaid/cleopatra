@@ -1,0 +1,78 @@
+<!-- E-commerce Traffic Sources Widget -->
+<!-- Uses semantic color tokens for theme awareness -->
+
+<div class="bg-card border border-border rounded-xl p-5 shadow-sm">
+    <h3 class="text-sm font-bold text-foreground mb-4">Traffic Sources</h3>
+    <div class="space-y-4">
+        <div>
+            <div class="flex items-center justify-between text-xs mb-1.5">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                        <polygon fill="white" points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                    </svg>
+                    <span class="text-muted-foreground">Organic Search</span>
+                </div>
+                <span class="font-bold text-foreground">42%</span>
+            </div>
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full transition-all duration-500" style="width: 42%"></div>
+            </div>
+        </div>
+        <div>
+            <div class="flex items-center justify-between text-xs mb-1.5">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <defs>
+                            <linearGradient id="insta-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#FD5;" />
+                                <stop offset="50%" style="stop-color:#FF543E;" />
+                                <stop offset="100%" style="stop-color:#C837AB;" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="20" height="20" x="2" y="2" rx="5" fill="url(#insta-gradient)" />
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="1.5" />
+                        <circle cx="17" cy="7" r="1.2" fill="white" />
+                    </svg>
+                    <span class="text-muted-foreground">Social Media</span>
+                </div>
+                <span class="font-bold text-foreground">28%</span>
+            </div>
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-amber-400 via-rose-500 to-purple-600 rounded-full transition-all duration-500"
+                    style="width: 28%"></div>
+            </div>
+        </div>
+        <div>
+            <div class="flex items-center justify-between text-xs mb-1.5">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                    <span class="text-muted-foreground">Direct Traffic</span>
+                </div>
+                <span class="font-bold text-foreground">18%</span>
+            </div>
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500 rounded-full transition-all duration-500" style="width: 18%"></div>
+            </div>
+        </div>
+        <div>
+            <div class="flex items-center justify-between text-xs mb-1.5">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span class="text-muted-foreground">Email Campaigns</span>
+                </div>
+                <span class="font-bold text-foreground">12%</span>
+            </div>
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-violet-500 rounded-full transition-all duration-500" style="width: 12%"></div>
+            </div>
+        </div>
+    </div>
+</div>
