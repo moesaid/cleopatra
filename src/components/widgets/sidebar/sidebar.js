@@ -19,6 +19,24 @@ const menuData = [
     },
     {
         type: 'category',
+        label: 'APPS'
+    },
+    {
+        type: 'link',
+        id: 'email',
+        label: 'Email',
+        icon: 'ri-mail-line',
+        href: '/pages/apps/email.html'
+    },
+    {
+        type: 'link',
+        id: 'blank-page',
+        label: 'Blank Page',
+        icon: 'ri-file-line',
+        href: '/pages/settings/blank.html'
+    },
+    {
+        type: 'category',
         label: 'UI ELEMENTS'
     },
     {
@@ -75,24 +93,7 @@ const menuData = [
             { id: 'tooltip', label: 'Tooltip', href: '/pages/overlays/tooltip.html' }
         ]
     },
-    {
-        type: 'category',
-        label: 'APPS'
-    },
-    {
-        type: 'link',
-        id: 'email',
-        label: 'Email',
-        icon: 'ri-mail-line',
-        href: '/pages/apps/email.html'
-    },
-    {
-        type: 'link',
-        id: 'blank-page',
-        label: 'Blank Page',
-        icon: 'ri-file-line',
-        href: '/pages/settings/blank.html'
-    },
+
     {
         type: 'category',
         label: 'SETTINGS'
