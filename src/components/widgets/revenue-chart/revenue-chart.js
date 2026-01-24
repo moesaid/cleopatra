@@ -5,12 +5,7 @@
 
 import ApexCharts from 'apexcharts';
 import { initChartDeferred, setupThemeObserver, getThemeColors } from '../chart-utils.js';
-
-// Chart data
-const revenueData = {
-    months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    values: [18000, 24000, 16000, 35000, 28000, 42000, 30000, 36000, 22000, 40000, 45000, 52000]
-};
+import { revenueChartData as revenueData } from '../../../data/analytics-dashboard.js';
 
 let chartInstance = null;
 let themeObserver = null;

@@ -5,7 +5,7 @@
 
 import ApexCharts from 'apexcharts';
 import { initChartDeferred, setupThemeObserver, getThemeColors, getPrimaryColor } from '../chart-utils.js';
-import { cryptoMarketData } from './crypto-data.js';
+import { cryptoMarketData } from '../../../data/crypto-market.js';
 
 // Store chart instances for cleanup
 const charts = {

@@ -5,7 +5,7 @@
 
 import ApexCharts from 'apexcharts';
 import { initChartDeferred, setupThemeObserver, getThemeColors } from '../chart-utils.js';
-import { ceoDashboardData } from '../ceo-dashboard-data.js';
+import { ceoDashboardData } from '../../../data/ceo-dashboard.js';
 
 let chartInstance = null;
 let themeObserver = null;

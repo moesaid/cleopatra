@@ -1,6 +1,5 @@
 /**
  * Logistics Dashboard Data Layer
- * ==============================================
  * Centralized mock data for the Logistics & Financial Dashboard.
  */
 
