@@ -1,0 +1,96 @@
+<!-- User Data Table -->
+<div class="bg-card border border-border rounded-xl overflow-hidden">
+    <!-- Table Header -->
+    <div
+        class="grid grid-cols-12 gap-4 px-4 py-3 bg-muted/30 dark:bg-muted/10 border-b border-border text-sm font-medium text-muted-foreground">
+        <div class="col-span-1 flex items-center">
+            <input type="checkbox" class="w-4 h-4 rounded border-border text-primary focus:ring-primary">
+        </div>
+        <div class="col-span-3">Name</div>
+        <div class="col-span-2">Role</div>
+        <div class="col-span-2">Projects</div>
+        <div class="col-span-2">Status</div>
+        <div class="col-span-2">Enrolled</div>
+    </div>
+
+    <!-- Table Body -->
+    <div class="divide-y divide-border">
+        {{> user-management/user-row
+        avatar="https://randomuser.me/api/portraits/women/44.jpg"
+        name="Arlene McCoy"
+        username="arlenem"
+        role="General"
+        roleColor="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300"
+        projects="12"
+        projectsTotal="25"
+        status="Active"
+        enrolled="May 12, 2019"
+        }}
+        {{> user-management/user-row
+        avatar="https://randomuser.me/api/portraits/women/68.jpg"
+        name="Brooklyn Simmons"
+        username="brooklyns"
+        role="Admin"
+        roleColor="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300"
+        projects="18"
+        projectsTotal="50"
+        status="Active"
+        enrolled="August 7, 2017"
+        }}
+        {{> user-management/user-row
+        avatar="https://randomuser.me/api/portraits/women/33.jpg"
+        name="Maribel Koss"
+        username="maribelk"
+        role="General"
+        roleColor="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300"
+        projects="7"
+        projectsTotal="25"
+        status="Active"
+        enrolled="May 9, 2014"
+        }}
+        {{> user-management/user-row
+        avatar="https://randomuser.me/api/portraits/men/32.jpg"
+        name="Cody Fisher"
+        username="codyf"
+        role="Creator"
+        roleColor="bg-primary/10 text-primary"
+        projects="27"
+        projectsTotal="100"
+        status="Active"
+        enrolled="October 24, 2018"
+        }}
+        {{> user-management/user-row
+        avatar="https://randomuser.me/api/portraits/women/65.jpg"
+        name="Darlene Robertson"
+        username="darlener"
+        role="General"
+        roleColor="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300"
+        projects="21"
+        projectsTotal="25"
+        status="Active"
+        enrolled="March 6, 2018"
+        }}
+        {{> user-management/user-row
+        avatar="https://randomuser.me/api/portraits/men/45.jpg"
+        name="Cameron Williamson"
+        username="cameronw"
+        role="General"
+        roleColor="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300"
+        projects="6"
+        projectsTotal="25"
+        status="Active"
+        enrolled="July 14, 2015"
+        }}
+        {{> user-management/user-row
+        avatar="https://randomuser.me/api/portraits/women/21.jpg"
+        name="Dianne Russell"
+        username="dianner"
+        role="Admin"
+        roleColor="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300"
+        projects="32"
+        projectsTotal="50"
+        status="Active"
+        enrolled="August 2, 2013"
+        }}
+    </div>
+</div>
