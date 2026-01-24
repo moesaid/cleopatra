@@ -242,3 +242,81 @@ select {
       color var(--duration-200),
       border-color var(--duration-200);
 }
+
+/* Chart Loading & Fade-in Transitions */
+.chart-container,
+[class*="chart"]>div {
+   opacity: 1;
+   transition: opacity 0.4s ease-out;
+}
+
+.chart-loading {
+   opacity: 0;
+}
+
+.chart-loaded {
+   opacity: 1;
+}
+
+/* Smooth chart canvas transitions */
+canvas {
+   transition: opacity 0.3s ease-out;
+}
+
+/* Hide ApexCharts y-axis tooltip (unnecessary and ugly) */
+.apexcharts-yaxistooltip {
+   display: none !important;
+}
+
+/* Page Loading State */
+.dashboard-loading {
+   position: relative;
+
+   &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--background);
+      z-index: 10;
+      opacity: 1;
+      transition: opacity 0.4s ease-out, visibility 0.4s;
+   }
+
+   &.loaded::before {
+      opacity: 0;
+      visibility: hidden;
+   }
+}
+
+/* Skeleton loading animation */
+.skeleton {
+   background: linear-gradient(90deg,
+         var(--muted) 25%,
+         var(--muted-foreground/20) 50%,
+         var(--muted) 75%);
+   background-size: 200% 100%;
+   animation: skeleton-shimmer 1.5s infinite;
+   border-radius: var(--radius-md);
+}
+
+@keyframes skeleton-shimmer {
+   0% {
+      background-position: 200% 0;
+   }
+
+   100% {
+      background-position: -200% 0;
+   }
+}
+
+/* Widget fade-in on load */
+.widget-loading {
+   opacity: 0;
+   transform: translateY(10px);
+   transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.widget-loaded {
+   opacity: 1;
+   transform: translateY(0);
+}

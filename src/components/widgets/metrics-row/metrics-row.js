@@ -10,7 +10,7 @@ import { initChartDeferred, setupThemeObserver, getThemeColors } from '../chart-
 const chartInstances = new Map();
 let themeObserver = null;
 
-function getSparklineOptions(data, colorOverride = null, width) {
+function getSparklineOptions(data, colorOverride = null, width, delayOffset = 0) {
     const colors = getThemeColors();
     const chartColor = colorOverride || colors.primary;
     const isDark = document.documentElement.classList.contains('dark');
@@ -21,7 +21,19 @@ function getSparklineOptions(data, colorOverride = null, width) {
             height: 40,
             width: width || '100%',
             sparkline: { enabled: true },
-            animations: { enabled: true, easing: 'easeinout', speed: 600 },
+            animations: {
+                enabled: true,
+                easing: 'easeout',
+                speed: 900,
+                animateGradually: {
+                    enabled: true,
+                    delay: 50 + delayOffset  // Wave effect with stagger
+                },
+                dynamicAnimation: {
+                    enabled: true,
+                    speed: 350
+                }
+            },
             redrawOnParentResize: true,
         },
         series: [{ data }],

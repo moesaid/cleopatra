@@ -22,8 +22,16 @@ function getChartOptions() {
             sparkline: { enabled: true },
             animations: {
                 enabled: true,
-                easing: 'easeinout',
-                speed: 1000,
+                easing: 'easeout',
+                speed: 1400,
+                animateGradually: {
+                    enabled: true,
+                    delay: 200
+                },
+                dynamicAnimation: {
+                    enabled: true,
+                    speed: 600
+                }
             },
             redrawOnParentResize: true,
         },

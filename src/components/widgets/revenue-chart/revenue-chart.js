@@ -24,7 +24,23 @@ function getChartOptions(width) {
             animations: {
                 enabled: true,
                 easing: 'easeinout',
-                speed: 600,
+                speed: 800,
+                animateGradually: {
+                    enabled: true,
+                    delay: 80  // Stagger each bar by 80ms
+                },
+                dynamicAnimation: {
+                    enabled: true,
+                    speed: 400
+                }
+            },
+            dropShadow: {
+                enabled: true,
+                top: 2,
+                left: 0,
+                blur: 4,
+                opacity: 0.15,
+                color: colors.primary
             },
             redrawOnParentResize: true,
             redrawOnWindowResize: true

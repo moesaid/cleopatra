@@ -1,18 +1,18 @@
 <!-- E-commerce Low Stock Alert Widget -->
-<!-- Uses semantic color tokens for theme awareness -->
+<!-- Theme-aware using primary color tokens -->
 
 <div
-    class="bg-gradient-to-br from-rose-500/10 to-amber-500/10 border border-rose-200 dark:border-rose-800/50 rounded-xl p-5">
+    class="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 dark:border-primary/30 rounded-xl p-5">
     <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center">
-            <svg class="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
             </svg>
         </div>
         <div>
-            <h3 class="text-sm font-bold text-rose-900 dark:text-rose-100">Low Stock Alert</h3>
-            <p class="text-xs text-rose-600 dark:text-rose-400">5 products need restock</p>
+            <h3 class="text-sm font-bold text-foreground">Low Stock Alert</h3>
+            <p class="text-xs text-muted-foreground">5 products need restock</p>
         </div>
     </div>
     <div class="space-y-2">
@@ -21,25 +21,25 @@
                 <span class="text-sm">👟</span>
                 <span class="text-xs font-medium text-foreground">Nike Air Max 270</span>
             </div>
-            <span class="text-xs font-bold text-rose-600">3 left</span>
+            <span class="text-xs font-bold text-primary">3 left</span>
         </div>
         <div class="flex items-center justify-between p-2 bg-card/60 rounded-lg">
             <div class="flex items-center gap-2">
                 <span class="text-sm">⌚</span>
                 <span class="text-xs font-medium text-foreground">Apple Watch SE</span>
             </div>
-            <span class="text-xs font-bold text-rose-600">5 left</span>
+            <span class="text-xs font-bold text-primary">5 left</span>
         </div>
         <div class="flex items-center justify-between p-2 bg-card/60 rounded-lg">
             <div class="flex items-center gap-2">
                 <span class="text-sm">📱</span>
                 <span class="text-xs font-medium text-foreground">iPhone 15 Pro</span>
             </div>
-            <span class="text-xs font-bold text-amber-600">8 left</span>
+            <span class="text-xs font-bold text-primary/70">8 left</span>
         </div>
     </div>
     <button
-        class="w-full mt-4 py-2 text-xs font-medium text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-700 rounded-lg hover:bg-rose-500/10 transition-colors">
+        class="w-full mt-4 py-2 text-xs font-medium text-primary border border-primary/30 rounded-lg hover:bg-primary/10 transition-colors">
         Manage Inventory →
     </button>
 </div>

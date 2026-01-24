@@ -31,6 +31,17 @@
     {{> monthly-goal/monthly-goal }}
   </div>
 
+  <!-- Chart.js Charts Row -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Traffic Analytics (Chart.js Line) -->
+    <div class="lg:col-span-2">
+      {{> traffic-chart/traffic-chart }}
+    </div>
+
+    <!-- Sales Distribution (Chart.js Doughnut) -->
+    {{> distribution-chart/distribution-chart }}
+  </div>
+
 </div>
 
 {{> end }}

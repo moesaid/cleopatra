@@ -31,12 +31,16 @@ import { initAnalytics1 } from '../components/charts/analytics';
 import { initSalesOverview } from '../components/charts/sales-overview';
 import { initSummary } from '../components/charts/summary';
 
-// Dashboard Widgets
 import { initMetricsRow } from '../components/widgets/metrics-row/metrics-row.js';
 import { initRevenueChart } from '../components/widgets/revenue-chart/revenue-chart.js';
 import { initMonthlyGoal } from '../components/widgets/monthly-goal/monthly-goal.js';
 import { initUserRetentionChart } from '../components/widgets/user-retention-chart/user-retention-chart.js';
 import { initCryptoCharts } from '../components/widgets/crypto';
+import { initEcommerceCharts } from './ecommerce-charts.js';
+
+// Dashboard Widgets (Chart.js)
+import { initTrafficChart } from '../components/widgets/traffic-chart/traffic-chart.js';
+import { initDistributionChart } from '../components/widgets/distribution-chart/distribution-chart.js';
 
 // Router
 import { initRouter } from '../components/layout/router';
@@ -62,12 +66,19 @@ function initComponents() {
     initSalesOverview();
     initSummary();
 
-    // Dashboard widgets
+    // Dashboard widgets (ApexCharts)
     initMetricsRow();
     initRevenueChart();
     initMonthlyGoal();
     initUserRetentionChart();
     initCryptoCharts();
+
+    // Dashboard widgets (Chart.js) - stagger to prevent simultaneous loading
+    initTrafficChart(300);      // 300ms stagger offset
+    initDistributionChart(450); // 450ms stagger offset
+
+    // E-commerce dashboard charts (ApexCharts)
+    initEcommerceCharts();
 }
 
 // Re-initialize on SPA navigation (including code highlighting)

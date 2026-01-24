@@ -1,20 +1,22 @@
 // ============================================
 // Sidebar Component - Data-Driven Navigation
-// Theme-Aware Colors
+// Theme-Aware Colors with Lucide Icons
 // ============================================
 
-// Menu Data Structure
+import { getLucideIcon } from '../../../data/lucide-icons.js';
+
+// Menu Data Structure with Lucide icon names
 const menuData = [
     {
         type: 'menu',
         id: 'dashboards',
         label: 'Dashboards',
-        icon: 'ri-layout-grid-line',
+        icon: 'layout-dashboard',
         children: [
-            { id: 'analytics-dashboard', label: 'Analytics Dashboard', href: '/pages/' },
-            { id: 'mission-control', label: 'Mission Control', href: '/pages/index-mission-control.html' },
-            { id: 'index-e-commerce', label: 'eCommerce', href: '/pages/index-e-commerce.html' },
-            { id: 'index-crypto', label: 'Crypto Dashboard', href: '/pages/index-crypto.html' },
+            { id: 'analytics-dashboard', label: 'Analytics Dashboard', href: '/pages/', icon: 'bar-chart-3' },
+            { id: 'mission-control', label: 'Mission Control', href: '/pages/index-mission-control.html', icon: 'gauge' },
+            { id: 'index-e-commerce', label: 'eCommerce', href: '/pages/index-e-commerce.html', icon: 'shopping-cart' },
+            { id: 'index-crypto', label: 'Crypto Dashboard', href: '/pages/index-crypto.html', icon: 'bitcoin' },
         ]
     },
     {
@@ -25,63 +27,63 @@ const menuData = [
         type: 'link',
         id: 'email',
         label: 'Email',
-        icon: 'ri-mail-line',
+        icon: 'mail',
         href: '/pages/apps/email.html'
     },
     {
         type: 'link',
         id: 'calendar',
         label: 'Calendar',
-        icon: 'ri-calendar-line',
+        icon: 'calendar',
         href: '/pages/apps/calendar.html'
     },
     {
         type: 'link',
         id: 'ai-chat',
         label: 'AI Chat',
-        icon: 'ri-chat-ai-line',
+        icon: 'bot',
         href: '/pages/apps/ai-chat.html'
     },
     {
         type: 'link',
         id: 'user-management',
         label: 'User Management',
-        icon: 'ri-user-settings-line',
+        icon: 'users',
         href: '/pages/apps/user-management.html'
     },
     {
         type: 'link',
         id: 'todo',
         label: 'Todo',
-        icon: 'ri-checkbox-line',
+        icon: 'check-square',
         href: '/pages/apps/todo.html'
     },
     {
         type: 'link',
         id: 'retail-store',
         label: 'Retail Store',
-        icon: 'ri-store-2-line',
+        icon: 'store',
         href: '/pages/apps/retail-store.html'
     },
     {
         type: 'link',
         id: 'crm',
         label: 'CRM',
-        icon: 'ri-contacts-book-line',
+        icon: 'contact',
         href: '/pages/apps/crm.html'
     },
     {
         type: 'link',
         id: 'inventory',
         label: 'Inventory',
-        icon: 'ri-box-3-line',
+        icon: 'package',
         href: '/pages/apps/inventory.html'
     },
     {
         type: 'link',
         id: 'real-estate',
         label: 'Real Estate',
-        icon: 'ri-home-4-line',
+        icon: 'home',
         href: '/pages/apps/real-estate.html'
     },
     {
@@ -92,7 +94,7 @@ const menuData = [
         type: 'link',
         id: 'blank-page',
         label: 'Blank Page',
-        icon: 'ri-file-line',
+        icon: 'file',
         href: '/pages/extra/blank.html'
     },
     {
@@ -103,54 +105,54 @@ const menuData = [
         type: 'menu',
         id: 'components',
         label: 'Components',
-        icon: 'ri-stack-line',
+        icon: 'layers',
         children: [
-            { id: 'accordion', label: 'Accordion', href: '/pages/components/accordion.html' },
-            { id: 'alerts', label: 'Alerts', href: '/pages/components/alert.html' },
-            { id: 'avatar', label: 'Avatar', href: '/pages/components/avatar.html' },
-            { id: 'badges', label: 'Badges', href: '/pages/components/badges.html' },
-            { id: 'breadcrumb', label: 'Breadcrumb', href: '/pages/components/breadcrumb.html' },
-            { id: 'buttons', label: 'Buttons', href: '/pages/components/buttons.html' },
-            { id: 'cards', label: 'Cards', href: '/pages/components/cards.html' },
-            { id: 'checkbox', label: 'Checkbox', href: '/pages/components/checkbox.html' },
-            { id: 'collapse', label: 'Collapse', href: '/pages/components/collapse.html' },
-            { id: 'dropdowns', label: 'Dropdowns', href: '/pages/components/dropdowns.html' },
-            { id: 'pagination', label: 'Pagination', href: '/pages/components/pagination.html' },
-            { id: 'progress', label: 'Progress', href: '/pages/components/progress.html' },
-            { id: 'skeleton', label: 'Skeleton', href: '/pages/components/skeleton.html' },
-            { id: 'tabs', label: 'Tabs', href: '/pages/components/tabs.html' },
-            { id: 'toast', label: 'Toast', href: '/pages/components/toast.html' }
+            { id: 'accordion', label: 'Accordion', href: '/pages/components/accordion.html', icon: 'chevrons-up-down' },
+            { id: 'alerts', label: 'Alerts', href: '/pages/components/alert.html', icon: 'alert-triangle' },
+            { id: 'avatar', label: 'Avatar', href: '/pages/components/avatar.html', icon: 'user' },
+            { id: 'badges', label: 'Badges', href: '/pages/components/badges.html', icon: 'badge' },
+            { id: 'breadcrumb', label: 'Breadcrumb', href: '/pages/components/breadcrumb.html', icon: 'navigation' },
+            { id: 'buttons', label: 'Buttons', href: '/pages/components/buttons.html', icon: 'mouse-pointer-click' },
+            { id: 'cards', label: 'Cards', href: '/pages/components/cards.html', icon: 'credit-card' },
+            { id: 'checkbox', label: 'Checkbox', href: '/pages/components/checkbox.html', icon: 'check-square' },
+            { id: 'collapse', label: 'Collapse', href: '/pages/components/collapse.html', icon: 'panel-top-close' },
+            { id: 'dropdowns', label: 'Dropdowns', href: '/pages/components/dropdowns.html', icon: 'list' },
+            { id: 'pagination', label: 'Pagination', href: '/pages/components/pagination.html', icon: 'skip-forward' },
+            { id: 'progress', label: 'Progress', href: '/pages/components/progress.html', icon: 'loader' },
+            { id: 'skeleton', label: 'Skeleton', href: '/pages/components/skeleton.html', icon: 'loader' },
+            { id: 'tabs', label: 'Tabs', href: '/pages/components/tabs.html', icon: 'square-stack' },
+            { id: 'toast', label: 'Toast', href: '/pages/components/toast.html', icon: 'message-circle' }
         ]
     },
     {
         type: 'menu',
         id: 'forms',
         label: 'Forms',
-        icon: 'ri-file-list-3-line',
+        icon: 'file-text',
         children: [
-            { id: 'form-elements', label: 'Form Elements', href: '/pages/forms/forms.html' },
-            { id: 'form-validation', label: 'Validation', href: '/pages/forms/validation.html' }
+            { id: 'form-elements', label: 'Form Elements', href: '/pages/forms/forms.html', icon: 'text-cursor-input' },
+            { id: 'form-validation', label: 'Validation', href: '/pages/forms/validation.html', icon: 'shield-check' }
         ]
     },
     {
         type: 'menu',
         id: 'content',
         label: 'Content',
-        icon: 'ri-text',
+        icon: 'type',
         children: [
-            { id: 'typography', label: 'Typography', href: '/pages/content/typography.html' },
-            { id: 'tables', label: 'Tables', href: '/pages/content/tables.html' },
-            { id: 'code-blocks', label: 'Code Blocks', href: '/pages/content/code-blocks.html' }
+            { id: 'typography', label: 'Typography', href: '/pages/content/typography.html', icon: 'heading' },
+            { id: 'tables', label: 'Tables', href: '/pages/content/tables.html', icon: 'table' },
+            { id: 'code-blocks', label: 'Code Blocks', href: '/pages/content/code-blocks.html', icon: 'code' }
         ]
     },
     {
         type: 'menu',
         id: 'overlays',
         label: 'Overlays',
-        icon: 'ri-window-line',
+        icon: 'app-window',
         children: [
-            { id: 'modal', label: 'Modal', href: '/pages/overlays/modal.html' },
-            { id: 'tooltip', label: 'Tooltip', href: '/pages/overlays/tooltip.html' }
+            { id: 'modal', label: 'Modal', href: '/pages/overlays/modal.html', icon: 'square-stack' },
+            { id: 'tooltip', label: 'Tooltip', href: '/pages/overlays/tooltip.html', icon: 'info' }
         ]
     },
 
@@ -162,7 +164,7 @@ const menuData = [
         type: 'link',
         id: 'theme',
         label: 'Theme',
-        icon: 'ri-palette-line',
+        icon: 'palette',
         href: '/pages/settings/theme.html'
     }
 ];
@@ -200,9 +202,6 @@ export function initSidebar() {
 
     // Handle resize
     window.addEventListener('resize', handleResize);
-
-    // Set active based on current URL
-    setTimeout(() => setActiveByUrl(), 0);
 }
 
 // Check if URL matches href
@@ -232,6 +231,9 @@ function renderMenu(container) {
     html += '</nav>';
     container.innerHTML = html;
     attachMenuListeners(container);
+
+    // Open parent menu of active item (without triggering click animation)
+    openActiveParentMenu(container);
 }
 
 // Render Category Header - THEME-AWARE
@@ -243,7 +245,7 @@ function renderCategory(item) {
     `;
 }
 
-// Render Menu Item with Children - THEME-AWARE
+// Render Menu Item with Children - THEME-AWARE with Lucide Icons
 function renderMenuItem(item) {
     const hasActiveChild = item.children?.some(child => isUrlMatch(child.href));
 
@@ -251,14 +253,13 @@ function renderMenuItem(item) {
     if (item.children) {
         childrenHtml = item.children.map(child => {
             const isActive = isUrlMatch(child.href);
+            const childIcon = child.icon ? getLucideIcon(child.icon, 'w-4 h-4 flex-shrink-0') : '';
             return `
                 <a href="${child.href}" 
                    data-id="${child.id}"
-                   class="submenu-link flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all duration-200
-                          focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50
-                          active:scale-[0.98] active:opacity-80
-                          ${isActive ? 'bg-primary/10 text-primary font-medium' : 'text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground'}">
-                    ${isActive ? '<span class="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>' : ''}
+                   class="submenu-link flex items-center gap-2.5 px-3 py-2 text-sm rounded-lg transition-colors
+                          ${isActive ? 'bg-sidebar-accent text-primary font-medium' : 'text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground focus:bg-sidebar-accent focus:text-sidebar-foreground active:bg-sidebar-accent'}">
+                    ${childIcon}
                     <span>${child.label}</span>
                 </a>
             `;
@@ -266,19 +267,28 @@ function renderMenuItem(item) {
     }
 
     // Popover links for hover - THEME-AWARE
-    const popoverLinks = item.children?.map(child => `
-        <a href="${child.href}" class="block px-4 py-2 text-sm text-popover-foreground/70 hover:bg-muted hover:text-popover-foreground transition-colors focus:outline-none active:opacity-80">${child.label}</a>
-    `).join('') || '';
+    const popoverLinks = item.children?.map(child => {
+        const childIcon = child.icon ? getLucideIcon(child.icon, 'w-4 h-4 flex-shrink-0') : '';
+        return `
+            <a href="${child.href}" class="flex items-center gap-2.5 px-4 py-2 text-sm text-popover-foreground/70 hover:bg-muted hover:text-popover-foreground transition-colors">
+                ${childIcon}
+                <span>${child.label}</span>
+            </a>
+        `;
+    }).join('') || '';
+
+    const menuIcon = getLucideIcon(item.icon, 'w-5 h-5 flex-shrink-0 text-sidebar-foreground/50 group-hover:text-sidebar-foreground transition-colors');
+    const arrowIcon = getLucideIcon('plus', `menu-arrow w-4 h-4 text-sidebar-foreground/50 transition-transform duration-300 ${hasActiveChild ? 'rotate-45' : ''}`);
 
     return `
         <div class="menu-item relative ${hasActiveChild ? 'is-open' : ''}" data-id="${item.id}">
-            <button class="menu-toggle w-full h-11 flex items-center px-6 text-sidebar-foreground hover:bg-sidebar-accent transition-all duration-200 group">
-                <i class="${item.icon} text-[18px] text-sidebar-foreground/50 group-hover:text-sidebar-foreground transition-colors w-5 flex-shrink-0"></i>
+            <button class="menu-toggle w-full h-11 flex items-center px-6 text-sidebar-foreground hover:bg-sidebar-accent focus:bg-sidebar-accent active:bg-sidebar-accent transition-colors duration-200 group">
+                ${menuIcon}
                 <span class="menu-text flex-1 text-left text-sm font-medium ml-3 truncate">${item.label}</span>
-                <i class="menu-arrow ri-add-line text-sidebar-foreground/50 transition-transform duration-300 ${hasActiveChild ? 'rotate-45' : ''}"></i>
+                ${arrowIcon}
             </button>
-            <div class="submenu transition-all duration-300 overflow-hidden ${hasActiveChild ? 'max-h-[500px]' : 'max-h-0'}">
-                <div class="py-1 pl-14 pr-4">
+            <div class="submenu overflow-hidden transition-all duration-300 ease-out ${hasActiveChild ? '' : 'max-h-0'}">
+                <div class="py-1 pl-10 pr-4 space-y-0.5">
                     ${childrenHtml}
                 </div>
             </div>
@@ -291,20 +301,20 @@ function renderMenuItem(item) {
     `;
 }
 
-// Render Simple Link - THEME-AWARE
+// Render Simple Link - THEME-AWARE with Lucide Icons
 function renderLink(item) {
     const isActive = isUrlMatch(item.href);
     const isDisabled = item.disabled;
 
+    const linkIcon = getLucideIcon(item.icon, `w-5 h-5 flex-shrink-0 transition-colors ${isActive ? 'text-primary' : isDisabled ? 'text-sidebar-foreground/20' : 'text-sidebar-foreground/50 group-hover:text-sidebar-foreground'}`);
+
     return `
         <div class="menu-link relative" data-id="${item.id}">
             <a href="${isDisabled ? '#' : item.href || '#'}" 
-               class="w-full h-11 flex items-center px-6 transition-all duration-200 group
-                      focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-inset
-                      active:scale-[0.99] active:opacity-80
-                      ${isActive ? 'bg-primary/10 text-primary' : isDisabled ? 'text-sidebar-foreground/30 cursor-not-allowed' : 'text-sidebar-foreground hover:bg-sidebar-accent'}"
+               class="w-full h-11 flex items-center px-6 transition-colors duration-200 group
+                      ${isActive ? 'bg-sidebar-accent text-primary' : isDisabled ? 'text-sidebar-foreground/30 cursor-not-allowed' : 'text-sidebar-foreground hover:bg-sidebar-accent focus:bg-sidebar-accent active:bg-sidebar-accent'}"
                ${isDisabled ? 'onclick="return false;"' : ''}>
-                <i class="${item.icon} text-[18px] ${isActive ? 'text-primary' : isDisabled ? 'text-sidebar-foreground/20' : 'text-sidebar-foreground/50 group-hover:text-sidebar-foreground'} w-5 flex-shrink-0 transition-colors"></i>
+                ${linkIcon}
                 <span class="menu-text flex-1 text-left text-sm font-medium ml-3 truncate">${item.label}</span>
                 ${item.status ? `<span class="status-badge text-[10px] bg-muted text-muted-foreground px-2 py-0.5 rounded font-medium">${item.status}</span>` : ''}
             </a>
@@ -314,6 +324,27 @@ function renderLink(item) {
             </div>
         </div>
     `;
+}
+
+// Open parent menu of active item without animation
+function openActiveParentMenu(container) {
+    container.querySelectorAll('.menu-item').forEach(menuItem => {
+        if (menuItem.classList.contains('is-open')) {
+            const submenu = menuItem.querySelector('.submenu');
+            if (submenu) {
+                // Set height immediately without transition
+                submenu.style.maxHeight = submenu.scrollHeight + 'px';
+            }
+        }
+    });
+
+    // Scroll active link into view
+    const activeLink = container.querySelector('.submenu-link.bg-primary\\/10, .menu-link a.bg-primary\\/10');
+    if (activeLink) {
+        setTimeout(() => {
+            activeLink.scrollIntoView({ behavior: 'instant', block: 'center' });
+        }, 50);
+    }
 }
 
 // Attach Event Listeners
@@ -359,50 +390,6 @@ function handleMenuToggle(e) {
         menuItem.classList.add('is-open');
         submenu.style.maxHeight = submenu.scrollHeight + 'px';
         arrow.classList.add('rotate-45');
-    }
-}
-
-// Set Active by Current URL - THEME-AWARE
-function setActiveByUrl() {
-    const container = document.getElementById('sidebar');
-    if (!container) return;
-
-    // Clear all active states - remove old hardcoded colors, apply theme colors
-    container.querySelectorAll('.submenu-link, .menu-link a').forEach(link => {
-        link.classList.remove('bg-primary/10', 'text-primary', 'font-medium');
-        link.classList.add('text-sidebar-foreground/70', 'hover:bg-sidebar-accent', 'hover:text-sidebar-foreground');
-        const bullet = link.querySelector('.w-1\\.5');
-        if (bullet) bullet.remove();
-    });
-
-    // Set active based on URL with theme colors
-    let activeLink = null;
-    container.querySelectorAll('.submenu-link, .menu-link a').forEach(link => {
-        if (isUrlMatch(link.getAttribute('href'))) {
-            link.classList.remove('text-sidebar-foreground/70', 'hover:bg-sidebar-accent', 'hover:text-sidebar-foreground');
-            link.classList.add('bg-primary/10', 'text-primary', 'font-medium');
-
-            if (!link.querySelector('.w-1\\.5') && link.classList.contains('submenu-link')) {
-                const bullet = document.createElement('span');
-                bullet.className = 'w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0';
-                link.insertBefore(bullet, link.firstChild);
-            }
-
-            // Open parent menu
-            const menuItem = link.closest('.menu-item');
-            if (menuItem && !menuItem.classList.contains('is-open')) {
-                menuItem.querySelector('.menu-toggle')?.click();
-            }
-
-            activeLink = link;
-        }
-    });
-
-    // Scroll active link into view (centered in sidebar)
-    if (activeLink) {
-        setTimeout(() => {
-            activeLink.scrollIntoView({ behavior: 'instant', block: 'center' });
-        }, 100);
     }
 }
 
