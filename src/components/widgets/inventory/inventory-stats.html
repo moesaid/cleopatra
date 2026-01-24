@@ -1,0 +1,62 @@
+<!-- Inventory Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+    <!-- Total Products -->
+    <div class="bg-card border border-border rounded-xl p-4">
+        <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+            </div>
+            <span class="px-2 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full">+12%</span>
+        </div>
+        <div class="text-2xl font-bold text-foreground mb-1">2,847</div>
+        <div class="text-sm text-muted-foreground">Total Products</div>
+    </div>
+
+    <!-- In Stock -->
+    <div class="bg-card border border-border rounded-xl p-4">
+        <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <span class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-medium rounded-full">86%</span>
+        </div>
+        <div class="text-2xl font-bold text-foreground mb-1">2,456</div>
+        <div class="text-sm text-muted-foreground">In Stock</div>
+    </div>
+
+    <!-- Low Stock -->
+    <div class="bg-card border border-border rounded-xl p-4">
+        <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+            </div>
+            <span class="px-2 py-1 bg-amber-500/10 text-amber-500 text-xs font-medium rounded-full">11%</span>
+        </div>
+        <div class="text-2xl font-bold text-foreground mb-1">324</div>
+        <div class="text-sm text-muted-foreground">Low Stock</div>
+    </div>
+
+    <!-- Out of Stock -->
+    <div class="bg-card border border-border rounded-xl p-4">
+        <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                </svg>
+            </div>
+            <span class="px-2 py-1 bg-rose-500/10 text-rose-500 text-xs font-medium rounded-full">3%</span>
+        </div>
+        <div class="text-2xl font-bold text-foreground mb-1">67</div>
+        <div class="text-sm text-muted-foreground">Out of Stock</div>
+    </div>
+</div>

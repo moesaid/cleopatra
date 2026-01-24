@@ -1,0 +1,100 @@
+<!-- Inventory Categories Widget -->
+<div class="bg-card border border-border rounded-xl p-4 mb-4">
+    <div class="flex items-center justify-between mb-4">
+        <h3 class="text-base font-semibold text-foreground">Categories</h3>
+        <button class="p-1 rounded-md hover:bg-muted transition-colors">
+            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="1.5" />
+                <circle cx="12" cy="12" r="1.5" />
+                <circle cx="12" cy="18" r="1.5" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Category List -->
+    <div class="space-y-3">
+        <!-- Electronics -->
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <span class="text-sm">📱</span>
+                </div>
+                <div>
+                    <div class="text-sm font-medium text-foreground">Electronics</div>
+                    <div class="text-xs text-muted-foreground">1,245 products</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-sm font-bold text-foreground">44%</div>
+                <div class="w-16 h-1.5 bg-muted rounded-full mt-1">
+                    <div class="h-full bg-primary rounded-full" style="width: 44%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clothing -->
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center">
+                    <span class="text-sm">👕</span>
+                </div>
+                <div>
+                    <div class="text-sm font-medium text-foreground">Clothing</div>
+                    <div class="text-xs text-muted-foreground">856 products</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-sm font-bold text-foreground">30%</div>
+                <div class="w-16 h-1.5 bg-muted rounded-full mt-1">
+                    <div class="h-full bg-violet-500 rounded-full" style="width: 30%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessories -->
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center">
+                    <span class="text-sm">🎒</span>
+                </div>
+                <div>
+                    <div class="text-sm font-medium text-foreground">Accessories</div>
+                    <div class="text-xs text-muted-foreground">512 products</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-sm font-bold text-foreground">18%</div>
+                <div class="w-16 h-1.5 bg-muted rounded-full mt-1">
+                    <div class="h-full bg-cyan-500 rounded-full" style="width: 18%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home & Garden -->
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                    <span class="text-sm">🏡</span>
+                </div>
+                <div>
+                    <div class="text-sm font-medium text-foreground">Home & Garden</div>
+                    <div class="text-xs text-muted-foreground">234 products</div>
+                </div>
+            </div>
+            <div class="text-right">
+                <div class="text-sm font-bold text-foreground">8%</div>
+                <div class="w-16 h-1.5 bg-muted rounded-full mt-1">
+                    <div class="h-full bg-emerald-500 rounded-full" style="width: 8%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button
+        class="w-full mt-4 pt-3 border-t border-border text-sm text-primary hover:text-primary/80 transition-colors flex items-center justify-center gap-1">
+        Manage Categories
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+    </button>
+</div>
