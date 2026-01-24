@@ -9,6 +9,7 @@ import {
     LineController,
     DoughnutController,
     BarController,
+    BubbleController,
     CategoryScale,
     LinearScale,
     PointElement,
@@ -25,6 +26,7 @@ Chart.register(
     LineController,
     DoughnutController,
     BarController,
+    BubbleController,
     CategoryScale,
     LinearScale,
     PointElement,
@@ -143,6 +145,41 @@ export function getPrimaryColorShades() {
             `hsl(${h}, ${Math.max(s - 30, 15)}%, ${Math.min(l + 36, 85)}%)`
         ];
     }
+}
+
+/**
+ * Get the primary color RGB values by reading from the DOM
+ * This is the most reliable way to get the computed primary color
+ * regardless of whether it's defined as HSL, OKLCH, etc.
+ */
+export function getPrimaryRGBA(alpha = 1) {
+    const rgb = getPrimaryRGB();
+    return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+}
+
+/**
+ * Add alpha transparency to any color using computed RGB values
+ * Works with HSL, OKLCH, or any valid CSS color format
+ * @param {number} index - The shade index (0 = darkest, 3 = lightest)
+ * @param {number} alpha - The alpha value (0-1)
+ */
+export function getShadeWithAlpha(index, alpha = 1) {
+    // Get the base primary RGB and derive shades from it
+    const rgb = getPrimaryRGB();
+    const { h, s, l } = rgbToHsl(rgb.r, rgb.g, rgb.b);
+    const isDark = document.documentElement.classList.contains('dark');
+
+    // Calculate lightness offset based on index
+    let targetL;
+    if (isDark) {
+        const offsets = [0, -10, -20, -30];
+        targetL = Math.max(l + (offsets[index] || 0), 15);
+    } else {
+        const offsets = [0, 12, 24, 36];
+        targetL = Math.min(l + (offsets[index] || 0), 85);
+    }
+
+    return `hsla(${h}, ${s}%, ${targetL}%, ${alpha})`;
 }
 
 
@@ -352,12 +389,14 @@ export function createGradient(ctx, colorStart, colorEnd) {
 }
 
 /**
- * Observe theme changes
+ * Observe theme changes (class for dark/light, data-theme for primary color)
  */
 export function observeThemeChanges(callback) {
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-            if (mutation.attributeName === 'class') {
+            if (mutation.attributeName === 'class' ||
+                mutation.attributeName === 'style' ||
+                mutation.attributeName === 'data-theme') {
                 callback();
             }
         });
@@ -365,7 +404,7 @@ export function observeThemeChanges(callback) {
 
     observer.observe(document.documentElement, {
         attributes: true,
-        attributeFilter: ['class']
+        attributeFilter: ['class', 'style', 'data-theme']
     });
 
     return observer;

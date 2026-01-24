@@ -42,6 +42,9 @@ import { initEcommerceCharts } from './ecommerce-charts.js';
 import { initTrafficChart } from '../components/widgets/traffic-chart/traffic-chart.js';
 import { initDistributionChart } from '../components/widgets/distribution-chart/distribution-chart.js';
 import { initCountryStatsChart } from '../components/widgets/retail-store/country-stats.js';
+import { initCrmRevenueChart } from '../components/widgets/crm/crm-revenue.js';
+import { initCrmRetentionChart } from '../components/widgets/crm/crm-retention.js';
+import { initCrmMapChart } from '../components/widgets/crm/crm-map.js';
 
 // Router
 import { initRouter } from '../components/layout/router';
@@ -75,9 +78,12 @@ function initComponents() {
     initCryptoCharts();
 
     // Dashboard widgets (Chart.js) - stagger to prevent simultaneous loading
-    initTrafficChart(300);      // 300ms stagger offset
-    initDistributionChart(450); // 450ms stagger offset
-    initCountryStatsChart(600); // 600ms stagger offset
+    initTrafficChart(300);       // 300ms stagger offset
+    initDistributionChart(450);  // 450ms stagger offset
+    initCountryStatsChart(600);  // 600ms stagger offset
+    initCrmRevenueChart(750);    // 750ms stagger offset
+    initCrmRetentionChart(900);  // 900ms stagger offset
+    initCrmMapChart(1050);       // 1050ms stagger offset
 
     // E-commerce dashboard charts (ApexCharts)
     initEcommerceCharts();
