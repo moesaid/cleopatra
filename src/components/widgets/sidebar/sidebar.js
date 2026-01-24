@@ -255,6 +255,8 @@ function renderMenuItem(item) {
                 <a href="${child.href}" 
                    data-id="${child.id}"
                    class="submenu-link flex items-center gap-2 px-3 py-2 text-sm rounded-lg transition-all duration-200
+                          focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50
+                          active:scale-[0.98] active:opacity-80
                           ${isActive ? 'bg-primary/10 text-primary font-medium' : 'text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground'}">
                     ${isActive ? '<span class="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>' : ''}
                     <span>${child.label}</span>
@@ -265,7 +267,7 @@ function renderMenuItem(item) {
 
     // Popover links for hover - THEME-AWARE
     const popoverLinks = item.children?.map(child => `
-        <a href="${child.href}" class="block px-4 py-2 text-sm text-popover-foreground/70 hover:bg-muted hover:text-popover-foreground transition-colors">${child.label}</a>
+        <a href="${child.href}" class="block px-4 py-2 text-sm text-popover-foreground/70 hover:bg-muted hover:text-popover-foreground transition-colors focus:outline-none active:opacity-80">${child.label}</a>
     `).join('') || '';
 
     return `
@@ -298,6 +300,8 @@ function renderLink(item) {
         <div class="menu-link relative" data-id="${item.id}">
             <a href="${isDisabled ? '#' : item.href || '#'}" 
                class="w-full h-11 flex items-center px-6 transition-all duration-200 group
+                      focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-inset
+                      active:scale-[0.99] active:opacity-80
                       ${isActive ? 'bg-primary/10 text-primary' : isDisabled ? 'text-sidebar-foreground/30 cursor-not-allowed' : 'text-sidebar-foreground hover:bg-sidebar-accent'}"
                ${isDisabled ? 'onclick="return false;"' : ''}>
                 <i class="${item.icon} text-[18px] ${isActive ? 'text-primary' : isDisabled ? 'text-sidebar-foreground/20' : 'text-sidebar-foreground/50 group-hover:text-sidebar-foreground'} w-5 flex-shrink-0 transition-colors"></i>
