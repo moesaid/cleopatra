@@ -1,0 +1,62 @@
+<!-- Customer By Country -->
+<div class="bg-card border border-border rounded-xl p-4 mb-4">
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold text-foreground">Customer By Country</h3>
+        <p class="text-sm text-muted-foreground">See where your customers are coming from</p>
+    </div>
+
+    <!-- Chart Container -->
+    <div class="relative h-40 mb-4 flex items-center justify-center">
+        <canvas id="country-stats-chart"></canvas>
+        <!-- Center Label -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+            <span class="text-2xl font-bold text-foreground">56,892</span>
+            <span class="text-xs text-muted-foreground">Clients</span>
+        </div>
+    </div>
+
+    <!-- Country Breakdown -->
+    <div class="space-y-3">
+        <!-- Russia -->
+        <div>
+            <div class="flex items-center justify-between text-sm mb-1">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-sm bg-amber-500"></span>
+                    <span class="text-foreground font-medium">Russia</span>
+                </div>
+                <span class="text-muted-foreground">54%</span>
+            </div>
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-amber-400 rounded-full" style="width: 54%"></div>
+            </div>
+        </div>
+
+        <!-- USA -->
+        <div>
+            <div class="flex items-center justify-between text-sm mb-1">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-sm bg-emerald-500"></span>
+                    <span class="text-foreground font-medium">USA</span>
+                </div>
+                <span class="text-muted-foreground">28%</span>
+            </div>
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500 rounded-full" style="width: 28%"></div>
+            </div>
+        </div>
+
+        <!-- UAE -->
+        <div>
+            <div class="flex items-center justify-between text-sm mb-1">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-sm bg-emerald-300"></span>
+                    <span class="text-foreground font-medium">UAE</span>
+                </div>
+                <span class="text-muted-foreground">18%</span>
+            </div>
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-300 rounded-full" style="width: 18%"></div>
+            </div>
+        </div>
+    </div>
+</div>

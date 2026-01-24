@@ -41,6 +41,7 @@ import { initEcommerceCharts } from './ecommerce-charts.js';
 // Dashboard Widgets (Chart.js)
 import { initTrafficChart } from '../components/widgets/traffic-chart/traffic-chart.js';
 import { initDistributionChart } from '../components/widgets/distribution-chart/distribution-chart.js';
+import { initCountryStatsChart } from '../components/widgets/retail-store/country-stats.js';
 
 // Router
 import { initRouter } from '../components/layout/router';
@@ -76,6 +77,7 @@ function initComponents() {
     // Dashboard widgets (Chart.js) - stagger to prevent simultaneous loading
     initTrafficChart(300);      // 300ms stagger offset
     initDistributionChart(450); // 450ms stagger offset
+    initCountryStatsChart(600); // 600ms stagger offset
 
     // E-commerce dashboard charts (ApexCharts)
     initEcommerceCharts();
