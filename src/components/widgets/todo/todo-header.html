@@ -1,0 +1,80 @@
+<!-- Todo Kanban Header Widget -->
+<!-- Cover image with project title and team - Theme Aware -->
+
+<div class="relative mb-6">
+    <!-- Cover Image - Theme Aware Gradient using Primary Color -->
+    <div class="h-32 rounded-xl overflow-hidden relative">
+        <!-- Primary color gradient with HSL variations for theme awareness -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-primary/60"></div>
+        <!-- Lighter overlay for visual depth -->
+        <div class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/10"></div>
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
+
+        <!-- Cover Actions -->
+        <div class="absolute top-3 right-3 flex gap-2">
+            <button
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 dark:bg-black/50 hover:bg-white dark:hover:bg-black/70 rounded-lg text-xs font-medium text-gray-700 dark:text-gray-200 transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="hidden sm:inline">Change Cover</span>
+            </button>
+            <button
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 dark:bg-black/50 hover:bg-white dark:hover:bg-black/70 rounded-lg text-xs font-medium text-gray-700 dark:text-gray-200 transition-colors backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+                <span class="hidden sm:inline">Reposition</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Project Info - Responsive -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4">
+        <div class="flex items-center gap-3">
+            <!-- Project Icon - Uses Primary Color -->
+            <div
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary flex items-center justify-center text-primary-foreground font-bold text-base sm:text-lg shadow-lg shadow-primary/25">
+                C
+            </div>
+            <h1 class="text-lg sm:text-xl font-bold text-foreground">Craftboard Project</h1>
+        </div>
+
+        <!-- Team Avatars -->
+        <div class="flex items-center gap-3">
+            <div class="flex -space-x-2">
+                <div
+                    class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/20 border-2 border-card flex items-center justify-center text-[10px] sm:text-xs font-medium text-primary">
+                    AL</div>
+                <div
+                    class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary border-2 border-card flex items-center justify-center text-xs font-medium text-primary-foreground">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                </div>
+                <div
+                    class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/80 border-2 border-card flex items-center justify-center text-[10px] sm:text-xs font-medium text-primary-foreground">
+                    DT</div>
+                <div
+                    class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/60 border-2 border-card flex items-center justify-center text-xs font-medium text-primary-foreground">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                </div>
+            </div>
+            <button
+                class="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 border border-border rounded-lg text-xs sm:text-sm font-medium text-foreground hover:bg-muted transition-colors">
+                <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                </svg>
+                <span class="hidden sm:inline">Invite</span>
+            </button>
+        </div>
+    </div>
+</div>

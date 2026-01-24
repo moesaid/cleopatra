@@ -1,16 +1,98 @@
 {{> start title="Todo" hidePageHeader=true }}
 
-<div class="flex items-center justify-center h-[60vh]">
-    <div class="text-center">
-        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-            </svg>
+<div class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+
+    <!-- Header with Cover Image -->
+    {{> todo/todo-header }}
+
+    <!-- Toolbar -->
+    {{> todo/todo-toolbar }}
+
+    <!-- Kanban Board -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 overflow-x-auto pb-4">
+
+        <!-- To-do Column -->
+        <div class="kanban-column bg-muted/30 rounded-xl p-3 min-h-[400px]">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-gray-400"></span>
+                    <h3 class="text-sm font-semibold text-foreground">To-do</h3>
+                    <span class="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded">3</span>
+                </div>
+                <button
+                    class="w-6 h-6 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-3">
+                {{> todo/todo-cards-todo }}
+            </div>
         </div>
-        <h1 class="text-2xl font-bold text-foreground mb-2">Todo</h1>
-        <p class="text-muted-foreground">Coming soon</p>
+
+        <!-- On Progress Column -->
+        <div class="kanban-column bg-muted/30 rounded-xl p-3 min-h-[400px]">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                    <h3 class="text-sm font-semibold text-foreground">On Progress</h3>
+                    <span class="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded">10</span>
+                </div>
+                <button
+                    class="w-6 h-6 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-3">
+                {{> todo/todo-cards-progress }}
+            </div>
+        </div>
+
+        <!-- In Review Column -->
+        <div class="kanban-column bg-muted/30 rounded-xl p-3 min-h-[400px]">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                    <h3 class="text-sm font-semibold text-foreground">In Review</h3>
+                    <span class="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded">2</span>
+                </div>
+                <button
+                    class="w-6 h-6 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-3">
+                {{> todo/todo-cards-review }}
+            </div>
+        </div>
+
+        <!-- Completed Column -->
+        <div class="kanban-column bg-muted/30 rounded-xl p-3 min-h-[400px]">
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <h3 class="text-sm font-semibold text-foreground">Completed</h3>
+                    <span class="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded">20</span>
+                </div>
+                <button
+                    class="w-6 h-6 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-3">
+                {{> todo/todo-cards-completed }}
+            </div>
+        </div>
+
     </div>
+
 </div>
 
 {{> end }}
