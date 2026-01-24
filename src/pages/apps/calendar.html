@@ -1,15 +1,21 @@
 {{> start title="Calendar" hidePageHeader=true }}
 
-<div class="flex items-center justify-center h-[60vh]">
-    <div class="text-center">
-        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+<div class="flex h-[calc(100vh-64px)]">
+    <!-- Left Sidebar -->
+    {{> calendar/calendar-sidebar }}
+
+    <!-- Main Calendar Area -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Calendar Header -->
+        {{> calendar/calendar-header }}
+
+        <!-- Calendar Grid with Events -->
+        <div class="flex-1 overflow-auto relative">
+            {{> calendar/calendar-grid }}
+
+            <!-- Event Detail Popup -->
+            {{> calendar/calendar-event-popup }}
         </div>
-        <h1 class="text-2xl font-bold text-foreground mb-2">Calendar</h1>
-        <p class="text-muted-foreground">Coming soon</p>
     </div>
 </div>
 

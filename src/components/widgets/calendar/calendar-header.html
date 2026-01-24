@@ -1,0 +1,94 @@
+<!-- Calendar Header -->
+<div
+    class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-border bg-card">
+    <!-- Top Row on Mobile: Month + Navigation -->
+    <div class="flex items-center justify-between sm:justify-start gap-4">
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2 rounded-md hover:bg-muted transition-colors"
+            onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden')">
+            <svg class="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Month/Week -->
+        <button
+            class="flex items-center gap-2 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors">
+            <span>Aug 2022</span>
+            <span class="text-muted-foreground">/</span>
+            <span>W30</span>
+            <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+
+        <!-- Navigation Arrows - Mobile -->
+        <div class="flex items-center gap-1 sm:hidden">
+            <button class="p-1.5 rounded-md hover:bg-muted transition-colors">
+                <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="p-1.5 rounded-md hover:bg-muted transition-colors">
+                <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Center: View Tabs -->
+    <div class="flex items-center gap-1 bg-muted/50 dark:bg-muted/30 rounded-lg p-1 self-start sm:self-auto">
+        <button
+            class="px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium rounded-md text-muted-foreground hover:text-foreground transition-colors">
+            Day
+        </button>
+        <button
+            class="px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium rounded-md bg-primary text-primary-foreground shadow-sm">
+            Week
+        </button>
+        <button
+            class="px-3 sm:px-4 py-1.5 text-xs sm:text-sm font-medium rounded-md text-muted-foreground hover:text-foreground transition-colors">
+            Month
+        </button>
+    </div>
+
+    <!-- Right: Navigation & Actions -->
+    <div class="hidden sm:flex items-center gap-3">
+        <!-- Navigation Arrows - Desktop -->
+        <div class="flex items-center gap-1">
+            <button class="p-2 rounded-md hover:bg-muted transition-colors">
+                <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="p-2 rounded-md hover:bg-muted transition-colors">
+                <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Today Button -->
+        <button
+            class="px-4 py-1.5 text-sm font-medium rounded-md bg-muted/50 dark:bg-muted/30 text-foreground hover:bg-muted transition-colors">
+            Today
+        </button>
+
+        <!-- Share Button -->
+        <button
+            class="px-4 py-1.5 text-sm font-medium rounded-md bg-muted/50 dark:bg-muted/30 text-foreground hover:bg-muted transition-colors flex items-center gap-2">
+            <span>Share</span>
+        </button>
+
+        <!-- Settings -->
+        <button class="p-2 rounded-md hover:bg-muted transition-colors">
+            <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+        </button>
+    </div>
+</div>
