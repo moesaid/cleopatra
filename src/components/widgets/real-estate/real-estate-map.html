@@ -1,0 +1,68 @@
+<!-- Real Estate Map Widget -->
+<div class="bg-card border border-border rounded-xl p-4 mb-4">
+    <div class="flex items-center justify-between mb-3">
+        <h3 class="text-base font-semibold text-foreground">Property Locations</h3>
+        <button class="text-xs text-primary hover:text-primary/80 transition-colors">View Full Map</button>
+    </div>
+
+    <!-- Map Placeholder -->
+    <div class="relative h-[200px] bg-muted/30 rounded-lg overflow-hidden">
+        <!-- Map Background SVG -->
+        <svg class="absolute inset-0 w-full h-full opacity-20 text-muted-foreground" viewBox="0 0 512 512"
+            preserveAspectRatio="xMidYMid slice" fill="currentColor">
+            <path
+                d="M474.726,55.276c-0.049-2.27-1.274-4.345-3.234-5.488l-31.249-18.23c-1.502-0.866-2.58-2.312-3.022-3.978l-2.483-9.531c-0.816-3.144-3.806-5.194-7.007-4.836L331.34,23.922c-0.899,0.106-1.765,0.384-2.532,0.833l-50.491,29.158c-1.699,0.972-2.859,2.662-3.169,4.59l-9.311,57.18c-0.523,3.21,1.388,6.314,4.509,7.269l13.15,4.051c0.882,0.262,1.797,0.343,2.695,0.237l-0.915,0.123c2.745-0.343,5.424,1.111,6.616,3.61c1.224,2.5,0.719,5.472-1.242,7.448l3.186-3.193c-1.356,1.356-2.026,3.227-1.879,5.138l1.65,20.361c0.245,2.924,2.402,5.333,5.276,5.873l21.284,4.034c1.405,0.262,2.858,0.065,4.133-0.571l-0.67,0.326c2.009-1.013,4.41-0.898,6.338,0.286c0.506,0.318,0.8,0.824,1.192,1.249c-0.605,0.638-1.307,1.193-2.14,1.536l-3.642,1.503c-3.055,1.258-4.688,4.59-3.806,7.758l1.568,5.603c0.458,1.674,0.245,3.463-0.621,4.966l-7.008,12.268" />
+        </svg>
+
+        <!-- Map Markers -->
+        <div class="absolute inset-0 p-4">
+            <!-- Marker 1 -->
+            <div class="absolute top-[20%] left-[25%] group cursor-pointer">
+                <div
+                    class="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    <span class="text-primary-foreground text-xs font-bold">3</span>
+                </div>
+                <div
+                    class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap">
+                    Los Angeles
+                </div>
+            </div>
+
+            <!-- Marker 2 -->
+            <div class="absolute top-[35%] left-[45%] group cursor-pointer">
+                <div
+                    class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    <span class="text-white text-xs font-bold">5</span>
+                </div>
+                <div
+                    class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap">
+                    San Francisco
+                </div>
+            </div>
+
+            <!-- Marker 3 -->
+            <div class="absolute top-[60%] left-[70%] group cursor-pointer">
+                <div
+                    class="w-8 h-8 bg-violet-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    <span class="text-white text-xs font-bold">2</span>
+                </div>
+                <div
+                    class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap">
+                    Miami
+                </div>
+            </div>
+
+            <!-- Marker 4 -->
+            <div class="absolute top-[45%] left-[80%] group cursor-pointer">
+                <div
+                    class="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                    <span class="text-white text-xs font-bold">4</span>
+                </div>
+                <div
+                    class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap">
+                    New York
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

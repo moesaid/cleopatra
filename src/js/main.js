@@ -46,6 +46,7 @@ import { initCrmRevenueChart } from '../components/widgets/crm/crm-revenue.js';
 import { initCrmRetentionChart } from '../components/widgets/crm/crm-retention.js';
 import { initCrmMapChart } from '../components/widgets/crm/crm-map.js';
 import { initInventoryChart } from '../components/widgets/inventory/inventory-chart.js';
+import { initRealEstateChart } from '../components/widgets/real-estate/real-estate-chart.js';
 
 // Router
 import { initRouter } from '../components/layout/router';
@@ -86,6 +87,7 @@ function initComponents() {
     initCrmRetentionChart(900);  // 900ms stagger offset
     initCrmMapChart(1050);       // 1050ms stagger offset
     initInventoryChart(1200);    // 1200ms stagger offset
+    initRealEstateChart(1350);   // 1350ms stagger offset
 
     // E-commerce dashboard charts (ApexCharts)
     initEcommerceCharts();
