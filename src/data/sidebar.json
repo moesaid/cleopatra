@@ -99,11 +99,83 @@
         "label": "EXTRA"
     },
     {
-        "type": "link",
-        "id": "blank-page",
-        "label": "Blank Page",
-        "icon": "ri-file-line",
-        "href": "/pages/extra/blank.html"
+        "type": "menu",
+        "id": "error-pages",
+        "label": "Error Pages",
+        "icon": "ri-error-warning-line",
+        "children": [
+            {
+                "id": "error-404",
+                "label": "404 - Not Found",
+                "href": "/pages/extra/404.html"
+            },
+            {
+                "id": "error-500",
+                "label": "500 - Server Error",
+                "href": "/pages/extra/500.html"
+            },
+            {
+                "id": "error-403",
+                "label": "403 - Forbidden",
+                "href": "/pages/extra/403.html"
+            },
+            {
+                "id": "maintenance",
+                "label": "Maintenance",
+                "href": "/pages/extra/maintenance.html"
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "id": "auth-pages",
+        "label": "Authentication",
+        "icon": "ri-lock-line",
+        "children": [
+            {
+                "id": "login",
+                "label": "Login",
+                "href": "/pages/extra/login.html"
+            },
+            {
+                "id": "register",
+                "label": "Register",
+                "href": "/pages/extra/register.html"
+            },
+            {
+                "id": "forgot-password",
+                "label": "Forgot Password",
+                "href": "/pages/extra/forgot-password.html"
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "id": "utility-pages",
+        "label": "Utility Pages",
+        "icon": "ri-file-list-line",
+        "children": [
+            {
+                "id": "blank-page",
+                "label": "Blank Page",
+                "href": "/pages/extra/blank.html"
+            },
+            {
+                "id": "coming-soon",
+                "label": "Coming Soon",
+                "href": "/pages/extra/coming-soon.html"
+            },
+            {
+                "id": "empty-state",
+                "label": "Empty State",
+                "href": "/pages/extra/empty.html"
+            },
+            {
+                "id": "success",
+                "label": "Success",
+                "href": "/pages/extra/success.html"
+            }
+        ]
     },
     {
         "type": "category",

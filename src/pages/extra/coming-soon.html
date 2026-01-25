@@ -1,0 +1,99 @@
+{{> start title="Coming Soon" hidePageHeader=true }}
+
+<!-- Coming Soon Page Content -->
+<div class="min-h-[80vh] flex items-center justify-center">
+    <div class="max-w-lg w-full mx-auto px-4 text-center">
+
+        <!-- Background decoration -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <!-- Illustration -->
+        <div class="relative mb-8">
+            <div
+                class="w-32 h-32 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto shadow-xl shadow-primary/10">
+                <svg class="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-2xl md:text-3xl font-bold text-foreground mb-3 relative">
+            Coming Soon
+        </h1>
+
+        <!-- Description -->
+        <p class="text-muted-foreground text-sm md:text-base max-w-md mx-auto mb-8 leading-relaxed relative">
+            We're working hard to bring you something amazing. Subscribe to get notified when we launch!
+        </p>
+
+        <!-- Email Signup -->
+        <div class="bg-card border border-border rounded-2xl p-6 relative">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Enter your email address"
+                    class="flex-1 px-4 py-3 bg-muted/50 border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                <button
+                    class="px-6 py-3 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                    </svg>
+                    Notify Me
+                </button>
+            </div>
+            <p class="text-xs text-muted-foreground mt-3">We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+
+        <!-- Features Preview -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 relative">
+            <div class="bg-card border border-border rounded-xl p-4">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h3 class="text-sm font-medium text-foreground mb-1">Lightning Fast</h3>
+                <p class="text-xs text-muted-foreground">Optimized for speed and performance</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-xl p-4">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h3 class="text-sm font-medium text-foreground mb-1">Secure</h3>
+                <p class="text-xs text-muted-foreground">Enterprise-grade security</p>
+            </div>
+
+            <div class="bg-card border border-border rounded-xl p-4">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-sm font-medium text-foreground mb-1">Made with Love</h3>
+                <p class="text-xs text-muted-foreground">Crafted with attention to detail</p>
+            </div>
+        </div>
+
+        <!-- Back Link -->
+        <a href="/pages/index.html"
+            class="inline-flex items-center gap-2 mt-8 text-sm text-muted-foreground hover:text-foreground transition-colors relative">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+        </a>
+
+    </div>
+</div>
+
+{{> end }}

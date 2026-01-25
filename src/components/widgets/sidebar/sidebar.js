@@ -91,11 +91,39 @@ const menuData = [
         label: 'EXTRA'
     },
     {
-        type: 'link',
-        id: 'blank-page',
-        label: 'Blank Page',
-        icon: 'file',
-        href: '/pages/extra/blank.html'
+        type: 'menu',
+        id: 'error-pages',
+        label: 'Error Pages',
+        icon: 'alert-triangle',
+        children: [
+            { id: 'error-404', label: '404 - Not Found', href: '/pages/extra/404.html', icon: 'file-x' },
+            { id: 'error-500', label: '500 - Server Error', href: '/pages/extra/500.html', icon: 'server-crash' },
+            { id: 'error-403', label: '403 - Forbidden', href: '/pages/extra/403.html', icon: 'lock' },
+            { id: 'maintenance', label: 'Maintenance', href: '/pages/extra/maintenance.html', icon: 'wrench' }
+        ]
+    },
+    {
+        type: 'menu',
+        id: 'auth-pages',
+        label: 'Authentication',
+        icon: 'shield',
+        children: [
+            { id: 'login', label: 'Login', href: '/pages/extra/login.html', icon: 'log-in' },
+            { id: 'register', label: 'Register', href: '/pages/extra/register.html', icon: 'user-plus' },
+            { id: 'forgot-password', label: 'Forgot Password', href: '/pages/extra/forgot-password.html', icon: 'key' }
+        ]
+    },
+    {
+        type: 'menu',
+        id: 'utility-pages',
+        label: 'Utility Pages',
+        icon: 'file-text',
+        children: [
+            { id: 'blank-page', label: 'Blank Page', href: '/pages/extra/blank.html', icon: 'file' },
+            { id: 'coming-soon', label: 'Coming Soon', href: '/pages/extra/coming-soon.html', icon: 'clock' },
+            { id: 'empty-state', label: 'Empty State', href: '/pages/extra/empty.html', icon: 'inbox' },
+            { id: 'success', label: 'Success', href: '/pages/extra/success.html', icon: 'check-circle' }
+        ]
     },
     {
         type: 'category',

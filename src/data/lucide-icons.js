@@ -44,6 +44,18 @@ import appWindow from 'lucide-static/icons/app-window.svg?raw';
 import info from 'lucide-static/icons/info.svg?raw';
 import palette from 'lucide-static/icons/palette.svg?raw';
 import plus from 'lucide-static/icons/plus.svg?raw';
+// Extra pages icons
+import fileX from 'lucide-static/icons/file-x.svg?raw';
+import serverCrash from 'lucide-static/icons/server-crash.svg?raw';
+import lock from 'lucide-static/icons/lock.svg?raw';
+import wrench from 'lucide-static/icons/wrench.svg?raw';
+import shield from 'lucide-static/icons/shield.svg?raw';
+import logIn from 'lucide-static/icons/log-in.svg?raw';
+import userPlus from 'lucide-static/icons/user-plus.svg?raw';
+import key from 'lucide-static/icons/key.svg?raw';
+import clock from 'lucide-static/icons/clock.svg?raw';
+import inbox from 'lucide-static/icons/inbox.svg?raw';
+import checkCircle from 'lucide-static/icons/check-circle.svg?raw';
 
 // Icon map
 const icons = {
@@ -87,6 +99,18 @@ const icons = {
     'info': info,
     'palette': palette,
     'plus': plus,
+    // Extra pages icons
+    'file-x': fileX,
+    'server-crash': serverCrash,
+    'lock': lock,
+    'wrench': wrench,
+    'shield': shield,
+    'log-in': logIn,
+    'user-plus': userPlus,
+    'key': key,
+    'clock': clock,
+    'inbox': inbox,
+    'check-circle': checkCircle,
 };
 
 /**

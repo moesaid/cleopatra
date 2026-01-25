@@ -16,8 +16,8 @@ const sidebarData = JSON.parse(readFileSync(resolve(__dirname, 'src/data/sidebar
 // Get all HTML files for multi-page setup (recursively scans subfolders)
 function getHtmlPages() {
     const pages = {
-        // Main entry point at root
-        main: resolve(__dirname, 'src/pages/index.html'),
+        // Landing page at root
+        main: resolve(__dirname, 'src/index.html'),
     };
 
     const pagesDir = resolve(__dirname, 'src/pages');

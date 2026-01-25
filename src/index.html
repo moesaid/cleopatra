@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleopatra - Modern Admin Dashboard Template</title>
+    <link rel="icon" type="image/png" href="/images/fav.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Import main.js which loads all styles including Tailwind -->
+    <script type="module" src="/js/main.js"></script>
+
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.6) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-animation-delay-1 {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        .float-animation-delay-2 {
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        /* Shimmer Effect */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background-size: 1000px 100%;
+            animation: shimmer 3s infinite linear;
+        }
+
+        /* Screenshot Hover Effect */
+        .screenshot-card {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+            transition: all 0.5s ease;
+        }
+
+        .screenshot-card:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(5deg) scale(1.02);
+        }
+
+        /* Glow Effect */
+        .glow {
+            box-shadow: 0 0 60px 20px hsl(var(--primary) / 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-3">
+                    <img src="/images/logo.png" alt="Cleopatra"
+                        class="w-8 h-8 object-contain dark:invert dark:brightness-200">
+                    <span class="text-xl font-bold text-foreground">Cleopatra</span>
+                </a>
+
+                <!-- Nav Links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#features"
+                        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
+                    <a href="#screenshots"
+                        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Screenshots</a>
+                    <a href="#components"
+                        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Components</a>
+                    <a href="#pricing"
+                        class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center gap-3">
+                    <a href="https://github.com/moesaid/cleopatra" target="_blank"
+                        class="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                        <i class="ri-github-fill text-lg"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="/pages/"
+                        class="px-5 py-2.5 bg-primary text-primary-foreground text-sm font-semibold rounded-xl hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                        Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div
+                class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] float-animation">
+            </div>
+            <div
+                class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] float-animation-delay-1">
+            </div>
+            <!-- Grid Pattern -->
+            <div class="absolute inset-0 opacity-[0.02]"
+                style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 60px 60px;">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-8 animate-fade-in-up opacity-0">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    <span class="text-sm font-medium text-primary">Now in v2.0 - Complete Redesign</span>
+                </div>
+
+                <!-- Title -->
+                <h1
+                    class="text-4xl sm:text-5xl md:text-7xl font-black text-foreground mb-6 animate-fade-in-up opacity-0 delay-100">
+                    Build Stunning<br>
+                    <span class="gradient-text">Admin Dashboards</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p
+                    class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up opacity-0 delay-200">
+                    A premium admin template with 50+ pages, 100+ components, theme customization,
+                    Chart.js integration, and responsive design. Perfect for your next SaaS project.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div
+                    class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up opacity-0 delay-300">
+                    <a href="/pages/"
+                        class="w-full sm:w-auto px-8 py-4 bg-primary text-primary-foreground text-lg font-semibold rounded-2xl hover:bg-primary/90 transition-all shadow-2xl shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-1 flex items-center justify-center gap-3">
+                        <span>Explore Demo</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                    <a href="https://github.com/moesaid/cleopatra" target="_blank"
+                        class="w-full sm:w-auto px-8 py-4 bg-muted text-foreground text-lg font-semibold rounded-2xl hover:bg-muted/80 transition-all border border-border flex items-center justify-center gap-3">
+                        <i class="ri-github-fill text-xl"></i>
+                        <span>Star on GitHub</span>
+                    </a>
+                </div>
+
+                <!-- Hero Screenshot -->
+                <div class="relative animate-fade-in-up opacity-0 delay-400">
+                    <div class="relative rounded-2xl overflow-hidden border border-border shadow-2xl glow">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10">
+                        </div>
+                        <img src="/images/screenshots/dashboard.png" alt="Cleopatra Dashboard" class="w-full h-auto"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <!-- Fallback gradient -->
+                        <div
+                            class="hidden w-full aspect-video bg-gradient-to-br from-primary/20 via-primary/10 to-background items-center justify-center">
+                            <div class="text-center">
+                                <i class="ri-dashboard-3-line text-6xl text-primary/50 mb-4"></i>
+                                <p class="text-muted-foreground">Dashboard Preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-primary uppercase tracking-wider">Features</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mt-3 mb-4">Everything You Need</h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">Built with modern technologies and best practices for
+                    creating powerful admin interfaces.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div
+                    class="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="ri-palette-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">10+ Theme Colors</h3>
+                    <p class="text-sm text-muted-foreground">Customize with multiple color schemes. Switch between light
+                        and dark modes effortlessly.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="ri-layout-grid-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">50+ Ready Pages</h3>
+                    <p class="text-sm text-muted-foreground">Complete pages for dashboards, apps, authentication, error
+                        handling, and more.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="ri-stack-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">100+ Components</h3>
+                    <p class="text-sm text-muted-foreground">Beautifully crafted UI components following modern design
+                        principles.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="ri-bar-chart-box-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">Chart.js Integration</h3>
+                    <p class="text-sm text-muted-foreground">Interactive charts and graphs with theme-aware colors and
+                        smooth animations.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="ri-smartphone-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">Fully Responsive</h3>
+                    <p class="text-sm text-muted-foreground">Optimized for all screen sizes from mobile to desktop with
+                        fluid layouts.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div
+                    class="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-5">
+                        <i class="ri-code-s-slash-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-foreground mb-2">Clean Code</h3>
+                    <p class="text-sm text-muted-foreground">Well-organized codebase with Handlebars partials and
+                        modular architecture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-primary uppercase tracking-wider">Screenshots</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mt-3 mb-4">Beautiful Interfaces</h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">Explore our collection of premium dashboard designs
+                    and application views.</p>
+            </div>
+
+            <!-- Screenshots Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Screenshot 1 -->
+                <a href="/pages/" class="group screenshot-card">
+                    <div class="relative rounded-2xl overflow-hidden border border-border bg-card shadow-lg">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-primary/10 via-primary/5 to-background flex items-center justify-center">
+                            <i class="ri-dashboard-3-line text-6xl text-primary/30"></i>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+                            <h3 class="text-lg font-semibold text-foreground">Analytics Dashboard</h3>
+                            <p class="text-sm text-muted-foreground">Comprehensive metrics and KPIs</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Screenshot 2 -->
+                <a href="/pages/apps/crm.html" class="group screenshot-card">
+                    <div class="relative rounded-2xl overflow-hidden border border-border bg-card shadow-lg">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-violet-500/10 via-violet-500/5 to-background flex items-center justify-center">
+                            <i class="ri-contacts-book-line text-6xl text-violet-500/30"></i>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+                            <h3 class="text-lg font-semibold text-foreground">CRM Dashboard</h3>
+                            <p class="text-sm text-muted-foreground">Customer relationship management</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Screenshot 3 -->
+                <a href="/pages/apps/email.html" class="group screenshot-card">
+                    <div class="relative rounded-2xl overflow-hidden border border-border bg-card shadow-lg">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-background flex items-center justify-center">
+                            <i class="ri-mail-line text-6xl text-emerald-500/30"></i>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+                            <h3 class="text-lg font-semibold text-foreground">Email App</h3>
+                            <p class="text-sm text-muted-foreground">Full-featured email client</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Screenshot 4 -->
+                <a href="/pages/apps/real-estate.html" class="group screenshot-card">
+                    <div class="relative rounded-2xl overflow-hidden border border-border bg-card shadow-lg">
+                        <div
+                            class="aspect-video bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-background flex items-center justify-center">
+                            <i class="ri-home-4-line text-6xl text-amber-500/30"></i>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform">
+                            <h3 class="text-lg font-semibold text-foreground">Real Estate</h3>
+                            <p class="text-sm text-muted-foreground">Property management dashboard</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="py-24 bg-muted/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <span class="text-sm font-semibold text-primary uppercase tracking-wider">Components</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-foreground mt-3 mb-4">Modular Building Blocks</h2>
+                <p class="text-muted-foreground max-w-2xl mx-auto">All the UI components you need to build any admin
+                    interface, fully documented and customizable.</p>
+            </div>
+
+            <!-- Components Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="/pages/components/buttons.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-cursor-fill text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Buttons</p>
+                </a>
+                <a href="/pages/components/cards.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-layout-cards-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Cards</p>
+                </a>
+                <a href="/pages/components/alert.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-alarm-warning-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Alerts</p>
+                </a>
+                <a href="/pages/overlays/modal.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-window-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Modals</p>
+                </a>
+                <a href="/pages/forms/forms.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-input-cursor-move text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Forms</p>
+                </a>
+                <a href="/pages/content/tables.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-table-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Tables</p>
+                </a>
+                <a href="/pages/components/tabs.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-file-list-3-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Tabs</p>
+                </a>
+                <a href="/pages/components/badges.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-price-tag-3-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Badges</p>
+                </a>
+                <a href="/pages/components/progress.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-loader-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Progress</p>
+                </a>
+                <a href="/pages/components/avatar.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-user-3-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Avatars</p>
+                </a>
+                <a href="/pages/components/dropdowns.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-list-check text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Dropdowns</p>
+                </a>
+                <a href="/pages/components/toast.html"
+                    class="bg-card border border-border rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all hover:-translate-y-1">
+                    <i class="ri-notification-3-line text-2xl text-primary mb-2"></i>
+                    <p class="text-sm font-medium text-foreground">Toast</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="pricing" class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div
+                class="bg-gradient-to-br from-primary/10 via-primary/5 to-background border border-primary/20 rounded-3xl p-8 md:p-16 relative overflow-hidden">
+                <!-- Background Glow -->
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none">
+                </div>
+
+                <div class="relative z-10">
+                    <span
+                        class="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 text-primary text-sm font-semibold rounded-full mb-6">
+                        <i class="ri-gift-line"></i>
+                        Free & Open Source
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
+                        Ready to Build Something Amazing?
+                    </h2>
+                    <p class="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
+                        Get started with Cleopatra today. It's free, open-source, and perfect for your next project.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="/pages/"
+                            class="w-full sm:w-auto px-10 py-5 bg-primary text-primary-foreground text-lg font-bold rounded-2xl hover:bg-primary/90 transition-all shadow-2xl shadow-primary/30 hover:shadow-primary/40 hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <span>Explore Demo</span>
+                            <i class="ri-arrow-right-line text-xl"></i>
+                        </a>
+                        <a href="https://github.com/moesaid/cleopatra" target="_blank"
+                            class="w-full sm:w-auto px-10 py-5 bg-card text-foreground text-lg font-bold rounded-2xl hover:bg-muted transition-all border border-border flex items-center justify-center gap-3">
+                            <i class="ri-github-fill text-xl"></i>
+                            <span>View Source</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <img src="/images/logo.png" alt="Cleopatra"
+                        class="w-8 h-8 object-contain dark:invert dark:brightness-200">
+                    <span class="text-lg font-bold text-foreground">Cleopatra</span>
+                </div>
+
+                <!-- Links -->
+                <div class="flex items-center gap-8 text-sm text-muted-foreground">
+                    <a href="/pages/" class="hover:text-foreground transition-colors">Demo</a>
+                    <a href="https://github.com/moesaid/cleopatra" target="_blank"
+                        class="hover:text-foreground transition-colors">GitHub</a>
+                    <a href="https://github.com/moesaid/cleopatra/blob/main/LICENSE" target="_blank"
+                        class="hover:text-foreground transition-colors">License</a>
+                </div>
+
+                <!-- Social -->
+                <div class="flex items-center gap-4">
+                    <a href="https://github.com/moesaid/cleopatra" target="_blank"
+                        class="w-10 h-10 bg-muted rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors">
+                        <i class="ri-github-fill text-xl"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 bg-muted rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors">
+                        <i class="ri-twitter-x-fill text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+                <p>© 2024 Cleopatra. Built with ❤️ using Vite, Tailwind CSS, and Handlebars.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Theme Script -->
+    <script type="module">
+        // Apply saved theme
+        const savedTheme = localStorage.getItem('theme') || 'neutral';
+        const savedMode = localStorage.getItem('mode') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.documentElement.classList.toggle('dark', savedMode === 'dark');
+    </script>
+</body>
+
+</html>
