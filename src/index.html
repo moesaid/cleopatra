@@ -135,23 +135,56 @@
             </div>
 
             <!-- Browser Mockup -->
-            <div class="browser-mockup animate-enter delay-4">
-                <div class="browser-mockup-header">
-                    <div class="flex gap-2">
-                        <div class="circle" style="background: #ff5f57"></div>
-                        <div class="circle" style="background: #febc2e"></div>
-                        <div class="circle" style="background: #28c840"></div>
+            <div class="browser-mockup-wrapper animate-enter delay-4">
+                <div class="browser-mockup">
+                    <div class="browser-mockup-header">
+                        <div class="flex gap-2">
+                            <div class="circle" style="background: #ff5f57"></div>
+                            <div class="circle" style="background: #febc2e"></div>
+                            <div class="circle" style="background: #28c840"></div>
+                        </div>
+                        <div class="browser-mockup-url">cleopatra.dev/dashboard</div>
                     </div>
-                    <div class="browser-mockup-url">cleopatra.dev/dashboard</div>
+                    <img src="/images/index.png" alt="Dashboard Preview">
                 </div>
-                <img src="/images/index.png" alt="Dashboard Preview">
+
+                <!-- Floating Customizer Panel -->
+                <div class="floating-customizer">
+                    <!-- Color Scheme -->
+                    <div class="customizer-section">
+                        <span class="customizer-label">Color</span>
+                        <div class="customizer-colors">
+                            <button class="color-swatch color-swatch--active" style="background: #3b82f6;"
+                                title="Blue"></button>
+                            <button class="color-swatch" style="background: #8b5cf6;" title="Purple"></button>
+                            <button class="color-swatch" style="background: #22c55e;" title="Green"></button>
+                            <button class="color-swatch" style="background: #f59e0b;" title="Amber"></button>
+                            <button class="color-swatch" style="background: #ef4444;" title="Red"></button>
+                        </div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <div class="customizer-section">
+                        <span class="customizer-label">Theme</span>
+                        <div class="customizer-toggle">
+                            <button class="toggle-btn toggle-btn--active">
+                                <i class="ri-sun-line"></i>
+                                <span>Light</span>
+                            </button>
+                            <button class="toggle-btn">
+                                <i class="ri-moon-line"></i>
+                                <span>Dark</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Built With -->
         <section class="ui-section ui-section--bordered py-16">
             <div class="text-center">
-                <p class="text-muted text-sm uppercase tracking-widest font-semibold mb-8">Built with modern tools</p>
+                <p class="text-muted text-sm uppercase tracking-widest font-semibold! mb-8!">Built with modern tools</p>
                 <div class="flex flex-wrap justify-center items-center gap-12 opacity-60">
                     <span class="text-2xl font-bold tracking-tight">Vite</span>
                     <span class="text-2xl font-bold tracking-tight">SCSS</span>
@@ -167,7 +200,7 @@
             <div class="text-center mb-20">
                 <p class="text-muted text-sm uppercase tracking-widest font-semibold mb-4">Features</p>
                 <h2 class="heading-lg">Everything you need.</h2>
-                <p class="text-muted mt-4 max-w-2xl mx-auto">
+                <p class="text-muted mt-4! max-w-2xl mx-auto!">
                     From authentication flows to data visualization, Cleopatra provides the building blocks
                     you need to ship production-ready admin dashboards.
                 </p>
@@ -240,9 +273,9 @@
         <!-- Components Showcase -->
         <section id="components" class="ui-section ui-section--bordered">
             <div class="text-center mb-16">
-                <p class="text-muted text-sm uppercase tracking-widest font-semibold mb-4">Components</p>
+                <p class="text-muted text-sm! uppercase tracking-widest font-semibold mb-4!">Components</p>
                 <h2 class="heading-lg">Ready-to-use components.</h2>
-                <p class="text-muted mt-4 max-w-2xl mx-auto">
+                <p class="text-muted mt-4! max-w-2xl mx-auto!">
                     47 pages and 15 beautifully crafted components. Copy, paste, and customize.
                 </p>
             </div>
@@ -417,9 +450,10 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2 order-1 lg:order-2">
-                    <p class="text-muted text-sm uppercase tracking-widest font-semibold mb-4">Developer Experience</p>
-                    <h2 class="heading-lg">Start in seconds.<br />Ship in hours.</h2>
-                    <p class="text-muted mt-6">
+                    <p class="text-muted text-sm uppercase tracking-widest font-semibold! mb-4!">Developer Experience
+                    </p>
+                    <h2 class="heading-lg">Start in seconds. Ship in hours.</h2>
+                    <p class="text-muted text-base! mt-6!">
                         Zero configuration needed. Clone the repo, install dependencies, and start building.
                         We've handled the tooling so you can focus on your product.
                     </p>
@@ -448,9 +482,9 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="ui-section text-center py-32">
+        <section class="ui-section text-center py-32 flex flex-col items-center">
             <h2 class="heading-lg">Start building today.</h2>
-            <p class="text-muted mt-4 max-w-xl mx-auto">
+            <p class="text-muted mt-4! max-w-xl mx-auto">
                 Free and open source. Use it for personal projects, client work, or your next startup.
             </p>
             <div class="flex flex-wrap gap-4 justify-center mt-10">
@@ -474,16 +508,17 @@
                         <img src="/images/logo.png" alt="Cleopatra" width="24" height="24" style="object-fit: contain;">
                         <span>cleopatra</span>
                     </a>
-                    <p class="text-muted text-sm mt-3">
+                    <p class="text-muted text-sm! mt-3">
                         Beautifully designed admin dashboard components.
                     </p>
                 </div>
                 <div class="ui-footer-links-row">
                     <div class="ui-footer-column">
-                        <h4>Product</h4>
-                        <a href="/pages/index.html" target="_blank">Dashboard</a>
-                        <a href="/pages/apps/chat.html" target="_blank">Apps</a>
-                        <a href="/pages/components/buttons.html" target="_blank">Components</a>
+                        <h4>dashboard</h4>
+                        <a href="/pages/index.html" target="_blank">Analytics</a>
+                        <a href="/pages/index-e-commerce.html" target="_blank">E-commerce</a>
+                        <a href="/pages/index-crypto.html" target="_blank">Crypto</a>
+                        <a href="/pages/index-mission-control.html" target="_blank">Mission Control</a>
                     </div>
                     <div class="ui-footer-column">
                         <h4>Resources</h4>
@@ -498,7 +533,7 @@
                 </div>
             </div>
             <div class="ui-footer-bottom">
-                <p class="text-muted text-sm">
+                <p class="text-muted text-sm!">
                     Built by <a href="https://moesaid.com" target="_blank" class="underline underline-offset-4">Mohamed
                         Said</a>.
                     The source code is available on <a href="https://github.com/moesaid/cleopatra" target="_blank"

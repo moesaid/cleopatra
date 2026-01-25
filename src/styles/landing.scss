@@ -718,9 +718,18 @@ $landing-radius: 0.5rem;
     // BROWSER MOCKUP
     // ============================================
 
-    .browser-mockup {
+    .browser-mockup-wrapper {
+        position: relative;
         width: 100%;
         margin-top: 48px;
+
+        @media (min-width: 768px) {
+            margin-top: 64px;
+        }
+    }
+
+    .browser-mockup {
+        width: 100%;
         border-radius: 12px;
         border: 1px solid $landing-border;
         background: white;
@@ -729,10 +738,6 @@ $landing-radius: 0.5rem;
             0 0 0 1px rgba(0, 0, 0, 0.03),
             0 2px 4px rgba(0, 0, 0, 0.02),
             0 12px 24px rgba(0, 0, 0, 0.06);
-
-        @media (min-width: 768px) {
-            margin-top: 64px;
-        }
 
         &-header {
             display: flex;
@@ -769,6 +774,192 @@ $landing-radius: 0.5rem;
             height: auto;
         }
     }
+
+    // Floating Customizer Panel
+    .floating-customizer {
+        display: none;
+        position: absolute;
+        bottom: -40px;
+        right: 24px;
+        flex-direction: column;
+        gap: 16px;
+        background: white;
+        border: 1px solid $landing-border;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        animation: customizer-float 3s ease-in-out infinite;
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    @keyframes customizer-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    .customizer-section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .customizer-label {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: $landing-muted-fg;
+    }
+
+    // Color Swatches
+    .customizer-colors {
+        display: flex;
+        gap: 8px;
+    }
+
+    .color-swatch {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &--active {
+            border-color: $landing-fg;
+            box-shadow: 0 0 0 2px white inset;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 10px;
+                height: 10px;
+                background: white;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    // Theme Toggle
+    .customizer-toggle {
+        display: flex;
+        gap: 6px;
+        padding: 4px;
+        background: $landing-muted;
+        border-radius: 8px;
+    }
+
+    .toggle-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex: 1;
+        justify-content: center;
+        padding: 8px 12px;
+        border: none;
+        background: transparent;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-size: 13px;
+        font-weight: 500;
+        color: $landing-muted-fg;
+
+        i {
+            font-size: 16px;
+        }
+
+        &:hover {
+            color: $landing-fg;
+        }
+
+        &--active {
+            background: white;
+            color: $landing-fg;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    // Layout Mode Previews
+    .customizer-modes {
+        display: flex;
+        gap: 8px;
+    }
+
+    .mode-btn {
+        flex: 1;
+        padding: 8px;
+        border: 2px solid $landing-border;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            border-color: darken($landing-border, 10%);
+        }
+
+        &--active {
+            border-color: $landing-fg;
+        }
+    }
+
+    .mode-preview {
+        display: flex;
+        gap: 3px;
+        height: 32px;
+        background: $landing-muted;
+        border-radius: 4px;
+        overflow: hidden;
+        padding: 3px;
+    }
+
+    .mode-sidebar {
+        background: darken($landing-muted, 8%);
+        border-radius: 2px;
+    }
+
+    .mode-content {
+        flex: 1;
+        background: white;
+        border-radius: 2px;
+    }
+
+    .mode-preview--compact .mode-sidebar {
+        width: 8px;
+    }
+
+    .mode-preview--default .mode-sidebar {
+        width: 14px;
+    }
+
+    .mode-preview--wide .mode-sidebar {
+        width: 20px;
+    }
+
+
 
     // ============================================
     // CARDS
@@ -1240,7 +1431,7 @@ $landing-radius: 0.5rem;
     }
 
     @media (min-width: 768px) {
-        .md\:flex {
+        .md\\:flex {
             display: flex;
         }
     }
