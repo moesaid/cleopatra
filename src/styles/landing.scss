@@ -17,7 +17,17 @@ $landing-radius: 0.5rem;
 // LANDING PAGE SCOPE
 // ============================================
 
+html {
+    scroll-behavior: smooth;
+}
+
 .landing {
+
+    // Scroll margin for anchor links (accounts for fixed navbar)
+    [id] {
+        scroll-margin-top: 80px;
+    }
+
     // CSS Custom Properties scoped to .landing
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -37,7 +47,11 @@ $landing-radius: 0.5rem;
     padding: 0;
     background-color: $landing-bg;
     color: $landing-fg;
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-family: 'Inter',
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    sans-serif;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;

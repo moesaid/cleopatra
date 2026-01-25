@@ -94,8 +94,7 @@
             <div class="ui-nav-links">
                 <a href="#features">Features</a>
                 <a href="#components">Components</a>
-                <a href="#examples">Examples</a>
-                <a href="https://github.com/moesaid/cleopatra" target="_blank">GitHub</a>
+                <a href="#examples">install</a>
             </div>
             <div class="flex gap-3">
                 <a href="https://github.com/moesaid/cleopatra" class="ui-button ui-button--ghost">
@@ -595,6 +594,23 @@
         // Scroll behavior for nav
         window.addEventListener('scroll', () => {
             document.querySelector('.ui-nav')?.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     </script>
 </body>
