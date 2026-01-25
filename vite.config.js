@@ -126,7 +126,7 @@ export default defineConfig({
     ],
 
     root: 'src',
-    publicDir: resolve(__dirname, 'src/assets'),
+    publicDir: resolve(__dirname, 'public'),
 
     server: {
         port: 8081,

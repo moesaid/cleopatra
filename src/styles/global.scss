@@ -36,6 +36,9 @@
 @use "../components/ui/example-block/example-block.scss";
 @use "../components/layout/docs-right-sidebar.scss";
 
+// Landing page styles
+@use "./landing.scss";
+
 
 /* Base Typography */
 body,
