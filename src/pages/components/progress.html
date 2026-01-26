@@ -1,0 +1,70 @@
+{{> docs-start
+pageTitle="Progress"
+pageDescription="Progress bars and indicators"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Sizes -->
+{{#> example-block
+title="Sizes"
+description="Progress bars in different heights."
+id="progress-sizes"
+language="html"
+}}
+{{> progress/examples/sizes}}
+{{/example-block}}
+
+<!-- Colors -->
+{{#> example-block
+title="Colors"
+description="Semantic color variants for different states."
+id="progress-colors"
+language="html"
+}}
+{{> progress/examples/colors}}
+{{/example-block}}
+
+<!-- Animated -->
+{{#> example-block
+title="Animated Variants"
+description="Striped and animated progress indicators."
+id="progress-animated"
+language="html"
+}}
+{{> progress/examples/animated}}
+{{/example-block}}
+
+<!-- With Label -->
+{{#> example-block
+title="With Label"
+description="Progress bars with text labels inside."
+id="progress-labeled"
+language="html"
+}}
+{{> progress/examples/labeled}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="progress-usage-code"
+    code="<div class=\"progress\">
+        <div class=\"progress-bar\" style=\"width: 60%\"></div>
+    </div>
+
+    <!-- With color -->
+    <div class=\"progress progress-success\">
+        <div class=\"progress-bar\" style=\"width: 80%\"></div>
+    </div>
+
+    <!-- Animated -->
+    <div class=\"progress progress-striped progress-animated\">
+        <div class=\"progress-bar\" style=\"width: 70%\"></div>
+    </div>"
+    }}
+</div>
+
+{{> docs-end}}

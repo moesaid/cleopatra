@@ -1,0 +1,117 @@
+/* ============================================
+   Tooltip Component - Theme-Aware
+   Hover tooltips
+   ============================================ */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-content {
+    position: absolute;
+    z-index: 100;
+    padding: var(--spacing-1, 0.25rem) var(--spacing-2, 0.5rem);
+    font-size: var(--text-xs, 0.75rem);
+    line-height: 1.4;
+    color: var(--popover-foreground);
+    background-color: var(--popover);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md, 0.375rem);
+    box-shadow: var(--shadow-md);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--duration-150, 150ms) ease,
+        visibility var(--duration-150, 150ms) ease;
+
+    /* Arrow */
+    &::after {
+        content: '';
+        position: absolute;
+        border: 5px solid transparent;
+    }
+}
+
+.tooltip:hover .tooltip-content,
+.tooltip:focus .tooltip-content,
+.tooltip-content.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Positions */
+.tooltip-top .tooltip-content {
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: var(--spacing-2, 0.5rem);
+
+    &::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top-color: var(--popover);
+    }
+}
+
+.tooltip-bottom .tooltip-content {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: var(--spacing-2, 0.5rem);
+
+    &::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom-color: var(--popover);
+    }
+}
+
+.tooltip-left .tooltip-content {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: var(--spacing-2, 0.5rem);
+
+    &::after {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-left-color: var(--popover);
+    }
+}
+
+.tooltip-right .tooltip-content {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: var(--spacing-2, 0.5rem);
+
+    &::after {
+        right: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-right-color: var(--popover);
+    }
+}
+
+/* Dark variant */
+.tooltip-dark .tooltip-content {
+    background-color: var(--foreground);
+    color: var(--background);
+    border-color: var(--foreground);
+
+    &::after {
+        border-color: transparent;
+    }
+}
+
+.tooltip-dark.tooltip-top .tooltip-content::after {
+    border-top-color: var(--foreground);
+}
+
+.tooltip-dark.tooltip-bottom .tooltip-content::after {
+    border-bottom-color: var(--foreground);
+}

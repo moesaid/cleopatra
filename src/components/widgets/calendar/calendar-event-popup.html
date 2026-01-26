@@ -1,0 +1,96 @@
+<!-- Calendar Event Popup -->
+<div class="hidden lg:block absolute bg-card border border-border rounded-xl shadow-xl p-4 w-80 z-20"
+    style="right: 20px; top: 120px;">
+    <!-- Header -->
+    <div class="mb-4">
+        <h3 class="text-lg font-semibold text-foreground mb-1">Frappe + Timeless Standup call</h3>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>Sat, July 27 — 04:00pm - 04:30pm</span>
+        </div>
+    </div>
+
+    <!-- Members & Join -->
+    <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+            <div class="flex -space-x-2">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                    class="w-7 h-7 rounded-full border-2 border-card">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                    class="w-7 h-7 rounded-full border-2 border-card">
+                <img src="https://randomuser.me/api/portraits/men/45.jpg"
+                    class="w-7 h-7 rounded-full border-2 border-card">
+            </div>
+            <span class="text-sm text-muted-foreground">3 members</span>
+        </div>
+        <button
+            class="flex items-center gap-2 px-3 py-1.5 bg-muted/50 dark:bg-muted/30 rounded-lg text-sm font-medium text-foreground hover:bg-muted transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            <span>Join Meeting</span>
+        </button>
+    </div>
+
+    <!-- Details -->
+    <div class="space-y-3 mb-4">
+        <!-- Location -->
+        <div class="flex items-center gap-3 text-sm">
+            <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            <span class="text-foreground">Mumbai, Maharastra</span>
+        </div>
+
+        <!-- Reminder -->
+        <div class="flex items-center gap-3 text-sm">
+            <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+            <span class="text-foreground">10 Minutes Before</span>
+        </div>
+
+        <!-- Description -->
+        <div class="flex items-start gap-3 text-sm">
+            <svg class="w-4 h-4 text-muted-foreground mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+            </svg>
+            <p class="text-muted-foreground leading-relaxed">Everyone should join this call without fail. frappe team
+                all set to go for new update making sure everyone should schedule call twice a week.</p>
+        </div>
+    </div>
+
+    <!-- RSVP -->
+    <div>
+        <p class="text-sm text-muted-foreground mb-2">Going?</p>
+        <div class="flex items-center gap-2">
+            <button
+                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Yes</span>
+            </button>
+            <button
+                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-muted/50 dark:bg-muted/30 hover:bg-muted text-foreground rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>No</span>
+            </button>
+            <button
+                class="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-muted/50 dark:bg-muted/30 hover:bg-muted text-foreground rounded-lg text-sm font-medium transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                </svg>
+                <span>Maybe</span>
+            </button>
+        </div>
+    </div>
+</div>

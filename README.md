@@ -1,72 +1,148 @@
-# Cleopatra [live demo](https://moesaid.github.io/cleopatra/)
-### Cleopatra – Clean & Minimal tailwind css Admin Dashboard Template
-
-![image](https://github.com/moesaid/cleopatra/raw/master/dist/img/index.png)
-![image](https://github.com/moesaid/cleopatra/raw/master/dist/img/index-1.png)
-
-
-## Status
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://moesaid.com/) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://twitter.com/MohamedSaid__)  [![GitHub tag](https://img.shields.io/github/tag/moesaid/cleopatra.svg)](https://GitHub.com/moesaid/cleopatra/tags/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-
-
-
->Looking for an admin dashboard that was made with you in mind, look no further than Cleopatra Admin Template. A powerful admin dashboard template built on **tailwind css**, Cleopatra is **developer-first** Template , rich with features and highly customizable. i'am followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable.
-
+<div align="center">
+  
+  <h1>Cleopatra</h1>
+  <p><strong>Modern Admin Dashboard Template</strong></p>
+  
+  [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+  [![Vite](https://img.shields.io/badge/Vite-5.0-646CFF.svg)](https://vitejs.dev/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC.svg)](https://tailwindcss.com/)
+  
+  <p>A beautifully designed, production-ready admin dashboard built with <strong>Tailwind CSS v4</strong> and <strong>Vite</strong>.</p>
+  
+  [Live Demo](https://moesaid.github.io/cleopatra/)
+</div>
 
 ---
-**Cleopatra** has been carefully coded with clear comments in all of its JS, SASS and HTML files. SASS has been used to increase code customizability.
 
+## Version 2.0 - Complete Rewrite
 
+Version 2.0 is a **complete rewrite** from the ground up. The entire codebase has been rebuilt with a modern architecture, improved developer experience, and better performance.
 
-## Installation
+**What's New:**
+- Rebuilt with Tailwind CSS v4 and Vite
+- 4 unique dashboard templates
+- 10 accent colors + Light/Dark themes
+- SPA-like navigation without page reloads
+- Widget-based component architecture
+- Redesigned landing page
 
-There are multiple ways to install Cleopatra.
+**Documentation:**
+- [ARCHITECTURE.md](ARCHITECTURE.md) - Project structure and architecture rules
+- [COMPONENT_GUIDE.md](COMPONENT_GUIDE.md) - How to create and use components
 
-<br>
-<br>
+---
 
-**Download:**
+## Preview
 
+<div align="center">
+  <img src="public/images/demo_1.png" alt="Analytics Dashboard" width="100%">
+</div>
 
+### 4 Dashboard Templates
 
-<br>
+| Analytics | E-commerce |
+|-----------|------------|
+| ![Analytics](public/images/demo_1.png) | ![E-commerce](public/images/demo_2.png) |
 
-**Using The Command Line:**
+| Crypto | Mission Control |
+|--------|-----------------|
+| ![Crypto](public/images/demo_3.png) | ![Mission Control](public/images/demo_4.png) |
 
-**via npm**
+---
 
-`npm install @moesaid/cleopatra`
+## Features
 
-<br>
-<br>
+- **4 Dashboard Templates** - Analytics, E-commerce, Crypto, Mission Control
+- **2 Themes** - Light & Dark mode
+- **47+ Pages** - Authentication, Apps, Components, Forms, and more
+- **15+ Components** - Buttons, Cards, Tables, Charts, Modals, etc.
+- **SPA Navigation** - Smooth transitions without page reloads
+- **Responsive Design** - Works on all devices
+- **Modern Stack** - Vite, Tailwind CSS v4, Handlebars
 
-**Via Git**
+---
 
-*Clone to your machine*
+## Why Pure JavaScript?
 
-`git clone https://github.com/moesaid/cleopatra.git`
+Cleopatra is built with vanilla JavaScript intentionally:
 
-<br>
-<br>
-<br>
+- **Zero Framework Lock-in** - Use it with any backend (Laravel, Django, Rails, Node, or static)
+- **Faster Load Times** - No framework runtime overhead
+- **Easy to Understand** - Simple, readable code without framework abstractions
+- **Future Proof** - Vanilla JS never goes out of style
+- **Lightweight** - Smaller bundle size means faster page loads
+- **Full Control** - No hidden magic, you own every line of code
 
-**Compile dist files**
+This makes Cleopatra perfect for developers who want a clean starting point without the complexity of React, Vue, or Angular.
 
-your work station is the src file
-you can list files as you wish **( file get compile with gulp )**
+---
 
-- first run `yarn`
-- Optional: `yarn dev` (developer mode, autocompile with **browsersync** support for live demo) , will open on port `8080` , `http://localhost:8080/` change that as you want from **gulpfile.js**
-- `npm run build` (compile css/js files for production)
+## Quick Start
 
+```bash
+# Clone the repository
+git clone https://github.com/moesaid/cleopatra.git
 
-<br>
-<br>
+# Navigate to directory
+cd cleopatra
 
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:8081](http://localhost:8081)
+
+---
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── layout/      # App shell, header, sidebar
+│   ├── ui/          # Buttons, cards, alerts, modals
+│   ├── widgets/     # Dashboard widgets, charts, stats
+│   └── charts/      # ApexCharts & Chart.js components
+├── pages/           # Route files
+├── styles/          # Global styles & Tailwind config
+└── js/              # JavaScript modules
+```
+
+---
+
+## Customization
+
+### Theme Colors
+
+Choose from 10 accent colors:
+
+| | | | | |
+|---|---|---|---|---|
+| Black (default) | Blue | Green | Orange | Yellow |
+| Olive | Slate | Cyan | Purple | Rose |
+
+### Theme Modes
+
+- **Light Mode** - Clean white interface
+- **Dark Mode** - Easy on the eyes
+
+---
+
+## Tech Stack
+
+| Tool | Purpose |
+|------|---------|
+| **Vite** | Build tool & dev server |
+| **Tailwind CSS v4** | Utility-first styling |
+| **Handlebars** | Template partials |
+| **ApexCharts** | Interactive charts |
+| **Chart.js** | Additional chart types |
+
+---
 
 ## License
 
-Cleopatra is an open source project by
-[Mohamed Said](https://moesaid.com) that is licensed under MIT.
-
-[Mohamed Said](https://moesaid.com) reserves the right to change the license of future releases.
+MIT © [Mohamed Said](https://moesaid.com)

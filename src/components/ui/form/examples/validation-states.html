@@ -1,0 +1,24 @@
+<div class="space-y-6 max-w-sm">
+    <div class="space-y-2">
+        <label class="text-sm font-medium leading-none">Valid Input</label>
+        <div class="relative">
+            <input type="email" value="valid@email.com" class="flex h-10 w-full rounded-md border border-success
+                bg-background px-3 py-2 text-sm pr-10 focus-visible:outline-none focus-visible:ring-2
+                focus-visible:ring-success focus-visible:ring-offset-2">
+            <i class="ri-check-line absolute right-3 top-1/2 -translate-y-1/2 text-success"></i>
+        </div>
+        <p class="text-[0.8rem] text-success flex items-center gap-1"><i class="ri-checkbox-circle-fill"></i> Email
+            address is valid</p>
+    </div>
+    <div class="space-y-2">
+        <label class="text-sm font-medium leading-none">Invalid Input</label>
+        <div class="relative">
+            <input type="password" value="123" class="flex h-10 w-full rounded-md border border-destructive
+                bg-background px-3 py-2 text-sm pr-10 focus-visible:outline-none focus-visible:ring-2
+                focus-visible:ring-destructive focus-visible:ring-offset-2">
+            <i class="ri-error-warning-line absolute right-3 top-1/2 -translate-y-1/2 text-destructive"></i>
+        </div>
+        <p class="text-[0.8rem] text-destructive flex items-center gap-1"><i class="ri-error-warning-fill"></i>
+            Password must be at least 8 characters</p>
+    </div>
+</div>

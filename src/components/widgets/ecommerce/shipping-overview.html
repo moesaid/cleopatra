@@ -1,0 +1,75 @@
+<!-- E-commerce Shipping Overview Widget -->
+<!-- Theme-aware shipping statistics -->
+
+<div class="bg-card border border-border rounded-xl p-5">
+    <div class="flex items-center justify-between mb-4">
+        <h3 class="text-sm font-bold text-foreground">Shipping Overview</h3>
+        <span class="text-xs text-primary font-medium">View All</span>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-3 gap-3 mb-4">
+        <div class="text-center p-3 bg-primary/5 rounded-lg">
+            <p class="text-xl font-bold text-foreground">247</p>
+            <p class="text-xs text-muted-foreground">In Transit</p>
+        </div>
+        <div class="text-center p-3 bg-primary/5 rounded-lg">
+            <p class="text-xl font-bold text-foreground">892</p>
+            <p class="text-xs text-muted-foreground">Delivered</p>
+        </div>
+        <div class="text-center p-3 bg-primary/5 rounded-lg">
+            <p class="text-xl font-bold text-foreground">12</p>
+            <p class="text-xs text-muted-foreground">Pending</p>
+        </div>
+    </div>
+
+    <!-- Recent Shipments -->
+    <div class="space-y-2">
+        <div class="flex items-center justify-between p-2 bg-muted/30 rounded-lg">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-xs font-medium text-foreground">#SH-7892</p>
+                    <p class="text-xs text-muted-foreground">New York, NY</p>
+                </div>
+            </div>
+            <span class="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">In Transit</span>
+        </div>
+
+        <div class="flex items-center justify-between p-2 bg-muted/30 rounded-lg">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-xs font-medium text-foreground">#SH-7891</p>
+                    <p class="text-xs text-muted-foreground">Los Angeles, CA</p>
+                </div>
+            </div>
+            <span class="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-500 rounded-full font-medium">Delivered</span>
+        </div>
+
+        <div class="flex items-center justify-between p-2 bg-muted/30 rounded-lg">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-amber-500/10 flex items-center justify-center">
+                    <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-xs font-medium text-foreground">#SH-7890</p>
+                    <p class="text-xs text-muted-foreground">Chicago, IL</p>
+                </div>
+            </div>
+            <span class="text-xs px-2 py-1 bg-amber-500/10 text-amber-500 rounded-full font-medium">Pending</span>
+        </div>
+    </div>
+</div>

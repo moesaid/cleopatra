@@ -1,0 +1,108 @@
+{{> docs-start
+pageTitle="Badges"
+pageDescription="Badge and tag components for status indicators"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Badges -->
+{{#> example-block
+title="Default Badges"
+description="Basic badge variants for common use cases."
+id="badge-default"
+language="html"
+}}
+{{> default}}
+{{/example-block}}
+
+<!-- Semantic Colors -->
+{{#> example-block
+title="Semantic Colors"
+description="Badges with semantic meaning for status indication."
+id="badge-semantic"
+language="html"
+}}
+{{> semantic}}
+{{/example-block}}
+
+<!-- Soft Variants -->
+{{#> example-block
+title="Soft Variants"
+description="Subtle background with colored text using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">.badge-soft-{color}</code> class."
+id="badge-soft"
+language="html"
+}}
+{{> soft}}
+{{/example-block}}
+
+<!-- Sizes -->
+{{#> example-block
+title="Sizes"
+description="Small, default, and large badge sizes."
+id="badge-sizes"
+language="html"
+}}
+{{> sizes}}
+{{/example-block}}
+
+<!-- With Dot -->
+{{#> example-block
+title="With Dot Indicator"
+description="Add status dots using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm font-mono\">.badge-dot</code>
+class."
+id="badge-dot"
+language="html"
+}}
+{{> dot}}
+{{/example-block}}
+
+<!-- With Icons -->
+{{#> example-block
+title="With Icons"
+description="Combine badges with icons for enhanced visual communication."
+id="badge-icons"
+language="html"
+}}
+{{> icons}}
+{{/example-block}}
+
+<!-- Rounded Variant -->
+{{#> example-block
+title="Rounded Square"
+description="Less rounded corners using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">.badge-rounded</code> class."
+id="badge-rounded"
+language="html"
+}}
+{{> rounded}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    <p class="text-sm text-muted-foreground mb-4">
+        The badge component is located at <code
+            class="px-1.5 py-0.5 bg-muted text-foreground text-xs rounded font-mono">src/components/ui/badge/badge.scss</code>
+    </p>
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-secondary</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-destructive</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-outline</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-success</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-warning</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-info</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-soft-*</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-sm</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-lg</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-dot</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.badge-rounded</div>
+</div>
+
+{{> docs-end}}

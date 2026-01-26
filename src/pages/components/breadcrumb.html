@@ -1,0 +1,71 @@
+{{> docs-start
+pageTitle="Breadcrumb"
+pageDescription="Navigation path indicator component"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Breadcrumb -->
+{{#> example-block
+title="Default"
+description="Basic breadcrumb navigation."
+id="breadcrumb-default"
+language="html"
+}}
+{{> breadcrumb/examples/default}}
+{{/example-block}}
+
+<!-- With Icons -->
+{{#> example-block
+title="With Icons"
+description="Breadcrumb links with icons."
+id="breadcrumb-icons"
+language="html"
+}}
+{{> breadcrumb/examples/icons}}
+{{/example-block}}
+
+<!-- Contained Variant -->
+{{#> example-block
+title="Contained"
+description="Contained style with background using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">.breadcrumb-contained</code>."
+id="breadcrumb-contained"
+language="html"
+}}
+{{> breadcrumb/examples/contained}}
+{{/example-block}}
+
+<!-- With Ellipsis -->
+{{#> example-block
+title="With Ellipsis"
+description="Collapsed breadcrumb for long paths."
+id="breadcrumb-ellipsis"
+language="html"
+}}
+{{> breadcrumb/examples/ellipsis}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">
+    CSS-only component at <code
+        class="px-1.5 py-0.5 bg-muted text-foreground text-xs rounded font-mono">src/components/ui/breadcrumb/breadcrumb.scss</code>
+</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-list</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-item</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-link</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-page</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-separator</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-ellipsis</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-contained</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.breadcrumb-icon</div>
+</div>
+
+{{> docs-end}}

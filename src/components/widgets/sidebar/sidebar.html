@@ -1,0 +1,65 @@
+<!-- sidebar backdrop -->
+<div id="sidebarBackdrop"
+  class="fixed inset-0 bg-black/50 z-20 hidden [&.active]:block transition-opacity duration-300 ease-in-out backdrop-blur-sm md:hidden">
+</div>
+
+<!-- Mobile Sidebar -->
+<div id="mobileSidebar"
+  class="fixed top-0 left-0 bg-sidebar text-sidebar-foreground shadow-xl z-30 h-screen w-64 transition-transform duration-300 ease-in-out -translate-x-full [&.open]:translate-x-0 md:hidden overflow-y-auto">
+
+  <!-- mobile sidebar content -->
+  <div class="flex flex-col p-6">
+
+    <!-- sidebar toggle -->
+    <div class="text-right mb-4">
+      <button id="sideBarHideBtn">
+        <i class="fad fa-times-circle text-xl text-sidebar-foreground/50 hover:text-destructive transition-colors"></i>
+      </button>
+    </div>
+    <!-- end sidebar toggle -->
+
+    {{#each sidebarLinks}}
+    <p class="uppercase text-xs text-sidebar-foreground/60 mb-4 {{#if @first}}{{else}}mt-4{{/if}} tracking-wider">
+      {{category}}</p>
+
+    {{#each items}}
+    <a href="{{url}}"
+      class="mb-3 capitalize font-medium text-sm text-sidebar-foreground hover:text-sidebar-primary transition ease-in-out duration-500 flex items-center">
+      <i class="{{icon}} text-xs mr-2 w-4 text-center"></i>
+      {{label}}
+    </a>
+    {{/each}}
+    {{/each}}
+
+  </div>
+  <!-- end mobile sidebar content -->
+
+</div>
+<!-- end Mobile Sidebar -->
+
+
+<!-- Desktop Sidebar -->
+<div id="desktopSidebar"
+  class="hidden md:flex md:flex-col md:w-64 md:h-screen md:bg-sidebar md:text-sidebar-foreground md:border-r md:border-sidebar-border md:shadow-none md:fixed md:left-0 md:top-0 md:pt-16 md:z-10 overflow-y-auto">
+
+  <!-- desktop sidebar content -->
+  <div class="flex flex-col p-6">
+
+    {{#each sidebarLinks}}
+    <p class="uppercase text-xs text-sidebar-foreground/60 mb-4 {{#if @first}}{{else}}mt-4{{/if}} tracking-wider">
+      {{category}}</p>
+
+    {{#each items}}
+    <a href="{{url}}"
+      class="mb-3 capitalize font-medium text-sm text-sidebar-foreground hover:text-sidebar-primary transition ease-in-out duration-500 flex items-center">
+      <i class="{{icon}} text-xs mr-2 w-4 text-center"></i>
+      {{label}}
+    </a>
+    {{/each}}
+    {{/each}}
+
+  </div>
+  <!-- end desktop sidebar content -->
+
+</div>
+<!-- end Desktop Sidebar -->

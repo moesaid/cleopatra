@@ -1,0 +1,67 @@
+{{> docs-start
+pageTitle="Accordion"
+pageDescription="Collapsible content sections with smooth animations"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Accordion -->
+{{#> example-block
+title="Default"
+description="Basic accordion with single item open at a time."
+id="accordion-default"
+language="html"
+}}
+{{> accordion/examples/default}}
+{{/example-block}}
+
+<!-- Separated Variant -->
+{{#> example-block
+title="Separated"
+description="Accordion with visual separation between items using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">.accordion-separated</code> class."
+id="accordion-separated"
+language="html"
+}}
+{{> accordion/examples/separated}}
+{{/example-block}}
+
+<!-- Allow Multiple -->
+{{#> example-block
+title="Allow Multiple Open"
+description="Enable multiple items to be open simultaneously with <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">data-allow-multiple</code> attribute."
+id="accordion-multiple"
+language="html"
+}}
+{{> accordion/examples/multiple}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    <p class="text-sm text-muted-foreground mb-4">Import the accordion component in your JavaScript:</p>
+
+    <script type="text/plain" class="language-javascript">
+import { initAccordion } from '../components/ui/accordion';
+
+// Initialize all accordions
+initAccordion();
+    </script>
+</div>
+
+<!-- Available Classes -->
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.accordion</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.accordion-item</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.accordion-trigger</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.accordion-content</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.accordion-body</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.accordion-separated</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.accordion-flush</div>
+</div>
+
+{{> docs-end}}

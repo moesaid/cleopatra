@@ -1,0 +1,135 @@
+{{> docs-start
+pageTitle="Form Elements"
+pageDescription="Beautiful form inputs and controls inspired by shadcn/ui"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Text Inputs -->
+{{#> example-block
+title="Text Inputs"
+description="Clean, minimal input fields with focus states."
+id="form-text-inputs"
+language="html"
+}}
+{{> form/examples/text-inputs}}
+{{/example-block}}
+
+<!-- Input with Label and Description -->
+{{#> example-block
+title="With Description"
+description="Input fields with helper text for additional context."
+id="form-with-description"
+language="html"
+}}
+{{> form/examples/with-description}}
+{{/example-block}}
+
+<!-- Input with Icons -->
+{{#> example-block
+title="With Icons"
+description="Inputs enhanced with leading or trailing icons."
+id="form-icons"
+language="html"
+}}
+{{> form/examples/with-icons}}
+{{/example-block}}
+
+<!-- Select -->
+{{#> example-block
+title="Select"
+description="Dropdown selection with custom styling."
+id="form-select"
+language="html"
+}}
+{{> form/examples/select}}
+{{/example-block}}
+
+<!-- Textarea -->
+{{#> example-block
+title="Textarea"
+description="Multi-line text input for longer content."
+id="form-textarea"
+language="html"
+}}
+{{> form/examples/textarea}}
+{{/example-block}}
+
+<!-- Checkbox -->
+{{#> example-block
+title="Checkbox"
+description="Checkboxes for multiple selections."
+id="form-checkbox"
+language="html"
+}}
+{{> form/examples/checkbox}}
+{{/example-block}}
+
+<!-- Radio Group -->
+{{#> example-block
+title="Radio Group"
+description="Single selection from multiple options."
+id="form-radio"
+language="html"
+}}
+{{> form/examples/radio}}
+{{/example-block}}
+
+<!-- Switch Toggle -->
+{{#> example-block
+title="Switch"
+description="Toggle switches for on/off settings."
+id="form-switch"
+language="html"
+}}
+{{> form/examples/switch}}
+{{/example-block}}
+
+<!-- File Upload -->
+{{#> example-block
+title="File Input"
+description="Clean file upload with drag and drop zone."
+id="form-file"
+language="html"
+}}
+{{> form/examples/file}}
+{{/example-block}}
+
+<!-- Complete Form -->
+{{#> example-block
+title="Complete Form"
+description="A complete login form example."
+id="form-complete"
+language="html"
+}}
+{{> form/examples/complete}}
+{{/example-block}}
+
+<!-- Disabled States -->
+{{#> example-block
+title="Disabled State"
+description="Inputs in disabled state."
+id="form-disabled"
+language="html"
+}}
+{{> form/examples/disabled}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Form elements follow shadcn/ui styling conventions with semantic classes:
+</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Key Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">border-input</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">bg-background</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">ring-ring</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">text-muted-foreground</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">focus-visible:ring-2</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">ring-offset-background</div>
+</div>
+
+{{> docs-end}}

@@ -1,0 +1,171 @@
+/* ============================================
+   Badge Component - Theme-Aware
+   Status labels and counts
+   ============================================ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-1, 0.25rem);
+    padding: 0.125rem 0.5rem;
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--font-medium, 500);
+    line-height: 1.25rem;
+    border-radius: var(--radius-full, 9999px);
+    white-space: nowrap;
+    transition: all var(--duration-150, 150ms) ease;
+}
+
+/* ============================================
+   Badge Variants - Theme Colors
+   ============================================ */
+
+/* Default */
+.badge-default,
+.badge:not([class*="badge-"]) {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+/* Secondary */
+.badge-secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+}
+
+/* Destructive */
+.badge-destructive {
+    background-color: var(--destructive);
+    color: var(--destructive-foreground);
+}
+
+/* Outline */
+.badge-outline {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+}
+
+/* Success */
+.badge-success {
+    background-color: var(--success);
+    color: var(--success-foreground);
+}
+
+/* Warning */
+.badge-warning {
+    background-color: var(--warning);
+    color: var(--warning-foreground);
+}
+
+/* Info */
+.badge-info {
+    background-color: var(--info);
+    color: var(--info-foreground);
+}
+
+/* ============================================
+   Soft Variants (Light backgrounds)
+   ============================================ */
+
+.badge-soft-primary {
+    background-color: color-mix(in srgb, var(--primary) 15%, transparent);
+    color: var(--primary);
+}
+
+.badge-soft-secondary {
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+}
+
+.badge-soft-destructive {
+    background-color: color-mix(in srgb, var(--destructive) 15%, transparent);
+    color: var(--destructive);
+}
+
+.badge-soft-success {
+    background-color: color-mix(in srgb, var(--success) 15%, transparent);
+    color: var(--success);
+}
+
+.badge-soft-warning {
+    background-color: color-mix(in srgb, var(--warning) 15%, transparent);
+    color: var(--warning);
+}
+
+.badge-soft-info {
+    background-color: color-mix(in srgb, var(--info) 15%, transparent);
+    color: var(--info);
+}
+
+/* ============================================
+   Badge Sizes
+   ============================================ */
+
+.badge-sm {
+    padding: 0 0.375rem;
+    font-size: 0.625rem;
+    line-height: 1rem;
+}
+
+.badge-lg {
+    padding: 0.25rem 0.75rem;
+    font-size: var(--text-sm, 0.875rem);
+    line-height: 1.5rem;
+}
+
+/* ============================================
+   Badge with Dot
+   ============================================ */
+
+.badge-dot {
+    padding-left: 0.375rem;
+
+    &::before {
+        content: '';
+        width: 0.375rem;
+        height: 0.375rem;
+        border-radius: 50%;
+        background-color: currentColor;
+    }
+}
+
+/* ============================================
+   Pill/Rounded Style (default is pill)
+   ============================================ */
+
+.badge-rounded {
+    border-radius: var(--radius-md, 0.375rem);
+}
+
+/* ============================================
+   Removable Badge
+   ============================================ */
+
+.badge-removable {
+    padding-right: 0.25rem;
+
+    .badge-remove {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1rem;
+        height: 1rem;
+        margin-left: 0.125rem;
+        border-radius: var(--radius-full, 9999px);
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity var(--duration-150, 150ms) ease;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        svg,
+        i {
+            width: 0.75rem;
+            height: 0.75rem;
+        }
+    }
+}

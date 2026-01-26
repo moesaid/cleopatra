@@ -1,0 +1,152 @@
+/* ============================================
+   Input Component - Theme-Aware
+   Text inputs, textareas, and input groups
+   ============================================ */
+
+.input {
+    display: flex;
+    width: 100%;
+    padding: var(--spacing-2, 0.5rem) var(--spacing-3, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+    line-height: var(--leading-normal, 1.5);
+    color: var(--foreground);
+    background-color: var(--background);
+    border: 1px solid var(--input);
+    border-radius: var(--radius-md, 0.375rem);
+    transition: border-color var(--duration-150, 150ms) ease,
+        box-shadow var(--duration-150, 150ms) ease;
+
+    &::placeholder {
+        color: var(--muted-foreground);
+    }
+
+    &:hover:not(:disabled) {
+        border-color: var(--border);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--ring);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--ring) 20%, transparent);
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background-color: var(--muted);
+    }
+}
+
+/* Sizes */
+.input-sm {
+    padding: var(--spacing-1, 0.25rem) var(--spacing-2, 0.5rem);
+    font-size: var(--text-xs, 0.75rem);
+}
+
+.input-lg {
+    padding: var(--spacing-3, 0.75rem) var(--spacing-4, 1rem);
+    font-size: var(--text-base, 1rem);
+}
+
+/* States */
+.input-error {
+    border-color: var(--destructive);
+
+    &:focus {
+        border-color: var(--destructive);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--destructive) 20%, transparent);
+    }
+}
+
+.input-success {
+    border-color: var(--success);
+
+    &:focus {
+        border-color: var(--success);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--success) 20%, transparent);
+    }
+}
+
+/* ============================================
+   Textarea
+   ============================================ */
+
+.textarea {
+    min-height: 5rem;
+    resize: vertical;
+}
+
+/* ============================================
+   Input Group
+   ============================================ */
+
+.input-group {
+    display: flex;
+    align-items: stretch;
+
+    .input {
+        border-radius: 0;
+
+        &:first-child {
+            border-radius: var(--radius-md, 0.375rem) 0 0 var(--radius-md, 0.375rem);
+        }
+
+        &:last-child {
+            border-radius: 0 var(--radius-md, 0.375rem) var(--radius-md, 0.375rem) 0;
+        }
+
+        &:not(:first-child) {
+            margin-left: -1px;
+        }
+    }
+}
+
+.input-addon {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-3, 0.75rem);
+    font-size: var(--text-sm, 0.875rem);
+    color: var(--muted-foreground);
+    background-color: var(--muted);
+    border: 1px solid var(--input);
+    white-space: nowrap;
+
+    &:first-child {
+        border-radius: var(--radius-md, 0.375rem) 0 0 var(--radius-md, 0.375rem);
+        border-right: none;
+    }
+
+    &:last-child {
+        border-radius: 0 var(--radius-md, 0.375rem) var(--radius-md, 0.375rem) 0;
+        border-left: none;
+    }
+}
+
+/* ============================================
+   Labels and Help Text
+   ============================================ */
+
+.label {
+    display: block;
+    margin-bottom: var(--spacing-1, 0.25rem);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--font-medium, 500);
+    color: var(--foreground);
+}
+
+.label-required::after {
+    content: ' *';
+    color: var(--destructive);
+}
+
+.input-help {
+    margin-top: var(--spacing-1, 0.25rem);
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--muted-foreground);
+}
+
+.input-error-text {
+    margin-top: var(--spacing-1, 0.25rem);
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--destructive);
+}

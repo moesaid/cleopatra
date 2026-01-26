@@ -1,14 +1,16 @@
-module.exports = {
-  content: ["./src/views/**/*.{html,js}"],
+export default {
+  content: [
+    "./src/**/*.{html,js,scss}",
+    "./src/views/**/*.{html,js,scss}"
+  ],
   theme: {
     screens: {
-      sm: { max: "639px" },
-
-      md: { max: "767px" },
-
-      lg: { max: "1023px" },
-
-      xl: { max: "1279px" },
+      // // Mobile-first breakpoints (standard practice)
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
     },
     extend: {},
   },

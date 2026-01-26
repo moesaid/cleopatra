@@ -1,0 +1,47 @@
+<!-- Delivery Metrics Group -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Card 1: Fleet Utilization (Mini Bar Chart) -->
+    <div
+        class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400">Fleet Utilization</h4>
+        <div class="flex items-end justify-between mt-2">
+            <span class="text-2xl font-bold text-zinc-900 dark:text-zinc-50">95.1%</span>
+            <span
+                class="text-xs font-medium text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-1 rounded">+4.2%</span>
+        </div>
+        <!-- Mini Bar Chart Container -->
+        <div id="logistics-chart-utilization" class="mt-4 h-12 w-full"></div>
+    </div>
+
+    <!-- Card 2: On-Time Delivery (Gauge/Slider) -->
+    <div
+        class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400">On-Time Delivery</h4>
+        <div class="mt-2">
+            <div class="flex items-end justify-between mb-2">
+                <span class="text-2xl font-bold text-zinc-900 dark:text-zinc-50">92.8%</span>
+                <span class="text-xs font-medium text-zinc-500">Target: 95%</span>
+            </div>
+            <!-- Custom Progress/Gauge -->
+            <div class="relative h-2.5 w-full bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+                <div class="absolute top-0 left-0 h-full bg-gradient-to-r from-emerald-400 to-primary rounded-full"
+                    style="width: 92.8%"></div>
+            </div>
+            <p class="text-xs text-zinc-500 mt-2 text-right">Top 5% in region</p>
+        </div>
+    </div>
+
+    <!-- Card 3: Total Deliveries (Smooth Sparkline) -->
+    <div
+        class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+        <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400">Total Deliveries</h4>
+        <div class="flex items-end justify-between mt-2">
+            <span class="text-2xl font-bold text-zinc-900 dark:text-zinc-50">24.5k</span>
+            <span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded">+14%</span>
+        </div>
+        <!-- Sparkline Container -->
+        <div id="logistics-chart-deliveries" class="mt-4 h-12 w-full"></div>
+    </div>
+
+</div>

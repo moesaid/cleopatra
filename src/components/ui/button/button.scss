@@ -1,0 +1,256 @@
+/* ============================================
+   Button Component - Theme-Aware
+   Uses global CSS variables from theme.css
+   ============================================ */
+
+/* Base Button */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    border-radius: var(--radius-md, 0.375rem);
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--font-medium, 500);
+    transition: all var(--duration-150, 150ms) ease;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+    /* Focus visible ring */
+    &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 2px;
+    }
+
+    /* Disabled state */
+    &:disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+/* ============================================
+   Button Sizes - Using theme size system
+   ============================================ */
+.btn-sm {
+    height: var(--size-sm, 2rem);
+    padding: 0 var(--spacing-3, 0.75rem);
+    font-size: var(--text-xs, 0.75rem);
+}
+
+.btn-default,
+.btn {
+    height: var(--size-md, 2.5rem);
+    padding: 0 var(--spacing-4, 1rem);
+}
+
+.btn-lg {
+    height: var(--size-lg, 2.75rem);
+    padding: 0 var(--spacing-8, 2rem);
+    font-size: var(--text-base, 1rem);
+}
+
+.btn-icon {
+    width: var(--size-md, 2.5rem);
+    height: var(--size-md, 2.5rem);
+    padding: 0;
+}
+
+.btn-icon.btn-sm {
+    width: var(--size-sm, 2rem);
+    height: var(--size-sm, 2rem);
+}
+
+.btn-icon.btn-lg {
+    width: var(--size-lg, 2.75rem);
+    height: var(--size-lg, 2.75rem);
+}
+
+/* ============================================
+   Button Variants - Theme-Aware
+   ============================================ */
+
+/* Default - Primary solid */
+.btn-default,
+.btn:not([class*="btn-"]) {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Destructive - Red */
+.btn-destructive {
+    background-color: var(--destructive);
+    color: var(--destructive-foreground);
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Outline - Border only */
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border);
+    color: var(--foreground);
+
+    &:hover {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+    }
+}
+
+/* Secondary - Muted */
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Ghost - No background */
+.btn-ghost {
+    background-color: transparent;
+    color: var(--foreground);
+
+    &:hover {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+    }
+}
+
+/* Link - Text only */
+.btn-link {
+    background-color: transparent;
+    color: var(--primary);
+    text-underline-offset: 4px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* ============================================
+   Color Variants (Semantic) - Theme-Aware
+   ============================================ */
+
+/* Success */
+.btn-success {
+    background-color: var(--success);
+    color: var(--success-foreground);
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Warning */
+.btn-warning {
+    background-color: var(--warning);
+    color: var(--warning-foreground);
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* Info */
+.btn-info {
+    background-color: var(--info);
+    color: var(--info-foreground);
+
+    &:hover {
+        opacity: 0.9;
+    }
+}
+
+/* ============================================
+   Soft Variants (Light backgrounds) - Theme-Aware
+   ============================================ */
+
+.btn-soft-primary {
+    background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+    color: var(--primary);
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+    }
+}
+
+.btn-soft-destructive {
+    background-color: color-mix(in srgb, var(--destructive) 10%, transparent);
+    color: var(--destructive);
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--destructive) 20%, transparent);
+    }
+}
+
+.btn-soft-success {
+    background-color: color-mix(in srgb, var(--success) 10%, transparent);
+    color: var(--success);
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--success) 20%, transparent);
+    }
+}
+
+.btn-soft-warning {
+    background-color: color-mix(in srgb, var(--warning) 10%, transparent);
+    color: var(--warning);
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--warning) 20%, transparent);
+    }
+}
+
+.btn-soft-info {
+    background-color: color-mix(in srgb, var(--info) 10%, transparent);
+    color: var(--info);
+
+    &:hover {
+        background-color: color-mix(in srgb, var(--info) 20%, transparent);
+    }
+}
+
+/* ============================================
+   Loading State
+   ============================================ */
+
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid currentColor;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: btn-spin 0.6s linear infinite;
+    }
+}
+
+@keyframes btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   Full Width
+   ============================================ */
+
+.btn-full {
+    width: 100%;
+}

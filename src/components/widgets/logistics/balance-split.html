@@ -1,0 +1,72 @@
+<!-- Balance & Categories Split Widget -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Left: Cash Balance -->
+    <div class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+            <h4 class="text-sm font-medium text-zinc-500 dark:text-zinc-400">Cash Balance</h4>
+            <span
+                class="text-xs text-emerald-600 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded-full">Healthy</span>
+        </div>
+        <h3 class="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-1">$126,500</h3>
+        <p class="text-sm text-zinc-400 mb-6">Available for withdrawal</p>
+
+        <!-- Mixed Bar Chart (Positive/Negative) -->
+        <div id="logistics-chart-balance" class="h-40 w-full"></div>
+    </div>
+
+    <!-- Right: Costs by Category -->
+    <div
+        class="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 shadow-sm flex flex-col">
+        <h4 class="text-base font-bold text-zinc-900 dark:text-zinc-50 mb-5">Costs by Category</h4>
+
+        <div class="space-y-5 flex-1 overflow-y-auto">
+
+            <!-- Item 1 -->
+            <div>
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-sm font-medium text-zinc-700 dark:text-zinc-300">Fuel</span>
+                    <span class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$45.2k</span>
+                </div>
+                <div class="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div>
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-sm font-medium text-zinc-700 dark:text-zinc-300">Salaries</span>
+                    <span class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$32.8k</span>
+                </div>
+                <div class="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2">
+                    <div class="bg-purple-500 h-2 rounded-full" style="width: 60%"></div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div>
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-sm font-medium text-zinc-700 dark:text-zinc-300">Maintenance</span>
+                    <span class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$12.4k</span>
+                </div>
+                <div class="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2">
+                    <div class="bg-amber-500 h-2 rounded-full" style="width: 35%"></div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div>
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-sm font-medium text-zinc-700 dark:text-zinc-300">Legal</span>
+                    <span class="text-sm font-bold text-zinc-900 dark:text-zinc-50">$4.1k</span>
+                </div>
+                <div class="w-full bg-zinc-100 dark:bg-zinc-800 rounded-full h-2">
+                    <div class="bg-rose-500 h-2 rounded-full" style="width: 15%"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,114 @@
+{{> start title="Blank Page" hidePageHeader=true }}
+
+<!-- Blank Page Content -->
+<div class="min-h-[60vh] flex items-center justify-center">
+  <div class="max-w-2xl w-full mx-auto px-4">
+
+    <!-- Main Card -->
+    <div class="bg-card border border-border rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+
+      <!-- Background decoration -->
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 via-primary to-primary/50"></div>
+      <div class="absolute -top-32 -right-32 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-32 -left-32 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+
+      <!-- Icon -->
+      <div class="relative z-10">
+        <div
+          class="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/10">
+          <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-2xl md:text-3xl font-bold text-foreground mb-3">
+          Blank Page Template
+        </h1>
+
+        <!-- Description -->
+        <p class="text-muted-foreground text-sm md:text-base max-w-md mx-auto mb-8 leading-relaxed">
+          This is a starter template. Use it to create new pages with consistent layout and styling that follows your
+          design system.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <button
+            class="w-full sm:w-auto px-6 py-3 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
+            Create New Page
+          </button>
+          <button
+            class="w-full sm:w-auto px-6 py-3 bg-muted text-foreground font-medium rounded-xl hover:bg-muted/80 transition-all duration-200 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+            View Documentation
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+      <a href="/pages/index.html"
+        class="group bg-card border border-border rounded-xl p-4 hover:border-primary/30 hover:shadow-lg transition-all duration-200">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium text-foreground text-sm">Dashboard</p>
+            <p class="text-xs text-muted-foreground">Go to home</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="/pages/ui/button.html"
+        class="group bg-card border border-border rounded-xl p-4 hover:border-primary/30 hover:shadow-lg transition-all duration-200">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium text-foreground text-sm">Components</p>
+            <p class="text-xs text-muted-foreground">UI elements</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="/pages/index-crypto.html"
+        class="group bg-card border border-border rounded-xl p-4 hover:border-primary/30 hover:shadow-lg transition-all duration-200">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium text-foreground text-sm">Crypto</p>
+            <p class="text-xs text-muted-foreground">Dashboard</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{{> end}}

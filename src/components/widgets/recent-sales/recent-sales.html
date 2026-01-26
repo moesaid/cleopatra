@@ -1,0 +1,184 @@
+<!-- Recent Sales Widget - Transaction Table -->
+<div class="bg-card border border-border rounded-xl shadow-sm">
+    <!-- Card Header -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 border-b border-border">
+        <div>
+            <h3 class="text-base font-semibold text-foreground">Recent Sales</h3>
+            <p class="text-sm text-muted-foreground mt-0.5">You made 265 sales this month.</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <!-- Search -->
+            <div class="relative">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" placeholder="Search transactions..."
+                    class="pl-10 pr-4 py-2 text-sm bg-muted border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent w-64">
+            </div>
+            <a href="#"
+                class="text-sm font-medium text-foreground hover:text-primary hover:underline transition-colors">View
+                All</a>
+        </div>
+    </div>
+    <!-- Transactions Table -->
+    <div class="overflow-x-auto">
+        <table class="w-full">
+            <thead>
+                <tr class="border-b border-border">
+                    <th class="text-left text-xs font-medium text-muted-foreground uppercase tracking-wider px-6 py-3">
+                        Customer</th>
+                    <th class="text-left text-xs font-medium text-muted-foreground uppercase tracking-wider px-6 py-3">
+                        Status</th>
+                    <th class="text-left text-xs font-medium text-muted-foreground uppercase tracking-wider px-6 py-3">
+                        Date</th>
+                    <th class="text-right text-xs font-medium text-muted-foreground uppercase tracking-wider px-6 py-3">
+                        Amount</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+                <!-- Row 1 -->
+                <tr class="hover:bg-muted/50 transition-colors cursor-pointer">
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-full bg-gradient-to-br from-violet-400 to-violet-600 flex items-center justify-center text-white text-sm font-medium">
+                                OM</div>
+                            <div>
+                                <p class="text-sm font-medium text-foreground">Olivia Martin</p>
+                                <p class="text-xs text-muted-foreground">olivia.martin@email.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">Success</span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-muted-foreground">Jan 23, 2026</td>
+                    <td class="px-6 py-4 text-right text-sm font-semibold text-foreground">+$1,999.00</td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-muted/50 transition-colors cursor-pointer">
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-sm font-medium">
+                                JL</div>
+                            <div>
+                                <p class="text-sm font-medium text-foreground">Jackson Lee</p>
+                                <p class="text-xs text-muted-foreground">jackson.lee@email.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400">Processing</span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-muted-foreground">Jan 22, 2026</td>
+                    <td class="px-6 py-4 text-right text-sm font-semibold text-foreground">+$39.00</td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="hover:bg-muted/50 transition-colors cursor-pointer">
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-white text-sm font-medium">
+                                IN</div>
+                            <div>
+                                <p class="text-sm font-medium text-foreground">Isabella Nguyen</p>
+                                <p class="text-xs text-muted-foreground">isabella.nguyen@email.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">Success</span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-muted-foreground">Jan 21, 2026</td>
+                    <td class="px-6 py-4 text-right text-sm font-semibold text-foreground">+$299.00</td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="hover:bg-muted/50 transition-colors cursor-pointer">
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white text-sm font-medium">
+                                WK</div>
+                            <div>
+                                <p class="text-sm font-medium text-foreground">William Kim</p>
+                                <p class="text-xs text-muted-foreground">will@email.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">Success</span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-muted-foreground">Jan 20, 2026</td>
+                    <td class="px-6 py-4 text-right text-sm font-semibold text-foreground">+$99.00</td>
+                </tr>
+                <!-- Row 5 -->
+                <tr class="hover:bg-muted/50 transition-colors cursor-pointer">
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-white text-sm font-medium">
+                                SD</div>
+                            <div>
+                                <p class="text-sm font-medium text-foreground">Sofia Davis</p>
+                                <p class="text-xs text-muted-foreground">sofia.davis@email.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400">Failed</span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-muted-foreground">Jan 19, 2026</td>
+                    <td class="px-6 py-4 text-right text-sm font-semibold text-foreground">+$39.00</td>
+                </tr>
+                <!-- Row 6 -->
+                <tr class="hover:bg-muted/50 transition-colors cursor-pointer">
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-white text-sm font-medium">
+                                LH</div>
+                            <div>
+                                <p class="text-sm font-medium text-foreground">Liam Harris</p>
+                                <p class="text-xs text-muted-foreground">liam.harris@email.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400">Success</span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-muted-foreground">Jan 18, 2026</td>
+                    <td class="px-6 py-4 text-right text-sm font-semibold text-foreground">+$2,499.00</td>
+                </tr>
+                <!-- Row 7 -->
+                <tr class="hover:bg-muted/50 transition-colors cursor-pointer">
+                    <td class="px-6 py-4">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-9 h-9 rounded-full bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center text-white text-sm font-medium">
+                                EM</div>
+                            <div>
+                                <p class="text-sm font-medium text-foreground">Emma Miller</p>
+                                <p class="text-xs text-muted-foreground">emma.m@email.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400">Processing</span>
+                    </td>
+                    <td class="px-6 py-4 text-sm text-muted-foreground">Jan 17, 2026</td>
+                    <td class="px-6 py-4 text-right text-sm font-semibold text-foreground">+$799.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

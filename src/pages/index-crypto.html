@@ -1,0 +1,52 @@
+{{> start title="Dashboard" hidePageHeader=true }}
+
+<!-- Dashboard Content -->
+<div class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+  <!-- Crypto Dashboard Main Content -->
+  <!-- Assembles: Trending Tokens, Market Table, Web3 Connect, Trending Exchanges -->
+
+  <div class="space-y-6">
+
+    <!-- Page Header -->
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-bold text-foreground">Crypto Market</h1>
+        <p class="text-sm text-muted-foreground mt-1">Track your favorite tokens and exchanges</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-xs text-muted-foreground">Last updated: Just now</span>
+        <button
+          class="p-2 rounded-lg bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Part A: Trending Token Cards -->
+    {{> crypto/trending-tokens }}
+
+    <!-- Part B: Market Table + Web3 Connect Sidebar -->
+    <div class="grid grid-cols-1 xl:grid-cols-4 gap-4 items-stretch">
+      <!-- Market Table (75% - 3 cols) -->
+      <div class="xl:col-span-3 flex">
+        {{> crypto/market-table }}
+      </div>
+
+      <!-- Web3 Connect Card (25% - 1 col) -->
+      <div class="xl:col-span-1 flex">
+        {{> crypto/web3-connect-card }}
+      </div>
+    </div>
+
+    <!-- Part C: Trending Exchanges -->
+    {{> crypto/trending-exchanges }}
+
+  </div>
+
+</div>
+
+{{> end }}

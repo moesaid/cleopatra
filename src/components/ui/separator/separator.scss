@@ -1,0 +1,50 @@
+/* ============================================
+   Separator Component - Theme-Aware
+   Horizontal and vertical dividers
+   ============================================ */
+
+.separator {
+    background-color: var(--border);
+    flex-shrink: 0;
+}
+
+.separator-horizontal {
+    height: 1px;
+    width: 100%;
+}
+
+.separator-vertical {
+    width: 1px;
+    height: 100%;
+    align-self: stretch;
+}
+
+/* With label */
+.separator-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4, 1rem);
+    color: var(--muted-foreground);
+    font-size: var(--text-sm, 0.875rem);
+
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: var(--border);
+    }
+}
+
+/* Dashed variant */
+.separator-dashed {
+    background: none;
+    border: none;
+    border-top: 1px dashed var(--border);
+    height: 0;
+}
+
+/* Thick variant */
+.separator-thick {
+    height: 2px;
+}

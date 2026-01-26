@@ -1,0 +1,86 @@
+<!-- Revenue Breakdown - Subscriptions vs Advertising -->
+<div class="bg-card border border-border rounded-xl shadow-sm h-full flex flex-col">
+    <div class="flex items-center justify-between p-4 sm:p-5 border-b border-border">
+        <div>
+            <h3 class="text-sm sm:text-base font-semibold text-foreground">Revenue Breakdown</h3>
+            <p class="text-[10px] sm:text-xs text-muted-foreground mt-0.5">Today's earnings</p>
+        </div>
+        <span class="inline-flex items-center gap-1 text-[10px] sm:text-xs font-medium text-primary">
+            <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+            +22.1% YoY
+        </span>
+    </div>
+
+    <div class="flex-1 p-4 sm:p-5 space-y-4 sm:space-y-5">
+        <!-- Daily Total -->
+        <div class="text-center pb-3 sm:pb-4 border-b border-border">
+            <p class="text-2xl sm:text-3xl font-bold font-mono text-foreground">$32.68M</p>
+            <p class="text-[10px] sm:text-xs text-muted-foreground mt-1">Daily Revenue</p>
+        </div>
+
+        <!-- Breakdown -->
+        <div class="space-y-3 sm:space-y-4">
+            <!-- Advertising Revenue - Uses primary color -->
+            <div class="space-y-1.5 sm:space-y-2">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs sm:text-sm font-medium text-foreground">Advertising</p>
+                            <p class="text-[9px] sm:text-[10px] text-muted-foreground">4.2B impressions • $6.78 CPM</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs sm:text-sm font-bold font-mono text-foreground">$28.45M</p>
+                        <p class="text-[9px] sm:text-[10px] text-primary">+5.2%</p>
+                    </div>
+                </div>
+                <div class="h-1.5 sm:h-2 bg-muted rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full" style="width: 87%"></div>
+                </div>
+            </div>
+
+            <!-- Subscription Revenue -->
+            <div class="space-y-1.5 sm:space-y-2">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs sm:text-sm font-medium text-foreground">Verified Subscriptions</p>
+                            <p class="text-[9px] sm:text-[10px] text-muted-foreground">892K standard • 124K premium</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-xs sm:text-sm font-bold font-mono text-foreground">$4.23M</p>
+                        <p class="text-[9px] sm:text-[10px] text-primary">+18.4%</p>
+                    </div>
+                </div>
+                <div class="h-1.5 sm:h-2 bg-muted rounded-full overflow-hidden">
+                    <div class="h-full bg-amber-500 rounded-full" style="width: 13%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MTD Total -->
+        <div class="pt-3 sm:pt-4 border-t border-border">
+            <div class="flex items-center justify-between">
+                <span class="text-[10px] sm:text-xs text-muted-foreground">Month-to-Date</span>
+                <span class="text-xs sm:text-sm font-bold font-mono text-foreground">$684.52M</span>
+            </div>
+        </div>
+    </div>
+</div>

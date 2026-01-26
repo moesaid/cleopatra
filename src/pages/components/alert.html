@@ -1,0 +1,65 @@
+{{> docs-start
+pageTitle="Alerts"
+pageDescription="Notification and alert styles with theme-aware colors"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Standard Alerts -->
+{{#> example-block
+title="Standard Alerts"
+description="Full alerts with icon, title, description, and close button."
+id="alert-standard"
+language="html"
+}}
+{{> standard}}
+{{/example-block}}
+
+<!-- Minimal Style -->
+{{#> example-block
+title="Minimal Style"
+description="Simple alerts with left border accent using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+  font-mono\">.alert-minimal</code> class."
+id="alert-minimal"
+language="html"
+}}
+{{> minimal}}
+{{/example-block}}
+
+<!-- Without Title -->
+{{#> example-block
+title="Without Title"
+description="Simpler alerts with just description and icon."
+id="alert-no-title"
+language="html"
+}}
+{{> without-title}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+  <p class="text-sm text-muted-foreground mb-4">
+    The alert component is located at <code
+      class="px-1.5 py-0.5 bg-muted text-foreground text-xs rounded font-mono">src/components/ui/alert/alert.scss</code>
+  </p>
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-icon</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-content</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-title</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-description</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-close</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-info</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-success</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-warning</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-destructive</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.alert-minimal</div>
+</div>
+
+{{> docs-end}}

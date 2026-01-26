@@ -1,0 +1,123 @@
+{{!--
+Example Block Component
+A component for displaying component examples with Preview/Code tabs, RTL toggle, dark mode toggle, and copy
+functionality.
+
+Usage (inline code - legacy):
+{{> example-block
+title="Basic Usage"
+description="Use the accordion selector to enable accordion behavior."
+id="accordion-basic"
+code="<div class='accordion'>...</div>"
+language="html"
+}}
+
+Usage (block syntax with partial):
+{{#> example-block title="Basic Usage" id="accordion-basic" language="html"}}
+{{> accordion/examples/default}}
+{{/example-block}}
+
+Parameters:
+- title: Section title for the example
+- description: Optional description text
+- id: Unique identifier for the example (used for copy and anchors)
+- code: (Optional) HTML code string - for legacy inline approach
+- language: Programming language for syntax highlighting (defaults to "html")
+- Block content: Pass example via {{#> example-block}}...{{/example-block}} syntax
+--}}
+
+<section class="example-block mb-8" id="{{id}}">
+    {{#if title}}
+    <h3 class="text-lg font-semibold mb-4">{{title}}</h3>
+    {{/if}}
+
+    {{#if description}}
+    <p class="text-sm text-muted-foreground mb-4">{{{description}}}</p>
+    {{/if}}
+
+    {{!-- Toolbar above container --}}
+    <div class="example-toolbar flex items-center justify-between mb-3">
+        {{!-- Tab Switcher --}}
+        <div class="example-tabs inline-flex rounded-lg bg-muted p-1">
+            <button type="button" class="example-tab active px-4 py-1.5 text-sm font-medium rounded-md transition-all"
+                data-tab="preview" data-target="{{id}}">
+                Preview
+            </button>
+            <button type="button" class="example-tab px-4 py-1.5 text-sm font-medium rounded-md transition-all"
+                data-tab="code" data-target="{{id}}">
+                Code
+            </button>
+        </div>
+
+        {{!-- Actions --}}
+        <div class="example-actions flex items-center gap-2">
+            {{!-- RTL Toggle --}}
+            <button type="button"
+                class="example-action-btn rtl-toggle w-9 h-9 flex items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:bg-muted transition-colors text-xs font-medium"
+                data-target="{{id}}" title="Toggle RTL">
+                RTL
+            </button>
+
+            {{!-- Dark Mode Toggle --}}
+            <button type="button"
+                class="example-action-btn darkmode-toggle w-9 h-9 flex items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                data-target="{{id}}" title="Toggle dark mode">
+                <i class="ri-moon-line text-lg"></i>
+            </button>
+
+            {{!-- Copy Button --}}
+            <button type="button"
+                class="example-action-btn copy-btn w-9 h-9 flex items-center justify-center rounded-lg border border-border text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                data-code-target="code-{{id}}" title="Copy code">
+                <i class="ri-file-copy-line text-lg copy-icon-default"></i>
+                <i class="ri-check-line text-lg copy-icon-success hidden text-success"></i>
+            </button>
+        </div>
+    </div>
+
+    {{!-- Preview Panel with browser chrome --}}
+    <div class="example-panel example-preview active" data-panel="preview" data-id="{{id}}">
+        <div class="example-preview-container border border-border rounded-xl bg-background">
+            {{!-- Browser chrome header --}}
+            <div
+                class="example-browser-bar flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border rounded-t-xl">
+                <span class="w-3 h-3 rounded-full bg-muted-foreground/30"></span>
+                <span class="w-3 h-3 rounded-full bg-muted-foreground/30"></span>
+                <span class="w-3 h-3 rounded-full bg-muted-foreground/30"></span>
+            </div>
+            {{!-- Preview content: Use block content if provided, otherwise use code attribute --}}
+            <div class="example-preview-content p-6 rounded-b-xl">
+                {{#if code}}
+                {{{code}}}
+                {{else}}
+                {{> @partial-block}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    {{!-- Code Panel - uses code-block styling --}}
+    <div class="example-panel example-code" data-panel="code" data-id="{{id}}">
+        <div class="code-block-stripe relative rounded-xl overflow-hidden">
+            {{!-- Header bar with filename and actions --}}
+            <div class="code-block-header flex justify-between items-center px-4 py-2">
+                {{!-- Left side: File icon and name --}}
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                    <span class="text-sm text-foreground font-medium">{{#if
+                        language}}{{language}}{{else}}html{{/if}}</span>
+                </div>
+            </div>
+
+            {{!-- Code content --}}
+            <div class="code-block-content relative overflow-x-auto">
+                <pre
+                    class="code-pre shiki-code !m-0 !bg-transparent"><code id="code-{{id}}" class="shiki-code-inner language-{{#if language}}{{language}}{{else}}html{{/if}} !bg-transparent text-sm" {{#unless code}}data-from-preview="true"{{/unless}}>{{#if code}}{{code}}{{/if}}</code></pre>
+            </div>
+        </div>
+    </div>
+</section>

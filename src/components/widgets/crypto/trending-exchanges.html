@@ -1,0 +1,204 @@
+<!-- Part C: Trending Exchanges Row -->
+<div class="space-y-4">
+    <!-- Header -->
+    <div class="flex items-center justify-between">
+        <h2 class="text-lg font-semibold text-foreground">Trending Exchanges</h2>
+        <div class="flex items-center gap-2">
+            <button
+                class="p-2 rounded-lg bg-muted hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+            <a href="#"
+                class="text-sm text-primary hover:text-primary/80 font-medium flex items-center gap-1 transition-colors bg-muted/50 px-3 py-1.5 rounded-lg">
+                <span class="hidden sm:inline">View All</span> →
+            </a>
+        </div>
+    </div>
+
+    <!-- Exchange Cards Grid - Horizontal scroll on mobile -->
+    <div class="-mx-4 px-4 overflow-x-auto scrollbar-hide sm:mx-0 sm:px-0 sm:overflow-visible">
+        <div class="flex gap-4 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 min-w-max sm:min-w-0">
+
+            <!-- Exchange 1: Indodax -->
+            <div
+                class="bg-card border border-border rounded-xl p-3 sm:p-4 relative overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group cursor-pointer min-w-[160px] sm:min-w-0 flex-shrink-0 sm:flex-shrink">
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 6l6 3 6-3v12l-6 3-6-3V6z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted-foreground">Exchange</p>
+                        <span class="font-semibold text-foreground">Indodax</span>
+                    </div>
+                </div>
+                <p class="text-xs text-muted-foreground uppercase tracking-wide mb-1">Total Asset (USD)</p>
+                <div class="flex items-baseline justify-between">
+                    <p class="text-xl sm:text-2xl font-bold text-foreground">21.82M</p>
+                    <span
+                        class="text-xs font-medium text-rose-600 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                        5.33%
+                    </span>
+                </div>
+            </div>
+
+            <!-- Exchange 2: Crypto.com -->
+            <div
+                class="bg-card border border-border rounded-xl p-3 sm:p-4 relative overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group cursor-pointer min-w-[160px] sm:min-w-0 flex-shrink-0 sm:flex-shrink">
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-700 to-indigo-800 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L4 6v6c0 5.5 3.4 10.3 8 12 4.6-1.7 8-6.5 8-12V6l-8-4z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted-foreground">Exchange</p>
+                        <span class="font-semibold text-foreground">Crypto.com</span>
+                    </div>
+                </div>
+                <p class="text-xs text-muted-foreground uppercase tracking-wide mb-1">Total Asset (USD)</p>
+                <div class="flex items-baseline justify-between">
+                    <p class="text-2xl font-bold text-foreground">$3.02B</p>
+                    <span
+                        class="text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                        16.02%
+                    </span>
+                </div>
+            </div>
+
+            <!-- Exchange 3: Kraken -->
+            <div
+                class="bg-card border border-border rounded-xl p-3 sm:p-4 relative overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group cursor-pointer min-w-[160px] sm:min-w-0 flex-shrink-0 sm:flex-shrink">
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-violet-700 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="8" />
+                            <path d="M8 12c0-2 1.5-4 4-4s4 2 4 4" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted-foreground">Exchange</p>
+                        <span class="font-semibold text-foreground">Kraken</span>
+                    </div>
+                </div>
+                <p class="text-xs text-muted-foreground uppercase tracking-wide mb-1">Total Asset (USD)</p>
+                <div class="flex items-baseline justify-between">
+                    <p class="text-2xl font-bold text-foreground">$983.02M</p>
+                    <span
+                        class="text-xs font-medium text-rose-600 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                        9.52%
+                    </span>
+                </div>
+            </div>
+
+            <!-- Exchange 4: Binance -->
+            <div
+                class="bg-card border border-border rounded-xl p-3 sm:p-4 relative overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group cursor-pointer min-w-[160px] sm:min-w-0 flex-shrink-0 sm:flex-shrink">
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 5l2.5 2.5L12 10l-2.5-2.5L12 5zM7.5 9.5L10 12l-2.5 2.5L5 12l2.5-2.5zM16.5 9.5L19 12l-2.5 2.5L14 12l2.5-2.5zM12 14l2.5 2.5L12 19l-2.5-2.5L12 14z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted-foreground">Exchange</p>
+                        <span class="font-semibold text-foreground">Binance</span>
+                    </div>
+                </div>
+                <p class="text-xs text-muted-foreground uppercase tracking-wide mb-1">Total Asset (USD)</p>
+                <div class="flex items-baseline justify-between">
+                    <p class="text-2xl font-bold text-foreground">$111.04B</p>
+                    <span
+                        class="text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                        </svg>
+                        15.26%
+                    </span>
+                </div>
+            </div>
+
+            <!-- Exchange 5: Coinbase -->
+            <div
+                class="bg-card border border-border rounded-xl p-3 sm:p-4 relative overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 group cursor-pointer min-w-[160px] sm:min-w-0 flex-shrink-0 sm:flex-shrink">
+                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+                            <path d="M15 9.5c-.7-1-1.8-1.5-3-1.5-2.2 0-4 1.8-4 4s1.8 4 4 4c1.2 0 2.3-.5 3-1.5" />
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-muted-foreground">Exchange</p>
+                        <span class="font-semibold text-foreground">Coinbase</span>
+                    </div>
+                </div>
+                <p class="text-xs text-muted-foreground uppercase tracking-wide mb-1">Total Asset (USD)</p>
+                <div class="flex items-baseline justify-between">
+                    <p class="text-2xl font-bold text-foreground">$838.23M</p>
+                    <span
+                        class="text-xs font-medium text-rose-600 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full flex items-center gap-0.5">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                        3.02%
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

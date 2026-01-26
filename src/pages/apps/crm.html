@@ -1,0 +1,43 @@
+{{> start title="CRM" hidePageHeader=true }}
+
+<div class="p-4 lg:p-6">
+    <!-- Header Toolbar -->
+    {{> crm/crm-header }}
+
+    <!-- Stats Cards -->
+    {{> crm/crm-stats }}
+
+    <!-- Main Content Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <!-- Revenue Chart (2/3) -->
+        <div class="lg:col-span-2">
+            {{> crm/crm-revenue }}
+        </div>
+
+        <!-- Right Sidebar (1/3) -->
+        <div class="lg:col-span-1 space-y-4">
+            {{> crm/crm-leads }}
+            {{> crm/crm-retention }}
+        </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Calendar -->
+        <div class="lg:col-span-1">
+            {{> crm/crm-calendar }}
+        </div>
+
+        <!-- World Map -->
+        <div class="lg:col-span-1 relative">
+            {{> crm/crm-map }}
+        </div>
+
+        <!-- Top Locations -->
+        <div class="lg:col-span-1">
+            {{> crm/crm-locations }}
+        </div>
+    </div>
+</div>
+
+{{> end }}

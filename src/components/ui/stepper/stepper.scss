@@ -1,0 +1,122 @@
+/* ============================================
+   Stepper Component - Theme-Aware
+   Step-by-step progress indicator
+   ============================================ */
+
+.stepper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.stepper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 1rem;
+        left: calc(50% + 1.25rem);
+        right: calc(-50% + 1.25rem);
+        height: 2px;
+        background-color: var(--border);
+    }
+
+    &.is-completed::after {
+        background-color: var(--primary);
+    }
+}
+
+.stepper-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--font-medium, 500);
+    color: var(--muted-foreground);
+    background-color: var(--muted);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    transition: all var(--duration-200, 200ms) ease;
+
+    .stepper-item.is-active & {
+        color: var(--primary-foreground);
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .stepper-item.is-completed & {
+        color: var(--primary-foreground);
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+}
+
+.stepper-content {
+    margin-top: var(--spacing-2, 0.5rem);
+    text-align: center;
+}
+
+.stepper-title {
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--font-medium, 500);
+    color: var(--foreground);
+
+    .stepper-item.is-active & {
+        color: var(--primary);
+    }
+}
+
+.stepper-description {
+    font-size: var(--text-xs, 0.75rem);
+    color: var(--muted-foreground);
+    margin-top: var(--spacing-1, 0.25rem);
+}
+
+/* Vertical */
+.stepper-vertical {
+    flex-direction: column;
+
+    .stepper-item {
+        flex-direction: row;
+        align-items: flex-start;
+
+        &:not(:last-child)::after {
+            top: 2.25rem;
+            left: 1rem;
+            right: auto;
+            bottom: 0;
+            width: 2px;
+            height: auto;
+        }
+    }
+
+    .stepper-content {
+        margin-top: 0;
+        margin-left: var(--spacing-3, 0.75rem);
+        text-align: left;
+        padding-bottom: var(--spacing-6, 1.5rem);
+    }
+}
+
+/* Small variant */
+.stepper-sm {
+    .stepper-indicator {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: var(--text-xs, 0.75rem);
+    }
+
+    .stepper-item:not(:last-child)::after {
+        top: 0.75rem;
+        left: calc(50% + 1rem);
+        right: calc(-50% + 1rem);
+    }
+}

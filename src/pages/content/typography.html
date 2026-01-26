@@ -1,0 +1,96 @@
+{{> docs-start
+pageTitle="Typography"
+pageDescription="Text styles, headings, and formatting utilities"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Headings -->
+{{#> example-block
+title="Headings"
+description="Six levels of headings with consistent tracking and weight."
+id="typography-headings"
+language="html"
+}}
+{{> content/examples/headings}}
+{{/example-block}}
+
+<!-- Paragraphs -->
+{{#> example-block
+title="Paragraphs"
+description="Text sizes for different content hierarchy."
+id="typography-paragraphs"
+language="html"
+}}
+{{> content/examples/paragraphs}}
+{{/example-block}}
+
+<!-- Text Colors -->
+{{#> example-block
+title="Text Colors"
+description="Semantic color classes for text."
+id="typography-colors"
+language="html"
+}}
+{{> content/examples/colors}}
+{{/example-block}}
+
+<!-- Font Weights -->
+{{#> example-block
+title="Font Weights"
+description="Available font weight utilities."
+id="typography-weights"
+language="html"
+}}
+{{> content/examples/weights}}
+{{/example-block}}
+
+<!-- Inline Code -->
+{{#> example-block
+title="Inline Code"
+description="Code snippets within paragraph text."
+id="typography-inline"
+language="html"
+}}
+{{> content/examples/inline-code}}
+{{/example-block}}
+
+<!-- Blockquote -->
+{{#> example-block
+title="Blockquote"
+description="Styled quotation blocks."
+id="typography-blockquote"
+language="html"
+}}
+{{> content/examples/blockquote}}
+{{/example-block}}
+
+<!-- Lists -->
+{{#> example-block
+title="Lists"
+description="Ordered and unordered list styles."
+id="typography-lists"
+language="html"
+}}
+{{> content/examples/lists}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Typography uses semantic classes for theming support:</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Key Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-foreground</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-muted-foreground</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-primary</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-destructive</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-success</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">text-warning</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">leading-7</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">tracking-tight</div>
+</div>
+
+{{> docs-end}}

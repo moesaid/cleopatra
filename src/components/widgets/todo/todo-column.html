@@ -1,0 +1,26 @@
+<!-- Todo Kanban Column Widget -->
+<!-- Reusable column with header and cards container -->
+<!-- Usage: {{#> todo/todo-column title="To-do" count="3" color="gray"}} ...cards... {{/todo/todo-column}} -->
+
+<div class="kanban-column bg-muted/30 rounded-xl p-3 min-h-[400px]">
+    <!-- Column Header -->
+    <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center gap-2">
+            <span
+                class="w-2.5 h-2.5 rounded-full bg-{{color}}-{{#if colorShade}}{{colorShade}}{{else}}500{{/if}}"></span>
+            <h3 class="text-sm font-semibold text-foreground">{{title}}</h3>
+            <span class="text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded">{{count}}</span>
+        </div>
+        <button
+            class="w-6 h-6 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Cards Container -->
+    <div class="space-y-3">
+        {{> @partial-block}}
+    </div>
+</div>

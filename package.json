@@ -1,84 +1,46 @@
 {
   "name": "@moesaid/cleopatra",
-  "version": "1.1.1",
-  "description": "cleopatra admin dashboard template built especially for developers",
+  "version": "2.0.0",
+  "description": "Cleopatra admin dashboard template built with Vite and Tailwind CSS v4",
   "author": "Mohamed Said , moesaid.com",
   "license": "MIT",
-  "main": "gulpfile.js",
+  "type": "module",
   "scripts": {
-    "dev": "gulp",
-    "build": "gulp build",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "git": "git add . && git commit -m",
     "postgit": "git push -u origin master && git subtree push --prefix dist origin gh-pages"
   },
-  "options": {
-    "config": {
-      "tailwindjs": "./tailwind.config.js"
-    },
-    "paths": {
-      "root": "./",
-      "src": {
-        "base": "./src",
-        "css": "./src/css",
-        "js": "./src/js",
-        "img": "./src/img"
-      },
-      "dist": {
-        "base": "./dist",
-        "css": "./dist/css",
-        "js": "./dist/js",
-        "img": "./dist/img"
-      },
-      "build": {
-        "base": "./build",
-        "css": "./build/css",
-        "js": "./build/js",
-        "img": "./build/img"
-      }
-    }
-  },
   "keywords": [
     "cleopatra",
-    "gulp",
+    "vite",
     "tailwind",
     "tailwindcss",
+    "tailwindcss-v4",
     "admin",
     "dashboard",
     "admin dashboard",
     "admin themes",
-    "sass",
+    "modern css",
     "admin dashboard template"
   ],
   "devDependencies": {
-    "autoprefixer": "^10.4.7",
-    "browser-sync": "^2.27.9",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "gulp-cache": "^1.1.3",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-file-include": "^2.3.0",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-markdown": "^6.0.0",
-    "gulp-postcss": "^9.0.1",
-    "gulp-purgecss": "^4.1.3",
-    "gulp-purify-css": "^0.1.0",
-    "gulp-purifycss": "^0.2.0",
-    "gulp-replace": "^1.1.3",
-    "gulp-sass": "^5.1.0",
-    "gulp-sass-glob": "^1.1.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-webp": "^4.0.1",
-    "lodash.template": ">=4.5.0",
-    "log-symbols": "^2.2.0",
-    "mem": "^9.0.2",
-    "postcss": "^8.4.13",
-    "purifycss-extended": "^1.3.6",
-    "tailwindcss": "^3.0.24",
-    "tailwindcss-animatecss": "^1.0.7"
+    "@tailwindcss/vite": "^4.1.18",
+    "lightningcss": "^1.28.2",
+    "sass": "^1.97.2",
+    "tailwindcss": "^4.1.18",
+    "vite": "^6.0.5",
+    "vite-plugin-handlebars": "^2.0.0",
+    "vite-plugin-image-optimizer": "^1.1.8"
   },
   "dependencies": {
-    "chart.js": "^3.7.1",
-    "sass": "^1.51.0"
+    "@tailwindcss/postcss": "^4.1.18",
+    "apexcharts": "^5.3.6",
+    "chart.js": "^4.4.7",
+    "lucide-static": "^0.563.0",
+    "postcss": "^8.5.6",
+    "sharp": "^0.34.5",
+    "shiki": "^3.21.0"
   }
 }

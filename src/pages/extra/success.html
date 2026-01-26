@@ -1,0 +1,98 @@
+{{> start title="Success" hidePageHeader=true }}
+
+<!-- Success Page Content -->
+<div class="min-h-[80vh] flex items-center justify-center">
+    <div class="max-w-lg w-full mx-auto px-4 text-center">
+
+        <!-- Success Animation -->
+        <div class="relative mb-8">
+            <div
+                class="w-32 h-32 bg-gradient-to-br from-emerald-500/20 to-emerald-500/10 rounded-full flex items-center justify-center mx-auto shadow-xl shadow-emerald-500/10">
+                <svg class="w-16 h-16 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <!-- Decorative rings -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-40 h-40 rounded-full border-2 border-emerald-500/10 animate-ping"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-48 h-48 rounded-full border border-emerald-500/5"></div>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-2xl md:text-3xl font-bold text-foreground mb-3">
+            Success!
+        </h1>
+
+        <!-- Description -->
+        <p class="text-muted-foreground text-sm md:text-base max-w-md mx-auto mb-8 leading-relaxed">
+            Your action was completed successfully. You can now continue using the application or view your updates.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="/pages/index.html"
+                class="w-full sm:w-auto px-6 py-3 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Go to Dashboard
+            </a>
+            <button
+                class="w-full sm:w-auto px-6 py-3 bg-muted text-foreground font-medium rounded-xl hover:bg-muted/80 transition-all duration-200 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                View Details
+            </button>
+        </div>
+
+        <!-- Summary Card -->
+        <div class="mt-10 bg-card border border-border rounded-xl p-6 text-left">
+            <h3 class="text-sm font-medium text-foreground mb-4">Summary</h3>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between py-2 border-b border-border">
+                    <span class="text-sm text-muted-foreground">Transaction ID</span>
+                    <span class="text-sm font-medium text-foreground">#TXN-2024-001234</span>
+                </div>
+                <div class="flex items-center justify-between py-2 border-b border-border">
+                    <span class="text-sm text-muted-foreground">Date</span>
+                    <span class="text-sm font-medium text-foreground">January 24, 2024</span>
+                </div>
+                <div class="flex items-center justify-between py-2">
+                    <span class="text-sm text-muted-foreground">Status</span>
+                    <span
+                        class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-medium rounded-full">Completed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Actions -->
+        <div class="mt-6 flex items-center justify-center gap-4 text-sm">
+            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download Receipt
+            </a>
+            <span class="text-border">|</span>
+            <a href="#" class="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                </svg>
+                Share
+            </a>
+        </div>
+
+    </div>
+</div>
+
+{{> end }}

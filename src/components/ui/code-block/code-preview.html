@@ -1,0 +1,18 @@
+{{!--
+Code Preview Component
+A simpler code block for documentation pages, showing code in a code-block-stripe footer.
+
+Usage:
+{{> code-preview code="<button class=\"btn\">Click</button>" }}
+
+Parameters:
+- code: The code string to display
+- language: Optional, defaults to "html"
+--}}
+
+<div class="code-block-stripe rounded-lg overflow-hidden">
+    <div class="code-block-content">
+        <pre
+            class="code-pre !m-0 !p-0 !bg-transparent"><code class="language-{{#if language}}{{language}}{{else}}html{{/if}} code-content text-xs !bg-transparent">{{code}}</code></pre>
+    </div>
+</div>

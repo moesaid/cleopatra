@@ -1,0 +1,74 @@
+{{> docs-start
+pageTitle="Code Blocks"
+pageDescription="Code display and syntax highlighting patterns"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Basic Code Block -->
+{{#> example-block
+title="Basic Code Block"
+description="Simple preformatted code with monospace font."
+id="code-basic"
+language="html"
+}}
+{{> content/examples/code-basic}}
+{{/example-block}}
+
+<!-- Inline Code -->
+{{#> example-block
+title="Inline Code"
+description="Code snippets within paragraph text."
+id="code-inline"
+language="html"
+}}
+{{> content/examples/inline-code}}
+{{/example-block}}
+
+<!-- With Line Numbers -->
+{{#> example-block
+title="With Line Numbers"
+description="Code display with numbered lines for reference."
+id="code-lines"
+language="html"
+}}
+{{> content/examples/code-lines}}
+{{/example-block}}
+
+<!-- Multiple Languages -->
+{{#> example-block
+title="Multiple Languages"
+description="Code blocks with language indicators."
+id="code-languages"
+language="html"
+}}
+{{> content/examples/code-languages}}
+{{/example-block}}
+
+<!-- With Copy Button -->
+{{#> example-block
+title="With Copy Button"
+description="Code block with copy-to-clipboard functionality."
+id="code-copy"
+language="html"
+}}
+{{> content/examples/code-copy}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Code blocks use semantic classes for theming:</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Key Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">bg-muted/50</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">border-border</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">font-mono</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">text-sm</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">overflow-x-auto</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">rounded-lg</div>
+</div>
+
+{{> docs-end}}

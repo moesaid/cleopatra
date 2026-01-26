@@ -1,0 +1,147 @@
+/* ===========================================
+   Example Block Component Styles
+   Interactive component examples with tabs
+   =========================================== */
+
+.example-block {
+    scroll-margin-top: 6rem;
+}
+
+/* Tab Switcher */
+.example-tabs {
+    background-color: var(--muted);
+}
+
+.example-tab {
+    color: var(--muted-foreground);
+    background-color: transparent;
+
+    &:hover:not(.active) {
+        color: var(--foreground);
+    }
+
+    &.active {
+        background-color: var(--background);
+        color: var(--foreground);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* Action Buttons */
+.example-action-btn {
+    background-color: var(--background);
+
+    &.active {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+        border-color: var(--primary);
+    }
+
+    &.copied {
+        background-color: color-mix(in srgb, var(--success) 15%, transparent);
+        border-color: var(--success);
+        color: var(--success);
+    }
+}
+
+/* Panels */
+.example-panel {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+/* Preview Container */
+.example-preview-container {
+    background-color: var(--background);
+}
+
+.example-browser-bar {
+    background-color: var(--muted);
+
+    span {
+        opacity: 0.5;
+    }
+}
+
+/* Preview Content */
+.example-preview-content {
+    background-color: var(--background);
+    min-height: 100px;
+
+    &.rtl {
+        direction: rtl;
+    }
+
+    &.dark-preview {
+        background-color: oklch(0.145 0 0);
+        color: oklch(0.985 0 0);
+
+        // Base colors
+        --background: oklch(0.145 0 0);
+        --foreground: oklch(0.985 0 0);
+
+        // Card
+        --card: oklch(0.205 0 0);
+        --card-foreground: oklch(0.985 0 0);
+
+        // Muted
+        --muted: oklch(0.269 0 0);
+        --muted-foreground: oklch(0.708 0 0);
+
+        // Border & Input
+        --border: oklch(1 0 0 / 10%);
+        --input: oklch(1 0 0 / 15%);
+        --ring: oklch(0.556 0.215 252.417);
+
+        // Accent
+        --accent: oklch(0.269 0 0);
+        --accent-foreground: oklch(0.985 0 0);
+
+        // Primary
+        --primary: oklch(0.623 0.214 259.815);
+        --primary-foreground: oklch(0.985 0 0);
+
+        // Secondary
+        --secondary: oklch(0.269 0 0);
+        --secondary-foreground: oklch(0.985 0 0);
+
+        // Destructive
+        --destructive: oklch(0.577 0.245 27.325);
+        --destructive-foreground: oklch(0.985 0 0);
+
+        // Popover
+        --popover: oklch(0.205 0 0);
+        --popover-foreground: oklch(0.985 0 0);
+
+        // Success/Warning/Info
+        --success: oklch(0.696 0.17 162.48);
+        --warning: oklch(0.769 0.188 70.08);
+        --info: oklch(0.623 0.214 259.815);
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .example-toolbar {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+
+    .example-tabs {
+        width: 100%;
+        display: flex;
+
+        .example-tab {
+            flex: 1;
+            text-align: center;
+        }
+    }
+
+    .example-actions {
+        justify-content: flex-end;
+    }
+}

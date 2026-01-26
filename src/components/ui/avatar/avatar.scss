@@ -1,0 +1,183 @@
+/* ============================================
+   Avatar Component - Theme-Aware
+   User profile images with fallback
+   ============================================ */
+
+.avatar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full, 9999px);
+    overflow: hidden;
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    font-weight: var(--font-medium, 500);
+    flex-shrink: 0;
+
+    /* Allow status indicator to show outside */
+    &.avatar-status {
+        overflow: visible;
+    }
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.avatar-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    text-transform: uppercase;
+}
+
+/* ============================================
+   Avatar Sizes
+   ============================================ */
+
+.avatar-xs {
+    width: var(--size-xs, 1.5rem);
+    height: var(--size-xs, 1.5rem);
+    font-size: var(--text-xs, 0.75rem);
+}
+
+.avatar-sm {
+    width: var(--size-sm, 2rem);
+    height: var(--size-sm, 2rem);
+    font-size: var(--text-xs, 0.75rem);
+}
+
+.avatar-md,
+.avatar {
+    width: var(--size-md, 2.5rem);
+    height: var(--size-md, 2.5rem);
+    font-size: var(--text-sm, 0.875rem);
+}
+
+.avatar-lg {
+    width: var(--size-lg, 2.75rem);
+    height: var(--size-lg, 2.75rem);
+    font-size: var(--text-base, 1rem);
+}
+
+.avatar-xl {
+    width: var(--size-xl, 3rem);
+    height: var(--size-xl, 3rem);
+    font-size: var(--text-lg, 1.125rem);
+}
+
+.avatar-2xl {
+    width: var(--size-2xl, 3.5rem);
+    height: var(--size-2xl, 3.5rem);
+    font-size: var(--text-xl, 1.25rem);
+}
+
+/* Large avatars for profiles */
+.avatar-3xl {
+    width: 5rem;
+    height: 5rem;
+    font-size: var(--text-2xl, 1.5rem);
+}
+
+.avatar-4xl {
+    width: 6rem;
+    height: 6rem;
+    font-size: var(--text-3xl, 1.875rem);
+}
+
+/* ============================================
+   Avatar Variants
+   ============================================ */
+
+/* Rounded square */
+.avatar-rounded {
+    border-radius: var(--radius-lg, 0.5rem);
+}
+
+/* With ring/border */
+.avatar-ring {
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--border);
+}
+
+.avatar-ring-primary {
+    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--primary);
+}
+
+/* Status indicator */
+.avatar-status {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 25%;
+        height: 25%;
+        min-width: 8px;
+        min-height: 8px;
+        border-radius: 50%;
+        background-color: var(--muted-foreground);
+        border: 2px solid var(--background);
+    }
+
+    &.status-online::after {
+        background-color: var(--success);
+    }
+
+    &.status-offline::after {
+        background-color: var(--muted-foreground);
+    }
+
+    &.status-busy::after {
+        background-color: var(--destructive);
+    }
+
+    &.status-away::after {
+        background-color: var(--warning);
+    }
+}
+
+/* ============================================
+   Avatar Group
+   ============================================ */
+
+.avatar-group {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .avatar {
+        margin-left: -0.5rem;
+        box-shadow: 0 0 0 2px var(--background);
+        transition: transform var(--duration-150, 150ms) ease;
+
+        &:hover {
+            transform: translateY(-2px);
+            z-index: 10;
+        }
+    }
+
+    .avatar:last-child {
+        margin-left: 0;
+    }
+}
+
+.avatar-group-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    font-size: var(--text-xs, 0.75rem);
+    font-weight: var(--font-medium, 500);
+    margin-left: -0.5rem;
+    box-shadow: 0 0 0 2px var(--background);
+}

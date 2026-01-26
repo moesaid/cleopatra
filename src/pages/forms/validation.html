@@ -1,0 +1,84 @@
+{{> docs-start
+pageTitle="Form Validation"
+pageDescription="Beautiful validation states and patterns inspired by shadcn/ui"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Validation States -->
+{{#> example-block
+title="Validation States"
+description="Visual indicators for valid, invalid, and warning states."
+id="validation-states"
+language="html"
+}}
+{{> form/examples/validation-states}}
+{{/example-block}}
+
+<!-- Inline Error Message -->
+{{#> example-block
+title="Inline Error"
+description="Error message displayed inline with the input."
+id="validation-inline"
+language="html"
+}}
+{{> form/examples/inline-error}}
+{{/example-block}}
+
+<!-- Required Fields -->
+{{#> example-block
+title="Required Fields"
+description="Indicators for required and optional fields."
+id="validation-required"
+language="html"
+}}
+{{> form/examples/required}}
+{{/example-block}}
+
+<!-- Password Strength -->
+{{#> example-block
+title="Password Strength"
+description="Visual password strength indicator."
+id="validation-password"
+language="html"
+}}
+{{> form/examples/password-strength}}
+{{/example-block}}
+
+<!-- Form Card with Validation -->
+{{#> example-block
+title="Registration Form"
+description="Complete registration form with validation states."
+id="validation-form"
+language="html"
+}}
+{{> form/examples/registration-form}}
+{{/example-block}}
+
+<!-- Input with Hint -->
+{{#> example-block
+title="Input with Hint"
+description="Helpful hint text below input."
+id="validation-hint"
+language="html"
+}}
+{{> form/examples/hint}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Apply validation states using border and text color classes:</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">State Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">border-success</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">border-destructive</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">text-success</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">text-destructive</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">bg-destructive/5</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">ring-destructive</div>
+</div>
+
+{{> docs-end}}

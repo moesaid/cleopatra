@@ -1,0 +1,75 @@
+<!-- Customer Row -->
+<tr class="border-b border-border hover:bg-muted/30 transition-colors">
+    <!-- Checkbox -->
+    <td class="p-3">
+        <input type="checkbox" class="w-4 h-4 rounded border-border text-primary focus:ring-primary" {{#if
+            checked}}checked{{/if}}>
+    </td>
+
+    <!-- Customer Name -->
+    <td class="p-3">
+        <div class="flex items-center gap-3">
+            <img src="{{avatar}}" alt="{{name}}" class="w-9 h-9 rounded-full object-cover">
+            <span class="text-sm font-medium text-foreground">{{name}}</span>
+        </div>
+    </td>
+
+    <!-- Onboard Date -->
+    <td class="p-3">
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>{{date}}</span>
+        </div>
+    </td>
+
+    <!-- Email -->
+    <td class="p-3">
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>{{email}}</span>
+        </div>
+    </td>
+
+    <!-- Phone -->
+    <td class="p-3">
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>{{phone}}</span>
+        </div>
+    </td>
+
+    <!-- Status -->
+    <td class="p-3">
+        {{#if active}}
+        <span
+            class="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">
+            Active
+        </span>
+        {{else}}
+        <span
+            class="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300">
+            Inactive
+        </span>
+        {{/if}}
+    </td>
+
+    <!-- Action -->
+    <td class="p-3">
+        <button class="p-1.5 rounded-md hover:bg-muted transition-colors">
+            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="1.5" />
+                <circle cx="12" cy="12" r="1.5" />
+                <circle cx="12" cy="18" r="1.5" />
+            </svg>
+        </button>
+    </td>
+</tr>

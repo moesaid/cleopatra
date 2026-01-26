@@ -1,0 +1,219 @@
+<!-- Real Estate Property Listings -->
+<div class="bg-card border border-border rounded-xl overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-4 border-b border-border">
+        <h3 class="text-lg font-semibold text-foreground">Property Listings</h3>
+        <div class="flex items-center gap-2">
+            <button class="p-2 bg-primary/10 text-primary rounded-lg">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+            </button>
+            <button class="p-2 bg-muted/50 hover:bg-muted text-muted-foreground rounded-lg transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Listings Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        <!-- Property 1 -->
+        <div
+            class="bg-muted/30 rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
+            <div class="aspect-[16/10] bg-gradient-to-br from-primary/20 to-primary/5 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-4xl">🏠</span>
+                </div>
+                <span
+                    class="absolute top-3 left-3 px-2 py-1 bg-emerald-500 text-white text-xs font-medium rounded-full">For
+                    Sale</span>
+                <button
+                    class="absolute top-3 right-3 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-4">
+                <div class="text-xl font-bold text-primary mb-1">$450,000</div>
+                <div class="text-sm font-medium text-foreground mb-2">Modern Family Home</div>
+                <div class="text-xs text-muted-foreground mb-3">123 Oak Street, Los Angeles, CA 90001</div>
+                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                    <span class="flex items-center gap-1">🛏️ 4 Beds</span>
+                    <span class="flex items-center gap-1">🛁 3 Baths</span>
+                    <span class="flex items-center gap-1">📐 2,450 sqft</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property 2 -->
+        <div
+            class="bg-muted/30 rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
+            <div class="aspect-[16/10] bg-gradient-to-br from-violet-500/20 to-violet-500/5 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-4xl">🏢</span>
+                </div>
+                <span
+                    class="absolute top-3 left-3 px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">For
+                    Rent</span>
+                <button
+                    class="absolute top-3 right-3 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-4">
+                <div class="text-xl font-bold text-primary mb-1">$2,800/mo</div>
+                <div class="text-sm font-medium text-foreground mb-2">Luxury Downtown Apartment</div>
+                <div class="text-xs text-muted-foreground mb-3">456 Main Ave, San Francisco, CA 94102</div>
+                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                    <span class="flex items-center gap-1">🛏️ 2 Beds</span>
+                    <span class="flex items-center gap-1">🛁 2 Baths</span>
+                    <span class="flex items-center gap-1">📐 1,200 sqft</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property 3 -->
+        <div
+            class="bg-muted/30 rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
+            <div class="aspect-[16/10] bg-gradient-to-br from-amber-500/20 to-amber-500/5 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-4xl">🏡</span>
+                </div>
+                <span
+                    class="absolute top-3 left-3 px-2 py-1 bg-emerald-500 text-white text-xs font-medium rounded-full">For
+                    Sale</span>
+                <button
+                    class="absolute top-3 right-3 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-4 h-4 text-rose-500" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-4">
+                <div class="text-xl font-bold text-primary mb-1">$875,000</div>
+                <div class="text-sm font-medium text-foreground mb-2">Suburban Villa with Pool</div>
+                <div class="text-xs text-muted-foreground mb-3">789 Palm Drive, Miami, FL 33101</div>
+                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                    <span class="flex items-center gap-1">🛏️ 5 Beds</span>
+                    <span class="flex items-center gap-1">🛁 4 Baths</span>
+                    <span class="flex items-center gap-1">📐 3,800 sqft</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property 4 -->
+        <div
+            class="bg-muted/30 rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
+            <div class="aspect-[16/10] bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-4xl">🏬</span>
+                </div>
+                <span
+                    class="absolute top-3 left-3 px-2 py-1 bg-muted text-muted-foreground text-xs font-medium rounded-full">Sold</span>
+                <button
+                    class="absolute top-3 right-3 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-4">
+                <div class="text-xl font-bold text-muted-foreground line-through mb-1">$320,000</div>
+                <div class="text-sm font-medium text-foreground mb-2">Cozy Studio Condo</div>
+                <div class="text-xs text-muted-foreground mb-3">321 Beach Blvd, San Diego, CA 92101</div>
+                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                    <span class="flex items-center gap-1">🛏️ 1 Bed</span>
+                    <span class="flex items-center gap-1">🛁 1 Bath</span>
+                    <span class="flex items-center gap-1">📐 650 sqft</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property 5 -->
+        <div
+            class="bg-muted/30 rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
+            <div class="aspect-[16/10] bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-4xl">🏘️</span>
+                </div>
+                <span
+                    class="absolute top-3 left-3 px-2 py-1 bg-emerald-500 text-white text-xs font-medium rounded-full">For
+                    Sale</span>
+                <button
+                    class="absolute top-3 right-3 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-4">
+                <div class="text-xl font-bold text-primary mb-1">$625,000</div>
+                <div class="text-sm font-medium text-foreground mb-2">Renovated Townhouse</div>
+                <div class="text-xs text-muted-foreground mb-3">555 Elm Street, Seattle, WA 98101</div>
+                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                    <span class="flex items-center gap-1">🛏️ 3 Beds</span>
+                    <span class="flex items-center gap-1">🛁 2.5 Baths</span>
+                    <span class="flex items-center gap-1">📐 1,950 sqft</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property 6 -->
+        <div
+            class="bg-muted/30 rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-colors">
+            <div class="aspect-[16/10] bg-gradient-to-br from-rose-500/20 to-rose-500/5 relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-4xl">🏛️</span>
+                </div>
+                <span
+                    class="absolute top-3 left-3 px-2 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">For
+                    Rent</span>
+                <button
+                    class="absolute top-3 right-3 w-8 h-8 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-colors">
+                    <svg class="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="p-4">
+                <div class="text-xl font-bold text-primary mb-1">$5,500/mo</div>
+                <div class="text-sm font-medium text-foreground mb-2">Penthouse Suite</div>
+                <div class="text-xs text-muted-foreground mb-3">888 Skyline Tower, New York, NY 10001</div>
+                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                    <span class="flex items-center gap-1">🛏️ 3 Beds</span>
+                    <span class="flex items-center gap-1">🛁 3 Baths</span>
+                    <span class="flex items-center gap-1">📐 2,800 sqft</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex items-center justify-between p-4 border-t border-border">
+        <div class="text-sm text-muted-foreground">Showing 1-6 of 856 properties</div>
+        <div class="flex items-center gap-2">
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-muted-foreground transition-colors">Previous</button>
+            <button class="px-3 py-1.5 bg-primary text-primary-foreground rounded-lg text-sm font-medium">1</button>
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-foreground transition-colors">2</button>
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-foreground transition-colors">3</button>
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-foreground transition-colors">Next</button>
+        </div>
+    </div>
+</div>

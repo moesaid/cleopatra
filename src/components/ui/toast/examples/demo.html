@@ -1,0 +1,22 @@
+<div class="flex flex-wrap gap-3">
+    <button onclick="toast.show({ title: 'Notification' , description: 'This is a default toast message.' })"
+        class="btn btn-outline">
+        Default
+    </button>
+    <button onclick="toast.success({ title: 'Success!' , description: 'Your changes have been saved.' })" class="btn
+        btn-outline">
+        <i class="ri-check-circle-line text-success mr-1"></i> Success
+    </button>
+    <button onclick="toast.warning({ title: 'Warning' , description: 'Please review before proceeding.' })"
+        class="btn btn-outline">
+        <i class="ri-alert-line text-warning mr-1"></i> Warning
+    </button>
+    <button onclick="toast.error({ title: 'Error' , description: 'Something went wrong.' })" class="btn
+        btn-outline">
+        <i class="ri-close-circle-line text-destructive mr-1"></i> Error
+    </button>
+    <button onclick="toast.info({ title: 'Info' , description: 'Here is some helpful information.' })" class="btn
+        btn-outline">
+        <i class="ri-information-line text-info mr-1"></i> Info
+    </button>
+</div>

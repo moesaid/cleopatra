@@ -1,0 +1,106 @@
+/* ============================================
+   Breadcrumb Component - Theme-Aware
+   Navigation path indicator
+   ============================================ */
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-1, 0.25rem);
+    font-size: var(--text-sm, 0.875rem);
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-1, 0.25rem);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1, 0.25rem);
+}
+
+.breadcrumb-link {
+    color: var(--muted-foreground);
+    text-decoration: none;
+    transition: color var(--duration-150, 150ms) ease;
+
+    &:hover {
+        color: var(--foreground);
+    }
+}
+
+.breadcrumb-page {
+    color: var(--foreground);
+    font-weight: var(--font-medium, 500);
+}
+
+.breadcrumb-separator {
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+
+    svg,
+    i {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+/* ============================================
+   Breadcrumb with Ellipsis
+   ============================================ */
+
+.breadcrumb-ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 1.5rem;
+    color: var(--muted-foreground);
+
+    &:hover {
+        color: var(--foreground);
+    }
+}
+
+/* ============================================
+   Breadcrumb Variants
+   ============================================ */
+
+/* With background */
+.breadcrumb-contained {
+    background-color: var(--muted);
+    padding: var(--spacing-2, 0.5rem) var(--spacing-4, 1rem);
+    border-radius: var(--radius-lg, 0.5rem);
+}
+
+/* Larger size */
+.breadcrumb-lg {
+    font-size: var(--text-base, 1rem);
+    gap: var(--spacing-2, 0.5rem);
+
+    .breadcrumb-list {
+        gap: var(--spacing-2, 0.5rem);
+    }
+}
+
+/* With icons */
+.breadcrumb-icon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1, 0.25rem);
+
+    svg,
+    i {
+        width: 1rem;
+        height: 1rem;
+    }
+}

@@ -1,0 +1,184 @@
+/* ============================================
+   Collapse Component - Theme-Aware
+   Expandable/collapsible content areas
+   ============================================ */
+
+.collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--duration-300, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.is-open {
+        grid-template-rows: 1fr;
+    }
+}
+
+.collapse-inner {
+    overflow: hidden;
+}
+
+/* ============================================
+   Collapse Trigger
+   ============================================ */
+
+.collapse-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--spacing-4, 1rem);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--font-medium, 500);
+    color: var(--foreground);
+    text-align: left;
+    transition: background-color var(--duration-150, 150ms) ease;
+
+    &:hover {
+        background-color: var(--muted);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: -2px;
+    }
+}
+
+.collapse-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--muted-foreground);
+    transition: transform var(--duration-300, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+
+    .collapse-trigger[aria-expanded="true"] & {
+        transform: rotate(180deg);
+    }
+}
+
+.collapse-content {
+    padding: 0 var(--spacing-4, 1rem) var(--spacing-4, 1rem);
+    color: var(--muted-foreground);
+    font-size: var(--text-sm, 0.875rem);
+    line-height: var(--leading-relaxed, 1.625);
+}
+
+/* ============================================
+   Collapse Card Variant
+   ============================================ */
+
+.collapse-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 0.5rem);
+    background-color: var(--card);
+    margin-bottom: var(--spacing-3, 0.75rem);
+    overflow: hidden;
+    transition: box-shadow var(--duration-200, 200ms) ease;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:hover {
+        box-shadow: var(--shadow-sm);
+    }
+
+    .collapse-trigger {
+        border-radius: var(--radius-lg, 0.5rem);
+    }
+
+    &.is-open .collapse-trigger {
+        border-radius: var(--radius-lg, 0.5rem) var(--radius-lg, 0.5rem) 0 0;
+        background-color: var(--muted);
+    }
+
+    .collapse-content {
+        border-top: 1px solid var(--border);
+        background-color: var(--background);
+    }
+}
+
+/* ============================================
+   Collapse Flush Variant
+   ============================================ */
+
+.collapse-flush {
+    border-bottom: 1px solid var(--border);
+
+    &:first-child {
+        border-top: 1px solid var(--border);
+    }
+
+    .collapse-trigger {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .collapse-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* ============================================
+   Collapse Group
+   ============================================ */
+
+.collapse-group {
+    .collapse-card {
+        border-radius: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+
+        &:first-child {
+            border-radius: var(--radius-lg, 0.5rem) var(--radius-lg, 0.5rem) 0 0;
+        }
+
+        &:last-child {
+            border-radius: 0 0 var(--radius-lg, 0.5rem) var(--radius-lg, 0.5rem);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .collapse-trigger {
+            border-radius: 0;
+        }
+
+        &:first-child .collapse-trigger {
+            border-radius: var(--radius-lg, 0.5rem) var(--radius-lg, 0.5rem) 0 0;
+        }
+    }
+}
+
+/* ============================================
+   Animation Variants
+   ============================================ */
+
+/* Smooth (default) - uses grid for perfect height animation */
+
+/* Fade variant */
+.collapse-fade .collapse {
+    opacity: 0;
+    transition: grid-template-rows var(--duration-300, 300ms) cubic-bezier(0.4, 0, 0.2, 1),
+        opacity var(--duration-200, 200ms) ease;
+
+    &.is-open {
+        opacity: 1;
+    }
+}
+
+/* Fast variant */
+.collapse-fast .collapse {
+    transition: grid-template-rows var(--duration-150, 150ms) ease-out;
+}
+
+/* Slow variant */
+.collapse-slow .collapse {
+    transition: grid-template-rows var(--duration-500, 500ms) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Bounce variant */
+.collapse-bounce .collapse {
+    transition: grid-template-rows var(--duration-500, 500ms) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}

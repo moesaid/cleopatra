@@ -1,0 +1,50 @@
+<!-- User Table Row -->
+<div class="grid grid-cols-12 gap-4 px-4 py-3 items-center hover:bg-muted/30 dark:hover:bg-muted/10 transition-colors">
+    <!-- Checkbox -->
+    <div class="col-span-1">
+        <input type="checkbox" class="w-4 h-4 rounded border-border text-primary focus:ring-primary">
+    </div>
+
+    <!-- Name with Avatar -->
+    <div class="col-span-3 flex items-center gap-3">
+        <img src="{{avatar}}" alt="{{name}}" class="w-10 h-10 rounded-full object-cover">
+        <div>
+            <p class="text-sm font-medium text-foreground">{{name}}</p>
+            <p class="text-xs text-muted-foreground">@{{username}}</p>
+        </div>
+    </div>
+
+    <!-- Role Badge -->
+    <div class="col-span-2">
+        <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-md {{roleColor}}">
+            {{role}}
+        </span>
+    </div>
+
+    <!-- Projects -->
+    <div class="col-span-2">
+        <span class="text-sm text-foreground">{{projects}}</span>
+        <span class="text-sm text-muted-foreground">/{{projectsTotal}}</span>
+    </div>
+
+    <!-- Status -->
+    <div class="col-span-2">
+        <span class="text-sm text-foreground">{{status}}</span>
+    </div>
+
+    <!-- Enrolled Date -->
+    <div class="col-span-1">
+        <span class="text-sm text-muted-foreground">{{enrolled}}</span>
+    </div>
+
+    <!-- Actions -->
+    <div class="col-span-1 flex justify-end">
+        <button class="p-1.5 rounded-md hover:bg-muted transition-colors">
+            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="6" r="1.5" />
+                <circle cx="12" cy="12" r="1.5" />
+                <circle cx="12" cy="18" r="1.5" />
+            </svg>
+        </button>
+    </div>
+</div>

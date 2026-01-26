@@ -1,0 +1,77 @@
+{{> start title="Empty State" hidePageHeader=true }}
+
+<!-- Empty State Page Content -->
+<div class="min-h-[60vh] flex items-center justify-center">
+    <div class="max-w-md w-full mx-auto px-4 text-center">
+
+        <!-- Illustration -->
+        <div class="relative mb-8">
+            <div
+                class="w-32 h-32 bg-gradient-to-br from-muted to-muted/50 rounded-full flex items-center justify-center mx-auto">
+                <svg class="w-16 h-16 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                </svg>
+            </div>
+            <!-- Decorative dots -->
+            <div class="absolute top-4 left-1/4 w-2 h-2 bg-primary/30 rounded-full"></div>
+            <div class="absolute bottom-8 right-1/4 w-3 h-3 bg-primary/20 rounded-full"></div>
+            <div class="absolute top-1/2 right-1/6 w-1.5 h-1.5 bg-primary/40 rounded-full"></div>
+        </div>
+
+        <!-- Title -->
+        <h2 class="text-xl md:text-2xl font-bold text-foreground mb-2">
+            No Data Found
+        </h2>
+
+        <!-- Description -->
+        <p class="text-muted-foreground text-sm max-w-sm mx-auto mb-8 leading-relaxed">
+            There's nothing here yet. Create your first item to get started or try adjusting your filters.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <button
+                class="w-full sm:w-auto px-6 py-3 bg-primary text-primary-foreground font-medium rounded-xl hover:bg-primary/90 transition-all duration-200 shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                </svg>
+                Create New
+            </button>
+            <button
+                class="w-full sm:w-auto px-6 py-3 bg-muted text-foreground font-medium rounded-xl hover:bg-muted/80 transition-all duration-200 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                </svg>
+                Clear Filters
+            </button>
+        </div>
+
+        <!-- Quick Tips -->
+        <div class="mt-10 pt-8 border-t border-border">
+            <p class="text-xs text-muted-foreground mb-4">Quick tips to get started:</p>
+            <div class="space-y-2 text-left max-w-xs mx-auto">
+                <div class="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span
+                        class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-xs text-primary">1</span>
+                    Click "Create New" to add your first item
+                </div>
+                <div class="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span
+                        class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-xs text-primary">2</span>
+                    Import data from an external source
+                </div>
+                <div class="flex items-center gap-2 text-sm text-muted-foreground">
+                    <span
+                        class="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center text-xs text-primary">3</span>
+                    Explore sample data to learn the features
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{{> end }}

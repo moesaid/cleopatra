@@ -1,0 +1,75 @@
+<!-- Leads Management Widget -->
+<div class="bg-card border border-border rounded-xl p-4">
+    <h3 class="text-base font-semibold text-foreground mb-3">Leads Management</h3>
+
+    <!-- Tabs -->
+    <div class="flex items-center gap-4 mb-3 border-b border-border">
+        <button class="px-3 py-2 text-sm font-medium text-foreground border-b-2 border-primary -mb-px">Status</button>
+        <button class="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">Sources</button>
+        <button
+            class="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors">Qualification</button>
+    </div>
+
+    <!-- Progress Bar - using primary color shades -->
+    <div class="h-2.5 flex rounded-full overflow-hidden mb-3 bg-muted/30">
+        <div class="bg-primary" style="width: 32%"></div>
+        <div class="bg-primary/70" style="width: 24%"></div>
+        <div class="bg-primary/40" style="width: 18%"></div>
+        <div class="bg-primary/25" style="width: 14%"></div>
+        <div class="bg-primary/15" style="width: 12%"></div>
+    </div>
+
+    <!-- Legend -->
+    <div class="space-y-1.5">
+        <div class="flex items-center justify-between text-sm">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span class="text-foreground">Open</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-muted-foreground">156 leads</span>
+                <span class="px-1.5 py-0.5 bg-primary/20 text-primary rounded text-[10px] font-medium">32%</span>
+            </div>
+        </div>
+        <div class="flex items-center justify-between text-sm">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary/70"></span>
+                <span class="text-foreground">In Progress</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-muted-foreground">118 leads</span>
+                <span class="px-1.5 py-0.5 bg-primary/20 text-primary rounded text-[10px] font-medium">24%</span>
+            </div>
+        </div>
+        <div class="flex items-center justify-between text-sm">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary/40"></span>
+                <span class="text-foreground">Qualified</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-muted-foreground">89 leads</span>
+                <span class="px-1.5 py-0.5 bg-primary/20 text-primary rounded text-[10px] font-medium">18%</span>
+            </div>
+        </div>
+        <div class="flex items-center justify-between text-sm">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary/25"></span>
+                <span class="text-foreground">Negotiation</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-muted-foreground">67 leads</span>
+                <span class="px-1.5 py-0.5 bg-primary/20 text-primary rounded text-[10px] font-medium">14%</span>
+            </div>
+        </div>
+        <div class="flex items-center justify-between text-sm">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary/15"></span>
+                <span class="text-foreground">Closed Won</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-muted-foreground">58 leads</span>
+                <span class="px-1.5 py-0.5 bg-primary/20 text-primary rounded text-[10px] font-medium">12%</span>
+            </div>
+        </div>
+    </div>
+</div>

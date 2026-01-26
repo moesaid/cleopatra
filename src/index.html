@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleopatra — Build beautiful dashboards</title>
+    <meta name="description"
+        content="Beautifully designed admin dashboard components. Accessible. Customizable. Open Source.">
+    <link rel="icon" type="image/png" href="/images/fav.png">
+
+    <!-- Critical inline styles for loading state (prevents FOUC) -->
+    <style>
+        /* Loading screen - always visible until page ready */
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .loader-logo {
+            width: auto;
+            height: 48px;
+            object-fit: contain;
+        }
+
+        .loader-spinner {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #e4e4e7;
+            border-top-color: #09090b;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Hide main content until loaded */
+        .landing:not(.is-loaded)>*:not(.page-loader) {
+            opacity: 0;
+        }
+
+        .landing.is-loaded>*:not(.page-loader) {
+            opacity: 1;
+            transition: opacity 0.4s ease 0.1s;
+        }
+    </style>
+
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+</head>
+
+<body class="landing landing-body">
+
+    <!-- Loading Screen -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <img src="/images/logo.png" alt="Cleopatra" class="loader-logo">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <nav class="ui-nav ui-nav--bordered">
+        <div class="ui-nav-content">
+            <a href="/" class="ui-nav-logo">
+                <img src="/images/logo.png" alt="Cleopatra" width="24" height="24">
+                <span>cleopatra</span>
+            </a>
+            <div class="ui-nav-links">
+                <a href="#features">Features</a>
+                <a href="#components">Components</a>
+                <a href="#examples">install</a>
+            </div>
+            <div class="flex gap-3">
+                <a href="https://github.com/moesaid/cleopatra" class="ui-button ui-button--ghost">
+                    <i class="ri-github-fill"></i>
+                </a>
+                <a href="/pages/index.html" target="_blank" class="ui-button ui-button--default">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+
+        <!-- Hero Section -->
+        <section class="ui-section ui-section--hero mt-20">
+            <a href="https://github.com/moesaid/cleopatra/releases" class="ui-badge animate-enter">
+                <span class="ui-badge-dot"></span>
+                Introducing Cleopatra 2.0 — Read the announcement
+            </a>
+
+            <h1 class="heading-xl animate-enter delay-1">
+                Build your admin dashboard<br />faster than ever.
+            </h1>
+
+            <p class="text-muted animate-enter delay-2">
+                Beautifully designed. Endlessly customizable. Production-ready.<br />
+                47 pages and 15 components built with best practices.
+            </p>
+
+            <div class="flex flex-wrap gap-4 justify-center animate-enter delay-3 mt-12">
+                <a target="_blank" href="/pages/index.html" class="ui-button ui-button--default ui-button--lg">
+                    Get Started
+                </a>
+                <a href="https://github.com/moesaid/cleopatra" class="ui-button ui-button--outline ui-button--lg">
+                    <i class="ri-github-fill"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+
+            <!-- Browser Mockup -->
+            <div class="browser-mockup-wrapper animate-enter delay-4">
+                <div class="browser-mockup">
+                    <div class="browser-mockup-header">
+                        <div class="flex gap-2">
+                            <div class="circle" style="background: #ff5f57"></div>
+                            <div class="circle" style="background: #febc2e"></div>
+                            <div class="circle" style="background: #28c840"></div>
+                        </div>
+                        <div class="browser-mockup-url">cleopatra.dev/dashboard</div>
+                    </div>
+                    <img src="/images/index.png" alt="Dashboard Preview">
+                </div>
+
+                <!-- Floating Customizer Panel -->
+                <div class="floating-customizer">
+                    <!-- Color Scheme -->
+                    <div class="customizer-section">
+                        <span class="customizer-label">Color</span>
+                        <div class="customizer-colors">
+                            <button class="color-swatch color-swatch--active" style="background: #3b82f6;"
+                                title="Blue"></button>
+                            <button class="color-swatch" style="background: #8b5cf6;" title="Purple"></button>
+                            <button class="color-swatch" style="background: #22c55e;" title="Green"></button>
+                            <button class="color-swatch" style="background: #f59e0b;" title="Amber"></button>
+                            <button class="color-swatch" style="background: #ef4444;" title="Red"></button>
+                        </div>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <div class="customizer-section">
+                        <span class="customizer-label">Theme</span>
+                        <div class="customizer-toggle">
+                            <button class="toggle-btn toggle-btn--active">
+                                <i class="ri-sun-line"></i>
+                                <span>Light</span>
+                            </button>
+                            <button class="toggle-btn">
+                                <i class="ri-moon-line"></i>
+                                <span>Dark</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built With -->
+        <section class="ui-section ui-section--bordered py-16">
+            <div class="text-center">
+                <p class="text-muted text-sm uppercase tracking-widest font-semibold! mb-8!">Built with modern tools</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 opacity-60">
+                    <span class="text-2xl font-bold tracking-tight">Vite</span>
+                    <span class="text-2xl font-bold tracking-tight">SCSS</span>
+                    <span class="text-2xl font-bold tracking-tight">Tailwind</span>
+                    <span class="text-2xl font-bold tracking-tight">JavaScript</span>
+                    <span class="text-2xl font-bold tracking-tight">HTML5</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="features" class="ui-section ui-section--bordered">
+            <div class="text-center mb-20">
+                <p class="text-muted text-sm uppercase tracking-widest font-semibold mb-4">Features</p>
+                <h2 class="heading-lg">Everything you need.</h2>
+                <p class="text-muted mt-4! max-w-2xl mx-auto!">
+                    From authentication flows to data visualization, Cleopatra provides the building blocks
+                    you need to ship production-ready admin dashboards.
+                </p>
+            </div>
+
+            <div class="ui-grid">
+                <div class="ui-card">
+                    <div class="ui-card-icon">
+                        <i class="ri-palette-line"></i>
+                    </div>
+                    <h3 class="ui-card-title">Themable</h3>
+                    <p class="ui-card-desc">
+                        Customize with CSS variables. Light and dark mode included.
+                        Make it yours with minimal effort.
+                    </p>
+                </div>
+                <div class="ui-card">
+                    <div class="ui-card-icon">
+                        <i class="ri-smartphone-line"></i>
+                    </div>
+                    <h3 class="ui-card-title">Responsive</h3>
+                    <p class="ui-card-desc">
+                        Mobile-first design ensures your dashboard looks great on any device,
+                        from phones to ultrawide monitors.
+                    </p>
+                </div>
+                <div class="ui-card">
+                    <div class="ui-card-icon">
+                        <i class="ri-flashlight-line"></i>
+                    </div>
+                    <h3 class="ui-card-title">Lightweight</h3>
+                    <p class="ui-card-desc">
+                        No heavy frameworks. Pure HTML, CSS, and vanilla JS.
+                        Blazing fast performance out of the box.
+                    </p>
+                </div>
+                <div class="ui-card">
+                    <div class="ui-card-icon">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <h3 class="ui-card-title">Accessible</h3>
+                    <p class="ui-card-desc">
+                        Built with WAI-ARIA guidelines in mind. Keyboard navigation,
+                        screen reader support, and focus management.
+                    </p>
+                </div>
+                <div class="ui-card">
+                    <div class="ui-card-icon">
+                        <i class="ri-code-s-slash-line"></i>
+                    </div>
+                    <h3 class="ui-card-title">Developer First</h3>
+                    <p class="ui-card-desc">
+                        Clean, readable code with sensible conventions.
+                        No black-box magic—understand everything.
+                    </p>
+                </div>
+                <div class="ui-card">
+                    <div class="ui-card-icon">
+                        <i class="ri-open-source-line"></i>
+                    </div>
+                    <h3 class="ui-card-title">Open Source</h3>
+                    <p class="ui-card-desc">
+                        MIT licensed. Use it for personal and commercial projects.
+                        Contribute and shape the future.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Components Showcase -->
+        <section id="components" class="ui-section ui-section--bordered">
+            <div class="text-center mb-16">
+                <p class="text-muted text-sm! uppercase tracking-widest font-semibold mb-4!">Components</p>
+                <h2 class="heading-lg">Ready-to-use components.</h2>
+                <p class="text-muted mt-4! max-w-2xl mx-auto!">
+                    47 pages and 15 beautifully crafted components. Copy, paste, and customize.
+                </p>
+            </div>
+
+            <div class="component-grid">
+                <a href="/pages/components/buttons.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-buttons">
+                            <span class="demo-btn demo-btn--primary">Button</span>
+                            <span class="demo-btn demo-btn--outline">Outline</span>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Buttons</span>
+                        <span class="component-card-badge">15 variants</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/cards.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-card">
+                            <div class="demo-card-header"></div>
+                            <div class="demo-card-body">
+                                <div class="demo-line demo-line--md"></div>
+                                <div class="demo-line demo-line--sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Cards</span>
+                        <span class="component-card-badge">8 variants</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/progress.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-progress">
+                            <div class="demo-progress-bar" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Progress</span>
+                        <span class="component-card-badge">Loading states</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/avatar.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-avatars">
+                            <span class="demo-avatar demo-avatar--purple">M</span>
+                            <span class="demo-avatar demo-avatar--blue">A</span>
+                            <span class="demo-avatar demo-avatar--green">S</span>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Avatar</span>
+                        <span class="component-card-badge">User profiles</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/badges.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-badges">
+                            <span class="demo-badge demo-badge--default">Default</span>
+                            <span class="demo-badge demo-badge--success">Success</span>
+                            <span class="demo-badge demo-badge--warning">Warning</span>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Badges</span>
+                        <span class="component-card-badge">6 variants</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/accordion.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-accordion">
+                            <div class="demo-accordion-item demo-accordion-item--open">
+                                <div class="demo-line demo-line--sm"></div>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                            <div class="demo-accordion-item">
+                                <div class="demo-line demo-line--sm"></div>
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Accordion</span>
+                        <span class="component-card-badge">3 variants</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/checkbox.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-checkbox">
+                            <span class="demo-check demo-check--checked"><i class="ri-check-line"></i></span>
+                            <span class="demo-check"></span>
+                            <span class="demo-check demo-check--indeterminate"><i class="ri-subtract-line"></i></span>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Checkbox</span>
+                        <span class="component-card-badge">4 variants</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/toast.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-toast">
+                            <i class="ri-checkbox-circle-fill" style="color: #22c55e;"></i>
+                            <div class="demo-toast-content">
+                                <div class="demo-line demo-line--xs"></div>
+                                <div class="demo-line demo-line--md" style="opacity: 0.5;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Toast</span>
+                        <span class="component-card-badge">5 variants</span>
+                    </div>
+                </a>
+
+                <a href="/pages/components/skeleton.html" target="_blank" class="component-card">
+                    <div class="component-card-preview">
+                        <div class="component-demo-skeleton">
+                            <div class="demo-skeleton-circle"></div>
+                            <div class="demo-skeleton-lines">
+                                <div class="demo-skeleton-line demo-skeleton-line--lg"></div>
+                                <div class="demo-skeleton-line demo-skeleton-line--md"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="component-card-footer">
+                        <span class="component-card-title">Skeleton</span>
+                        <span class="component-card-badge">Loading states</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="/pages/components/buttons.html" target="_blank"
+                    class="ui-button ui-button--default ui-button--lg">
+                    Browse All Components
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Developer Experience -->
+        <section id="examples" class="ui-section ui-section--bordered">
+            <div class="flex flex-col lg:flex-row items-center gap-20">
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <div class="terminal-block">
+                        <div class="terminal-header">
+                            <span class="terminal-title">Terminal</span>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+                                <div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+                            </div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line"><span class="terminal-prompt">$</span> git clone
+                                https://github.com/moesaid/cleopatra.git</div>
+                            <div class="terminal-line"><span class="terminal-prompt">$</span> cd cleopatra</div>
+                            <div class="terminal-line"><span class="terminal-prompt">$</span> npm install</div>
+                            <div class="terminal-line"><span class="terminal-prompt">$</span> npm run dev</div>
+                            <div class="terminal-line terminal-output"></div>
+                            <div class="terminal-line terminal-success">✓ Ready in 312ms</div>
+                            <div class="terminal-line terminal-output"> ➜ Local: http://localhost:8081/</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 order-1 lg:order-2">
+                    <p class="text-muted text-sm uppercase tracking-widest font-semibold! mb-4!">Developer Experience
+                    </p>
+                    <h2 class="heading-lg">Start in seconds. Ship in hours.</h2>
+                    <p class="text-muted text-base! mt-6!">
+                        Zero configuration needed. Clone the repo, install dependencies, and start building.
+                        We've handled the tooling so you can focus on your product.
+                    </p>
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center">
+                                <i class="ri-check-line text-green-600 text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">Vite powered — lightning fast HMR</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center">
+                                <i class="ri-check-line text-green-600 text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">Tailwind CSS — utility-first styling</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center">
+                                <i class="ri-check-line text-green-600 text-sm"></i>
+                            </div>
+                            <span class="text-sm font-medium">SCSS modules — organized and scalable</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="ui-section text-center py-32 flex flex-col items-center">
+            <h2 class="heading-lg">Start building today.</h2>
+            <p class="text-muted mt-4! max-w-xl mx-auto">
+                Free and open source. Use it for personal projects, client work, or your next startup.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center mt-10">
+                <a href="/pages/index.html" target="_blank" class="ui-button ui-button--default ui-button--lg">
+                    Get Started
+                </a>
+                <a href="https://github.com/moesaid/cleopatra" class="ui-button ui-button--outline ui-button--lg">
+                    <i class="ri-github-fill"></i>
+                    <span>Star on GitHub</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="ui-footer">
+        <div class="main-container">
+            <div class="ui-footer-top">
+                <div class="ui-footer-brand">
+                    <a href="/" class="ui-nav-logo">
+                        <img src="/images/logo.png" alt="Cleopatra" width="24" height="24" style="object-fit: contain;">
+                        <span>cleopatra</span>
+                    </a>
+                    <p class="text-muted text-sm! mt-3">
+                        Beautifully designed admin dashboard components.
+                    </p>
+                </div>
+                <div class="ui-footer-links-row">
+                    <div class="ui-footer-column">
+                        <h4>dashboard</h4>
+                        <a href="/pages/index.html" target="_blank">Analytics</a>
+                        <a href="/pages/index-e-commerce.html" target="_blank">E-commerce</a>
+                        <a href="/pages/index-crypto.html" target="_blank">Crypto</a>
+                        <a href="/pages/index-mission-control.html" target="_blank">Mission Control</a>
+                    </div>
+                    <div class="ui-footer-column">
+                        <h4>Resources</h4>
+                        <a href="https://github.com/moesaid/cleopatra" target="_blank">GitHub</a>
+                        <a href="https://github.com/moesaid/cleopatra/releases" target="_blank">Releases</a>
+                        <a href="https://github.com/moesaid/cleopatra/issues" target="_blank">Issues</a>
+                    </div>
+                    <div class="ui-footer-column">
+                        <h4>Legal</h4>
+                        <a href="https://github.com/moesaid/cleopatra/blob/main/LICENSE" target="_blank">MIT License</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-footer-bottom">
+                <p class="text-muted text-sm!">
+                    Built by <a href="https://moesaid.com" target="_blank" class="underline underline-offset-4">Mohamed
+                        Said</a>.
+                    The source code is available on <a href="https://github.com/moesaid/cleopatra" target="_blank"
+                        class="underline underline-offset-4">GitHub</a>.
+                </p>
+                <div class="flex gap-2">
+                    <a href="https://x.com/maborashid" target="_blank" class="ui-footer-social" title="X (Twitter)">
+                        <i class="ri-twitter-x-fill"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/moesaid" target="_blank" class="ui-footer-social" title="LinkedIn">
+                        <i class="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="https://moesaid.com" target="_blank" class="ui-footer-social" title="Website">
+                        <i class="ri-global-line"></i>
+                    </a>
+                    <a href="https://github.com/moesaid" target="_blank" class="ui-footer-social" title="GitHub">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
+    <script>
+        // Page loader - hide when everything is ready
+        function hideLoader() {
+            const loader = document.getElementById('pageLoader');
+            const body = document.body;
+
+            loader.classList.add('hidden');
+            body.classList.add('is-loaded');
+
+            // Remove loader from DOM after animation
+            setTimeout(() => loader.remove(), 300);
+        }
+
+        // Wait for all resources (CSS, fonts, images) to load
+        if (document.readyState === 'complete') {
+            hideLoader();
+        } else {
+            window.addEventListener('load', hideLoader);
+        }
+
+        // Fallback: hide loader after 3 seconds max (in case of slow resources)
+        setTimeout(hideLoader, 3000);
+
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.animate-enter').forEach(el => observer.observe(el));
+
+        // Scroll behavior for nav
+        window.addEventListener('scroll', () => {
+            document.querySelector('.ui-nav')?.classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

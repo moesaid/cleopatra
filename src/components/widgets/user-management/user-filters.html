@@ -1,0 +1,51 @@
+<!-- User Filters Toolbar -->
+<div class="mb-4">
+    <!-- Section Title -->
+    <h2 class="text-lg font-semibold text-foreground mb-4">All customers (12,345)</h2>
+
+    <!-- Toolbar -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <!-- Role Tabs -->
+        <div class="flex items-center gap-1 bg-muted/50 dark:bg-muted/30 rounded-lg p-1">
+            <button class="px-3 py-1.5 text-sm font-medium rounded-md bg-card text-foreground shadow-sm">
+                View all
+            </button>
+            <button
+                class="px-3 py-1.5 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground transition-colors">
+                General
+            </button>
+            <button
+                class="px-3 py-1.5 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground transition-colors">
+                Admin
+            </button>
+            <button
+                class="px-3 py-1.5 text-sm font-medium rounded-md text-muted-foreground hover:text-foreground transition-colors">
+                Creator
+            </button>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="flex items-center gap-3">
+            <!-- Search -->
+            <div class="relative">
+                <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" placeholder="Search"
+                    class="pl-9 pr-4 py-2 w-48 bg-card border border-border rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+            </div>
+
+            <!-- Filters Button -->
+            <button
+                class="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium text-foreground hover:bg-muted/50 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+                <span>Filters</span>
+            </button>
+        </div>
+    </div>
+</div>

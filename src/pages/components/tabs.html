@@ -1,0 +1,66 @@
+{{> docs-start
+pageTitle="Tabs"
+pageDescription="Tabbed navigation interface"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Tabs -->
+{{#> example-block
+title="Default Style"
+description="Standard tabs with background highlight for active state."
+id="tabs-default"
+language="html"
+}}
+{{> tabs/examples/default}}
+{{/example-block}}
+
+<!-- Underline Tabs -->
+{{#> example-block
+title="Underline Style"
+description="Tabs with underline indicator using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">.tabs-underline</code> class."
+id="tabs-underline"
+language="html"
+}}
+{{> tabs/examples/underline}}
+{{/example-block}}
+
+<!-- Pills Tabs -->
+{{#> example-block
+title="Pills Style"
+description="Pill-shaped tabs using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm font-mono\">.tabs-pills</code>
+class."
+id="tabs-pills"
+language="html"
+}}
+{{> tabs/examples/pills}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="tabs-usage-code"
+    code="<div class=\"tabs\">
+        <div class=\"tabs-list\">
+            <button class=\"tabs-trigger is-active\" data-tab-target=\"tab-1\">Tab 1</button>
+            <button class=\"tabs-trigger\" data-tab-target=\"tab-2\">Tab 2</button>
+        </div>
+        <div class=\"tabs-content\">
+            <div id=\"tab-1\" class=\"tabs-panel is-active\">Content 1</div>
+            <div id=\"tab-2\" class=\"tabs-panel\">Content 2</div>
+        </div>
+    </div>"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Style Variants</h3>
+<div class="grid grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.tabs (default)</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.tabs-underline</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.tabs-pills</div>
+</div>
+
+{{> docs-end}}

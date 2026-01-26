@@ -1,0 +1,84 @@
+{{> docs-start
+pageTitle="Checkbox"
+pageDescription="Custom styled checkbox inputs"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Checkbox -->
+{{#> example-block
+title="Default"
+description="Basic checkbox with label."
+id="checkbox-default"
+language="html"
+}}
+{{> checkbox/examples/default}}
+{{/example-block}}
+
+<!-- Sizes -->
+{{#> example-block
+title="Sizes"
+description="Small, default, and large checkbox sizes."
+id="checkbox-sizes"
+language="html"
+}}
+{{> checkbox/examples/sizes}}
+{{/example-block}}
+
+<!-- Color Variants -->
+{{#> example-block
+title="Color Variants"
+description="Semantic color options for checkboxes."
+id="checkbox-colors"
+language="html"
+}}
+{{> checkbox/examples/colors}}
+{{/example-block}}
+
+<!-- With Description -->
+{{#> example-block
+title="With Description"
+description="Checkbox with supporting text."
+id="checkbox-description"
+language="html"
+}}
+{{> checkbox/examples/description}}
+{{/example-block}}
+
+<!-- Card Style -->
+{{#> example-block
+title="Card Style"
+description="Card-style checkbox selection."
+id="checkbox-card"
+language="html"
+}}
+{{> checkbox/examples/card}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Import the checkbox component:</p>
+
+<div class="mb-6">
+    {{> code-block language="javascript" id="checkbox-usage-code"
+    code="import { initCheckbox } from '../components/ui/checkbox';
+    initCheckbox();"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-wrapper</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-label</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-description</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-sm</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-lg</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-success</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-group</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.checkbox-card</div>
+</div>
+
+{{> docs-end}}

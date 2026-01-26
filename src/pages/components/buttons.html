@@ -1,0 +1,140 @@
+{{> docs-start
+pageTitle="Buttons"
+pageDescription="Button component with multiple variants, sizes, and states"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Button -->
+{{#> example-block
+title="Default"
+description="Basic button with primary styling."
+id="btn-default"
+language="html"
+}}
+{{> button/examples/default}}
+{{/example-block}}
+
+<!-- Variants -->
+{{#> example-block
+title="Variants"
+description="Available button style variants."
+id="btn-variants"
+language="html"
+}}
+{{> button/examples/variants}}
+{{/example-block}}
+
+<!-- Semantic Colors -->
+{{#> example-block
+title="Semantic Colors"
+description="Buttons with semantic color meanings."
+id="btn-semantic"
+language="html"
+}}
+{{> button/examples/semantic}}
+{{/example-block}}
+
+<!-- Soft Variants -->
+{{#> example-block
+title="Soft Variants"
+description="Subtle background with colored text using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+  font-mono\">.btn-soft-{color}</code> class."
+id="btn-soft"
+language="html"
+}}
+{{> button/examples/soft}}
+{{/example-block}}
+
+<!-- Sizes -->
+{{#> example-block
+title="Sizes"
+description="Small, default, and large button sizes."
+id="btn-sizes"
+language="html"
+}}
+{{> button/examples/sizes}}
+{{/example-block}}
+
+<!-- Icon Buttons -->
+{{#> example-block
+title="Icon Buttons"
+description="Square icon-only buttons using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+  font-mono\">.btn-icon</code> class."
+id="btn-icon"
+language="html"
+}}
+{{> button/examples/icon}}
+{{/example-block}}
+
+<!-- With Icons -->
+{{#> example-block
+title="With Icons"
+description="Buttons with icon and text together."
+id="btn-with-icons"
+language="html"
+}}
+{{> button/examples/with-icons}}
+{{/example-block}}
+
+<!-- States -->
+{{#> example-block
+title="States"
+description="Disabled and loading button states."
+id="btn-states"
+language="html"
+}}
+{{> button/examples/states}}
+{{/example-block}}
+
+<!-- Full Width -->
+{{#> example-block
+title="Full Width"
+description="Full-width button using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm font-mono\">.btn-full</code>
+class."
+id="btn-full"
+language="html"
+}}
+{{> button/examples/full}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+  <p class="text-sm text-muted-foreground mb-4">
+    The button component is located at <code
+      class="px-1.5 py-0.5 bg-muted text-foreground text-xs rounded font-mono">src/components/ui/button/button.scss</code>
+  </p>
+
+  <script type="text/plain" class="language-scss">
+/* Import in your SCSS */
+@use "../components/ui/button/button.scss";
+
+/* Or extend base button */
+.my-button {
+  @extend .btn;
+}
+  </script>
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-secondary</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-destructive</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-outline</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-ghost</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-link</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-success</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-warning</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-info</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-sm</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-lg</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-icon</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-full</div>
+  <div class="bg-muted px-3 py-2 rounded font-mono">.btn-loading</div>
+</div>
+
+{{> docs-end}}

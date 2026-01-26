@@ -1,0 +1,66 @@
+{{> docs-start
+pageTitle="Tooltip"
+pageDescription="Hover tooltips"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Positions -->
+{{#> example-block
+title="Positions"
+description="Tooltip can appear in four positions around the trigger element."
+id="tooltip-positions"
+language="html"
+}}
+{{> tooltip/examples/positions}}
+{{/example-block}}
+
+<!-- Dark Variant -->
+{{#> example-block
+title="Dark Variant"
+description="Dark themed tooltips using <code class=\"bg-muted px-1.5 py-0.5 rounded text-sm
+    font-mono\">.tooltip-dark</code> class."
+id="tooltip-dark"
+language="html"
+}}
+{{> tooltip/examples/dark}}
+{{/example-block}}
+
+<!-- Icon Buttons -->
+{{#> example-block
+title="Icon Buttons with Tooltips"
+description="Common pattern for providing context to icon-only buttons."
+id="tooltip-icons"
+language="html"
+}}
+{{> tooltip/examples/icons}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="tooltip-usage-code"
+    code="<div class=\"tooltip tooltip-top\">
+        <button class=\"btn\">Hover me</button>
+        <span class=\"tooltip-content\">Tooltip text</span>
+    </div>
+
+    <!-- Dark variant -->
+    <div class=\"tooltip tooltip-top tooltip-dark\">
+        <button class=\"btn\">Dark tooltip</button>
+        <span class=\"tooltip-content\">Tooltip text</span>
+    </div>"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Position Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.tooltip-top</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.tooltip-bottom</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.tooltip-left</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.tooltip-right</div>
+</div>
+
+{{> docs-end}}

@@ -1,0 +1,60 @@
+{{> docs-start
+pageTitle="Dropdowns"
+pageDescription="Dropdown menu components with animations"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Animation Variants -->
+{{#> example-block
+title="Animation Variants"
+description="Different animation styles for dropdown menus."
+id="dropdown-animations"
+language="html"
+}}
+{{> dropdown/examples/animations}}
+{{/example-block}}
+
+<!-- With Sections -->
+{{#> example-block
+title="With Icons & Sections"
+description="Dropdown with headers, dividers, and icons."
+id="dropdown-sections"
+language="html"
+}}
+{{> dropdown/examples/sections}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="dropdown-usage-code"
+    code="<div class=\"dropdown dropdown-slide\">
+        <button class=\"btn dropdown-trigger\">
+            Menu <i class=\"ri-arrow-down-s-line ml-1\"></i>
+        </button>
+        <div class=\"dropdown-menu\">
+            <a href=\"#\" class=\"dropdown-item\">Action 1</a>
+            <a href=\"#\" class=\"dropdown-item\">Action 2</a>
+            <div class=\"dropdown-divider\"></div>
+            <a href=\"#\" class=\"dropdown-item\">Action 3</a>
+        </div>
+    </div>"
+    }}
+</div>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown-trigger</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown-menu</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown-item</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown-header</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown-divider</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown-fade</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.dropdown-slide</div>
+</div>
+
+{{> docs-end}}

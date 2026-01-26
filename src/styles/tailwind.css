@@ -1,0 +1,295 @@
+@import "tailwindcss";
+
+/* ============================================
+   Tailwind CSS v4 Configuration
+   Cleopatra Theme Integration
+   ============================================ */
+
+@theme {
+    /* Mobile-First Breakpoints (min-width) */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+
+    /* ============================================
+       Semantic Colors from Theme System
+       These reference the CSS variables defined in theme.css
+       ============================================ */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* Status Colors */
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+
+    /* Chart Colors */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    /* Sidebar Colors */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* ============================================
+       Component Sizes
+       Reference the size system from theme.css
+       ============================================ */
+    --size-xs: var(--size-xs);
+    --size-sm: var(--size-sm);
+    --size-md: var(--size-md);
+    --size-lg: var(--size-lg);
+    --size-xl: var(--size-xl);
+    --size-2xl: var(--size-2xl);
+
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'Courier New', monospace;
+
+    /* Font Sizes - Reference theme.css variables */
+    --font-size-xs: var(--text-xs);
+    --font-size-sm: var(--text-sm);
+    --font-size-base: var(--text-base);
+    --font-size-lg: var(--text-lg);
+    --font-size-xl: var(--text-xl);
+    --font-size-2xl: var(--text-2xl);
+    --font-size-3xl: var(--text-3xl);
+    --font-size-4xl: var(--text-4xl);
+    --font-size-5xl: var(--text-5xl);
+
+    /* Border Radius - Reference theme variable */
+    --radius-none: var(--radius-none);
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-xl: var(--radius-xl);
+    --radius-2xl: var(--radius-2xl);
+    --radius-3xl: var(--radius-3xl);
+    --radius-full: var(--radius-full);
+
+    /* Shadows - Reference theme variables */
+    --shadow-sm: var(--shadow-sm);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
+
+    /* Animation Timings */
+    --duration-fast: var(--duration-150);
+    --duration-base: var(--duration-300);
+    --duration-slow: var(--duration-500);
+    --duration-slower: var(--duration-700);
+
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+@layer base {
+    * {
+        border-color: var(--border);
+    }
+
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--background);
+        color: var(--foreground);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--foreground);
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}
+
+/* ============================================
+   Custom Utilities
+   ============================================ */
+
+@layer utilities {
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    .text-pretty {
+        text-wrap: pretty;
+    }
+
+    .container-query {
+        container-type: inline-size;
+    }
+
+    .animate-in {
+        animation: fadeIn var(--duration-base) var(--ease-out);
+    }
+
+    .animate-out {
+        animation: fadeOut var(--duration-base) var(--ease-in);
+    }
+
+    /* Size utilities */
+    .h-size-xs {
+        height: var(--size-xs);
+    }
+
+    .h-size-sm {
+        height: var(--size-sm);
+    }
+
+    .h-size-md {
+        height: var(--size-md);
+    }
+
+    .h-size-lg {
+        height: var(--size-lg);
+    }
+
+    .h-size-xl {
+        height: var(--size-xl);
+    }
+
+    .h-size-2xl {
+        height: var(--size-2xl);
+    }
+
+    .w-size-xs {
+        width: var(--size-xs);
+    }
+
+    .w-size-sm {
+        width: var(--size-sm);
+    }
+
+    .w-size-md {
+        width: var(--size-md);
+    }
+
+    .w-size-lg {
+        width: var(--size-lg);
+    }
+
+    .w-size-xl {
+        width: var(--size-xl);
+    }
+
+    .w-size-2xl {
+        width: var(--size-2xl);
+    }
+
+    .size-xs {
+        width: var(--size-xs);
+        height: var(--size-xs);
+    }
+
+    .size-sm {
+        width: var(--size-sm);
+        height: var(--size-sm);
+    }
+
+    .size-md {
+        width: var(--size-md);
+        height: var(--size-md);
+    }
+
+    .size-lg {
+        width: var(--size-lg);
+        height: var(--size-lg);
+    }
+
+    .size-xl {
+        width: var(--size-xl);
+        height: var(--size-xl);
+    }
+
+    .size-2xl {
+        width: var(--size-2xl);
+        height: var(--size-2xl);
+    }
+
+    /* Icon size utilities */
+    .icon-xs {
+        width: var(--icon-xs);
+        height: var(--icon-xs);
+    }
+
+    .icon-sm {
+        width: var(--icon-sm);
+        height: var(--icon-sm);
+    }
+
+    .icon-md {
+        width: var(--icon-md);
+        height: var(--icon-md);
+    }
+
+    .icon-lg {
+        width: var(--icon-lg);
+        height: var(--icon-lg);
+    }
+
+    .icon-xl {
+        width: var(--icon-xl);
+        height: var(--icon-xl);
+    }
+}

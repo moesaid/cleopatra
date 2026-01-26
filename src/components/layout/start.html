@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" type="image/png" href="/images/fav.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS -->
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        #app {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #loading {
+            position: fixed;
+            inset: 0;
+            background: var(--background, #fff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        #loading .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border, #e5e7eb);
+            border-top-color: var(--primary, #111);
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loaded #app {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.2s;
+        }
+
+        .loaded #loading {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-foreground">
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="app" class="min-h-screen">
+        <!-- Top Navbar -->
+        <header class="fixed top-0 left-0 right-0 h-16 bg-card border-b border-border z-50 flex items-center">
+
+            <!-- Logo Section (matches sidebar width) -->
+            <div class="w-[260px] h-full flex items-center px-5 border-r border-border flex-shrink-0 hidden lg:flex">
+                <a href="/pages/" class="flex items-center gap-2">
+                    <!-- Logo adapts to dark mode via CSS filter -->
+                    <img src="/images/logo.png" alt="Cleopatra"
+                        class="w-8 h-8 object-contain dark:invert dark:brightness-200">
+                    <span class="font-semibold text-foreground text-lg">Cleopatra</span>
+                </a>
+            </div>
+
+            <!-- Mobile Header -->
+            <div class="flex items-center px-4 lg:hidden">
+                <button id="mobile-menu-toggle"
+                    class="w-10 h-10 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors mr-2">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+                <a href="/pages/" class="flex items-center gap-2">
+                    <!-- Logo adapts to dark mode via CSS filter -->
+                    <img src="/images/logo.png" alt="Cleopatra"
+                        class="w-8 h-8 object-contain dark:invert dark:brightness-200">
+                    <span class="font-semibold text-foreground text-lg">Cleopatra</span>
+                </a>
+            </div>
+
+            <!-- Main Nav Area (after sidebar) -->
+            <div class="flex-1 h-full flex items-center px-4 lg:px-5">
+                <!-- Sidebar Toggle -->
+                <button id="sidebar-toggle"
+                    class="hidden lg:flex w-8 h-8 items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">
+                    <i class="ri-arrow-left-right-line text-lg"></i>
+                </button>
+
+                <!-- Center Nav Links -->
+                <nav class="hidden lg:flex items-center gap-1 ml-4">
+                    <a href="/pages/"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">Home</a>
+                    <a href="/pages/buttons.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">Components</a>
+                    <a href="/pages/alert.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">Alerts</a>
+                    <a href="/pages/email.html"
+                        class="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">Email</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-1 sm:gap-2 ml-auto">
+                    <button
+                        class="w-10 h-10 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">
+                        <i class="ri-search-line text-xl"></i>
+                    </button>
+                    <button
+                        class="w-10 h-10 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors relative">
+                        <i class="ri-notification-3-line text-xl"></i>
+                        <span class="absolute top-2 right-2 w-2 h-2 bg-destructive rounded-full"></span>
+                    </button>
+                    <button
+                        class="hidden sm:flex w-10 h-10 items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">
+                        <i class="ri-apps-2-line text-xl"></i>
+                    </button>
+
+                    <!-- Theme Switcher Dropdown -->
+                    <div class="relative" id="theme-dropdown-container">
+                        <button id="theme-toggle-btn"
+                            class="w-10 h-10 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors">
+                            <i class="ri-palette-line text-xl"></i>
+                        </button>
+
+                        <!-- Theme Dropdown Menu -->
+                        <div id="theme-dropdown"
+                            class="absolute right-0 top-12 w-64 bg-popover text-popover-foreground rounded-xl shadow-xl border border-border z-50 hidden overflow-hidden">
+                            <!-- Header -->
+                            <div class="p-3 border-b border-border">
+                                <h4 class="font-semibold text-sm">Theme</h4>
+                                <p class="text-xs text-muted-foreground">Customize your interface</p>
+                            </div>
+
+                            <!-- Color Themes -->
+                            <div class="p-3 border-b border-border">
+                                <p class="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">Color
+                                </p>
+                                <div class="grid grid-cols-5 gap-2" id="theme-colors">
+                                    <button data-theme="neutral" title="Neutral"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-gray-900 ring-2 ring-offset-2 ring-transparent hover:ring-gray-400 transition-all"></button>
+                                    <button data-theme="blue" title="Blue"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-blue-500 ring-2 ring-offset-2 ring-transparent hover:ring-blue-400 transition-all"></button>
+                                    <button data-theme="green" title="Green"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-emerald-500 ring-2 ring-offset-2 ring-transparent hover:ring-emerald-400 transition-all"></button>
+                                    <button data-theme="orange" title="Orange"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-orange-500 ring-2 ring-offset-2 ring-transparent hover:ring-orange-400 transition-all"></button>
+                                    <button data-theme="yellow" title="Yellow"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-yellow-400 ring-2 ring-offset-2 ring-transparent hover:ring-yellow-400 transition-all"></button>
+                                    <button data-theme="stone" title="Stone"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-stone-500 ring-2 ring-offset-2 ring-transparent hover:ring-stone-400 transition-all"></button>
+                                    <button data-theme="slate" title="Slate"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-slate-500 ring-2 ring-offset-2 ring-transparent hover:ring-slate-400 transition-all"></button>
+                                    <button data-theme="sky" title="Sky"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-sky-500 ring-2 ring-offset-2 ring-transparent hover:ring-sky-400 transition-all"></button>
+                                    <button data-theme="azure" title="Azure"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-indigo-500 ring-2 ring-offset-2 ring-transparent hover:ring-indigo-400 transition-all"></button>
+                                    <button data-theme="rose" title="Rose"
+                                        class="theme-color-btn w-8 h-8 rounded-full bg-rose-500 ring-2 ring-offset-2 ring-transparent hover:ring-rose-400 transition-all"></button>
+                                </div>
+                            </div>
+
+                            <!-- Mode Toggle -->
+                            <div class="p-3">
+                                <p class="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wide">Mode
+                                </p>
+                                <div class="flex gap-2" id="theme-modes">
+                                    <button data-mode="light"
+                                        class="theme-mode-btn flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:bg-muted transition-colors">
+                                        <i class="ri-sun-line"></i> Light
+                                    </button>
+                                    <button data-mode="dark"
+                                        class="theme-mode-btn flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg border border-border text-sm font-medium text-muted-foreground hover:bg-muted transition-colors">
+                                        <i class="ri-moon-line"></i> Dark
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Avatar Dropdown -->
+                    <div class="relative ml-1 sm:ml-2" id="user-dropdown-container">
+                        <button id="user-avatar-btn"
+                            class="w-9 h-9 rounded-full bg-gradient-to-br from-orange-400 to-rose-500 cursor-pointer ring-2 ring-background overflow-hidden">
+                            <img src="/images/user1.jpg" alt="User" class="w-full h-full object-cover">
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div id="user-dropdown"
+                            class="absolute right-0 top-12 w-72 bg-popover text-popover-foreground rounded-xl shadow-xl border border-border z-50 hidden overflow-hidden">
+                            <!-- Header -->
+                            <div class="p-4 border-b border-border">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-full overflow-hidden ring-2 ring-border">
+                                        <img src="/images/user1.jpg" alt="Cody Fisher"
+                                            class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center gap-2">
+                                            <h3 class="font-semibold truncate">Cody Fisher</h3>
+                                            <span
+                                                class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded font-medium">Pro</span>
+                                        </div>
+                                        <p class="text-sm text-muted-foreground truncate">c.fisher@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu Items -->
+                            <div class="py-2">
+                                <a href="#"
+                                    class="flex items-center gap-3 px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <i class="ri-user-line"></i>
+                                    <span>Public Profile</span>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <i class="ri-user-settings-line"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <i class="ri-settings-3-line"></i>
+                                    <span>My Account</span>
+                                    <i class="ri-arrow-right-s-line ml-auto"></i>
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-4 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+                                    <i class="ri-code-s-slash-line"></i>
+                                    <span>Dev Forum</span>
+                                </a>
+                            </div>
+
+                            <!-- Settings -->
+                            <div class="border-t border-border py-2">
+                                <div class="flex items-center justify-between px-4 py-2.5">
+                                    <div class="flex items-center gap-3">
+                                        <i class="ri-global-line text-muted-foreground"></i>
+                                        <span class="text-sm">Language</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 text-xs bg-muted px-2 py-1 rounded">
+                                        <span>🇺🇸</span>
+                                        <span class="text-muted-foreground">English</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between px-4 py-2.5">
+                                    <div class="flex items-center gap-3">
+                                        <i class="ri-moon-line text-muted-foreground"></i>
+                                        <span class="text-sm">Dark Mode</span>
+                                    </div>
+                                    <button class="w-10 h-5 bg-muted rounded-full relative transition-colors"
+                                        id="dark-mode-toggle">
+                                        <span
+                                            class="absolute left-0.5 top-0.5 w-4 h-4 bg-background rounded-full shadow transition-transform"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Logout -->
+                            <div class="border-t border-border p-3">
+                                <button
+                                    class="w-full px-4 py-2 text-sm font-medium text-muted-foreground border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors">
+                                    Log out
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+
+        <!-- Mobile Sidebar Overlay -->
+        <div id="sidebar-overlay"
+            class="fixed inset-0 bg-black/50 z-40 hidden opacity-0 transition-opacity duration-300 lg:hidden"></div>
+
+        <!-- Sidebar Container -->
+        <aside id="sidebar"
+            class="sidebar fixed top-16 left-0 w-[260px] h-[calc(100vh-4rem)] bg-sidebar text-sidebar-foreground border-r border-sidebar-border z-40 transition-all duration-300 lg:translate-x-0 -translate-x-full overflow-y-auto overflow-x-visible">
+            <!-- Sidebar content rendered by JS -->
+        </aside>
+
+        <!-- Main Content -->
+        <main id="content" class="lg:ml-[260px] pt-16 min-h-screen transition-all duration-300">
+
+            <!-- Page Header (hidden when hidePageHeader=true) -->
+            {{#unless hidePageHeader}}
+            <div class="bg-card border-b border-border px-4 sm:px-6 py-4 sm:py-5">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-semibold">{{pageTitle}}</h1>
+                        <p class="text-sm text-muted-foreground mt-0.5">{{pageDescription}}</p>
+                    </div>
+                    <button
+                        class="px-4 py-2 text-sm font-medium bg-secondary text-secondary-foreground border border-border rounded-lg hover:bg-muted transition-colors w-fit">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+            {{/unless}}
+
+            <!-- Page Content -->
+            <div class="p-4 sm:p-6">

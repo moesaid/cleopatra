@@ -1,0 +1,95 @@
+/* ============================================
+   Accordion Component - Theme-Aware
+   Collapsible content sections
+   ============================================ */
+
+.accordion {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg, 0.5rem);
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border);
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--spacing-4, 1rem);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: var(--text-sm, 0.875rem);
+    font-weight: var(--font-medium, 500);
+    color: var(--foreground);
+    text-align: left;
+    transition: background-color var(--duration-150, 150ms) ease;
+
+    &:hover {
+        background-color: var(--muted);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: -2px;
+    }
+
+    .accordion-icon {
+        width: 1rem;
+        height: 1rem;
+        color: var(--muted-foreground);
+        transition: transform var(--duration-200, 200ms) ease;
+        flex-shrink: 0;
+    }
+
+    &[aria-expanded="true"] .accordion-icon {
+        transform: rotate(180deg);
+    }
+}
+
+.accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--duration-300, 300ms) ease-out;
+
+    &.is-open {
+        max-height: 500px;
+    }
+}
+
+.accordion-body {
+    padding: 0 var(--spacing-4, 1rem) var(--spacing-4, 1rem);
+    color: var(--muted-foreground);
+    font-size: var(--text-sm, 0.875rem);
+    line-height: var(--leading-relaxed, 1.625);
+}
+
+/* Flush variant - no outer border */
+.accordion-flush {
+    border: none;
+    border-radius: 0;
+
+    .accordion-item {
+        border-radius: 0;
+    }
+}
+
+/* Separated variant - gap between items */
+.accordion-separated {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2, 0.5rem);
+
+    .accordion-item {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg, 0.5rem);
+    }
+}

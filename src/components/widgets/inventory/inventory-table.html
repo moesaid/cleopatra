@@ -1,0 +1,430 @@
+<!-- Inventory Table -->
+<div class="bg-card border border-border rounded-xl overflow-hidden">
+    <!-- Table Header -->
+    <div class="flex items-center justify-between p-4 border-b border-border">
+        <h3 class="text-lg font-semibold text-foreground">All Products</h3>
+        <div class="flex items-center gap-2">
+            <select
+                class="px-3 py-1.5 bg-muted/50 border border-border rounded-lg text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20">
+                <option>All Categories</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Accessories</option>
+                <option>Home & Garden</option>
+            </select>
+            <select
+                class="px-3 py-1.5 bg-muted/50 border border-border rounded-lg text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20">
+                <option>All Status</option>
+                <option>In Stock</option>
+                <option>Low Stock</option>
+                <option>Out of Stock</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="overflow-x-auto">
+        <table class="w-full">
+            <thead class="bg-muted/30">
+                <tr>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        <input type="checkbox" class="w-4 h-4 rounded border-border">
+                    </th>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        Product</th>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        SKU</th>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        Category</th>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        Stock</th>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        Price</th>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        Status</th>
+                    <th class="text-left px-4 py-3 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                        Actions</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+                <!-- Row 1 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">📱</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">iPhone 15 Pro Max</div>
+                                <div class="text-xs text-muted-foreground">256GB Space Black</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">IPH-15PM-256</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Electronics</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">145</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$1,199</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">💻</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">MacBook Pro 14"</div>
+                                <div class="text-xs text-muted-foreground">M3 Pro 512GB</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">MBP-14-M3P</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Electronics</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">89</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$1,999</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 3 - Low Stock -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">👟</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Nike Air Max 270</div>
+                                <div class="text-xs text-muted-foreground">White/Black Size 10</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">NK-AM270-WB10</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-violet-500/10 text-violet-500 text-xs rounded-full">Clothing</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-amber-500">8</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$150</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-amber-500/10 text-amber-500 text-xs rounded-full">Low Stock</span></td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">⌚</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Apple Watch Ultra 2</div>
+                                <div class="text-xs text-muted-foreground">Titanium 49mm</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">AW-ULTRA2-49</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Electronics</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">234</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$799</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 5 - Out of Stock -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">🎧</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Sony WH-1000XM5</div>
+                                <div class="text-xs text-muted-foreground">Black Edition</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">SONY-XM5-BLK</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs rounded-full">Accessories</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-rose-500">0</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$349</td>
+                    <td class="px-4 py-3"><span class="px-2 py-1 bg-rose-500/10 text-rose-500 text-xs rounded-full">Out
+                            of Stock</span></td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 6 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">🎮</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">PlayStation 5</div>
+                                <div class="text-xs text-muted-foreground">Disc Edition</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">PS5-DISC-01</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Electronics</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">56</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$499</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 7 - Low Stock -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">👜</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Leather Backpack</div>
+                                <div class="text-xs text-muted-foreground">Premium Brown</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">BAG-LTH-BRN</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs rounded-full">Accessories</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-amber-500">5</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$189</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-amber-500/10 text-amber-500 text-xs rounded-full">Low Stock</span></td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 8 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">🪴</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Indoor Plant Set</div>
+                                <div class="text-xs text-muted-foreground">3-Pack Succulents</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">PLT-SUC-3PK</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">Home &
+                            Garden</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">78</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$45</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 9 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">👔</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Slim Fit Dress Shirt</div>
+                                <div class="text-xs text-muted-foreground">Navy Blue Size L</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">SHT-SLM-NVL</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-violet-500/10 text-violet-500 text-xs rounded-full">Clothing</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">156</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$89</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 10 - Low Stock -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">🖱️
+                            </div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Logitech MX Master 3S</div>
+                                <div class="text-xs text-muted-foreground">Graphite Wireless</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">LGT-MXM3S-G</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-xs rounded-full">Accessories</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-amber-500">12</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$99</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-amber-500/10 text-amber-500 text-xs rounded-full">Low Stock</span></td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 11 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">📺</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Samsung 65" OLED TV</div>
+                                <div class="text-xs text-muted-foreground">4K Smart TV 2024</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">SAM-OLED65-24</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full">Electronics</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">34</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$1,799</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                <!-- Row 12 -->
+                <tr class="hover:bg-muted/20 transition-colors">
+                    <td class="px-4 py-3"><input type="checkbox" class="w-4 h-4 rounded border-border"></td>
+                    <td class="px-4 py-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-lg">🧥</div>
+                            <div>
+                                <div class="text-sm font-medium text-foreground">Winter Puffer Jacket</div>
+                                <div class="text-xs text-muted-foreground">Black Size M</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-muted-foreground">JKT-PUF-BLM</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-violet-500/10 text-violet-500 text-xs rounded-full">Clothing</span></td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">67</td>
+                    <td class="px-4 py-3 text-sm font-medium text-foreground">$249</td>
+                    <td class="px-4 py-3"><span
+                            class="px-2 py-1 bg-emerald-500/10 text-emerald-500 text-xs rounded-full">In Stock</span>
+                    </td>
+                    <td class="px-4 py-3">
+                        <button class="p-1.5 hover:bg-muted rounded-lg transition-colors">
+                            <svg class="w-4 h-4 text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="6" r="1.5" />
+                                <circle cx="12" cy="12" r="1.5" />
+                                <circle cx="12" cy="18" r="1.5" />
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex items-center justify-between p-4 border-t border-border">
+        <div class="text-sm text-muted-foreground">Showing 1-12 of 2,847 products</div>
+        <div class="flex items-center gap-2">
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-muted-foreground transition-colors">Previous</button>
+            <button class="px-3 py-1.5 bg-primary text-primary-foreground rounded-lg text-sm font-medium">1</button>
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-foreground transition-colors">2</button>
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-foreground transition-colors">3</button>
+            <span class="text-muted-foreground">...</span>
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-foreground transition-colors">407</button>
+            <button
+                class="px-3 py-1.5 bg-muted/50 hover:bg-muted rounded-lg text-sm text-foreground transition-colors">Next</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+{{> docs-start
+pageTitle="Avatar"
+pageDescription="User profile images with fallback and status indicators"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default Avatars -->
+{{#> example-block
+title="Default"
+description="Basic avatar with profile image."
+id="avatar-default"
+language="html"
+}}
+{{> default}}
+{{/example-block}}
+
+<!-- Sizes -->
+{{#> example-block
+title="Sizes"
+description="Avatar in different sizes from xs to 3xl."
+id="avatar-sizes"
+language="html"
+}}
+{{> sizes}}
+{{/example-block}}
+
+<!-- Fallback -->
+{{#> example-block
+title="Fallback"
+description="Display initials when no image is available."
+id="avatar-fallback"
+language="html"
+}}
+{{> fallback}}
+{{/example-block}}
+
+<!-- Status Indicators -->
+{{#> example-block
+title="Status Indicators"
+description="Show online, offline, busy, or away status."
+id="avatar-status"
+language="html"
+}}
+{{> status}}
+{{/example-block}}
+
+<!-- Avatar Group -->
+{{#> example-block
+title="Avatar Group"
+description="Stacked avatars with overlap effect."
+id="avatar-group"
+language="html"
+}}
+{{> group}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">
+    The avatar component is CSS-only. Located at <code
+        class="px-1.5 py-0.5 bg-muted text-foreground text-xs rounded font-mono">src/components/ui/avatar/avatar.scss</code>
+</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Available Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-image</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-fallback</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-xs</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-sm</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-lg</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-xl</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-2xl</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-rounded</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-status</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-group</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">.avatar-ring</div>
+</div>
+
+{{> docs-end}}

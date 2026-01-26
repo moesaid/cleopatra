@@ -1,0 +1,207 @@
+<!-- Global Sentiment Map - World Visualization -->
+<div class="bg-card border border-border rounded-xl shadow-sm h-full flex flex-col">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-5 border-b border-border">
+        <div>
+            <h3 class="text-base font-semibold text-foreground">Global Conversation Heatmap</h3>
+            <p class="text-xs text-muted-foreground mt-0.5">Real-time sentiment across 190 countries</p>
+        </div>
+        <div class="flex items-center gap-4">
+            <!-- Sentiment Legend -->
+            <div class="flex items-center gap-3 text-xs">
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Positive</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    Neutral</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-red-500"></span>
+                    Negative</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Container -->
+    <div class="relative flex-1 min-h-[400px] p-5">
+        <!-- Dotted World Map SVG Background -->
+        <div id="sentiment-map" class="absolute inset-5 bg-muted/30 rounded-lg overflow-hidden">
+            <!-- Simplified world map with dots representing major regions -->
+            <svg viewBox="0 0 1000 500" class="w-full h-full opacity-30 dark:opacity-20">
+                <!-- World outline dots - simplified representation -->
+                <g fill="currentColor" class="text-muted-foreground">
+                    <!-- North America -->
+                    <circle cx="200" cy="150" r="2" />
+                    <circle cx="220" cy="140" r="2" />
+                    <circle cx="240" cy="135" r="2" />
+                    <circle cx="180" cy="160" r="2" />
+                    <circle cx="200" cy="170" r="2" />
+                    <circle cx="220" cy="160" r="2" />
+                    <circle cx="160" cy="180" r="2" />
+                    <circle cx="180" cy="190" r="2" />
+                    <circle cx="200" cy="200" r="2" />
+                    <!-- South America -->
+                    <circle cx="280" cy="300" r="2" />
+                    <circle cx="300" cy="320" r="2" />
+                    <circle cx="290" cy="350" r="2" />
+                    <circle cx="270" cy="380" r="2" />
+                    <circle cx="280" cy="400" r="2" />
+                    <!-- Europe -->
+                    <circle cx="480" cy="130" r="2" />
+                    <circle cx="500" cy="120" r="2" />
+                    <circle cx="520" cy="125" r="2" />
+                    <circle cx="500" cy="140" r="2" />
+                    <circle cx="520" cy="150" r="2" />
+                    <circle cx="540" cy="145" r="2" />
+                    <!-- Africa -->
+                    <circle cx="500" cy="250" r="2" />
+                    <circle cx="520" cy="270" r="2" />
+                    <circle cx="540" cy="290" r="2" />
+                    <circle cx="520" cy="310" r="2" />
+                    <circle cx="500" cy="330" r="2" />
+                    <!-- Asia -->
+                    <circle cx="650" cy="150" r="2" />
+                    <circle cx="700" cy="140" r="2" />
+                    <circle cx="750" cy="160" r="2" />
+                    <circle cx="800" cy="180" r="2" />
+                    <circle cx="850" cy="170" r="2" />
+                    <circle cx="680" cy="200" r="2" />
+                    <circle cx="720" cy="220" r="2" />
+                    <circle cx="760" cy="240" r="2" />
+                    <!-- Australia -->
+                    <circle cx="820" cy="350" r="2" />
+                    <circle cx="850" cy="360" r="2" />
+                    <circle cx="840" cy="380" r="2" />
+                </g>
+            </svg>
+
+            <!-- Animated City Markers -->
+            <div class="absolute inset-0">
+                <!-- New York - Positive -->
+                <div class="absolute" style="left: 22%; top: 28%;">
+                    <span class="relative flex h-4 w-4">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
+                        <span
+                            class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-background shadow-lg"></span>
+                    </span>
+                </div>
+                <!-- London - Positive -->
+                <div class="absolute" style="left: 47%; top: 24%;">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
+                        <span
+                            class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-background shadow-lg"></span>
+                    </span>
+                </div>
+                <!-- Tokyo - Neutral -->
+                <div class="absolute" style="left: 85%; top: 32%;">
+                    <span class="relative flex h-4 w-4">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-50"></span>
+                        <span
+                            class="relative inline-flex rounded-full h-4 w-4 bg-blue-500 border-2 border-background shadow-lg"></span>
+                    </span>
+                </div>
+                <!-- São Paulo - Negative -->
+                <div class="absolute" style="left: 30%; top: 65%;">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-50"></span>
+                        <span
+                            class="relative inline-flex rounded-full h-3 w-3 bg-red-500 border-2 border-background shadow-lg"></span>
+                    </span>
+                </div>
+                <!-- Singapore - Positive -->
+                <div class="absolute" style="left: 76%; top: 55%;">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-50"></span>
+                        <span
+                            class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-background shadow-lg"></span>
+                    </span>
+                </div>
+                <!-- Dubai - Neutral -->
+                <div class="absolute" style="left: 58%; top: 42%;">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="relative inline-flex rounded-full h-2 w-2 bg-blue-500 border border-background shadow"></span>
+                    </span>
+                </div>
+                <!-- Sydney - Neutral -->
+                <div class="absolute" style="left: 88%; top: 72%;">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span
+                            class="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border-2 border-background shadow-lg"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spiking Topics Overlay -->
+        <div
+            class="absolute bottom-5 right-5 w-72 bg-card/95 backdrop-blur-sm border border-border rounded-lg shadow-xl">
+            <div class="p-3 border-b border-border">
+                <div class="flex items-center gap-2">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                    </span>
+                    <h4 class="text-sm font-semibold text-foreground">Spiking Topics</h4>
+                </div>
+            </div>
+            <div class="p-3 space-y-2">
+                <!-- Topic 1 - Critical -->
+                <div class="flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                        <span class="font-mono font-medium text-foreground">#Election2026</span>
+                    </div>
+                    <span class="text-red-500 font-semibold">2.4M/hr</span>
+                </div>
+                <!-- Topic 2 - High -->
+                <div class="flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                        <span class="font-mono font-medium text-foreground">#CryptoRebound</span>
+                    </div>
+                    <span class="text-amber-500 font-semibold">1.2M/hr</span>
+                </div>
+                <!-- Topic 3 - Medium -->
+                <div class="flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                        <span class="font-mono font-medium text-foreground">#TechLayoffs</span>
+                    </div>
+                    <span class="text-muted-foreground font-semibold">890K/hr</span>
+                </div>
+                <!-- Topic 4 -->
+                <div class="flex items-center justify-between text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span class="font-mono font-medium text-foreground">#AIArt</span>
+                    </div>
+                    <span class="text-muted-foreground font-semibold">340K/hr</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sentiment Summary -->
+        <div
+            class="absolute top-5 left-5 flex items-center gap-4 bg-card/90 backdrop-blur-sm border border-border rounded-lg px-4 py-2">
+            <div class="text-center">
+                <p class="text-lg font-bold font-mono text-emerald-500">42%</p>
+                <p class="text-[10px] text-muted-foreground uppercase">Positive</p>
+            </div>
+            <div class="w-px h-8 bg-border"></div>
+            <div class="text-center">
+                <p class="text-lg font-bold font-mono text-blue-500">38%</p>
+                <p class="text-[10px] text-muted-foreground uppercase">Neutral</p>
+            </div>
+            <div class="w-px h-8 bg-border"></div>
+            <div class="text-center">
+                <p class="text-lg font-bold font-mono text-red-500">20%</p>
+                <p class="text-[10px] text-muted-foreground uppercase">Negative</p>
+            </div>
+        </div>
+    </div>
+</div>

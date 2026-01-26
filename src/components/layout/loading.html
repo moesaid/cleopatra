@@ -1,0 +1,43 @@
+<!-- Loading Screen -->
+<div id="loading" class="loading-screen">
+    <div class="loading-spinner"></div>
+</div>
+
+<style>
+    .loading-screen {
+        position: fixed;
+        inset: 0;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        opacity: 1;
+        transition: opacity 0.3s ease-out;
+    }
+
+    .loading-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loading-spinner {
+        width: 24px;
+        height: 24px;
+        border: 2px solid #e5e7eb;
+        border-top-color: #111;
+        border-radius: 50%;
+        animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Hide content until loaded */
+    body:not(.loaded)>*:not(#loading) {
+        visibility: hidden;
+    }
+</style>

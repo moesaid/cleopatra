@@ -1,0 +1,56 @@
+{{> docs-start
+pageTitle="Tables"
+pageDescription="Table components for displaying data"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Basic Table -->
+{{#> example-block
+title="Basic Table"
+description="Simple table with hover states and status badges."
+id="table-basic"
+language="html"
+}}
+{{> content/examples/table-basic}}
+{{/example-block}}
+
+<!-- Striped Table -->
+{{#> example-block
+title="Striped Table"
+description="Alternating row backgrounds for better readability."
+id="table-striped"
+language="html"
+}}
+{{> content/examples/table-striped}}
+{{/example-block}}
+
+<!-- Advanced Table -->
+{{#> example-block
+title="With Selection & Actions"
+description="Full-featured table with checkboxes, avatars, and pagination."
+id="table-advanced"
+language="html"
+}}
+{{> content/examples/table-advanced}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<p class="text-sm text-muted-foreground mb-4">Tables use semantic classes for theming:</p>
+
+<h3 class="text-sm font-medium mb-3" id="available-classes">Key Classes</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+    <div class="bg-muted px-3 py-2 rounded font-mono">border-border</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">divide-border</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">bg-muted/50</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">bg-muted/30</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">text-muted-foreground</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">hover:bg-muted/30</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">uppercase</div>
+    <div class="bg-muted px-3 py-2 rounded font-mono">tracking-wider</div>
+</div>
+
+{{> docs-end}}

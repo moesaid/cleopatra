@@ -1,0 +1,22 @@
+{{> start title="Retail Store" hidePageHeader=true }}
+
+<div class="p-4 lg:p-6">
+    <!-- Header with Stats -->
+    {{> retail-store/retail-header }}
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Left: Customer Table (2/3) -->
+        <div class="lg:col-span-2">
+            {{> retail-store/customer-table }}
+        </div>
+
+        <!-- Right: Analytics Sidebar (1/3) -->
+        <div class="lg:col-span-1">
+            {{> retail-store/country-stats }}
+            {{> retail-store/top-product }}
+        </div>
+    </div>
+</div>
+
+{{> end }}

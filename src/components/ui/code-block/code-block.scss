@@ -1,0 +1,169 @@
+/* ===========================================
+   Code Block Styles - Always Dark Mode
+   Code blocks stay dark regardless of app theme
+   =========================================== */
+
+/* Main code block container - Always dark */
+.code-block-stripe {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    background-color: #0d1117;
+    /* GitHub dark background */
+    border: 1px solid #30363d;
+    /* GitHub dark border */
+    border-radius: 0.5rem;
+    color: #e6edf3;
+    /* GitHub dark text */
+}
+
+/* Header styling - Dark */
+.code-block-header {
+    background-color: #161b22;
+    /* GitHub dark header */
+    border-bottom: 1px solid #30363d;
+}
+
+/* Code content area - Dark */
+.code-block-content {
+    background-color: #0d1117;
+    padding: 0;
+}
+
+/* Pre and code styling */
+.code-block-stripe .code-pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+.code-block-stripe .code-content {
+    display: block;
+    padding: 1rem 1.25rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    color: var(--foreground) !important;
+    background: transparent !important;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+}
+
+/* ===========================================
+   Shiki Syntax Highlighting - Line Numbers
+   =========================================== */
+
+/* Shiki code block styling */
+.code-block-stripe .shiki-code {
+    padding: 1rem 1.25rem 1rem 3.5em !important;
+    counter-reset: line;
+    position: relative;
+}
+
+.code-block-stripe .shiki-code-inner {
+    display: block;
+}
+
+/* Each line in Shiki output gets line number via CSS counter */
+.code-block-stripe .shiki-code-inner .line {
+    display: block;
+    position: relative;
+    line-height: 1.6;
+}
+
+.code-block-stripe .shiki-code-inner .line::before {
+    counter-increment: line;
+    content: counter(line);
+    position: absolute;
+    left: -2.5em;
+    width: 2em;
+    text-align: right;
+    color: #8b949e;
+    /* GitHub dark muted text */
+    opacity: 0.6;
+    font-size: 0.875rem;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Line numbers gutter background */
+.code-block-stripe .shiki-code::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3em;
+    background: rgba(48, 54, 61, 0.3);
+    /* GitHub dark gutter */
+    border-right: 1px solid #30363d;
+}
+
+/* Font family for code */
+.code-block-stripe .shiki-code,
+.code-block-stripe .shiki-code-inner {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace !important;
+}
+
+/* Copy button - Always dark */
+.code-block-stripe .copy-btn {
+    transition: all 0.2s ease-out;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #8b949e;
+}
+
+.code-block-stripe .copy-btn:hover {
+    background-color: #30363d;
+    border-color: #484f58;
+    color: #e6edf3;
+}
+
+.code-block-stripe .copy-btn:active {
+    transform: scale(0.95);
+}
+
+/* Copied state styling */
+.code-block-stripe .copy-btn.copied {
+    background: rgba(35, 134, 54, 0.15) !important;
+    border-color: rgba(35, 134, 54, 0.4) !important;
+}
+
+.code-block-stripe .copy-btn.copied .copy-icon-default {
+    display: none !important;
+}
+
+.code-block-stripe .copy-btn.copied .copy-icon-success {
+    display: flex !important;
+}
+
+/* Scrollbar styling - Dark */
+.code-block-stripe .code-block-content::-webkit-scrollbar {
+    height: 8px;
+}
+
+.code-block-stripe .code-block-content::-webkit-scrollbar-track {
+    background: #161b22;
+}
+
+.code-block-stripe .code-block-content::-webkit-scrollbar-thumb {
+    background: rgba(139, 148, 158, 0.3);
+    border-radius: 4px;
+}
+
+.code-block-stripe .code-block-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 148, 158, 0.5);
+}
+
+/* Title text - Always light for dark background */
+.code-block-stripe .code-block-header span {
+    color: #e6edf3;
+}
+
+.code-block-stripe .code-block-header svg {
+    color: #8b949e;
+}
+
+.code-block-stripe .code-block-header svg {
+    color: var(--muted-foreground);
+}

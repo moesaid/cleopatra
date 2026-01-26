@@ -1,0 +1,56 @@
+<!-- Monthly Goal Widget - Eye-catching Circular Progress with ApexCharts -->
+<div class="bg-card border border-border rounded-xl shadow-sm h-full flex flex-col monthly-goal-wrapper">
+    <!-- Header -->
+    <div class="p-5 border-b border-border">
+        <h3 class="text-base font-semibold text-foreground">Monthly Target</h3>
+        <p class="text-sm text-muted-foreground mt-0.5">Track your revenue goal</p>
+    </div>
+
+    <!-- Visual Core: Circular Progress with ApexCharts -->
+    <div class="flex-1 flex flex-col items-center justify-center p-6">
+        <div id="monthly-goal-chart" class="w-48 h-48 min-w-[192px] min-h-[200px]"></div>
+    </div>
+
+    <!-- Footer Metrics -->
+    <div class="p-5 pt-0 space-y-4">
+        <!-- Progress Stats -->
+        <div class="flex items-center justify-between">
+            <div class="text-center flex-1">
+                <p class="text-lg font-bold text-foreground">$12,450</p>
+                <p class="text-xs text-muted-foreground">Earned</p>
+            </div>
+            <div class="w-px h-8 bg-border"></div>
+            <div class="text-center flex-1">
+                <p class="text-lg font-bold text-foreground">$15,000</p>
+                <p class="text-xs text-muted-foreground">Goal</p>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="space-y-2">
+            <div class="h-2 bg-muted rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full transition-all duration-1000 goal-progress-bar"
+                    style="width: 0"></div>
+            </div>
+            <p class="text-xs text-muted-foreground text-center">
+                <span class="text-primary font-medium">$2,550</span> more to reach your goal
+            </p>
+        </div>
+
+        <!-- Action Button -->
+        <button
+            class="w-full py-2.5 px-4 text-sm font-medium bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 shadow-sm hover:shadow-md hover:shadow-primary/20 transition-all duration-200 active:scale-[0.98]">
+            View Details
+        </button>
+    </div>
+</div>
+
+<script>
+    // Animate progress bar on load
+    setTimeout(() => {
+        const progressBar = document.querySelector('.goal-progress-bar');
+        if (progressBar) {
+            progressBar.style.width = '83%';
+        }
+    }, 500);
+</script>

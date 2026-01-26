@@ -1,0 +1,47 @@
+{{> start title="Dashboard" hidePageHeader=true }}
+
+<!-- Dashboard Content -->
+<div class="w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+  <!-- Page Header -->
+  {{> dashboard-header/dashboard-header }}
+
+  <!-- Top Metrics Row -->
+  {{> metrics-row/metrics-row }}
+
+  <!-- Middle Section: Charts Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Revenue Overview Chart (2/3) -->
+    <div class="lg:col-span-2">
+      {{> revenue-chart/revenue-chart }}
+    </div>
+
+    <!-- Sales by Country (1/3) -->
+    {{> sales-by-country/sales-by-country }}
+  </div>
+
+  <!-- Bottom Content Row: 2:1 Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Transaction Table (Span 2) -->
+    <div class="lg:col-span-2">
+      {{> transactions-table/transactions-table }}
+    </div>
+
+    <!-- Monthly Goal Card (Span 1) -->
+    {{> monthly-goal/monthly-goal }}
+  </div>
+
+  <!-- Chart.js Charts Row -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <!-- Traffic Analytics (Chart.js Line) -->
+    <div class="lg:col-span-2">
+      {{> traffic-chart/traffic-chart }}
+    </div>
+
+    <!-- Sales Distribution (Chart.js Doughnut) -->
+    {{> distribution-chart/distribution-chart }}
+  </div>
+
+</div>
+
+{{> end }}

@@ -1,0 +1,43 @@
+/* ===========================================
+   Docs Right Sidebar Styles
+   "On This Page" navigation
+   =========================================== */
+
+.docs-right-sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--foreground) 20%, transparent) transparent;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, var(--foreground) 20%, transparent);
+        border-radius: 2px;
+    }
+}
+
+.docs-toc {
+    .toc-link {
+        &.active {
+            color: var(--primary);
+            border-left-color: var(--primary);
+            font-weight: 500;
+        }
+    }
+}
+
+/* Documentation layout adjustments */
+.docs-layout {
+
+    // Main content needs margin for right sidebar on xl screens
+    .main-content-area {
+        @media (min-width: 1280px) {
+            margin-right: 220px;
+        }
+    }
+}

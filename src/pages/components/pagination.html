@@ -1,0 +1,55 @@
+{{> docs-start
+pageTitle="Pagination"
+pageDescription="Page navigation controls"
+}}
+
+<!-- Examples Section -->
+<h2 class="text-xl font-semibold mb-6" id="examples">Examples</h2>
+
+<!-- Default -->
+{{#> example-block
+title="Default"
+description="Standard pagination with page numbers and navigation arrows."
+id="pagination-default"
+language="html"
+}}
+{{> pagination/examples/default}}
+{{/example-block}}
+
+<!-- Sizes -->
+{{#> example-block
+title="Sizes"
+description="Small, default, and large pagination sizes."
+id="pagination-sizes"
+language="html"
+}}
+{{> pagination/examples/sizes}}
+{{/example-block}}
+
+<!-- Variants -->
+{{#> example-block
+title="Variants"
+description="Different visual styles for pagination."
+id="pagination-variants"
+language="html"
+}}
+{{> pagination/examples/variants}}
+{{/example-block}}
+
+<!-- Usage Section -->
+<h2 class="text-xl font-semibold mb-6 mt-12" id="usage">Usage</h2>
+
+<div class="mb-6">
+    {{> code-block language="html" id="pagination-usage-code"
+    code="<nav class=\"pagination\">
+        <button class=\"pagination-item\">Prev</button>
+        <button class=\"pagination-item is-active\">1</button>
+        <button class=\"pagination-item\">2</button>
+        <span class=\"pagination-ellipsis\">...</span>
+        <button class=\"pagination-item\">10</button>
+        <button class=\"pagination-item\">Next</button>
+    </nav>"
+    }}
+</div>
+
+{{> docs-end}}

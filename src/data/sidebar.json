@@ -1,0 +1,337 @@
+[
+    {
+        "type": "menu",
+        "id": "dashboards",
+        "label": "Dashboards",
+        "icon": "ri-layout-grid-line",
+        "children": [
+            {
+                "id": "analytics-dashboard",
+                "label": "Analytics Dashboard",
+                "href": "/pages/"
+            },
+            {
+                "id": "mission-control",
+                "label": "Mission Control",
+                "href": "/pages/index-mission-control.html"
+            },
+            {
+                "id": "index-e-commerce",
+                "label": "eCommerce",
+                "href": "/pages/index-e-commerce.html"
+            },
+            {
+                "id": "index-crypto",
+                "label": "Crypto Dashboard",
+                "href": "/pages/index-crypto.html"
+            }
+        ]
+    },
+    {
+        "type": "category",
+        "label": "APPS"
+    },
+    {
+        "type": "link",
+        "id": "email",
+        "label": "Email",
+        "icon": "ri-mail-line",
+        "href": "/pages/apps/email.html"
+    },
+    {
+        "type": "link",
+        "id": "calendar",
+        "label": "Calendar",
+        "icon": "ri-calendar-line",
+        "href": "/pages/apps/calendar.html"
+    },
+    {
+        "type": "link",
+        "id": "ai-chat",
+        "label": "AI Chat",
+        "icon": "ri-chat-ai-line",
+        "href": "/pages/apps/ai-chat.html"
+    },
+    {
+        "type": "link",
+        "id": "user-management",
+        "label": "User Management",
+        "icon": "ri-user-settings-line",
+        "href": "/pages/apps/user-management.html"
+    },
+    {
+        "type": "link",
+        "id": "todo",
+        "label": "Todo",
+        "icon": "ri-checkbox-line",
+        "href": "/pages/apps/todo.html"
+    },
+    {
+        "type": "link",
+        "id": "retail-store",
+        "label": "Retail Store",
+        "icon": "ri-store-2-line",
+        "href": "/pages/apps/retail-store.html"
+    },
+    {
+        "type": "link",
+        "id": "crm",
+        "label": "CRM",
+        "icon": "ri-contacts-book-line",
+        "href": "/pages/apps/crm.html"
+    },
+    {
+        "type": "link",
+        "id": "inventory",
+        "label": "Inventory",
+        "icon": "ri-box-3-line",
+        "href": "/pages/apps/inventory.html"
+    },
+    {
+        "type": "link",
+        "id": "real-estate",
+        "label": "Real Estate",
+        "icon": "ri-home-4-line",
+        "href": "/pages/apps/real-estate.html"
+    },
+    {
+        "type": "category",
+        "label": "EXTRA"
+    },
+    {
+        "type": "menu",
+        "id": "error-pages",
+        "label": "Error Pages",
+        "icon": "ri-error-warning-line",
+        "children": [
+            {
+                "id": "error-404",
+                "label": "404 - Not Found",
+                "href": "/pages/extra/404.html"
+            },
+            {
+                "id": "error-500",
+                "label": "500 - Server Error",
+                "href": "/pages/extra/500.html"
+            },
+            {
+                "id": "error-403",
+                "label": "403 - Forbidden",
+                "href": "/pages/extra/403.html"
+            },
+            {
+                "id": "maintenance",
+                "label": "Maintenance",
+                "href": "/pages/extra/maintenance.html"
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "id": "auth-pages",
+        "label": "Authentication",
+        "icon": "ri-lock-line",
+        "children": [
+            {
+                "id": "login",
+                "label": "Login",
+                "href": "/pages/extra/login.html"
+            },
+            {
+                "id": "register",
+                "label": "Register",
+                "href": "/pages/extra/register.html"
+            },
+            {
+                "id": "forgot-password",
+                "label": "Forgot Password",
+                "href": "/pages/extra/forgot-password.html"
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "id": "utility-pages",
+        "label": "Utility Pages",
+        "icon": "ri-file-list-line",
+        "children": [
+            {
+                "id": "blank-page",
+                "label": "Blank Page",
+                "href": "/pages/extra/blank.html"
+            },
+            {
+                "id": "coming-soon",
+                "label": "Coming Soon",
+                "href": "/pages/extra/coming-soon.html"
+            },
+            {
+                "id": "empty-state",
+                "label": "Empty State",
+                "href": "/pages/extra/empty.html"
+            },
+            {
+                "id": "success",
+                "label": "Success",
+                "href": "/pages/extra/success.html"
+            }
+        ]
+    },
+    {
+        "type": "category",
+        "label": "UI ELEMENTS"
+    },
+    {
+        "type": "menu",
+        "id": "components",
+        "label": "Components",
+        "icon": "ri-stack-line",
+        "children": [
+            {
+                "id": "accordion",
+                "label": "Accordion",
+                "href": "/pages/components/accordion.html"
+            },
+            {
+                "id": "alerts",
+                "label": "Alerts",
+                "href": "/pages/components/alert.html"
+            },
+            {
+                "id": "avatar",
+                "label": "Avatar",
+                "href": "/pages/components/avatar.html"
+            },
+            {
+                "id": "badges",
+                "label": "Badges",
+                "href": "/pages/components/badges.html"
+            },
+            {
+                "id": "breadcrumb",
+                "label": "Breadcrumb",
+                "href": "/pages/components/breadcrumb.html"
+            },
+            {
+                "id": "buttons",
+                "label": "Buttons",
+                "href": "/pages/components/buttons.html"
+            },
+            {
+                "id": "cards",
+                "label": "Cards",
+                "href": "/pages/components/cards.html"
+            },
+            {
+                "id": "checkbox",
+                "label": "Checkbox",
+                "href": "/pages/components/checkbox.html"
+            },
+            {
+                "id": "collapse",
+                "label": "Collapse",
+                "href": "/pages/components/collapse.html"
+            },
+            {
+                "id": "dropdowns",
+                "label": "Dropdowns",
+                "href": "/pages/components/dropdowns.html"
+            },
+            {
+                "id": "pagination",
+                "label": "Pagination",
+                "href": "/pages/components/pagination.html"
+            },
+            {
+                "id": "progress",
+                "label": "Progress",
+                "href": "/pages/components/progress.html"
+            },
+            {
+                "id": "skeleton",
+                "label": "Skeleton",
+                "href": "/pages/components/skeleton.html"
+            },
+            {
+                "id": "tabs",
+                "label": "Tabs",
+                "href": "/pages/components/tabs.html"
+            },
+            {
+                "id": "toast",
+                "label": "Toast",
+                "href": "/pages/components/toast.html"
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "id": "forms",
+        "label": "Forms",
+        "icon": "ri-file-list-3-line",
+        "children": [
+            {
+                "id": "form-elements",
+                "label": "Form Elements",
+                "href": "/pages/forms/forms.html"
+            },
+            {
+                "id": "form-validation",
+                "label": "Validation",
+                "href": "/pages/forms/validation.html"
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "id": "content",
+        "label": "Content",
+        "icon": "ri-text",
+        "children": [
+            {
+                "id": "typography",
+                "label": "Typography",
+                "href": "/pages/content/typography.html"
+            },
+            {
+                "id": "tables",
+                "label": "Tables",
+                "href": "/pages/content/tables.html"
+            },
+            {
+                "id": "code-blocks",
+                "label": "Code Blocks",
+                "href": "/pages/content/code-blocks.html"
+            }
+        ]
+    },
+    {
+        "type": "menu",
+        "id": "overlays",
+        "label": "Overlays",
+        "icon": "ri-window-line",
+        "children": [
+            {
+                "id": "modal",
+                "label": "Modal",
+                "href": "/pages/overlays/modal.html"
+            },
+            {
+                "id": "tooltip",
+                "label": "Tooltip",
+                "href": "/pages/overlays/tooltip.html"
+            }
+        ]
+    },
+    {
+        "type": "category",
+        "label": "SETTINGS"
+    },
+    {
+        "type": "link",
+        "id": "theme",
+        "label": "Theme",
+        "icon": "ri-palette-line",
+        "href": "/pages/settings/theme.html"
+    }
+]
