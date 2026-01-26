@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/images/logo.png" alt="Cleopatra" width="64" height="64">
+  
   <h1>Cleopatra</h1>
   <p><strong>Modern Admin Dashboard Template</strong></p>
   
@@ -101,7 +101,7 @@ src/
 
 Choose from 10 accent colors:
 
-| | | | | |
+
 |---|---|---|---|---|
 | Black (default) | Blue | Green | Orange | Yellow |
 | Olive | Slate | Cyan | Purple | Rose |
