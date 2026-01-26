@@ -9,12 +9,12 @@
   
   <p>A beautifully designed, production-ready admin dashboard built with <strong>Tailwind CSS v4</strong> and <strong>Vite</strong>.</p>
   
-  [Live Demo](https://moesaid.github.io/cleopatra/) · [GitHub](https://github.com/moesaid/cleopatra)
+  [Live Demo](https://moesaid.github.io/cleopatra/)
 </div>
 
 ---
 
-## ✨ Preview
+## Preview
 
 <div align="center">
   <img src="public/images/demo_1.png" alt="Analytics Dashboard" width="100%">
@@ -32,7 +32,7 @@
 
 ---
 
-## 🚀 Features
+## Features
 
 - **4 Dashboard Templates** - Analytics, E-commerce, Crypto, Mission Control
 - **2 Themes** - Light & Dark mode
@@ -44,7 +44,22 @@
 
 ---
 
-## 📦 Quick Start
+## Why Pure JavaScript?
+
+Cleopatra is built with vanilla JavaScript intentionally:
+
+- **Zero Framework Lock-in** - Use it with any backend (Laravel, Django, Rails, Node, or static)
+- **Faster Load Times** - No framework runtime overhead
+- **Easy to Understand** - Simple, readable code without framework abstractions
+- **Future Proof** - Vanilla JS never goes out of style
+- **Lightweight** - Smaller bundle size means faster page loads
+- **Full Control** - No hidden magic, you own every line of code
+
+This makes Cleopatra perfect for developers who want a clean starting point without the complexity of React, Vue, or Angular.
+
+---
+
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -64,7 +79,7 @@ Open [http://localhost:8081](http://localhost:8081)
 
 ---
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 src/
@@ -80,26 +95,25 @@ src/
 
 ---
 
-## 🎨 Customization
+## Customization
 
 ### Theme Colors
 
-Cleopatra supports multiple accent colors out of the box:
-- Blue (default)
-- Purple
-- Green
-- Amber
-- Red
+Choose from 10 accent colors:
 
-### Layout Modes
+| | | | | |
+|---|---|---|---|---|
+| Black (default) | Blue | Green | Orange | Yellow |
+| Olive | Slate | Cyan | Purple | Rose |
 
-- Default
-- Compact
-- Wide sidebar
+### Theme Modes
+
+- **Light Mode** - Clean white interface
+- **Dark Mode** - Easy on the eyes
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Tool | Purpose |
 |------|---------|
@@ -111,15 +125,6 @@ Cleopatra supports multiple accent colors out of the box:
 
 ---
 
-## 📝 License
+## License
 
 MIT © [Mohamed Said](https://moesaid.com)
-
----
-
-<div align="center">
-  <p>Built with ❤️ by <a href="https://moesaid.com">Mohamed Said</a></p>
-  <p>
-    <a href="https://github.com/moesaid/cleopatra">⭐ Star on GitHub</a>
-  </p>
-</div>
