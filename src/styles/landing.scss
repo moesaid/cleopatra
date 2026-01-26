@@ -360,7 +360,7 @@ html {
         transition: all 0.2s;
 
         &:hover {
-            background: darken($landing-muted, 5%);
+            background: hsl(240, 4.8%, 91%);
         }
     }
 
@@ -393,11 +393,11 @@ html {
         transition: all 0.2s;
 
         &:hover {
-            border-color: darken($landing-border, 10%);
+            border-color: hsl(240, 5.9%, 80%);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 
             .component-card-preview {
-                background: darken($landing-muted, 2%);
+                background: hsl(240, 4.8%, 94%);
             }
         }
     }
@@ -518,7 +518,7 @@ html {
 
     .demo-progress-bar {
         height: 100%;
-        background: linear-gradient(90deg, $landing-fg 0%, lighten($landing-fg, 20%) 100%);
+        background: linear-gradient(90deg, $landing-fg 0%, hsl(240, 10%, 24%) 100%);
         border-radius: 999px;
         transition: width 0.3s ease;
     }
@@ -932,7 +932,7 @@ html {
         transition: all 0.2s ease;
 
         &:hover {
-            border-color: darken($landing-border, 10%);
+            border-color: hsl(240, 5.9%, 80%);
         }
 
         &--active {
@@ -951,7 +951,7 @@ html {
     }
 
     .mode-sidebar {
-        background: darken($landing-muted, 8%);
+        background: hsl(240, 4.8%, 88%);
         border-radius: 2px;
     }
 

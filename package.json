@@ -29,6 +29,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "lightningcss": "^1.28.2",
     "sass": "^1.97.2",
+    "svgo": "^4.0.0",
     "tailwindcss": "^4.1.18",
     "vite": "^6.0.5",
     "vite-plugin-handlebars": "^2.0.0",
