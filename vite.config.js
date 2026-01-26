@@ -34,11 +34,10 @@ function getHtmlPages() {
                 scanDir(fullPath, prefix + entry.name + '/');
             } else if (entry.name.endsWith('.html') && !entry.name.startsWith('_')) {
                 const name = entry.name.replace('.html', '');
-                // Skip root index.html as it's handled specially
-                if (prefix === '' && name === 'index') return;
 
                 // Create unique key with folder prefix (e.g., 'components_accordion')
-                const key = prefix ? prefix.replace(/\//g, '_') + name : name;
+                // For pages/index.html, use 'pages_index' to avoid conflict with main landing page
+                const key = prefix ? prefix.replace(/\//g, '_') + name : 'pages_' + name;
                 pages[key] = fullPath;
             }
         });
