@@ -14,6 +14,24 @@
 
 ---
 
+## Version 2.0 - Complete Rewrite
+
+Version 2.0 is a **complete rewrite** from the ground up. The entire codebase has been rebuilt with a modern architecture, improved developer experience, and better performance.
+
+**What's New:**
+- Rebuilt with Tailwind CSS v4 and Vite
+- 4 unique dashboard templates
+- 10 accent colors + Light/Dark themes
+- SPA-like navigation without page reloads
+- Widget-based component architecture
+- Redesigned landing page
+
+**Documentation:**
+- [ARCHITECTURE.md](ARCHITECTURE.md) - Project structure and architecture rules
+- [COMPONENT_GUIDE.md](COMPONENT_GUIDE.md) - How to create and use components
+
+---
+
 ## Preview
 
 <div align="center">
@@ -101,7 +119,7 @@ src/
 
 Choose from 10 accent colors:
 
-
+| | | | | |
 |---|---|---|---|---|
 | Black (default) | Blue | Green | Orange | Yellow |
 | Olive | Slate | Cyan | Purple | Rose |

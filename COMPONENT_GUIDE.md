@@ -1,160 +1,208 @@
-# Cleopatra Component Guide
+# Component Guide
 
-A guide to Cleopatra's modular component architecture.
-
----
-
-## Project Structure
-
-```
-src/
-├── components/
-│   ├── widgets/         # Reusable widgets (navbar, sidebar, charts, stats)
-│   ├── ui/              # UI primitives (dropdown, alert, code-block, button)
-│   ├── charts/          # Chart components (analytics, sales, summary)
-│   ├── animations/      # Animation utilities (view-transitions, scroll-reveal)
-│   ├── layout/          # Layout system (start, end, router)
-│   └── index.js         # Component registry
-├── styles/
-│   ├── tailwind.css     # Tailwind v4 configuration
-│   └── global.scss      # Global styles + component imports
-├── pages/               # Route files only (like Next.js pages/)
-│   ├── index.html
-│   ├── buttons.html
-│   └── ...
-├── assets/images/       # Static images
-└── js/main.js           # Application entry point
-```
+> How to use and create components in Cleopatra v2.0
 
 ---
 
 ## Component Categories
 
+### Layout (`components/layout/`)
+
+App shell and page wrappers:
+
+| Component | Purpose |
+|-----------|---------|
+| `start.html` | Opens page, includes head, navbar, sidebar |
+| `end.html` | Closes page, includes footer scripts |
+
 ### Widgets (`components/widgets/`)
-Self-contained, reusable UI sections:
-- **navbar** - Top navigation bar
-- **sidebar** - Side navigation
-- **numbers** - Stat counters
-- **quick-info** - Info cards
-- **status** - Status indicators
-- **best-seller** - Product lists
-- **recent-orders** - Order tables
+
+Reusable dashboard widgets:
+
+| Widget | Description |
+|--------|-------------|
+| `navbar/` | Top navigation bar with search, notifications |
+| `sidebar/` | Side navigation with collapsible groups |
+| `stats-card/` | Metric display cards |
+| `recent-orders/` | Order tables |
+| `quick-info/` | Info summary cards |
 
 ### UI (`components/ui/`)
+
 Atomic UI components:
-- **dropdown** - Dropdown menus
-- **alert** - Dismissible alerts
-- **code-block** - Syntax-highlighted code
-- **button** - Button styles
+
+| Component | Description |
+|-----------|-------------|
+| `button/` | Button styles and variants |
+| `alert/` | Dismissible alerts |
+| `modal/` | Modal dialogs |
+| `dropdown/` | Dropdown menus |
+| `code-block/` | Syntax highlighted code |
 
 ### Charts (`components/charts/`)
-Data visualization:
-- **analytics** - ApexCharts analytics
-- **sales-overview** - Chart.js sales chart
-- **summary** - Summary stats chart
 
-### Layout (`components/layout/`)
-App shell and routing:
-- **start.html** - Page wrapper (open)
-- **end.html** - Page wrapper (close)
-- **router.js** - SPA client-side router
+Data visualization:
+
+| Chart | Library | Purpose |
+|-------|---------|---------|
+| `analytics/` | ApexCharts | Analytics line charts |
+| `sales-overview/` | Chart.js | Sales bar charts |
+| `summary/` | ApexCharts | Summary donut charts |
+
+### Dashboard-Specific Components
+
+| Folder | Dashboard |
+|--------|-----------|
+| `crypto/` | Crypto dashboard (trending tokens, market tables) |
+| `ecommerce/` | E-commerce (products, orders, sales) |
+| `mission-control/` | Project management (tasks, team) |
 
 ---
 
-## How Pages Work
+## Using Components
 
-Pages are pure route files (like Next.js `pages/` directory):
+### In Pages
+
+Include components using Handlebars partials:
 
 ```html
-{{> start}}
+{{> start title="My Page" }}
 
-<!-- Your page content here -->
-<div class="bg-white p-6 rounded-md shadow">
-  <h1>Page Title</h1>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+  {{> widgets/stats-card/stats-card }}
+  {{> widgets/recent-orders/recent-orders }}
 </div>
 
-{{> end}}
+{{> end }}
 ```
 
-The layout wraps your content with navbar, sidebar, and handles loading.
+### With Parameters
+
+Pass data to components:
+
+```html
+{{> widgets/stats-card/stats-card 
+    title="Revenue" 
+    value="$45,231" 
+    trend="+12.5%" 
+}}
+```
 
 ---
 
-## Tutorial: Creating a New Widget
+## Creating a New Widget
 
-### 1. Create Directory
+### Step 1: Create Directory
 
 ```bash
 mkdir src/components/widgets/my-widget
 ```
 
-### 2. Create Files
+### Step 2: Create Template
 
 **`my-widget.html`**
 ```html
-<div class="bg-white rounded-md p-6 shadow">
-  <h3 class="font-semibold mb-4">My Widget</h3>
-  <div id="my-widget-content"></div>
+<div class="bg-card rounded-lg border p-6">
+  <h3 class="font-semibold text-foreground mb-4">My Widget</h3>
+  <div id="my-widget-content">
+    <!-- Widget content -->
+  </div>
 </div>
 ```
+
+### Step 3: Add JavaScript (Optional)
 
 **`my-widget.js`**
 ```javascript
 export function initMyWidget() {
-    const el = document.getElementById('my-widget-content');
-    if (el) {
-        el.textContent = 'Widget loaded!';
-    }
+  const el = document.getElementById('my-widget-content');
+  if (el) {
+    // Initialize widget logic
+  }
 }
 ```
 
-**`index.js`**
-```javascript
-export { initMyWidget } from './my-widget.js';
+### Step 4: Add Styles (Optional)
+
+**`my-widget.scss`**
+```scss
+.my-widget {
+  // Widget-specific styles
+}
 ```
 
-### 3. Register in Component Index
-
-```javascript
-// src/components/index.js
-export { initMyWidget } from './widgets/my-widget';
+Import in `global.scss`:
+```scss
+@import 'components/widgets/my-widget/my-widget';
 ```
 
-### 4. Initialize in main.js
+### Step 5: Initialize in main.js
 
 ```javascript
-import { initMyWidget } from '../components/widgets/my-widget';
+import { initMyWidget } from '../components/widgets/my-widget/my-widget.js';
+
+// Call on page load
 initMyWidget();
 ```
 
-### 5. Use in Pages
+### Step 6: Use in Pages
 
 ```html
-{{> my-widget/my-widget}}
+{{> widgets/my-widget/my-widget }}
 ```
+
+---
+
+## Theme-Aware Components
+
+Use Tailwind's theme classes for automatic theme support:
+
+```html
+<!-- These adapt to light/dark mode automatically -->
+<div class="bg-card text-foreground border-border">
+  <h3 class="text-foreground">Title</h3>
+  <p class="text-muted-foreground">Description</p>
+</div>
+```
+
+**Available theme classes:**
+
+| Class | Description |
+|-------|-------------|
+| `bg-background` | Page background |
+| `bg-card` | Card background |
+| `text-foreground` | Primary text |
+| `text-muted-foreground` | Secondary text |
+| `border-border` | Border color |
+| `bg-primary` | Primary accent |
+| `text-primary` | Primary accent text |
 
 ---
 
 ## SPA Navigation
 
-The router (`components/layout/router.js`) provides single-page app navigation:
+Components are automatically reinitialized when navigating between pages.
 
-- **No full page reloads** - Content fetched via JavaScript
-- **Smooth transitions** - 150ms fade between pages
-- **History support** - Browser back/forward works
-- **Component reinitialization** - Charts and widgets reinit on navigation
+If your component needs cleanup, register a destroy function:
+
+```javascript
+export function initMyWidget() {
+  // Setup
+  const interval = setInterval(() => {}, 1000);
+  
+  // Cleanup on navigation
+  window.addEventListener('beforeunload', () => {
+    clearInterval(interval);
+  });
+}
+```
 
 ---
 
-## Using Components Standalone
+## Best Practices
 
-Copy any component to another project:
-
-```bash
-cp -r src/components/widgets/navbar ./your-project/
-```
-
-```javascript
-import { initNavbar } from './navbar';
-initNavbar();
-```
+1. **Keep widgets self-contained** - All files in one folder
+2. **Use semantic class names** - `bg-card` not `bg-white`
+3. **Follow the naming convention** - `widget-name/widget-name.html`
+4. **Document parameters** - Add comments for partial parameters
+5. **Test both themes** - Verify light and dark mode work
