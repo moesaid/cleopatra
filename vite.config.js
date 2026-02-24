@@ -99,97 +99,112 @@ function getPartialDirectories() {
     return dirs;
 }
 
-export default defineConfig({
+export default defineConfig(({ command }) => {
     // Base path for GitHub Pages deployment
-    base: process.env.GITHUB_ACTIONS ? '/cleopatra/' : '/',
+    const base = process.env.GITHUB_ACTIONS ? '/cleopatra/' : '/';
 
-    plugins: [
-        handlebars({
-            partialDirectory: getPartialDirectories(),
-            context: {
-                title: 'Cleopatra - Modern Admin Dashboard',
-                sidebarLinks: sidebarData,
-            },
-            helpers: {
-                eq: (a, b) => a === b,
-            },
-        }),
-        tailwindcss(),
+    return {
+        base,
 
-        ViteImageOptimizer({
-            png: { quality: 80 },
-            jpeg: { quality: 80 },
-            jpg: { quality: 80 },
-            webp: { quality: 80 },
-        }),
-    ],
-
-    root: 'src',
-    publicDir: resolve(__dirname, 'public'),
-
-    server: {
-        port: 8081,
-        open: false,
-        https: false,
-    },
-
-    build: {
-        outDir: resolve(__dirname, 'dist'),
-        emptyOutDir: true,
-        rollupOptions: {
-            input: getHtmlPages(),
-            output: {
-                assetFileNames: (assetInfo) => {
-                    let extType = assetInfo.name.split('.').at(1);
-                    if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(extType)) {
-                        return `img/[name][extname]`;
-                    }
-                    if (/css/i.test(extType)) {
-                        return `css/[name][extname]`;
-                    }
-                    return `assets/[name][extname]`;
+        plugins: [
+            handlebars({
+                partialDirectory: getPartialDirectories(),
+                context: {
+                    title: 'Cleopatra - Modern Admin Dashboard',
+                    sidebarLinks: sidebarData,
+                    base, // Make base path available in templates
                 },
-                chunkFileNames: 'js/[name]-[hash].js',
-                entryFileNames: 'js/[name].js',
+                helpers: {
+                    eq: (a, b) => a === b,
+                },
+            }),
+            tailwindcss(),
+
+            ViteImageOptimizer({
+                png: { quality: 80 },
+                jpeg: { quality: 80 },
+                jpg: { quality: 80 },
+                webp: { quality: 80 },
+            }),
+
+            // Rewrite hardcoded absolute hrefs to include base path
+            {
+                name: 'rewrite-html-hrefs',
+                transformIndexHtml(html) {
+                    if (base === '/') return html; // No rewriting needed for local dev
+                    // Rewrite href="/pages/..." and href="/images/..." to href="/cleopatra/pages/..."
+                    return html.replace(/href="\/(?!\/)(pages|images)\//g, `href="${base}$1/`);
+                },
             },
-            // Custom plugin to rename main.html to index.html
-            plugins: [
-                {
-                    name: 'rename-main-index',
-                    generateBundle(options, bundle) {
-                        // Find and rename main.html to index.html
-                        const mainHtml = bundle['main.html'];
-                        if (mainHtml) {
-                            bundle['index.html'] = mainHtml;
-                            delete bundle['main.html'];
+        ],
+
+        root: 'src',
+        publicDir: resolve(__dirname, 'public'),
+
+        server: {
+            port: 8081,
+            open: false,
+            https: false,
+        },
+
+        build: {
+            outDir: resolve(__dirname, 'dist'),
+            emptyOutDir: true,
+            rollupOptions: {
+                input: getHtmlPages(),
+                output: {
+                    assetFileNames: (assetInfo) => {
+                        let extType = assetInfo.name.split('.').at(1);
+                        if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(extType)) {
+                            return `img/[name][extname]`;
                         }
+                        if (/css/i.test(extType)) {
+                            return `css/[name][extname]`;
+                        }
+                        return `assets/[name][extname]`;
                     },
+                    chunkFileNames: 'js/[name]-[hash].js',
+                    entryFileNames: 'js/[name].js',
                 },
-            ],
+                // Custom plugin to rename main.html to index.html
+                plugins: [
+                    {
+                        name: 'rename-main-index',
+                        generateBundle(options, bundle) {
+                            // Find and rename main.html to index.html
+                            const mainHtml = bundle['main.html'];
+                            if (mainHtml) {
+                                bundle['index.html'] = mainHtml;
+                                delete bundle['main.html'];
+                            }
+                        },
+                    },
+                ],
+            },
+            cssCodeSplit: false,
+            sourcemap: false,
         },
-        cssCodeSplit: false,
-        sourcemap: false,
-    },
 
-    css: {
-        preprocessorOptions: {
-            scss: {
-                api: 'modern-compiler',
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    api: 'modern-compiler',
+                },
             },
         },
-    },
 
-    resolve: {
-        alias: {
-            '@': resolve(__dirname, 'src'),
-            '@components': resolve(__dirname, 'src/components'),
-            '@styles': resolve(__dirname, 'src/styles'),
-            '@pages': resolve(__dirname, 'src/pages'),
-            '@assets': resolve(__dirname, 'src/assets'),
-            // Legacy aliases for backward compatibility
-            '@css': resolve(__dirname, 'src/styles'),
-            '@js': resolve(__dirname, 'src/js'),
-            '@img': resolve(__dirname, 'src/assets/images'),
+        resolve: {
+            alias: {
+                '@': resolve(__dirname, 'src'),
+                '@components': resolve(__dirname, 'src/components'),
+                '@styles': resolve(__dirname, 'src/styles'),
+                '@pages': resolve(__dirname, 'src/pages'),
+                '@assets': resolve(__dirname, 'src/assets'),
+                // Legacy aliases for backward compatibility
+                '@css': resolve(__dirname, 'src/styles'),
+                '@js': resolve(__dirname, 'src/js'),
+                '@img': resolve(__dirname, 'src/assets/images'),
+            },
         },
-    },
+    };
 });

@@ -5,6 +5,14 @@
 
 import { getLucideIcon } from '../../../data/lucide-icons.js';
 
+// Resolve href with Vite base path (e.g. /cleopatra/ on GitHub Pages)
+function resolveHref(path) {
+    const base = import.meta.env.BASE_URL || '/';
+    // Remove leading slash from path since base already ends with one
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return base + cleanPath;
+}
+
 // Menu Data Structure with Lucide icon names
 const menuData = [
     {
@@ -235,11 +243,10 @@ export function initSidebar() {
 // Check if URL matches href
 function isUrlMatch(href) {
     const currentPath = window.location.pathname;
-    return href === currentPath ||
-        (currentPath === '/pages/' && href === '/pages/') ||
-        (currentPath === '/pages/index.html' && href === '/pages/') ||
-        (currentPath.endsWith('/index.html') && href === currentPath.replace('/index.html', '/')) ||
-        (href.endsWith('/') && currentPath === href + 'index.html');
+    const resolved = resolveHref(href);
+    return resolved === currentPath ||
+        (currentPath.endsWith('/index.html') && resolved === currentPath.replace('/index.html', '/')) ||
+        (resolved.endsWith('/') && currentPath === resolved + 'index.html');
 }
 
 // Render Menu from Data
@@ -283,7 +290,7 @@ function renderMenuItem(item) {
             const isActive = isUrlMatch(child.href);
             const childIcon = child.icon ? getLucideIcon(child.icon, 'w-4 h-4 flex-shrink-0') : '';
             return `
-                <a href="${child.href}" 
+                <a href="${resolveHref(child.href)}" 
                    data-id="${child.id}"
                    class="submenu-link flex items-center gap-2.5 px-3 py-2 text-sm rounded-lg transition-colors
                           ${isActive ? 'bg-sidebar-accent text-primary font-medium' : 'text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground focus:bg-sidebar-accent focus:text-sidebar-foreground active:bg-sidebar-accent'}">
@@ -298,7 +305,7 @@ function renderMenuItem(item) {
     const popoverLinks = item.children?.map(child => {
         const childIcon = child.icon ? getLucideIcon(child.icon, 'w-4 h-4 flex-shrink-0') : '';
         return `
-            <a href="${child.href}" class="flex items-center gap-2.5 px-4 py-2 text-sm text-popover-foreground/70 hover:bg-muted hover:text-popover-foreground transition-colors">
+            <a href="${resolveHref(child.href)}" class="flex items-center gap-2.5 px-4 py-2 text-sm text-popover-foreground/70 hover:bg-muted hover:text-popover-foreground transition-colors">
                 ${childIcon}
                 <span>${child.label}</span>
             </a>
@@ -338,7 +345,7 @@ function renderLink(item) {
 
     return `
         <div class="menu-link relative" data-id="${item.id}">
-            <a href="${isDisabled ? '#' : item.href || '#'}" 
+            <a href="${isDisabled ? '#' : resolveHref(item.href || '#')}" 
                class="w-full h-11 flex items-center px-6 transition-colors duration-200 group
                       ${isActive ? 'bg-sidebar-accent text-primary' : isDisabled ? 'text-sidebar-foreground/30 cursor-not-allowed' : 'text-sidebar-foreground hover:bg-sidebar-accent focus:bg-sidebar-accent active:bg-sidebar-accent'}"
                ${isDisabled ? 'onclick="return false;"' : ''}>
